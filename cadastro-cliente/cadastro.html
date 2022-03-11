@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    
+    <!-- FORMULÁRIO DE DADOS PESSOAIS    -->
+
+    <form action="">
+    <div class="formulario-dados-pessoais" id="1">
+        <h1>Cadastro de Cliente</h1>
+        <p>Dados pessoais</p>
+  
+   
+        
+        <form class="formulario-cadastro">
+
+            <label>Nome completo:
+                <input type="text" required>
+            </label>
+
+            <label>Data de nascimento:
+                <input type="date" required>
+            </label>
+
+            <label>Telefone(celular):
+                <input type="text" required>
+            </label>
+
+            <label>CPF/CNPJ:
+                <input type="text" required>
+            </label>
+
+            <p>Já possui uma conta?</p>
+
+            <button type="submit">
+                Continuar</button>
+    
+            </form>
+    </div>
+
+    <!-- FORMULÁRIO DE ENDEREÇO     -->
+
+    <div class="formulario-dados-endereco" style="display: none;" id="2">
+        <h1>Cadastro de Cliente</h1>
+        <p>Dados de endereço</p>
+  
+  
+
+        <form class="formulario-cadastro">
+
+            <label>CEP:
+                <input type="text" required>
+            </label>
+
+            <label>Rua:
+                <input type="text" required>
+            </label>
+
+            <div class="ajuste">
+
+                <div class="ajuste2">
+                    <label>Número:
+                        <input type="text" required>
+                    </label>
+                </div>
+               
+                <div class="ajuste2">
+                    <label>Complemento:
+                        <input type="text" required>
+                    </label>    
+                </div>
+ 
+            </div>
+          
+            <label>Bairro:
+                <input type="text" required>
+            </label>
+
+            <div class="ajuste">
+
+                <div class="ajuste2">
+                    <p>Cidade:</p>
+                    <select name="Cidade" required>
+                        <option value="osasco">Osasco</option>
+                        <option value="jundiai">Jundiaí</option>
+                        <option value="embu">Embu das Artes</option>
+        
+                    </select>
+        
+                </div>
+
+                <div class="ajuste2">
+                    <p>Estado:</p>
+                    <select name="Estado" required>
+                        
+                        <option value="sp">SP</option>
+                        <option value="mg">MG</option>
+                        <option value="rj">RJ</option>
+        
+                    </select>
+                </div>
+             
+
+            </div>
+
+            <button type="submit">Continuar</button>
+    
+        </form>
+    </div>
+
+    <!--   FORMULÁRIO DE DADOS DE ACESSO    -->
+
+    <div class="formulario-dados-acesso" style="display: none;" id="3">
+        <h1>Cadastro de Cliente</h1>
+        <p>Dados de endereço</p>
+  
+  
+
+        <form class="formulario-cadastro">
+
+            <label>E-mail(Este será o seu usuário):
+                <input type="email" required>
+            </label>
+
+            <label>Senha:
+                <input type="password" required>
+            </label>
+
+            <label>Confirmar senha:
+                <input type="password" required>
+            </label>
+
+            <button type="submit">Continuar</button>
+
+        </form>
+
+    </div>
+
+</form>
+
+    <section class="img-cadastro-1">
+        
+    </section>
+    
+</body>
+</html>

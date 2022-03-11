@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: azure; */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* background-color: tomato; */
+}
+.formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
+    width: 50%;
+    height: 80%;
+    padding: 20px;
+    margin-left: 300px;
+    margin-top: 160px;
+    /* background-color: bisque; */
+}
+
+h1{
+    font-size: 70px;
+}
+p{
+    font-size: 45px;
+}
+label {
+    /* margin-top: 50px; */
+    font-size: 26px;
+}
+
+.formulario-cadastro{
+    /* background-color: turquoise; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    margin-top: 40px;
+    gap: 30px;
+}
+.formulario-cadastro p{
+    font-size: 20px;
+    color: #40E0D0;
+}
+.img-cadastro-1 {
+    background-image: url(./img/art6.png);
+    /* background-size: contain; */
+    /* background-position: center; */
+    object-fit: cover;
+    background-repeat: no-repeat;
+    /* clip: rect(0px, 0px, 0px, 0px); */
+
+    width: 50%;
+    height: 100vh;
+    /* background-color: blueviolet; */
+    
+}
+.img-cadastro-2 {
+    background-image: url(./img/art-2.png);
+    /* background-size: contain; */
+    /* background-position: center; */
+    object-fit: cover;
+    background-repeat: no-repeat;
+    /* clip: rect(0px, 0px, 0px, 0px); */
+
+    width: 50%;
+    height: 100vh;
+    /* background-color: blueviolet; */
+}
+.img-cadastro-3 {
+    background-image: url(./img/art-3-1.png);
+    /* background-size: contain; */
+    /* background-position: center; */
+    object-fit: cover;
+    background-repeat: no-repeat;
+    /* clip: rect(0px, 0px, 0px, 0px); */
+
+    width: 50%;
+    height: 100vh;
+    /* background-color: blueviolet; */
+}
+
+input {
+    display: block;
+    width: 700px;
+    height: 60px;
+
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+
+    font-size: 40px;
+    padding: 4px 8px;
+}
+.ajuste{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 30px;
+    /* background-color: bisque; */
+}
+.ajuste input{
+    width: 335px;
+}
+.ajuste2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    /* background-color: yellow; */
+}
+
+.ajuste2 select{
+    width: 335px;
+}
+.ajuste2 p{
+    font-size: 25px;
+    color: black;
+}
+
+select{
+    display: block;
+    width: 700px;
+    height: 60px;
+
+    /* border-color: black; */
+    border-width: 1px;
+    border-radius: 10px;
+
+    font-size: 40px;
+    padding: 4px 8px;
+
+    
+}
+
+button{
+
+    width: 700px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    background-color: #40E0D0;
+    
+    margin-top: 30px;
+}
+
+@media (max-width: 360px){
+    
+    .formulario{
+        width: 100%;
+        height: 80%;
+        padding: 20px;
+        margin-left: 20px;
+        margin-top: 10px;
+        background-color: bisque;
+
+    }
+}
