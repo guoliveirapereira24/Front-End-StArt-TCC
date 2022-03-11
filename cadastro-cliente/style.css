@@ -13,23 +13,36 @@ body {
     /* background-color: tomato; */
 }
 .formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
-    width: 50%;
+    width: 70%;
     height: 80%;
     padding: 20px;
     margin-left: 300px;
     margin-top: 160px;
+    gap: 23px;
     /* background-color: bisque; */
+}
+.formulario-dados-pessoais{
+    display: flex;
+    flex-direction: column;
+}
+.formulario-dados-endereco{
+    display: none;
+    flex-direction: column;
+}
+.formulario-dados-acesso{
+    display: none;
+    flex-direction: column;
 }
 
 h1{
     font-size: 70px;
 }
 p{
-    font-size: 45px;
+    font-size: 40px;
 }
 label {
     /* margin-top: 50px; */
-    font-size: 26px;
+    font-size: 30px;
 }
 
 .formulario-cadastro{
@@ -47,6 +60,7 @@ label {
 }
 .img-cadastro-1 {
     background-image: url(./img/art6.png);
+    margin-left: 400px;
     /* background-size: contain; */
     /* background-position: center; */
     object-fit: cover;
@@ -56,8 +70,8 @@ label {
     width: 50%;
     height: 100vh;
     /* background-color: blueviolet; */
-    
 }
+
 .img-cadastro-2 {
     background-image: url(./img/art-2.png);
     /* background-size: contain; */
@@ -147,7 +161,12 @@ button{
     margin-top: 30px;
 }
 
-@media (max-width: 360px){
+@media (max-width: 390px){
+
+    body{
+        background-image: url(./img/art6.png);
+
+    }
     
     .formulario{
         width: 100%;
@@ -156,6 +175,67 @@ button{
         margin-left: 20px;
         margin-top: 10px;
         background-color: bisque;
-
     }
+    .formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
+        width: 95%;
+        height: 80%;
+        padding: 20px;
+        margin-left: 41px;
+        margin-top: 90px;
+        background-color: #FFFFFF;
+
+        border-radius: 15px;
+        border: 2px solid #000;
+    }
+    h1{
+        font-size: 30px;
+    }
+    p{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .formulario-cadastro p{
+        font-size: 20px;
+        color: #40E0D0;
+    }
+    label {
+        margin-top: 20px;
+        font-size: 22px;
+        width: 270px;
+    }
+    input {
+        display: block;
+        width: 270px;
+        height: 50px;
+    
+        border-color: black;
+        border-width: 1px;
+        border-radius: 10px;
+    
+        font-size: 25px;
+        padding: 4px 8px;
+    }
+    button{
+
+        width: 270px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        font-size: 25px;
+        background-color: #40E0D0;
+        
+        margin-top: 30px;
+    }
+
+    .ajuste{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        gap: 30px;
+        /* background-color: bisque; */
+    }
+    .img-cadastro-1 {
+        display: none;
+    }
+    
 }
