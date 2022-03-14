@@ -13,7 +13,7 @@
     <!-- FORMULÁRIO DE DADOS PESSOAIS    -->
 
     <form action="">
-    <div class="formulario-dados-pessoais" id="1">
+    <div class="formulario-dados-pessoais" id="formulario-dados-pessoais">
         <h1>Cadastro de Cliente</h1>
         <p>Dados pessoais</p>
   
@@ -21,20 +21,22 @@
         
         <form class="formulario-cadastro">
 
-            <label>Nome completo:
-                <input type="text" required>
+            <span id="msgAlertaErro">É obrigatório preencher todos os campos!!</span>
+
+            <label >Nome completo:
+                <input type="text" id="nome" required>
             </label>
 
-            <label>Data de nascimento:
-                <input type="date" required>
+            <label >Data de nascimento:
+                <input type="date"  id="data-nascimento" required>
             </label>
 
-            <label>Telefone(celular):
-                <input type="text" required>
+            <label >Telefone(celular):
+                <input type="text" id="telefone" required>
             </label>
 
-            <label>CPF/CNPJ:
-                <input type="text" required>
+            <label >CPF/CNPJ:
+                <input type="text" id="cpf-cnpj" required>
             </label>
 
             <p>Já possui uma conta?</p>
@@ -49,47 +51,52 @@
 
     <!-- FORMULÁRIO DE ENDEREÇO     -->
 
-    <div class="formulario-dados-endereco" id="2">
+    <div class="formulario-dados-endereco" id="formulario-dados-endereco">
         <h1>Cadastro de Cliente</h1>
         <p>Dados de endereço</p>
   
   
 
-        <form class="formulario-cadastro">
+        <div class="formulario-cadastro">
+             
+
+        <span id="msgAlertaErro2">É obrigatório preencher todos os campos!!</span>
 
             <label>CEP:
-                <input type="text" required>
+                <input type="text" id="cep" required>
             </label>
 
             <label>Rua:
-                <input type="text" required>
+                <input type="text" id="rua" required>
             </label>
 
             <div class="ajuste">
 
                 <div class="ajuste2">
                     <label>Número:
-                        <input type="text" required>
+                        <input type="text" id="numero" required>
                     </label>
                 </div>
                
                 <div class="ajuste2">
                     <label>Complemento:
-                        <input type="text" required>
+                        <input type="text" id="complemento" required>
                     </label>    
                 </div>
  
             </div>
           
             <label>Bairro:
-                <input type="text" required>
+                <input type="text" id="bairro" required>
             </label>
 
             <div class="ajuste">
 
-                <div class="ajuste2">
+                <div class="ajuste2" >
                     <p>Cidade:</p>
-                    <select name="Cidade" required>
+                    <select name="Cidade" id="cidade" required>
+                        
+                        <option value=""></option>
                         <option value="osasco">Osasco</option>
                         <option value="jundiai">Jundiaí</option>
                         <option value="embu">Embu das Artes</option>
@@ -100,8 +107,9 @@
 
                 <div class="ajuste2">
                     <p>Estado:</p>
-                    <select name="Estado" required>
-                        
+                    <select name="Estado" id="estado" required>
+
+                        <option value=""></option>
                         <option value="sp">SP</option>
                         <option value="mg">MG</option>
                         <option value="rj">RJ</option>
@@ -112,42 +120,46 @@
 
             </div>
 
-            <button class="button2" type="submit">Continuar</button>
+            <button class="button2"
+                 >Continuar</button>
     
-        </form>
+        </div>
     </div>
 
     <!--   FORMULÁRIO DE DADOS DE ACESSO    -->
 
-    <div class="formulario-dados-acesso" id="3">
+    <div class="formulario-dados-acesso" id="formulario-dados-acesso">
         <h1>Cadastro de Cliente</h1>
         <p>Dados de endereço</p>
   
   
 
-        <form class="formulario-cadastro">
+        <div class="formulario-cadastro">
+
+
+        <span id="msgAlertaErro3">É obrigatório preencher todos os campos!!</span>
 
             <label>E-mail(Este será o seu usuário):
-                <input type="email" required>
+                <input type="email" id="email" required>
             </label>
 
             <label>Senha:
-                <input type="password" required>
+                <input type="password" id="senha" value="" required>
             </label>
 
             <label>Confirmar senha:
-                <input type="password" required>
+                <input type="password" id="confirmar-senha" value="" required>
             </label>
 
             <button class="button3" type="submit">Continuar</button>
 
-        </form>
+        </div>
 
     </div>
 
 </form>
 
-    <section class="img-cadastro-1">
+    <section class="img-cadastro-1" id="img-cadastro-1">
         
     </section>
     
