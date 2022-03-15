@@ -79,20 +79,28 @@ else{
 
 button3.addEventListener("click", function() {
 
-    var senha = document.getElementById("senha");
+    // var senha = document.getElementById("senha");
 
-    var confirmar_senha = document.getElementById("confirmar-senha");
+    // var senha1 = document.querySelector("senha")
+
+    var confirmar_senha = document.getElementById("confirmar_senha");
 
     if (document.getElementById("email").value === "" ||
     document.getElementById("senha").value === "" ||
-    document.getElementById("confirmar-senha").value === ""
-){
+    document.getElementById("confirmar-senha").value === ""){
         console.log("É obrigatório preencher todos os campos!!")        
  
         msgAlertaErro3.style.display = "flex";
+    }
 
-}
-    else if(senha != confirmar_senha){ 
+    var senha = document.formulario.senha.value();
+    console.log(senha);  
+
+    if(senha !== confirmar_senha){ 
+
+    var senha = document.formulario.senha.value();
+
+    console.log(senha);    
 
     console.log("As senhas informadas são diferentes");
 
@@ -104,7 +112,9 @@ button3.addEventListener("click", function() {
 
         console.log("Dados enviados com sucesso");
     }
-
+     
+    
 });
+
 //  PASSAR DE TELA AO CLICAR NOS BOTÕES
 

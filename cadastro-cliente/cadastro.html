@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-   <script src="formulario.js" defer></script>
+   <script src="formulario.js" defer>
+
+   </script>
     <title>Cadastro</title>
 </head>
 <body>
     
     <!-- FORMULÁRIO DE DADOS PESSOAIS    -->
 
-    <form action="">
+    <form class="formulario" name="formulario" action="">
     <div class="formulario-dados-pessoais" id="formulario-dados-pessoais">
         <h1>Cadastro de Cliente</h1>
-        <p>Dados pessoais</p>
+        <p class="p-principal">Dados pessoais:</p>
   
    
         
@@ -53,7 +55,7 @@
 
     <div class="formulario-dados-endereco" id="formulario-dados-endereco">
         <h1>Cadastro de Cliente</h1>
-        <p>Dados de endereço</p>
+        <p class="p-principal">Dados de endereço</p>
   
   
 
@@ -86,13 +88,13 @@
  
             </div>
           
-            <label>Bairro:
+            <label >Bairro:
                 <input type="text" id="bairro" required>
             </label>
 
             <div class="ajuste">
 
-                <div class="ajuste2" >
+                <div class="ajuste2">
                     <p>Cidade:</p>
                     <select name="Cidade" id="cidade" required>
                         
@@ -144,11 +146,11 @@
             </label>
 
             <label>Senha:
-                <input type="password" id="senha" value="" required>
+                <input type="password" id="senha" value="" name="senha" required>
             </label>
 
             <label>Confirmar senha:
-                <input type="password" id="confirmar-senha" value="" required>
+                <input type="password" id="confirmar_senha" value="" name="confirmar_senha" required>
             </label>
 
             <button class="button3" type="submit">Continuar</button>
