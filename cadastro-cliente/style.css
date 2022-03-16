@@ -43,12 +43,12 @@ body {
 }
 
 .formulario-dados-pessoais{
-    display: none;
+    display: flex;
     flex-direction: column;
     /* background-color: chartreuse; */
 }
 .formulario-dados-endereco{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 30%;
     /* background-color: blueviolet; */
@@ -167,32 +167,40 @@ button{
 
     body{
         background-image: url(./img/img-cadastro.jpg);
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* background-color: yellow; */
+
 
     }
     .formulario{
-        width: 100%;
-        height: 100%;
+        /* width: 1px; */
+        height: 10px;
         /* padding: 0px; */
-        margin-left: 0px;
-        /* margin-top: 10px; */
+        margin-left: 4px;
+
+        /* background-color: #FFFFFF; */
+        margin-top: 1px;
         /* background-color: bisque; */
     }
     .formulario-cadastro{
-        /* background-color: turquoise; */
+        /* background-color: yellow; */
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 135px;
         height: 80%;
-        /* margin-top: 20px; */
+        margin-top: 20px;
         gap: 10px;
     }
+
     .formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
-        width: 95%;
-        height: 92%; 
+        width: 375px;
+        height: 800px; 
         /* height: 80%; */
         padding: 5px;
         margin-left: 5px;
-        /* margin-top: 10px; */
+        margin-bottom: 1px;
         
         margin-top: 30px;
 
@@ -202,8 +210,8 @@ button{
         border: 1px solid #000;
     }
     .formulario-dados-endereco{
-        margin-left: 0px;
-
+        margin-left: 2px;
+        /* background-color: aliceblue; */
     }
     h1{
         font-size: 35px;
@@ -238,9 +246,9 @@ button{
     label {
         
         font-size: 25px;
-        width: 155px;
+        width: 350px;
         margin-left: 5px;
-        background-color: #40E0D0;
+        /* background-color: #40E0D0; */
         
     }
     #msgAlertaErro, #msgAlertaErro2, #msgAlertaErro3{
@@ -262,6 +270,12 @@ button{
         font-size: 20px;
     
     }
+    #msgAlertaErro2{
+        margin-left: 230px;
+    }
+    #msgAlertaErro3{
+        margin-left: 230px;
+    }
     input {
         display: block;
         width: 350px;
@@ -274,6 +288,8 @@ button{
     
         font-size: 25px;
         padding: 4px 8px;
+
+        /* background-color: #40E0D0; */
 
         margin-top: 10px;
     }
@@ -320,7 +336,7 @@ button{
         width: 100%;
         flex-direction: row;
         gap: 30px;
-        background-color: bisque;
+        /* background-color: bisque; */
     }
     .ajuste input{
         width: 150px;
@@ -333,7 +349,7 @@ button{
         width: 160px;
 
         margin-top: 20px;
-        background-color: yellow;
+        /* background-color: yellow; */
     }
     
     .ajuste2 select{
@@ -358,7 +374,7 @@ button{
         border-radius: 10px;
         
         margin-left: 5px;
-        background-color: violet;
+        /* background-color: violet; */
         font-size: 20px;
         padding: 4px 8px;
     
