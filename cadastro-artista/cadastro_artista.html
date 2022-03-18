@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="formulario.js" defer></script>
+    <title>Cadastro de Artista</title>
+</head>
+<body>
+
+    <form class="formulario" name="formulario" action="">
+        <div class="formulario-dados-pessoais" id="formulario-dados-pessoais">
+            <h1>Cadastro de Artista</h1>
+            <p class="p-principal">Dados pessoais:</p>
+      
+            <form class="formulario-cadastro">
+    
+                <span id="msgAlertaErro">É obrigatório preencher todos os campos!!</span>
+    
+                <label >Nome completo:
+                    <input type="text" id="nome" required>
+                </label>
+
+                <label >Nome artístico:
+                    <input type="text" id="nome" required>
+                </label>
+    
+                <label >Data de nascimento:
+                    <input type="date"  id="data-nascimento" required>
+                </label>
+    
+                <label >Telefone(celular):
+                    <input type="text" id="telefone" required>
+                </label>
+    
+                <label >CPF/CNPJ:
+                    <input type="text" id="cpf-cnpj" required>
+                </label>
+
+                <div class="especialidade">
+                
+                    <p>Especialidade:</p>
+                    <select name="especialidade" id="especialidade" required>
+                    
+                        <option value=""></option>
+                        <option value="Ilustração">Ilustração</option>
+                        <option value="Pintura">Pintura</option>
+                        <option value="Escultura">Escultura</option>
+                        <option value="Fotografia">Fotografia</option>
+                    
+                    </select>
+                </div>
+                <p>Já possui uma conta?</p>
+    
+                <button class="button1" id="button1">
+                    Continuar</button>
+                      
+            </form>
+    
+        </div>
+
+        
+ <!--   FORMULÁRIO DE DADOS DE ACESSO    -->
+
+        <div class="formulario-dados-acesso" id="formulario-dados-acesso">
+            <h1>Cadastro de Artistas</h1>
+            <p class="p-principal">Dados de Login:</p>
+
+
+
+                <div class="formulario-cadastro">
+
+
+                    <span id="msgAlertaErro3">É obrigatório preencher todos os campos!!</span>
+
+                    <label>E-mail(Este será o seu usuário):
+                        <input type="email" id="email" required>
+                    </label>
+
+                    <label>Senha:
+                        <input type="password" id="senha" value="" name="senha" required>
+                    </label>
+
+                    <label>Confirmar senha:
+                        <input type="password" id="confirmar_senha" value="" name="confirmar_senha" required>
+                    </label>
+
+
+                <a href="cadastro_dados_pagamento.html">
+                    <button class="button3" type="submit" href="cadastro_dados_pagamento.html">Continuar</button>
+                </a>
+                </div>
+
+        </div>
+
+
+    </form>   
+
+    <section class="img-cadastro-1" id="img-cadastro-1">
+        
+    </section>
+
+</body>
+</html>
