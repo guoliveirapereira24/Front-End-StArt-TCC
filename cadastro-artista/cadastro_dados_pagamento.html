@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
+
+    <script src="formulario2.js" defer></script>
     <title>Cadastro de Artista</title>
 </head>
 <body>
@@ -17,15 +26,15 @@
 
             <div class="dados-pagamento">
 
-                <section class="pix_trans_banco">
-                    <button class="pix">PIX</button>
+                <div class="pix_trans_banco">
+                    <button class="pix" id="pix">PIX</button>
 
-                    <button class="transferencia-bancaria">TRANFERÊNCIA BANCÁRIA</button>
-                </section>
+                    <button class="transferencia-bancaria" id="transferencia">TRANFERÊNCIA BANCÁRIA</button>
+                </div>
 
-            <div class="dados-pix">
+            <div class="dados-pix" id="dados-pix">
                 <div class="ajuste">
-                    <p class="cpf">CPF/CNPJ</p>
+                    <p class="cpf">CPF/CNPJ:</p>
                     <!-- <label for="">
                         <input type="text" class="cpf" name="cpf-cnpj" id="" value="CPF / CNPJ"> 
                          <img src="img/vector.png" alt="" srcset=""> 
@@ -38,12 +47,73 @@
             </div>
 
 
-                <button class="button1" id="button1">
-                    Continuar</button>
+                <!-- <button class="button1" id="button1">
+                    Continuar</button> -->
                 
             </div>
 
         </div>
+
+        <!-- FORMULARIO DE TRANSFERÊNCIA BANCARIA -->
+
+        <div class="formulario_dados_transferencia" id="formulario_dados_transferencia">
+            
+
+            <div class="dados-transferencia" id="dados-transferencia">
+                <div class="ajuste2">
+
+                    <label for=""> BANCO:
+                        <select name="banco" id="banco"> 
+                        <option value=""></option>
+                        <option value="Santander">Santander</option>
+                        <option value="Bradesco">Bradesco</option>
+                        <option value="Itau">Itaú</option>
+                    </select></label>
+                 
+
+                    <label for=""> CPF DO TITULAR:
+                        <input type="text" name="cpf" id="cpf">
+                    </label>
+
+                </div>
+
+                <label for=""> TITULAR:
+                    <input type="text" name="titular" id="titular">
+                </label>
+
+                <div class="ajuste2">
+
+                    <label for="">AGÊNCIA:
+                        <input type="number" name="agencia" id="agencia">
+                    </label>
+
+                    <label for="">DIGITO (SE HOUVER):
+                        <input type="number" name="digito" id="digito">
+                    </label>
+
+                </div>
+
+                <div class="ajuste2">
+
+                    <label for="">CONTA:
+                        <input type="number" name="conta" id="conta">
+                    </label>
+
+                    <label for="">DÍGITO VERIFICADOR:
+                        <input type="number" name="digito_verificador" id="digito_verificador">
+                    </label>
+
+                </div>
+
+        
+            </div>
+                
+        </div>
+
+        
+        <button class="button1" id="button1">
+            Continuar</button>
+
 
     </form>
 

@@ -11,6 +11,7 @@ body{
 
     flex-direction: row;
     /* background-color: tomato; */
+    font-family: 'Raleway', sans-serif;
 
 }
 h1{
@@ -34,6 +35,7 @@ h1{
 }
 .formulario{
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 50%;
     /* background-color: aqua; */
@@ -53,12 +55,13 @@ h1{
     display: flex;
     flex-direction: column;
     width: 70%;
-    height: 80%;
+    height: 300px;
+    margin-top: 100px;
     margin-left: 300px;
 
     /* border: 1px solid; */
     border-radius: 15px;
-    /* background-color: brown; */
+    /* background-color: blueviolet; */
 }
 
 .pix_trans_banco{
@@ -67,7 +70,7 @@ h1{
     width: 100%;
     height: 50px;
     gap: 20px;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 .pix_trans_banco button{
     width: 200px;
@@ -157,6 +160,86 @@ h1{
     border: none;
     font-size: 30px;
     background-color: #40E0D0;
+    margin-left: 300px;
     
-    /* margin-top: 30px; */
+    /* margin-top: 500px; */
+}
+
+
+/* ESTILIZAÇÃO DO SEGUNDO FORMULÁRIO */
+
+
+.formulario_dados_transferencia{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 600px;
+    /* margin-top: 100px; */
+    margin-left: 300px;
+
+    /* gap: 20px; */
+    /* border: 1px solid; */
+    border-radius: 15px;
+    /* background-color: brown; */
+}
+.dados-transferencia{
+    display: none;
+    height: 600px;
+    flex-direction: column;
+    /* background-color: green; */
+
+
+    width: 100%;
+    gap: 20px; 
+
+}
+input{
+    display: block;
+    width: 690px;
+    height: 50px;
+    /* margin-left: 30px; */
+
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+
+    font-size: 25px;
+    padding: 4px 8px;
+
+    /* background-color: blueviolet; */
+}
+
+.ajuste2 input{
+    display: block;
+    width: 330px;
+    height: 50px;
+
+    /* margin-left: 30px; */
+    /* margin-top: 10px; */
+}
+
+.formulario_dados_transferencia select{
+
+    display: block;
+    width: 330px;
+    height: 50px;
+
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+
+    font-size: 25px;
+    padding: 4px 8px;
+
+    /* background-color: #40E0D0; */
+
+}
+.ajuste2{
+    display: flex;
+    height: 100px;
+
+    margin-top: 30px;
+}
+.formulario_dados_transferencia label{
+    margin-left: 30px;
 }
