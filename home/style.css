@@ -12,24 +12,54 @@ body {
     flex-direction: column;
     /* background-color: tomato; */
 }
+h1{
+    margin-top: 30px;
+    margin-left: 43vw;
+}
+h2{
+    font-size: 30px;
+    background-color: blue;
+
+}
 
 .container-slide{
-    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 70vh;
+    
+    margin-top: 5%;
+    /* margin-left: 5%; */
+    background-color: blueviolet;
+            
+}
+.container-slide-menor{
+    display: flex;
+    flex-direction: row;
+    width: 75vw;
     height: 40vh;
     
     margin-top: 5%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
+    background-color: dodgerblue;
             
 }
 
 .container-items {
-    width: 90vw;
-    height: 39vh;
+    width: 100vw;
+    height: 50vh;
+    background-color: aqua;
+}
+.container-items-menor {
+    width: 100vw;
+    height: 40vh;
+    /* background-color: yellow; */
 }
 
 .item img {
-    width: 89vw;
-    height: 39vh;
+    width: 1200vw;
+    height: 800px;
+    background-color: bisque;
 }
 
 .action-button{
@@ -46,4 +76,46 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: all 1s;
+}
+
+.slide-esquerda{
+    display: flex;
+    flex-direction: row;
+    /* background-color: chartreuse; */
+}
+.slide-direita{
+    display: flex;
+    flex-direction: row;
+    /* background-color: chartreuse; */
+}
+p{
+    background-color: blue;
+    width: 25vw;
+    font-size: 30px;
+    padding-top: 20vh;
+    padding-left: 9vw;
+
+    margin-top: 5%;
+    /* padding: 220px; */
+}
+.container{
+    display: flex;
+    height: 600px;
+
+    margin-top: 5vh;
+    background-color: yellow;
+}
+.doacao{
+    display: flex;
+    flex-direction: column;
+
+    width: 450px;
+    /* height: 100px; */
+    /* margin-top: 5vh; */
+    margin-left: 41vw;
+    background-color: chocolate;
+
+}
+.doacao button{
+    height: 20px;
 }
