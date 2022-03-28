@@ -15,10 +15,14 @@ body {
 h1{
     margin-top: 30px;
     margin-left: 43vw;
+    font-size: 34px;
+    font-family: 'Raleway', sans-serif;
+
 }
 h2{
     font-size: 30px;
-    background-color: blue;
+    /* background-color: blue; */
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -26,41 +30,89 @@ h2{
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 70vh;
+    height: 652px;
     
-    margin-top: 5%;
+    margin-top: 50px;
     /* margin-left: 5%; */
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
             
 }
 .container-slide-menor{
     display: flex;
     flex-direction: row;
     width: 75vw;
-    height: 40vh;
+    height: 30vh;
     
     margin-top: 5%;
     /* margin-left: 5%; */
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
             
 }
 
 .container-items {
     width: 100vw;
-    height: 50vh;
+    height: 500px;
     background-color: aqua;
 }
+.gallery {
+	height: 500px;
+    width: 100%;
+
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(4, 32vw);
+	grid-template-rows: 1fr;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+	overflow: scroll;
+	scroll-snap-type: both mandatory;
+	scroll-padding: 1rem;
+}
+
+.gallery-menor{
+    height: 390px;
+    width: 75vw;
+
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(4, 20vw);
+	grid-template-rows: 1fr;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+	overflow: scroll;
+	scroll-snap-type: both mandatory;
+	scroll-padding: 1rem;
+
+}
+.gallery-menor li img{
+
+    height: 350px;
+    width: 470px;
+}
+.active {
+	scroll-snap-type: unset;
+}
+
+li {
+    /* height: 552px; */
+	scroll-snap-align: center;
+	display: inline-block;
+	border-radius: 3px;
+	font-size: 0;
+}
+li img{
+    height: 460px;
+    width: 828px;
+}
+
+
 .container-items-menor {
     width: 100vw;
     height: 40vh;
     /* background-color: yellow; */
 }
 
-.item img {
-    width: 1200vw;
-    height: 800px;
-    background-color: bisque;
-}
+
 
 .action-button{
     display: flex;
@@ -81,41 +133,126 @@ h2{
 .slide-esquerda{
     display: flex;
     flex-direction: row;
+    border: 1px solid ;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* height: 800px; */
     /* background-color: chartreuse; */
 }
 .slide-direita{
     display: flex;
     flex-direction: row;
+    border: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     /* background-color: chartreuse; */
 }
 p{
-    background-color: blue;
+    /* background-color: brown; */
     width: 25vw;
     font-size: 30px;
-    padding-top: 20vh;
+    padding-top: 14vh;
     padding-left: 9vw;
 
     margin-top: 5%;
     /* padding: 220px; */
 }
-.container{
-    display: flex;
-    height: 600px;
 
-    margin-top: 5vh;
-    background-color: yellow;
-}
 .doacao{
     display: flex;
     flex-direction: column;
+    position: relative ;
 
-    width: 450px;
-    /* height: 100px; */
-    /* margin-top: 5vh; */
-    margin-left: 41vw;
-    background-color: chocolate;
+    width: 560px;
+    height: 500px;
+    margin-top: 140px;
+    margin-left: 40vw;
+    /* background-color: chocolate; */
 
+    border: 1px solid black;
+    border-radius: 5px;
+    
 }
-.doacao button{
-    height: 20px;
+.doacao h2{
+    width: 430px;
+    margin-top: 10px;
+    margin-left: 15px;
+
+    /* padding: 40px; */
+    /* background-color: bisque; */
+    /* border: 5px solid; */
+    /* border-top: ; */
+}
+.borda{
+    border: 10px solid;
+    width: 200px;
+    /* background-color: turquoise; */
+    border-right: none;
+    border-bottom: none;
+}
+.botao{
+    display: flex;
+    width: 200px;
+    flex-direction: row-reverse;
+    /* background-color: yellow; */
+    border: 10px solid;
+    border-top: none;
+    border-left: none;
+    /* margin-top: 10x; */
+    margin-left: 360px;
+}
+.botao button{
+    align-self: flex-end;
+    height: 60px;
+    width: 160px;
+    margin-bottom: 14px;
+    margin-right: 14px;
+    font-size: 25px;
+
+    border-radius: 5px;
+    background-color: #40E0D0;
+    color: white;
+    border: 0px solid;
+}
+
+.personalizado{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 20vw;
+    gap: 200px;
+}
+.personalizado h2{
+    width: 500px;
+    padding: 50px;
+}
+.personalizado button{
+    width: 270px;
+    height: 128px;
+    font-size: 40px;
+    margin-top: 3vh;
+
+    border-radius: 5px;
+    background-color: #40E0D0;
+    color: white;
+    border: 0px solid;   
+}
+.indicacao{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+
+    font-size: 38px;
+    /* background-color: bisque; */
+}
+.indicacao h2{
+    margin-left: 33vw;
+}
+
+.indicacao img{
+    width: 38px;
 }

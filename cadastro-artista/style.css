@@ -19,7 +19,7 @@ body {
     margin-left: 300px;
     margin-top: 100px;
     gap: 23px;
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 
 #msgAlertaErro, #msgAlertaErro2, #msgAlertaErro3{
