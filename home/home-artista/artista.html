@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
+
+    <script src="artista.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+
+    <link rel="stylesheet" href="artista.css">
+    <title>Tela inicial</title>
+</head>
+<body class="tela" id="tela">
+
+    <h1 id="recepcao">Olá, seja bem-vindo(a)!</h1>
+
+    <div class="container-slide" id="container-slide">
+            <ul class="gallery">
+                <li>
+                    <img src="../img/slide1.png" alt="" srcset="">
+                </li>
+                <li>
+                    <img src="../img/slide2.png" alt="" srcset="">
+                </li>
+                <li>
+                    <img src="../img/slide3.png" alt="">
+                </li>
+                <li>
+                    <img src="../img/slide4.png" alt="">
+                </li>
+            </ul>
+    </div>
+    
+
+        <div class="destaque" id="destaque">
+            <div class="borda">
+                <h2>Fique você também, como os acima listados, em destaque para os clientes.
+                </h2> 
+            </div>
+   
+            <div class="botao">
+                <button class="saiba-mais" id="saiba-mais">Saiba mais</button>
+            </div>
+                
+        </div>
+
+        <div class="artistas-destaque" id="artistas-destaque">
+            <p>A finalidade de "Artistas em Destaque” 
+                é que diversos artistas que não têm reconhecimento, 
+                mas possuem boas avaliações, tenham as mesmas oportunidades de artistas já reconhecidos. 
+            </p>
+
+            <button class="ok" id="ok">Ok</button>
+        </div>
+
+        <div id="opcao-pedidos" class="opcao-pedidos">
+            <button class="pedidos-publicos" id="pedidos-publicos">Pedidos Públicos (Geral)</button>
+            <button class="pedidos-para-mim" id="pedidos-para-mim">Pedidos para mim</button>
+        </div>
+
+        <div class="listagem_pedidos_genero">
+            <div id="listagem_genero">
+<!--  -->
+<!-- LISTAGEM POR GENEROS DE PINTURA -->
+<!--  -->
+                <div class="generos" id="pintura">
+                    <h2>Pintura:</h2>
+
+                    <section>
+                        <input type="checkbox" name="Abstrato" id="abstrato">
+                        <p>Abstrato</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Arte_Conceitual" id="conceitual">
+                        <p>Arte Conceitual</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Classicista" id="classicista">
+                        <p>Classicista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Cubista" id="cubista">
+                        <p>Cubista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Expressionista" id="expressionista">
+                        <p>Expressionista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Figurativa" id="figurativa">
+                        <p>Figurativa</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Figure_Painting" id="figure_painting">
+                        <p>Figure Painting</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Fotorrealista" id="fotorrealista">
+                        <p>Fotorrealista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Impressionista" id="impressionista">
+                        <p>Impressionista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Modernista" id="modernista">
+                        <p>Modernista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Realista" id="realista">
+                        <p>Realista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Rococó" id="rococo">
+                        <p>Rococó</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Sacro" id="sacro">
+                        <p>Sacro</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Simbolista" id="simbolista">
+                        <p>Simbolista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Surrealista" id="surrealista">
+                        <p>Surrealista</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Veduta" id="veduta">
+                        <p>Veduta</p>
+                    </section>
+                </div>
+    <!-- LISTAGEM POR GENERO DE ILUSTRAÇÃO -->
+               <div class="generos" id="ilustracao">
+                <h2>Ilustração:</h2>
+                    <section>
+                        <input type="checkbox" name="Água-forte" id="agua_forte">
+                        <p>Água-forte</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Cartoon" id="cartoon">
+                        <p>Cartoon</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Colagem" id="colagem">
+                        <p>Colagem</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Desenhado/Tinta" id="desenhado_tinta">
+                        <p>Desenhado/Tinta</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Digital" id="digital">
+                        <p>Digital</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Gravura" id="gravura">
+                        <p>Gravura</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Linoleogravura" id="linoleogravura">
+                        <p>Linoleogravura</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Litogravura" id="litogravura">
+                        <p>Litogravura</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Sumi-ê" id="sumi_e">
+                        <p>Sumi-ê</p>
+                    </section>
+                    <section>
+                        <input type="checkbox" name="Xilogravura" id="xilogravura">
+                        <p>Xilogravura</p>
+                    </section>
+               </div>
+<!-- LISTAGEM POR GENERO DE ESCULTURAS -->
+                    <div class="generos" id="esculturas">
+                        <h2>Esculturas:</h2>
+
+                        <section>
+                            <input type="checkbox" name="Barroca" id="barroca">
+                            <p>Barroca</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Grega" id="grega">
+                            <p>Grega</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Modernista" id="modernista">
+                            <p>Modernista</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Neoclássica" id="neoclassica">
+                            <p>Neoclássica</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Renascentista" id="renascentista">
+                            <p>Renascentista</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Romanas" id="romanas">
+                            <p>Romana</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Rupestre" id="rupestre">
+                            <p>Rupestre</p>
+                        </section>
+
+                        <section>
+                            <input type="checkbox" name="Argila" id="argila">
+                            <p>Argila</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Biscuit" id="biscuit">
+                            <p>Biscuit</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Cerâmica" id="ceramica">
+                            <p>Cerâmica</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Madeira" id="madeira">
+                            <p>Madeira</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Resina" id="resina">
+                            <p>Resina</p>
+                        </section>
+                    </div>
+
+<!--LISTAGEM POR GENERO DE FOTOGRAFIA  -->
+
+                    <div class="generos" id="fotografia">
+                        <h2>Fotografia:</h2>
+                        <section>
+                            <input type="checkbox" name="Arquitetônica" id="arquitetonica"> 
+                            <p>Arquitetônica</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Artística" id="artistica">
+                            <p>Artística</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Astronômica" id="astronomica">
+                            <p>Astronômica</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Culinária" id="culinaria">
+                            <p>Culinária</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Paisagem" id="paisagem">
+                            <p>Paisagem</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Retrato" id="retrato">
+                            <p>Retrato</p>
+                        </section>
+                        <section>
+                            <input type="checkbox" name="Subaquática" id="subaquatica">
+                            <p>Subaquática</p>
+                        </section>
+                    </div>
+            </div>
+            
+    <!-- LISTAGEM DE PEDIDOS -->
+        <div class="listagem_pedidos">
+            <div class="publicos" id="publicos">
+    
+                <div id="card">
+                    <div id="nome_tipo_contato">
+    
+                        <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
+    
+                        <p id="nome">Gabriel Gonçalves</p>
+                        
+                        <section id="avaliacao">
+                            <img id="estrelas" src="../img/estrela.png" alt="">
+                            <p>4.5</p>
+                        </section>
+    
+                        <section id="categoria_pedido">
+                            <p>.</p>
+                            <p>Retrato</p>
+                        </section>
+                       
+                        <section id="contatar">
+                            <img src="../img/contatar.png" alt="">
+                            <p>Contatar</p>
+                        </section>
+                        
+                    </div>
+                    <p id="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+    a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+    
+                    <div id="exemplo_botoes">
+                        <img src="" alt="">
+    
+                        <div id="botoes">
+                            <button id="fazer_proposta">Fazer Proposta</button>
+                            <button id="recusar">Recusar Pedido</button>
+                        </div>
+    
+    
+                    </div>
+    
+                </div>
+                    
+            </div>
+    
+    
+            <div class="para-mim" id="para-mim">
+    
+                    <div id="card">
+                        <div id="nome_tipo_contato">
+        
+                            <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
+        
+                            <p id="nome">Gabriel Gonçalves</p>
+                            <section id="avaliacao">
+                                <img id="estrelas" src="../img/estrela.png" alt="">
+                                <p>4.5</p>
+                            </section>
+
+        
+                            <p>Retrato</p>
+        
+                            <img src="../img/contatar.png" alt="">
+                            <p>Contatar</p>
+                        </div>
+                        <p id="descricao_pedido">
+                            Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+        a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                        </p>
+        
+                        <div id="exemplo_botoes">
+                            <img src="" alt="">
+        
+                            <div id="botoes">
+                                <button id="fazer_proposta">Fazer Proposta</button>
+                                <button id="recusar">Recusar Pedido</button>
+                            </div>
+        
+        
+                        </div>
+        
+                    </div>
+            
+                </div>
+
+        </div>    
+      
+        </div>
+        
+
+                
+    
+
