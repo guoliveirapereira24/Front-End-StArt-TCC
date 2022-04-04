@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
-    <script src="artista.js" defer></script>
+    <script src="slide_artista.js" defer></script>
+    <script src="listagem.js" defer></script>
+
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
     <link rel="stylesheet" href="artista.css">
@@ -25,16 +27,23 @@
     <div class="container-slide" id="container-slide">
             <ul class="gallery">
                 <li>
-                    <img src="../img/slide1.png" alt="" srcset="">
+                    <img id="slide1" src="../img/slide2.png" alt="" srcset="">
+                </li>
+
+                <section id="slide_descricao">
+                    <li>
+                        <img id="slide2" src="../img/slide1.png" alt="" srcset="">
+                    </li>
+                        <p id="descricao-slide2"> Vincent Van Gogh é um pintor pós-impressionista holandês. 
+                            Considerado uma das figuras mais famosas e influentes da história 
+                            da arte ocidental, criou mais de dois mil trabalhos.</p>       
+                </section>
+             
+                <li>
+                    <img id="slide3" src="../img/slide3.png" alt="">
                 </li>
                 <li>
-                    <img src="../img/slide2.png" alt="" srcset="">
-                </li>
-                <li>
-                    <img src="../img/slide3.png" alt="">
-                </li>
-                <li>
-                    <img src="../img/slide4.png" alt="">
+                    <img id="slide4" src="../img/slide4.png" alt="">
                 </li>
             </ul>
     </div>
@@ -271,10 +280,12 @@
                             <p>Subaquática</p>
                         </section>
                     </div>
-            </div>
+        </div>
             
     <!-- LISTAGEM DE PEDIDOS -->
         <div class="listagem_pedidos">
+
+            <!-- CARD DE PEDIDOS PUBLICOS -->
             <div class="publicos" id="publicos">
     
                 <div id="card">
@@ -290,8 +301,9 @@
                         </section>
     
                         <section id="categoria_pedido">
-                            <p>.</p>
+                            <!-- <h3 class="ponto">.</h3> -->
                             <p>Retrato</p>
+                            <!-- <p>CARD PUBLICO</p> -->
                         </section>
                        
                         <section id="contatar">
@@ -306,13 +318,12 @@
                     </p>
     
                     <div id="exemplo_botoes">
-                        <img src="" alt="">
+                        <img src="../img/exemplo.png" alt="">
     
                         <div id="botoes">
                             <button id="fazer_proposta">Fazer Proposta</button>
                             <button id="recusar">Recusar Pedido</button>
                         </div>
-    
     
                     </div>
     
@@ -320,7 +331,7 @@
                     
             </div>
     
-    
+    <!-- CARD DE PEDIDOS PARA MIM -->
             <div class="para-mim" id="para-mim">
     
                     <div id="card">
@@ -328,25 +339,33 @@
         
                             <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
         
+                            
+
                             <p id="nome">Gabriel Gonçalves</p>
                             <section id="avaliacao">
                                 <img id="estrelas" src="../img/estrela.png" alt="">
                                 <p>4.5</p>
                             </section>
 
-        
-                            <p>Retrato</p>
-        
-                            <img src="../img/contatar.png" alt="">
-                            <p>Contatar</p>
+                            <section id="categoria_pedido">
+                                <p>Retrato</p>
+                                <!-- <p>CARD PARA MIM</p> -->
+                            </section>
+
+                            <section id="contatar">
+                                <img src="../img/contatar.png" alt="">
+                                <p>Contatar</p>
+                            </section>
+                           
                         </div>
+
                         <p id="descricao_pedido">
-                            Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
-        a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                            Olá, Patrícia! Quero um desenho dessa foto da minha namorada. Se estiver disposta
+                        a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
                         </p>
         
                         <div id="exemplo_botoes">
-                            <img src="" alt="">
+                            <img src="../img/exemplo2.png" alt="">  
         
                             <div id="botoes">
                                 <button id="fazer_proposta">Fazer Proposta</button>

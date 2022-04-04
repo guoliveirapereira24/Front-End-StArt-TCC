@@ -53,6 +53,25 @@ h2{
 	scroll-snap-type: both mandatory;
 	scroll-padding: 1rem;
 }
+#slide_descricao{
+    display: flex;
+    width: 100%;
+    /* background-color: #40E0D0; */
+}
+#descricao-slide2{
+    display: none;
+    width: 32.5%;
+    height: 36.5%;
+    position: absolute;
+    padding-left: 50px;
+    padding-top: 150px;
+    font-size: 30px;
+    color: white;
+    /* background-color: yellowgreen; */
+}
+#slide2:hover{
+    opacity: black 80%;
+}
 .active {
 	scroll-snap-type: unset;
 }
@@ -78,13 +97,15 @@ li img{
     
     margin-left: 40vw;
     /* background-color: chocolate; */
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
 }
 .destaque h2{
     margin-top: 10px;
     margin-left: 15px;
+    /* background-color: #40E0D0; */
 }
 .borda{
     border: 10px solid;
@@ -117,6 +138,8 @@ li img{
     background-color: #40E0D0;
     color: white;
     border: 0px solid;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+
 }
 .artistas-destaque{
     display: none;
@@ -144,7 +167,10 @@ li img{
     border: 0.7px solid;
     background-color: #40E0D0;
     font-size: 25px;
-    color: white;
+    color: black;
+
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    
 }
 
 .opcao-pedidos{
@@ -159,30 +185,38 @@ li img{
     height: 80px;
     justify-content: center;
     gap: 30px;
+    
 }
 .opcao-pedidos button{
     font-size: 25px;
-
+    margin-top: 20px;
     /* border: 4px solid;
     border-top: none;
     border-left: none;
     border-right: none; */
+    height: 80px;
     width: 250px;
     background-color: white;
 }
 .listagem_pedidos_genero{
     display: flex;
     flex-direction: row;
+    margin-top: 30px;
+    /* background-color: yellowgreen; */
 }
 .listagem_pedidos{
     display: flex;
     flex-direction: column;
+    /* margin-top: 20px; */
+    /* background-color: yellowgreen; */
     
 }
-.listagem_genero{
+#listagem_genero{
     display: flex;
     flex-direction: column;
-
+    
+    margin-left: 1%;
+    /* background-color: #40E0D0; */
 }
 .generos section{
     display: flex;
@@ -209,19 +243,20 @@ li img{
     background-color: yellowgreen;
 }
 
-.pedidos-publicos{
-    border: 4px solid;
+#pedidos-publicos{
+    border: 2px solid;
     border-top: none;
     border-left: none;
     border-right: none;
     
 }
-.pedidos-para-mim{
+#pedidos-para-mim{
     border: 4px solid;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: none;
+    /* background-color: #40E0D0; */
 }
 .publicos{
     display: flex;
@@ -230,42 +265,54 @@ li img{
     align-items: center;
 }
 .para-mim{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 #card{
-    height: 300px;
-    width: 75vw;
-    border: 1px solid;
+    height: 500px;
+    width: 55vw;
+    /* border: 1px solid; */
+    border-radius: 15px;
     margin-top: 20px;
+    margin-left: 10%;
+    background-color: #FCFCFC;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    
 }
 #nome_tipo_contato{
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 80px;
+    /* border: 1px solid; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    /* border-bottom: 1px solid #5f5f5f; */
     /* width: 100%; */
-    /* background-color: #40E0D0; */
+    /* background-color: #40e0d042; */
 }
+
 #img_perfil{
     margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 10px;
     height: 70px;
     width: 70px;
+    /* background-color: #40E0D0; */
 }
+
 #nome{
     font-size: 25px;
     margin-left: 10px;
-
 }
+
 #avaliacao{
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 25px;
-    margin-left: 10px;
+    font-size: 30px;
+    margin-left: 1%;
 }
 #avaliacao img{
     width: 45px;
@@ -274,17 +321,71 @@ li img{
 #avaliacao p{
     margin-left: 10px;
     color: rgb(255, 200, 0);
+    
 }
 #categoria_pedido{
     display: flex;
+    height: 100%;
+    align-items: center;
     flex-direction: row;
-    margin-left: 100px;
+    margin-left: 20%;
     font-size: 25px;
+    /* background-color: #40E0D0; */
 }
-
-
 #contatar{
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 20%;
+    font-size: 25px;
+    /* background-color: #40E0D0; */
+}
+#descricao_pedido{
+    display: flex;
+    font-size: 28px;
+    height: 30%;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* background-color: #40E0D0; */
+}
+
+#exemplo_botoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background-color: brown; */
+    height: 50%;
+}
+
+#exemplo_botoes img{
+    width: 35%;
+    height: 100%;
+    margin-left: 5%;
+
+}
+
+#botoes{
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    height: 150px;
+    gap: 18px;
+    margin-left: 30%;
+
+    /* background-color: yellow; */
+}
+#botoes button{
+    height: 80px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+
+}
+#fazer_proposta{
+    background-color: #40e0d0a9;
+}
+#recusar{
+    background-color: rgba(255, 99, 71, 0.699);
 }

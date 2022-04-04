@@ -137,6 +137,9 @@ li img{
     border-top: none;
     border-left: none;
     border-right: none;
+    border-bottom: none;
+    /* box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712); */
+
     /* height: 800px; */
     /* background-color: chartreuse; */
 }
@@ -147,6 +150,9 @@ li img{
     border-top: none;
     border-left: none;
     border-right: none;
+    border-bottom: none;
+    /* box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712); */
+
     /* background-color: chartreuse; */
 }
 p{
@@ -171,15 +177,17 @@ p{
     margin-left: 40vw;
     /* background-color: chocolate; */
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+
     
 }
 .doacao h2{
     width: 430px;
     margin-top: 10px;
     margin-left: 15px;
-
+    
     /* padding: 40px; */
     /* background-color: bisque; */
     /* border: 5px solid; */

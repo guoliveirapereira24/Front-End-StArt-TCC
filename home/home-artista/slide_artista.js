@@ -43,3 +43,13 @@ button_ok.addEventListener("click", function(){
 
 });
 
+const slide2 = document.getElementById("slide2");
+const descricao_slide2 = document.getElementById("descricao-slide2");
+
+slide2.addEventListener("click", function(){
+
+    slide2.style.opacity = "80%";
+    descricao_slide2.style.display = "flex";
+});
+
+
