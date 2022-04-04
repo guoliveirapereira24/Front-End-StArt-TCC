@@ -13,10 +13,10 @@ const msgAlertaErro3 =  document.getElementById("msgAlertaErro3")
 button1.addEventListener("click", function() {
 
 
-    if (document.getElementById("nome").value === "" ||
-        document.getElementById("data-nascimento").value === "" ||
-        document.getElementById("telefone").value === "" ||
-        document.getElementById("cpf-cnpj").value === ""
+    if (document.getElementById("inputNome").value === "" ||
+        document.getElementById("inputDataNascimento").value === "" ||
+        document.getElementById("inputTelefone").value === "" ||
+        document.getElementById("inputCpfCnpj").value === ""
     ){
             console.log("É obrigatório preencher todos os campos!!")        
      
@@ -49,13 +49,13 @@ button1.addEventListener("click", function() {
 
 button2.addEventListener("click", function() {
 
-    if (document.getElementById("cep").value === "" ||
-    document.getElementById("rua").value === "" ||
-    document.getElementById("numero").value === "" ||
-    document.getElementById("complemento").value === ""||
-    document.getElementById("bairro").value === "" ||
-    document.getElementById("cidade").value === "" ||
-    document.getElementById("estado").value === "" 
+    if (document.getElementById("inputCep").value === "" ||
+    document.getElementById("inputRua").value === "" ||
+    document.getElementById("inputNumero").value === "" ||
+    document.getElementById("inputComplemento").value === ""||
+    document.getElementById("inputBairro").value === "" ||
+    document.getElementById("selectCidade").value === "" ||
+    document.getElementById("selectEstado").value === "" 
 ){
         console.log("É obrigatório preencher todos os campos!!")        
  

@@ -26,19 +26,19 @@
             <span id="msgAlertaErro">É obrigatório preencher todos os campos!!</span>
 
             <label >Nome completo:
-                <input type="text" id="nome" required>
+                <input type="text" id="inputNome" required>
             </label>
 
             <label >Data de nascimento:
-                <input type="date"  id="data-nascimento" required>
+                <input type="date"  id="inputDataNascimento" required>
             </label>
 
             <label >Telefone(celular):
-                <input type="text" id="telefone" required>
+                <input type="text" id="inputTelefone" required>
             </label>
 
             <label >CPF/CNPJ:
-                <input type="text" id="cpf-cnpj" required>
+                <input type="text" id="inputCpfCnpj" required>
             </label>
 
             <p>Já possui uma conta?</p>
@@ -65,40 +65,40 @@
         <span id="msgAlertaErro2">É obrigatório preencher todos os campos!!</span>
 
             <label>CEP:
-                <input type="text" id="cep" required>
+                <input type="text" id="inputCep" required>
             </label>
 
             <label>Rua:
-                <input type="text" id="rua" required>
+                <input type="text" id="inputRua" required>
             </label>
 
             <div class="ajuste">
 
                 <div class="ajuste2">
                     <label>Número:
-                        <input type="text" id="numero" required>
+                        <input type="text" id="inputNumero" required>
                     </label>
                 </div>
                
                 <div class="ajuste2">
                     <label>Complemento:
-                        <input type="text" id="complemento" required>
+                        <input type="text" id="inputComplemento" required>
                     </label>    
                 </div>
  
             </div>
           
             <label >Bairro:
-                <input type="text" id="bairro" required>
+                <input type="text" id="inputBairro" required>
             </label>
 
             <div class="ajuste">
 
                 <div class="ajuste2">
                     <p>Cidade:</p>
-                    <select name="Cidade" id="cidade" required>
+                    <select name="Cidade" id="selectCidade" required>
                         
-                        <option value=""></option>
+                        <option value="0" selected disabled></option> 
                         <option value="osasco">Osasco</option>
                         <option value="jundiai">Jundiaí</option>
                         <option value="embu">Embu das Artes</option>
@@ -109,9 +109,9 @@
 
                 <div class="ajuste2">
                     <p>Estado:</p>
-                    <select name="Estado" id="estado" required>
+                    <select name="Estado" id="selectEstado" required>
 
-                        <option value=""></option>
+                        <option value="0" selected disabled></option> 
                         <option value="sp">SP</option>
                         <option value="mg">MG</option>
                         <option value="rj">RJ</option>
@@ -142,19 +142,19 @@
         <!-- <span id="msgAlertaErro3">É obrigatório preencher todos os campos!!</span> -->
 
             <label>E-mail(Este será o seu usuário):
-                <input type="email" id="email" required>
+                <input type="email" id="inputEmail" required>
             </label>
 
             <label>Senha:
-                <input type="password" id="senha" value="" name="senha" required>
+                <input type="password" id="inputSenha" value="" name="senha" required>
             </label>
 
             <label>Confirmar senha:
-                <input type="password" id="confirmar_senha" value="" name="confirmar_senha" required>
+                <input type="password" id="inputConfirmarSenha" value="" name="confirmar_senha" required>
             </label>
 
             <a href="../login/index.html">
-                <button class="button3" type="submit" href="../login/index.html">Continuar</button>
+                <button class="button3" type="submit" id="buttonCadastro" href="../login/index.html">Cadastrar</button>
             </a>
 
         </div>
