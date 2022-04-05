@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: row;
     /* background-color: tomato; */
+    font-family: 'Raleway', sans-serif;
 }
 .formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
     /* width: 70%; */
@@ -29,14 +30,14 @@ body {
     align-self: center;
 
     height: 45px;
-    width: 535px;
+    width: 635px;
     padding-left: 10px;
     padding-top: 5px;
 
     border-radius: 10px;
-    border: 1px solid #000 ;
+    border: none;
 
-    background-color: rgb(255, 90, 76);
+    color: rgb(255, 90, 76);
 
     font-size: 30px;
 
@@ -62,9 +63,11 @@ body {
 
 h1{
     font-size: 70px;
+    font-family: 'Raleway', sans-serif;
 }
 p{
     font-size: 40px;
+    font-family: 'Raleway', sans-serif;
 }
 label {
     /* margin-top: 50px; */
@@ -84,6 +87,7 @@ label {
 .formulario-cadastro p{
     font-size: 20px;
     color: #40E0D0;
+    font-family: 'Raleway', sans-serif;
 }
 .img-cadastro-1 {
     background-image: url(./img/img-cadastro.jpg);
@@ -109,6 +113,7 @@ input {
 
     font-size: 40px;
     padding: 4px 8px;
+    font-family: 'Raleway', sans-serif;
 }
 .ajuste{
     display: flex;
@@ -262,11 +267,10 @@ button{
         padding-top: 10px;
     
         border-radius: 5px;
-        border: 1px solid #000 ;
-    
-        background-color: rgb(255, 90, 76);
+        border: none;
     
         font-size: 20px;
+        color: rgb(255, 90, 76);
     
     }
     #msgAlertaErro2{

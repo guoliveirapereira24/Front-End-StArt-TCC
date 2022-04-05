@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     /* background-color: azure; */
 }
 body{
@@ -19,18 +20,21 @@ h1{
 
     margin-left:50px;
     width: 600px;
+    font-family: 'Raleway', sans-serif;
     /* background-color: blueviolet; */
 }
 .p-principal{
     font-size: 40px;
 
     margin-left: 50px;
+    font-family: 'Raleway', sans-serif;
     /* background-color: cadetblue; */
 }
 .p-secundario{
     margin-top: 50px;
     margin-left: 50px;
     font-size: 25px;
+    font-family: 'Raleway', sans-serif;
 
 }
 .formulario{
