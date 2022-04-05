@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
     /* background-color: azure; */
 }
 
@@ -156,7 +157,10 @@ li img{
 .artistas-destaque p{
     font-size: 30px;
     padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 10px;
+    padding-right: 7px;
+    background-color: #40E0D0;
+    /* padding-bottom: 30px; */
 }
 .artistas-destaque button{
     margin-top: 100px;
@@ -377,10 +381,11 @@ li img{
 }
 #botoes button{
     height: 80px;
-    border: 1px solid;
-    border-radius: 10px;
+    border: none;
+    border-radius: 15px;
     font-size: 20px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    /* box-shadow: 0px 3px 0px 0px #00000025; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 #fazer_proposta{
