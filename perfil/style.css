@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', cursive;
+}
+
+#img_nome_avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 100px;
+    background-color: yellowgreen;
+}
+h1{
+    font-size: 60px;
+    font-family: 'Raleway', regular;
+}
+#icon_lapis{
+    height: 40px;
+    width: 40px;
+}
+#nome_avaliacao{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+}
+#avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 35px;
+}
+#avaliacao img{
+    height: 50px;
+    width: 50px;
+}

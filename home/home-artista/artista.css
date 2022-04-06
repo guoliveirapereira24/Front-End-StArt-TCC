@@ -97,6 +97,7 @@ li img{
     height: 210px;
     
     margin-left: 40vw;
+    margin-top: 50px;
     /* background-color: chocolate; */
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
 
@@ -157,9 +158,9 @@ li img{
 .artistas-destaque p{
     font-size: 30px;
     padding-top: 30px;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-right: 7px;
-    background-color: #40E0D0;
+    /* background-color: #40E0D0; */
     /* padding-bottom: 30px; */
 }
 .artistas-destaque button{
