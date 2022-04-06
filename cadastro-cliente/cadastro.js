@@ -15,15 +15,6 @@ const inputConfirmarSenha = document.getElementById('inputConfirmarSenha');
 var select = document.getElementById('selectCidade');
 var valueCidade = select.options[select.selectedIndex].value
 
-const verifyIfInputsEmpty = (input) => {
-    
-    if(input.value == ''){
-
-    } else if(input.value != ''){
-
-    }
-
-}
 
 const checkAndValidateInputs = () => {
 
@@ -39,12 +30,24 @@ const checkAndValidateInputs = () => {
         inputNumero.value.trim(),
         inputComplemento.value.trim(),
         inputBairro.value.trim(),
-        valueCidade
+        1
     )
 }
 
 
-const cadastrarCliente = (nomeCompleto, dataNascimento, telefoneCelular, cpfCnpj, email, senha, cep, rua, numero, complemento, bairro, cidade) => {
+const cadastrarCliente = (
+    nomeCompleto, 
+    dataNascimento, 
+    telefoneCelular, 
+    cpfCnpj, 
+    email, 
+    senha, 
+    cep, 
+    rua, 
+    numero, 
+    complemento, 
+    bairro, 
+    cidade) => {
 
     event.preventDefault();
 
@@ -72,7 +75,7 @@ const cadastrarCliente = (nomeCompleto, dataNascimento, telefoneCelular, cpfCnpj
         body: JSON.stringify(cliente)
     }
 
-    console.log(instituicao)
+    console.log(cliente)
     
     fetch('http://localhost:3000/cliente/cadastro', config)
         .then((res) => res.json())
@@ -84,5 +87,3 @@ const cadastrarCliente = (nomeCompleto, dataNascimento, telefoneCelular, cpfCnpj
 const buttonCadastro = document.getElementById("buttonCadastro");
 
 buttonCadastro.addEventListener("click", checkAndValidateInputs)
-
-
