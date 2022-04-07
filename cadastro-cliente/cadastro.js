@@ -12,8 +12,7 @@ const inputBairro = document.getElementById('inputBairro');
 const inputEmail = document.getElementById('inputEmail');
 const inputSenha = document.getElementById('inputSenha');
 const inputConfirmarSenha = document.getElementById('inputConfirmarSenha');
-var select = document.getElementById('selectCidade');
-var valueCidade = select.options[select.selectedIndex].value
+var selectCidade = document.getElementById('selectCidade');
 
 
 const checkAndValidateInputs = () => {
@@ -30,7 +29,7 @@ const checkAndValidateInputs = () => {
         inputNumero.value.trim(),
         inputComplemento.value.trim(),
         inputBairro.value.trim(),
-        1
+        selectCidade.value
     )
 }
 

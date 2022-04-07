@@ -46,7 +46,7 @@ h1{
     /* background-color: aqua; */
 }
 .img-cadastro-1 {
-    background-image: url(./img/fundo6.jpg);
+    background-image: url(../img/fundo6.jpg);
     margin-left: 400px;
 
     object-fit: cover;

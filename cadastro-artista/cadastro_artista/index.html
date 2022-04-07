@@ -11,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    
+    <script src="cadastro.js" defer></script>
 
-    <script src="formulario.js" defer></script>
     <title>Cadastro de Artista</title>
 </head>
 <body>
@@ -24,45 +25,49 @@
       
             <form class="formulario-cadastro">
     
-                <span id="msgAlertaErro">É obrigatório preencher todos os campos!!</span>
+                <span id="msgAlertaErroDadosPessoais">É obrigatório preencher todos os campos!!</span>
     
                 <label >Nome completo:
-                    <input type="text" id="nome" required>
+                    <input type="text" id="inputNomeCompleto" required>
                 </label>
 
                 <label >Nome artístico:
-                    <input type="text" id="nome" required>
+                    <input type="text" id="inputNomeArtistico" required>
                 </label>
     
                 <label >Data de nascimento:
-                    <input type="date"  id="data-nascimento" required>
+                    <input type="date"  id="inputDataNascimento" required>
                 </label>
     
                 <label >Telefone(celular):
-                    <input type="text" id="telefone" required>
+                    <input type="text" id="inputTelefone" required>
                 </label>
     
                 <label >CPF/CNPJ:
-                    <input type="text" id="cpf-cnpj" required>
+                    <input type="text" id="inputCpfCnpj" required>
                 </label>
 
                 <div class="especialidade">
                 
                     <p>Especialidade:</p>
-                    <select name="especialidade" id="especialidade" required>
+
+                    <select name="selectEspecialidade" id="selectEspecialidade" required>
                     
-                        <option value=""></option>
-                        <option value="Ilustração">Ilustração</option>
-                        <option value="Pintura">Pintura</option>
-                        <option value="Escultura">Escultura</option>
-                        <option value="Fotografia">Fotografia</option>
+                        <option value="">Selecione...</option>
+                        <option value="1">Ilustração</option>
+                        <option value="2">Pintura</option>
+                        <option value="3">Escultura</option>
+                        <option value="4">Fotografia</option>
                     
                     </select>
+
                 </div>
-                <p>Já possui uma conta?</p>
+
+                <a id="possuiConta" href="../../login/index.html">Já possui uma conta?</a>
     
-                <button class="button1" id="button1">
-                    Continuar</button>
+                <button type="button" class="button1" id="buttonContinuarDadosDeAcesso">
+                    Continuar
+                </button>
                       
             </form>
     
@@ -73,31 +78,31 @@
 
         <div class="formulario-dados-acesso" id="formulario-dados-acesso">
             <h1>Cadastro de Artistas</h1>
-            <p class="p-principal">Dados de Login:</p>
+            <p class="p-principal">Dados de Acesso:</p>
 
 
 
                 <div class="formulario-cadastro">
 
 
-                    <span id="msgAlertaErro3">É obrigatório preencher todos os campos!!</span>
+                    <span id="msgAlertaErroDadosAcesso">É obrigatório preencher todos os campos!!</span>
 
                     <label>E-mail(Este será o seu usuário):
-                        <input type="email" id="email" required>
+                        <input type="email" id="inputEmail" required>
                     </label>
 
                     <label>Senha:
-                        <input type="password" id="senha" value="" name="senha" required>
+                        <input type="password" id="inputSenha" value="" name="senha" required>
                     </label>
 
                     <label>Confirmar senha:
-                        <input type="password" id="confirmar_senha" value="" name="confirmar_senha" required>
+                        <input type="password" id="inputConfirmarSenha" value="" name="confirmar_senha" required>
                     </label>
 
+                    <button class="button3" id="buttonCadastrarArtista" type="submit" href="cadastro_dados_pagamento.html">
+                        Continuar
+                    </button>
 
-                <a href="cadastro_dados_pagamento.html">
-                    <button class="button3" type="submit" href="cadastro_dados_pagamento.html">Continuar</button>
-                </a>
                 </div>
 
         </div>
@@ -106,7 +111,7 @@
     </form>   
 
     <section class="img-cadastro-1" id="img-cadastro-1">
-        
+
     </section>
 
 </body>

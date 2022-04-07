@@ -23,21 +23,18 @@ body {
     /* background-color: bisque; */
 }
 
-#msgAlertaErro, #msgAlertaErro2, #msgAlertaErro3{
+#msgAlertaErroDadosPessoais, #msgAlertaErroDadosAcesso{
 
     display: none;
 
     align-self: center;
 
     height: 45px;
-    width: 535px;
+    width: 635px;
     padding-left: 10px;
     padding-top: 5px;
+    color: rgb(255, 90, 76);
 
-    border-radius: 10px;
-    border: 1px solid #000 ;
-
-    background-color: rgb(255, 90, 76);
 
     font-size: 30px;
 
@@ -72,6 +69,12 @@ label {
     font-size: 30px;
 }
 
+#possuiConta{
+    color: #40E0D0;
+    font-size: 40px;
+    text-decoration: none;
+}
+
 .formulario-cadastro{
     /* background-color: turquoise; */
     display: flex;
@@ -87,7 +90,7 @@ label {
     color: #40E0D0;
 }
 .img-cadastro-1 {
-    background-image: url(./img/fundo6.jpg);
+    background-image: url(../img/fundo6.jpg);
     margin-left: 400px;
 
     object-fit: cover;
