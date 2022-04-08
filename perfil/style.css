@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', cursive;
+    /* font-family: 'Raleway', Regular; */
+    /* font-family: 'Raleway', sans-serif; */
 }
 
 #img_nome_avaliacao{
@@ -10,15 +11,18 @@
     flex-direction: row;
     align-items: center;
     padding: 100px;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 h1{
     font-size: 60px;
     font-family: 'Raleway', regular;
 }
 #icon_lapis{
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    /* padding-left: 50px; */
 }
 #nome_avaliacao{
     display: flex;
@@ -35,4 +39,162 @@ h1{
 #avaliacao img{
     height: 50px;
     width: 50px;
+}
+.informacoes_cliente{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    /* background-color: violet; */
+    font-size: 30px;
+    align-items: center;
+}
+.text_informacoes_cliente{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 5%;
+}
+.text_informacoes_cliente section{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.text_informacoes_cliente p{
+    font-size: 40px;
+}
+.transparente{
+    opacity: 50%;
+}
+.button_meus_pedidos{
+    width: 393px;
+    height: 81px;
+    margin-left: 20%;
+    font-family: "Raleway", regular;
+    font-size: 35px;
+
+    border: none;
+    border-radius: 10px;
+    background: #40E0D0;
+}
+.descricao_perfil_cliente{
+    height: 300px;
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 35px;
+    background-color: coral;
+}
+.button_artistas_parceiros_obras_favoritas{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    
+    justify-content: center;
+    background-color: #40E0D0;
+    gap: 50px;
+}
+.button_artistas_parceiros_obras_favoritas button{
+    width: 300px;
+    background-color: #40E0D0;
+    font-style: bold;
+    font-size: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.listagem_artistas_parceiros{
+    display: flex;
+    margin-top: 2%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    background-color: violet;
+}
+.img_nome_artista{
+    display: flex;
+    /* background-color: yellow; */
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+}
+
+.nome_artista_parceiro{
+    margin-top: 20px;
+}
+.listagem_obras_favoritas{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 40px;
+    background-color: tomato;
+}
+.obra_favorita{
+    background-color: violet;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+.nome_artista_favorito_preco{
+    display: flex;
+    flex-direction: row;
+    /* gap: 5%; */
+    /* align-items: flex-end; */
+    /* width: 300px; */
+
+    height: 100%;
+    background-color: blueviolet;
+}
+.nome_obra_artista_categoria_tecnica{
+    background-color: #40E0D0;
+    gap: 10px;
+    width: 100%;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.nome_obra_artista{
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
+}
+.nome_obra_artista_categoria_tecnica p{
+    margin-top: 8px;
+    font-size: 18px;
+}
+.categoria_tecnica{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.img_favoritada_preco{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: beige;
+    align-items: flex-end;
+    justify-items: center;
+}
+.img_favoritada_preco img{
+    margin-top: 10px;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+}
+.img_favoritada_preco p{
+    font-size: 25px;
+    margin-top: 5%;
+    margin-right: 10px;
+}
+.parcelas{
+    display: flex;
+    flex-direction: row;
+    height: 3200px;
+    justify-content: end;
+    background-color: yellow;
+    /* font-size: 18px; */
+}
+.parcelas p{
+    font-size: 25px;
 }

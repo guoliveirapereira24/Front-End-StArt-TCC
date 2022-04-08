@@ -37,7 +37,7 @@ h2{
     
     margin-top: 50px;
     /* margin-left: 5%; */
-    /* background-color: blueviolet; */
+    background-color: blueviolet;
             
 }
 .gallery {
@@ -53,6 +53,7 @@ h2{
 	overflow: scroll;
 	scroll-snap-type: both mandatory;
 	scroll-padding: 1rem;
+    background-color: yellowgreen;
 }
 #slide_descricao{
     display: flex;
@@ -248,14 +249,14 @@ li img{
     background-color: yellowgreen;
 }
 
-#pedidos-publicos{
+.pedidos-publicos{
     border: 2px solid;
     border-top: none;
     border-left: none;
     border-right: none;
     
 }
-#pedidos-para-mim{
+.pedidos-para-mim{
     border: 4px solid;
     border-top: none;
     border-left: none;
@@ -291,12 +292,9 @@ li img{
     flex-direction: row;
     align-items: center;
     height: 80px;
-    /* border: 1px solid; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    /* border-bottom: 1px solid #5f5f5f; */
-    /* width: 100%; */
-    /* background-color: #40e0d042; */
+
 }
 
 #img_perfil{
@@ -307,7 +305,7 @@ li img{
     /* background-color: #40E0D0; */
 }
 
-#nome{
+.nome{
     font-size: 25px;
     margin-left: 10px;
 }
