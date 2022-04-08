@@ -54,28 +54,29 @@ buttonCadastrarArtista.addEventListener("click", function() {
 
         msgAlertaErroDadosAcesso.style.display = "flex";
 
-    }
+    } else {
 
-    if(inputSenha.value.trim() !== inputConfirmarSenha.value.trim()){ 
+        if(inputSenha.value.trim() !== inputConfirmarSenha.value.trim()){ 
 
-        msgAlertaErroDadosAcesso.innerHTML = "As senhas informadas são diferentes";
-        msgAlertaErroDadosAcesso.style.display = "flex";
+            msgAlertaErroDadosAcesso.innerHTML = "As senhas informadas são diferentes";
+            msgAlertaErroDadosAcesso.style.display = "flex";
 
-    }   
-    else {
-        cadastrarArtista(
-            inputNomeCompleto.value.trim(),
-            inputNomeArtistico.value.trim(),
-            inputDataNascimento.value,
-            inputTelefoneCelular.value.trim(),
-            inputCpfCnpj.value.trim(),
-            inputEmail.value.trim(),
-            inputConfirmarSenha.value.trim(),
-            selectEspecialidade.value
-        );
-        console.log("Dados enviados com sucesso");
-    }
-     
+        } else {
+            cadastrarArtista(
+                inputNomeCompleto.value.trim(),
+                inputNomeArtistico.value.trim(),
+                inputDataNascimento.value,
+                inputTelefoneCelular.value.trim(),
+                inputCpfCnpj.value.trim(),
+                inputEmail.value.trim(),
+                inputConfirmarSenha.value.trim(),
+                selectEspecialidade.value
+            );
+
+            window.location.href = "../cadastro_dados_pagamento/index.html";
+
+        }
+    }  
     
 });
 
@@ -119,8 +120,6 @@ const cadastrarArtista = (
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
+            localStorage.setItem('token', data.response.artistaCadastrado.token);    
         });
 }
-
-
-

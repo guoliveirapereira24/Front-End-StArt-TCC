@@ -1,3 +1,11 @@
+"use strict"
+
+const token = localStorage.getItem('token');
+
+if(token == "null"){
+  window.location.href = "../../login/index.html";
+} 
+
 const slider = document.querySelector('.gallery');
 let isDown = false;
 let startX;
