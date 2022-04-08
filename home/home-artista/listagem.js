@@ -1,10 +1,10 @@
 "use strict"
 
-const button_pedidos_para_mim = document.getElementById("pedidos-para-mim");
-const button_pedidos_publicos = document.getElementById("pedidos-publicos")
+const button_pedidos_para_mim = document.getElementById("button-pedidos-para-mim");
+const button_pedidos_publicos = document.getElementById("button-pedidos-publicos")
 
-const pedidos_para_mim = document.getElementById("para-mim");
-const pedidos_publicos = document.getElementById("publicos");
+const pedidos_para_mim = document.getElementById("listagem_pedidos_para_mim");
+const pedidos_publicos = document.getElementById("listagem_pedidos_publicos");
 
 
 button_pedidos_para_mim.addEventListener("click", function(){
@@ -17,7 +17,6 @@ button_pedidos_para_mim.addEventListener("click", function(){
     button_pedidos_publicos.style.border = "none";
     button_pedidos_publicos.style.borderBottomStyle = "none";
     
-    // button_pix.style.border-bottom = "";
 
     pedidos_publicos.style.display = "none";
     pedidos_para_mim.style.display = "flex";

@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 
-   <script src="formulario.js" defer></script>
     <script src="cadastro.js" defer></script>
 
   
@@ -31,7 +30,7 @@
         
         <form class="formulario-cadastro">
 
-            <span id="msgAlertaErro">É obrigatório preencher todos os campos!!</span>
+            <span id="msgAlertaErroDadosPessoais">É obrigatório preencher todos os campos!!</span>
 
             <label >Nome completo:
                 <input type="text" id="inputNome" required>
@@ -51,7 +50,7 @@
 
             <p>Já possui uma conta?</p>
 
-            <button class="button1" id="button1">
+            <button class="button1" id="buttonContinuarDadosEndereco" id="buttonContinuarDadosEndereco">
                 Continuar</button>
                   
         </form>
@@ -70,7 +69,7 @@
         <div class="formulario-cadastro">
              
 
-        <span id="msgAlertaErro2">É obrigatório preencher todos os campos!!</span>
+        <span id="msgAlertaErroDadosEndereco">É obrigatório preencher todos os campos!!</span>
 
             <label>CEP:
                 <input type="text" id="inputCep" required>
@@ -129,7 +128,7 @@
 
             </div>
 
-            <button class="button2">
+            <button class="buttonContinuarDadosDeAcesso" id="buttonContinuarDadosDeAcesso">
                 Continuar
             </button>
     
@@ -147,7 +146,7 @@
         <div class="formulario-cadastro">
 
 
-        <!-- <span id="msgAlertaErro3">É obrigatório preencher todos os campos!!</span> -->
+       <span id="msgAlertaErroDadosAcesso">É obrigatório preencher todos os campos!!</span>
 
             <label>E-mail(Este será o seu usuário):
                 <input type="email" id="inputEmail" required>

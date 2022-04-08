@@ -25,7 +25,7 @@ body {
     /* background-color: bisque; */
 }
 
-#msgAlertaErro, #msgAlertaErro2, #msgAlertaErro3{
+#msgAlertaErroDadosPessoais, #msgAlertaErroDadosAcesso, #msgAlertaErroDadosEndereco{
 
     display: none;
 
