@@ -8,19 +8,33 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
     /* background-color: tomato; */
 }
+.formulario_img{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    /* background-color: #1ff165; */
+}
+.formulario{
+    /* width: 100vw; */
+    padding-left: 0%;
+    /* background-color: rgb(151, 90, 9); */
+}
 .formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
-    width: 70%;
-    height: 90%;
-    padding: 20px;
-    margin-left: 300px;
-    margin-top: 100px;
-    gap: 23px;
-    /* background-color: bisque; */
+    width: 50vw;
+    height: 100%;
+    padding: 5%;
+    padding-left: 10%;
+    justify-content: center;
+    /* margin-left: 300px; */
+    
+    /* margin-top: 3%; */
+    /* gap: 1%; */
+    /* background-color: rgb(235, 130, 1); */
 }
 
 #msgAlertaErroDadosPessoais, #msgAlertaErroDadosAcesso{
@@ -29,8 +43,8 @@ body {
 
     align-self: center;
 
-    height: 45px;
-    width: 635px;
+    height: 5%;
+    width: 100%;
     padding-left: 10px;
     padding-top: 5px;
     color: rgb(255, 90, 76);
@@ -41,48 +55,56 @@ body {
 }
 
 .formulario-dados-pessoais{
-    display: flex;
+    display: none;
     flex-direction: column;
+    width: 100%;
     /* background-color: chartreuse; */
 }
 .formulario-dados-endereco{
-    display: none;
+    display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 100%;
     /* background-color: blueviolet; */
 }
 .formulario-dados-acesso{
-    display: none;
+    display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50vw;
     /* background-color: brown; */
 }
 
 h1{
-    font-size: 70px;
+    font-size: 60px;
+    /* justify-content: center; */
 }
 p{
     font-size: 40px;
 }
 label {
-    /* margin-top: 50px; */
+    margin-top: 50px;
+    height: 12%;
+    width: 100%;
+    /* background-color: #40E0D0; */
     font-size: 30px;
+}
+label input{
+    width: 80%;
 }
 
 #possuiConta{
     color: #40E0D0;
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: none;
+    margin-top: 2%;
 }
 
 .formulario-cadastro{
-    /* background-color: turquoise; */
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 80%;
-    margin-top: 40px;
-    gap: 30px;
+    /* margin-top: 40px; */
+    /* gap: 30px; */
     /* background-color: yellow; */
 }
 .formulario-cadastro p{
@@ -91,34 +113,34 @@ label {
 }
 .img-cadastro-1 {
     background-image: url(../img/fundo6.jpg);
-    margin-left: 400px;
+    /* margin-left: 400px; */
 
     object-fit: cover;
     background-repeat: no-repeat;
 
 
-    width: 50%;
+    width: 50vw;
     height: 100vh;
 
 }
 
 input {
     display: block;
-    width: 700px;
-    height: 60px;
+    width: 80%;
+    height: 60%;
 
     border-color: black;
     border-width: 0,5px;
     border-radius: 10px;
 
-    font-size: 40px;
+    font-size: 100%;
     padding: 4px 8px;
 }
 .ajuste{
     display: flex;
     width: 100%;
     flex-direction: row;
-    gap: 30px;
+    gap: 5%;
     /* background-color: bisque; */
 }
 .ajuste input{
@@ -142,8 +164,8 @@ input {
 
 select{
     display: flex;
-    width: 700px;
-    height: 60px;
+    width: 80%;
+    height: 60%;
 
     border-color: black;
     border-width: 2px;
@@ -151,21 +173,26 @@ select{
 
 
     /* background-color: violet; */
-    font-size: 40px;
+    font-size: 30px;
     padding: 4px 8px;
 
 }
 
 button{
 
-    width: 700px;
+    width: 80%;
     height: 60px;
     border-radius: 10px;
     border: none;
     font-size: 30px;
     background-color: #40E0D0;
     
-    margin-top: 30px;
+    margin-top: 10%;
+}
+.button1 , .button3 .button2{
+
+    width: 80%;
+
 }
 
 @media (max-width: 390px){
@@ -200,7 +227,7 @@ button{
     }
 
     .formulario-dados-pessoais , .formulario-dados-endereco , .formulario-dados-acesso{
-        width: 375px;
+        width: 50vw;
         height: 800px; 
         /* height: 80%; */
         padding: 5px;
@@ -209,7 +236,7 @@ button{
         
         margin-top: 30px;
 
-        background-color: #FFFFFF;
+        /* background-color: #FFFFFF; */
 
         border-radius: 10px;
         border: 1px solid #000;
@@ -364,10 +391,6 @@ button{
         font-size: 25px;
         color: black;
     }
-    /* .ajuste2 input{
-        width: ;
-
-    } */
     
     select{
         display: block;

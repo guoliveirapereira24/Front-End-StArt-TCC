@@ -1,9 +1,11 @@
 'use strict'
 
-var button_pix = document.getElementById("pix");
-var button_transferencia = document.getElementById("transferencia");
+var button_pix = document.getElementById("button_pix");
+var button_transferencia = document.getElementById("button_transferencia");
+var button_continuar = document.getElementById("buttonTransferencia");
 
-const formulario_transferencia = document.getElementById("dados-transferencia");
+const dados_transferencia = document.getElementById("dados-transferencia");
+const formulario_dados_transferencia = document.getElementById("formulario_dados_transferencia");
 const formulario_pix = document.getElementById("dados-pix");
 
 
@@ -11,7 +13,7 @@ button_transferencia.addEventListener("click", function(){
 
     event.preventDefault();
 
-    // var formulario_pix = document.getElementById("dados-pix")
+    var formulario_pix = document.getElementById("dados-pix")
     // var formulario_transferencia = document.getElementById("dados-transferencia")
     
     button_transferencia.style.border = "2px solid";
@@ -24,7 +26,9 @@ button_transferencia.addEventListener("click", function(){
     // button_pix.style.border-bottom = "";
 
     formulario_pix.style.display = "none";
-    formulario_transferencia.style.display = "flex";
+    dados_transferencia.style.display = "flex";
+    formulario_dados_transferencia.style.display = "flex";
+    button_continuar.style.marginTop = "100px";
 
 });
 
@@ -44,8 +48,11 @@ button_pix.addEventListener("click", function(){
     button_transferencia.style.border = "none";
 
 
-    formulario_transferencia.style.display = "none";
+    dados_transferencia.style.display = "none";
+    formulario_dados_transferencia.style.display = "none";
     formulario_pix.style.display = "flex";
+    button_continuar.style.marginTop = "400px";
+
 
     
 });
