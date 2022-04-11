@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Raleway', Regular; */
+    /* font-family: 'Raleway', sans-serif; */
+}
+
+#img_nome_avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 100px;
+    /* background-color: yellowgreen; */
+}
+h1{
+    font-size: 60px;
+    font-family: 'Raleway', regular;
+}
+#icon_lapis{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    /* padding-left: 50px; */
+}
+#nome_avaliacao{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+}
+#avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 35px;
+}
+#avaliacao img{
+    height: 50px;
+    width: 50px;
+}
+.informacoes_artista{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    /* background-color: violet; */
+    font-size: 30px;
+    align-items: center;
+}
+.text_informacoes_artista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 5%;
+}
+.text_informacoes_artista section{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.text_informacoes_artista p{
+    font-size: 40px;
+}
+.transparente{
+    opacity: 50%;
+}
+.descricao_perfil_artista{
+    height: 300px;
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 35px;
+    /* background-color: coral; */
+}
+.button_artistas_parceiros_obras_favoritas{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    
+    justify-content: center;
+    /* background-color: #40E0D0; */
+    gap: 50px;
+}
+.button_artistas_parceiros_obras_favoritas button{
+    width: 300px;
+    background-color: #FFFFFF;
+    font-style: bold;
+    font-size: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.button_minhas_propostas{
+    border-bottom: none;
+}
+.listagem_minhas_obras{
+    display: none;
+    flex-direction: row;
+    height: 50vh;
+    justify-content: center;
+    margin-top: 1%;
+    gap: 40px;
+    /* background-color: tomato; */
+}
+.card_minha_obra{
+    display: flex;
+    
+    /* background-color: #DCDCDC; */
+    background-color: #FCFCFC;
+
+    flex-direction: column;
+    height: 515px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+}
+.nome_artista{
+    display: flex;
+    flex-direction: row;
+    /* border-radius: 10px; */
+    /* gap: 5%; */
+    /* align-items: flex-end; */
+    /* width: 300px; */
+
+    height: 20%;
+    /* background-color: #40E0D0; */
+}
+.nome_obra_artista{
+    /* background-color: #40E0D0; */
+    gap: 5px;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+
+.nome_obra_artista{
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
+}
+.nome_obra_artista p{
+    margin-top: 8px;
+    font-size: 18px;
+}
+.categoria_tecnica{
+    display: flex;
+    flex-direction: row;
+    padding-left: 2%;
+    gap: 1%;
+}
+.card_minha_obra img{
+    width: 410px;
+    height: 75%;
+    border-radius: 10px 10px 0px 0px;
+}
+.edit_delete{
+    display: flex;
+    height: 10%;
+    width: 112px;
+    gap: 15%;
+    padding-right: 15%;
+    
+    align-items: center;
+    margin-left: 72.5%;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.25);
+    border-radius: 10px 10px 0px 10px;
+}
+.edit_delete img{
+    height: 4vh;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.para-mim{
+    display: flex;
+    margin-top: 0;
+    background-color: aquamarine;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#card{
+    height: 400px;
+    width: 55vw;
+    /* border: 1px solid; */
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10%;
+    background-color: #FCFCFC;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    
+}
+#nome_tipo_contato{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+
+#img_perfil{
+    margin-top: 5px;
+    margin-left: 10px;
+    height: 70px;
+    width: 70px;
+    /* background-color: #40E0D0; */
+}
+
+.nome{
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+#avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    margin-left: 1%;
+}
+#avaliacao img{
+    width: 45px;
+    height: 45px;
+}
+#avaliacao p{
+    margin-left: 10px;
+    color: rgb(255, 200, 0);
+    
+}
+#categoria_pedido{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 20%;
+    font-size: 25px;
+    /* background-color: #40E0D0; */
+}
+#contatar{
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+    font-size: 25px;
+    /* background-color: #40E0D0; */
+}
+#descricao_pedido{
+    display: flex;
+    font-size: 28px;
+    height: 30%;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* background-color: #40E0D0; */
+}
+
+#exemplo_botoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* background-color: brown; */
+    height: 50%;
+}
+
+#exemplo_botoes img{
+    width: 35%;
+    height: 100%;
+    margin-left: 5%;
+
+}
+
+.botoes{
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    height: 150px;
+    gap: 18px;
+    margin-left: 30%;
+
+    /* background-color: yellow; */
+}
+#botoes button{
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    /* box-shadow: 0px 3px 0px 0px #00000025; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+#fazer_proposta{
+    background-color: #40e0d0a9;
+}
+#recusar{
+    background-color: rgba(255, 99, 71, 0.699);
+}
+.container_status{
+    display: flex;
+    flex-direction: row;
+    margin-left: 28%;
+    gap: 3%;
+    font-size: 25px;
+}
+.text_para{
+    font-size: 25px;
+    margin-left: 2%;
+}
+.preco_prazo_buttons{
+    display: flex;
+    height: 180px;
+    flex-direction: row;
+    /* background-color: aqua; */
+}
+.preco_prazo{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    /* padding: 2%; */
+    padding-left: 2%;
+    font-size: 30px;
+       
+}
+.preco{
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    /* background-color: yellowgreen; */
+}
+.prazo{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    gap: 3%;
+    /* background-color: brown; */
+}
+.button_ver_pedido{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 3%;
+    font-size: 20px;
+    background: #EDECEC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#editar_proposta, #entrar_em_contato{
+    background-color: #40E0D0;
+}
+#rejeitar, #excluir_proposta, #cancelar_proposta{
+    background-color: #E14A4A;
+}
+.recusada{
+    color: #E14A4A;
+}

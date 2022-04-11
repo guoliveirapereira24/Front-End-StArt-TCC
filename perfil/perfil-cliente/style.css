@@ -82,7 +82,7 @@ h1{
     padding-left: 5%;
     padding-right: 5%;
     font-size: 35px;
-    background-color: coral;
+    /* background-color: coral; */
 }
 .button_artistas_parceiros_obras_favoritas{
     display: flex;
@@ -90,25 +90,29 @@ h1{
     height: 80px;
     
     justify-content: center;
-    background-color: #40E0D0;
+    /* background-color: #40E0D0; */
     gap: 50px;
 }
 .button_artistas_parceiros_obras_favoritas button{
     width: 300px;
-    background-color: #40E0D0;
+    background-color: #FFFFFF;
     font-style: bold;
     font-size: 30px;
     border-top: none;
     border-left: none;
     border-right: none;
 }
+.button_obras_favoritas{
+    border-bottom: none;
+}
 .listagem_artistas_parceiros{
     display: flex;
-    margin-top: 2%;
+    margin-top: 1%;
     flex-direction: row;
     justify-content: center;
     gap: 5%;
-    background-color: violet;
+    height: 50vh;
+    /* background-color: violet; */
 }
 .img_nome_artista{
     display: flex;
@@ -122,32 +126,38 @@ h1{
     margin-top: 20px;
 }
 .listagem_obras_favoritas{
-    display: flex;
+    display: none;
     flex-direction: row;
-    height: 100vh;
+    height: 50vh;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 1%;
     gap: 40px;
-    background-color: tomato;
+    /* background-color: tomato; */
 }
 .obra_favorita{
-    background-color: violet;
+    
+    /* background-color: #DCDCDC; */
+    background-color: #FCFCFC;
+
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 515px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
 }
 .nome_artista_favorito_preco{
     display: flex;
     flex-direction: row;
+    /* border-radius: 10px; */
     /* gap: 5%; */
     /* align-items: flex-end; */
     /* width: 300px; */
 
-    height: 100%;
-    background-color: blueviolet;
+    height: 20%;
+    /* background-color: #40E0D0; */
 }
 .nome_obra_artista_categoria_tecnica{
-    background-color: #40E0D0;
+    /* background-color: #40E0D0; */
     gap: 10px;
     width: 100%;
     padding-top: 2%;
@@ -172,7 +182,7 @@ h1{
     display: flex;
     flex-direction: column;
     width: 30%;
-    background-color: beige;
+    /* background-color: beige; */
     align-items: flex-end;
     justify-items: center;
 }
@@ -190,9 +200,11 @@ h1{
 .parcelas{
     display: flex;
     flex-direction: row;
-    height: 3200px;
+    /* margin-top: 1%; */
+    height: 10%;
     justify-content: end;
-    background-color: yellow;
+    padding-right: 2%;
+    /* background-color: yellow; */
     /* font-size: 18px; */
 }
 .parcelas p{
