@@ -21,6 +21,22 @@ body {
     align-items: flex-end;
 }
 
+#msgAlertaErro{
+
+    display: none;
+    align-self: center;
+
+    height: 45px;
+    width: 635px;
+    padding-left: 10px;
+    padding-top: 5px;
+    color: rgb(255, 90, 76);
+
+
+    font-size: 30px;
+
+}
+
 .conteudo-formulario-login {
     height: 80%;
     width: 80%;

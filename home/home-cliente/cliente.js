@@ -1,10 +1,14 @@
 "use strict"
 
-const token = localStorage.getItem('token');
 
-if(token == "null"){
-  window.location.href = "../../login/index.html";
+const tokenCliente = localStorage.getItem('tokenCliente');
+
+
+if(tokenCliente == "null" || tokenCliente == null || 
+   tokenCliente == "" || tokenCliente == "undefined") {
+  window.location.href = "../../index.html";
 } 
+
 
 const slider = document.querySelector('.gallery');
 let isDown = false;
@@ -33,4 +37,11 @@ slider.addEventListener('mousemove', e => {
   const walk = (x - startX) * SCROLL_SPEED;
   slider.scrollLeft = scrollLeft - walk;
 });
+
+function logout() {
+  localStorage.setItem("tokenCliente", null);
+  localStorage.setItem("tokenArtista", null);
+  window.location.href = "../../login/index.html";
+}
+
 

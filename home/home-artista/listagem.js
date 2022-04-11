@@ -1,5 +1,12 @@
 "use strict"
 
+const tokenArtista = localStorage.getItem('tokenArtista');
+
+if(tokenArtista === "null" || tokenArtista === null || 
+   tokenArtista === "" || tokenArtista === "undefined") {
+  window.location.href = "../../index.html";
+} 
+
 const button_pedidos_para_mim = document.getElementById("button-pedidos-para-mim");
 const button_pedidos_publicos = document.getElementById("button-pedidos-publicos")
 
@@ -38,3 +45,9 @@ button_pedidos_publicos.addEventListener("click", function(){
     pedidos_para_mim.style.display = "none";
 
 });
+
+function logout() {
+    localStorage.setItem("tokenCliente", null);
+    localStorage.setItem("tokenArtista", null);
+    window.location.href = "../../login/index.html";
+  }
