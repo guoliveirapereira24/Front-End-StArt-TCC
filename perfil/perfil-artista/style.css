@@ -95,7 +95,7 @@ h1{
     border-bottom: none;
 }
 .listagem_minhas_obras{
-    display: none;
+    display: flex;
     flex-direction: row;
     height: 50vh;
     justify-content: center;
@@ -171,11 +171,19 @@ h1{
     width: 50px;
     border-radius: 5px;
 }
+.edit_delete button{
+    height: 4vh;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 0, 0, 0.25);
 
-.para-mim{
-    display: flex;
+}
+
+.minhas_propostas{
+    display: none;
     margin-top: 0;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -276,14 +284,15 @@ h1{
     flex-direction: column;
 
     width: 300px;
-    height: 150px;
-    gap: 18px;
+    height: 200px;
+    gap: 12px;
     margin-left: 30%;
-
+    
+    justify-content: center;
     /* background-color: yellow; */
 }
 #botoes button{
-    height: 80px;
+    height: 55px;
     border: none;
     border-radius: 15px;
     font-size: 20px;
@@ -300,9 +309,11 @@ h1{
 .container_status{
     display: flex;
     flex-direction: row;
-    margin-left: 28%;
+    width: 230px;
+    margin-left: 21%;
     gap: 3%;
     font-size: 25px;
+    /* background-color: #40E0D0; */
 }
 .text_para{
     font-size: 25px;
@@ -310,7 +321,7 @@ h1{
 }
 .preco_prazo_buttons{
     display: flex;
-    height: 180px;
+    height: 150px;
     flex-direction: row;
     /* background-color: aqua; */
 }
@@ -352,6 +363,15 @@ h1{
 #rejeitar, #excluir_proposta, #cancelar_proposta{
     background-color: #E14A4A;
 }
+#iniciar_pedido, #finalizar_pedido, #pedido_despachado{
+    background-color: #04BA00;
+}
 .recusada{
     color: #E14A4A;
+}
+.aceita, .finalizado, .despachado{
+    color: #04BA00;
+}
+.andamento{
+    color: #FFC700;
 }

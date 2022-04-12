@@ -55,19 +55,14 @@ body {
 }
 
 .formulario-dados-pessoais{
-    display: none;
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50vw;
     /* background-color: chartreuse; */
 }
-.formulario-dados-endereco{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /* background-color: blueviolet; */
-}
+
 .formulario-dados-acesso{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 50vw;
     /* background-color: brown; */

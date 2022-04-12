@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 
+    <script src="proposta.js" defer></script>
     <script src="slide_artista.js" defer></script>
     <script src="listagem.js" defer></script>
 
@@ -379,13 +380,46 @@
         
                     </div>
             
-                </div>
+            </div>
 
         </div>    
       
-        </div>
-        
+    </div>
+    
+    <form class="modal_proposta" id="modal_proposta">
 
+        <h1 class="h1_proposta">Faça a sua proposta para esse pedido personalizado</h1>
+
+        <div class="descricao_preco_prazo_buttons">
+            <section>  
+                <p>Descrição:</p>
+                <textarea name="modal_proposta" id="modal_proposta" class="descricao_pedido_personalizado" cols="13" rows="13"></textarea>
+                <!-- <input aria-rowspan="10" class="descricao_pedido_personalizado" id="input_text_descricao_proposta_pedido_personalizado" type="text" value="">  -->
+            </section>
+     
+
+            <div class="inputs_buttons">
+                <section>
+                    <p>Preço:</p>
+                    <input type="text" name="preco" class="input_text_preco"  id="input_text_preco_proposta_pedido_personalizado" value="">
+                </section>
+                <section>
+                    <p>Prazo de entrega:</p>
+                    <input type="text" name="prazo" class="input_text_prazo" id="input_text_prazo_proposta_pedido_personalizado">
+                </section>
+
+                <div class="buttons_proposta_pedido_personalizado">
+                    <button class="cancelar" id="button_cancelar_proposta_pedido_personalizado">Cancelar</button>
+                    <button class="enviar" id="button_enviar_proposta_pedido_personalizado">Enviar</button>
+                </div>
+
+            </div>
+
+
+        </div>
+    </form>
+        
+</body>
                 
     
 

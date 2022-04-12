@@ -1,11 +1,11 @@
 "use strict"
 
-const tokenArtista = localStorage.getItem('tokenArtista');
+// const tokenArtista = localStorage.getItem('tokenArtista');
 
-if(tokenArtista === "null" || tokenArtista === null || 
-   tokenArtista === "" || tokenArtista === "undefined") {
-  window.location.href = "../../index.html";
-} 
+// if(tokenArtista === "null" || tokenArtista === null || 
+//    tokenArtista === "" || tokenArtista === "undefined") {
+//   window.location.href = "../../index.html";
+// } 
 
 const button_pedidos_para_mim = document.getElementById("button-pedidos-para-mim");
 const button_pedidos_publicos = document.getElementById("button-pedidos-publicos")
