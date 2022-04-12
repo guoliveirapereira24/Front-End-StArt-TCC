@@ -108,7 +108,6 @@ buttonCadastro.addEventListener("click", function() {
                 selectCidade.value
             )
 
-            window.location.href = "../home/home-cliente/cliente.html";
         }
     }
 });
@@ -160,6 +159,7 @@ const cadastrarCliente = (
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            localStorage.setItem('token', data.response.clienteCadastrado.token);
+            localStorage.setItem('tokenCliente', data.token); 
+            window.location.href = "../home/home-cliente/cliente.html";
         });
 }

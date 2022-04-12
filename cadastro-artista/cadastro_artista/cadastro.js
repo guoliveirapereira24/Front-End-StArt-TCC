@@ -73,7 +73,7 @@ buttonCadastrarArtista.addEventListener("click", function() {
                 selectEspecialidade.value
             );
 
-            window.location.href = "../cadastro_dados_pagamento/index.html";
+            
 
         }
     }  
@@ -120,6 +120,7 @@ const cadastrarArtista = (
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            localStorage.setItem('token', data.response.artistaCadastrado.token);    
+            localStorage.setItem('tokenArtista', data.token); 
+            window.location.href = "../cadastro_dados_pagamento/index.html";   
         });
 }
