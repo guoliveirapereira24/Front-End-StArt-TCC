@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 
+
     <script src="proposta.js" defer></script>
     <script src="slide_artista.js" defer></script>
     <script src="listagem.js" defer></script>
@@ -325,8 +326,8 @@
                         <img src="../img/exemplo.png" alt="">
     
                         <div id="botoes">
-                            <button id="fazer_proposta">Fazer Proposta</button>
-                            <button id="recusar">Recusar Pedido</button>
+                            <button class="fazer_proposta" id="fazer_proposta">Fazer Proposta</button>
+                            <button class="recusar" id="button_recusar">Recusar Pedido</button>
                         </div>
     
                     </div>
@@ -371,8 +372,8 @@
                             <img src="../img/exemplo2.png" alt="">  
         
                             <div id="botoes">
-                                <button id="fazer_proposta">Fazer Proposta</button>
-                                <button id="recusar">Recusar Pedido</button>
+                                <button class="fazer_proposta" id="fazer_proposta1">Fazer Proposta</button>
+                                <button class="recusar" id="button_recusar1">Recusar Pedido</button>
                             </div>
         
         
@@ -380,6 +381,9 @@
         
                     </div>
             
+
+
+
             </div>
 
         </div>    
@@ -418,6 +422,19 @@
 
         </div>
     </form>
+
+    <form class="exclusao_pedido" id="modal_exclusao_pedido">
+        <p>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTE PEDIDO?
+        </p>
+
+        <div class="exclusao_pedido_buttons">
+            <button class="nao" id="button_nao_recusar_pedido">NÃO</button>
+
+            <button class="sim" id="button_recusar_pedido">SIM</button>
+        </div>
+
+    </form>
+
         
 </body>
                 
