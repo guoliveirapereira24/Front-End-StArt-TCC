@@ -20,6 +20,7 @@
 </head>
 <body>
     <header>
+
         <a href="cliente.html" class="icon-home">
             <img src="../img/home.png" alt="icon home">
         </a>
@@ -32,42 +33,67 @@
         <a href="#" class="icon-chat">
             <img src="../img/chat.png" alt="icon chat">
         </a>
-        <a href="../../perfil/cliente.html" class="icon-profile">
-            <img src="../img/perfil.png" alt="icon profile">
-        </a>
-            
-    </header>
+        
+        <nav class="links">
+            <ul>
+                <li>
+                   <a href="../../perfil/perfil-cliente/index.html"><img src="../img/perfil.png" alt="icon profile" width="85%"></a> 
+                    <ul class="submenu">
+                       <li><a href= "#">Configurações</a></li>
+                       <li><a href= "#">Logout</a></li>
+                    </ul>
+            </ul>
+                </li>  
+        </nav>
+        
+</header>
+
 
     <header2>
         <div class="row-header">
 
 
-       <div class="obras-row">
-        <h3><a class="" href="#">Obras</a></h3>
-       </div>
+            <div class="obras-row">
+               <select class="select-obras">
+                   <option value="valor1">Obras</option>
+                   <option value="valor2">Pintura</option>
+                   <option value="valor3">Escultura</option>
+                   <option value="valor4">Fotografia</option>
+                   <option value="valor5">Ilustração</option>
+                   <option value="valor6">Gravuras</option>
 
-       <div class="artistas-row">
-        <h3><a class="" href="#">Artistas</a></h3>
-       </div>
 
-        <li>
-            <div class="form-group">
-                <select name="select">
-              <option value="valor1">Selecionar</option>
-              <option value="valor2">Artista</option>
-              <option value="valor3">Cliente</option>
-            </select>
-                <input class="form-field" type="text" placeholder="O que você está buscando?" >
-                
-            </div> 
 
-            <a> 
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-        </li>
+               </select>
+            </div>
 
-           
+            <div class="artistas-row">
+                <h3><a class="" href="#">Artistas</a></h3>
+            </div>
+
+                    <li class="li">
+                        <div class="form-group">
+                            <select name="select">
+                                <option value="valor1">Selecionar</option>
+                                <option value="valor2">Artista</option>
+                                <option value="valor3">Cliente</option>
+                            </select>
+                            <input class="form-field" type="text" placeholder="O que você está buscando?     &#128269;" >
+
+                                    <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+
+                                    <!-- <div><button class="btn-buscar-top" type="submit"></button></div> -->
+                                    <!-- <div class="container">
+                                        <form class="form-busca-site" action="">
+                                            <input class="form-field" type="text" placeholder="O que você está buscando?" >
+                                        <div><button class="btn-buscar-top" type="submit"></button></div>
+                                        </form>
+                                    </div> -->
+                        </div>  
+
+
+                        
+                    </li>
 
         </div>
 
@@ -75,7 +101,11 @@
 
     </header2>
 
-    <hr>
+    <div id="linha">
+       
+      </div>
+      
+    <!-- <hr size="10"> -->
 
     <h1>Olá, seja bem-vindo(a)!</h1>
 
@@ -270,9 +300,9 @@
         </div>
 
         <div class="column-3">
-            <img src="../img/whats.png" alt="image WhatsApp" width="20px"><p>+55 (11) 98470-7521</p>
-            <img src="../img/phone.png"alt="image phone" width="20px"><p>4179-3602</p>
-            <img src="../img/mail.png" alt="image mail" width="20px"><p>start@gmail.com</p>
+            <p><img src="../img/whats.png" alt="image WhatsApp" width="20px">   +55 (11) 98470-7521</p>
+            <p><img src="../img/phone.png"alt="image phone" width="20px">   4179-3602</p>
+            <p><img src="../img/mail.png" alt="image mail" width="20px">    start@gmail.com</p>
         </div>
 
     </div>

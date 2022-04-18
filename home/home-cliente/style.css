@@ -7,9 +7,80 @@
 
 }
 
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+.links ul {
+    padding-top: 1.5%;
+    padding-right: 1%;
+    display: flex;
+    /* gap: 10%; */
+    list-style-type: none;
+}
+
+.links li{
+    list-style: none;
+    /* width: 150px; */
+    height: 60px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    user-select: none;
+    transition: all 0.5s;
+   
+}
+
+
+
+.links a:hover {
+    color: #40E0D0;
+}
+
+.links ul .submenu {
+    display: none;
+    position: absolute;
+    font-size: 12px;
+}
+
+.links li ul{
+    position: relative;
+}
+
+ .submenu {
+    background-color: #000000BB;
+ }
+
+.submenu a{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.submenu a:hover {
+    border-left: 10px solid  #40E0D0;
+}
+
+.links li:hover > .submenu{
+    display: flex;
+    flex-direction: column;
+    /* gap: 2px; */
+}
+
+.select-obras{
+    border: 0px;
+    font-weight: bold;
+    font-size: 1.16rem;
+}
+
 :root {
-    --input-color: #f0f0f0;
-    --input-border: #f6f2f2;
+    --input-color: #000000;
+    --input-border: #000000;
     --input-background: #f0f0f0;
     --input-placeholder: #727070;
 
@@ -57,10 +128,7 @@ header{
 }
 
 .header2{
-    /* width: 100%; */
-    /* position: fixed; */
     background: white;
-    /* color: white; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -81,37 +149,42 @@ header{
     
 }
 
-a{
+header2 a{
     color: black;
     text-decoration: none;
 }
+.li{
+    list-style-type: none;
+}
 
 li select{
-    border-color: #f0f0f0;
-    border-radius: 0.1rem;
+    list-style-type: none;
+    height: 47px;
+    border-color: #000000;
     border-width: 0.2rem;
+    border-right-width: 0.1rem ;
  
 }
   
     .form-field {
         display: block;
-        width: 100%;
+        width: 210%;
         padding: 8px 16px;
         line-height: 25px;
         font-size: 14px;
-        font-weight: 500;
+        /* font-weight: 500; */
         font-family: inherit;
-        border-radius: 6px;
+        border-radius: 2px;
         -webkit-appearance: none;
         color: var(--input-color);
-        border: 5px solid var(--input-border);
+        border: 3px solid var(--input-border);
         /* background: var(--input-background); */
         transition: border 0.3s ease;
-            color: var(--input-placeholder);
+        color: var(--input-placeholder);
         }
     
     
-    .form-group {
+     .form-group {
         position: relative;
         display: flex;
         width: 200%;
@@ -122,13 +195,35 @@ li select{
 
     .form-group {
         max-width: 360px;
-        margin-bottom: 32px;
+        /* margin-bottom: 10%; */
         }
+/* 
+    .container {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: right;
+        }
+                  
+             
+    .btn-buscar-top {
+        width: 20px!important;
+        height: 22px;
+        background: url(http://www.devmedia.com.br/imagens/2013/buscar_grey.png) no-repeat;
+        cursor: pointer!important;
+        border: none;
+        transform: translateY(-50%);
+        padding: 0;
+         
+        } */
+
+        
     
-    
-hr{
-    height: 50%;
+ #linha {
+    width: 100%;
+    border-bottom: 10px solid #000000;
+    margin-bottom: 2%;
 }
+
 
 .logo img{
   width: 120px;
@@ -155,7 +250,7 @@ input{
     border-radius: 0%;
 }
 
-
+/* ---------------------------------------------------------------------------------- */
 
 body {
     width: 100%;
@@ -247,14 +342,14 @@ h2{
 	scroll-snap-type: unset;
 }
 
-li {
+.container-slide li {
     /* height: 552px; */
 	scroll-snap-align: center;
 	display: inline-block;
 	border-radius: 3px;
 	font-size: 0;
 }
-li img{
+.container-slide li img{
     height: 460px;
     width: 828px;
 }
@@ -419,6 +514,8 @@ p{
     width: 28px;
 }
 
+/* ---------------------------------------------------------------------------------- */
+
 footer {
     width: 100%;
     /* position: fixed; */
@@ -458,11 +555,18 @@ footer {
   } 
 
   .column-3 {
+    /* text-align: start; */
     width: 33%;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
+  }
+  .column-3 p{
+      margin: 1rem;
+      display: flex;
+      /* flex-direction: row; */
+      gap: 2rem;
   }
 
   .column-3 p{
