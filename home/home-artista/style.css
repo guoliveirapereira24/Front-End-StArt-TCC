@@ -37,7 +37,7 @@ h2{
     
     margin-top: 50px;
     /* margin-left: 5%; */
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
             
 }
 .gallery {
@@ -53,7 +53,7 @@ h2{
 	overflow: scroll;
 	scroll-snap-type: both mandatory;
 	scroll-padding: 1rem;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 #slide_descricao{
     display: flex;
@@ -387,10 +387,10 @@ li img{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
-#fazer_proposta{
+.fazer_proposta{
     background-color: #40e0d0a9;
 }
-#recusar{
+.recusar{
     background-color: rgba(255, 99, 71, 0.699);
 }
 
@@ -473,4 +473,55 @@ li img{
 }
 .enviar{
     background-color: turquoise;
+}
+.exclusao_pedido{
+    display: none;
+    flex-direction: column;
+    height: 300px;
+    width: 624px;
+    margin-top: 20%;
+    margin-left: 38.5vw;
+    position: absolute;
+    border-radius: 15px;
+    border: 1px solid;
+    background-color: white;
+}
+.exclusao_pedido p{
+    font-size: 30px;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* background-color: #40E0D0; */
+    /* padding-bottom: 30px; */
+}
+.exclusao_pedido_buttons{
+    display: flex;
+    height: 50%;
+    width:100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.exclusao_pedido button{
+    /* margin-top: 100px; */
+    /* margin-left: 32%; */
+
+    height: 40%;
+    width: 30%;
+    border-radius: 8px;
+    border: 0.7px solid;
+    /* background-color: #40E0D0; */
+    font-size: 25px;
+    color: black;
+
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    
+}
+.sim{
+    background-color:#D71B1B;
+}
+.nao{
+    background-color:#40E0D0;
 }

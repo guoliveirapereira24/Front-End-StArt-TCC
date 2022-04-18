@@ -96,23 +96,66 @@ h1{
 }
 .listagem_minhas_obras{
     display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: flex-start;
+    margin-top: 1%;
+    gap: 40px;
+    /* padding-left: 50%; */
+    /* padding-right: 50%; */
+    /* background-color: tomato; */
+}
+.linha_obras{
+    display: flex;
     flex-direction: row;
     height: 50vh;
     justify-content: center;
     margin-top: 1%;
     gap: 40px;
+    flex-wrap: wrap;
+    /* position: absolute; */
     /* background-color: tomato; */
 }
+
 .card_minha_obra{
+    display: flex;
+    
+    /* background-color: #DCDCDC; */
+    background-color: #FCFCFC;
+    flex-direction: column;
+    height: 515px;
+    width: 410px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+}
+.div_button_adicionar_obra{
     display: flex;
     
     /* background-color: #DCDCDC; */
     background-color: #FCFCFC;
 
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 515px;
+    width: 410px;
     border-radius: 10px;
     filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+}
+.div_button_adicionar_obra button{
+    height: 30%;
+    border: none;
+
+}
+
+.div_button_adicionar_obra img{
+    height: 100%; 
+    width: 100%;
+    border-radius:10px;
+    border: 1px solid;
+    font-size: 100px;
+    background-color:#40E0D0;
+    color: white;
 }
 .nome_artista{
     display: flex;
@@ -199,6 +242,9 @@ h1{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     
 }
+/* #card p{
+    background-color:#40E0D0;
+} */
 #nome_tipo_contato{
     display: flex;
     flex-direction: row;
@@ -206,6 +252,7 @@ h1{
     height: 80px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    /* background-color: #04BA00; */
 
 }
 
@@ -375,3 +422,4 @@ h1{
 .andamento{
     color: #FFC700;
 }
+

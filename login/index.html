@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="login.js" defer></script>
+    <script src="./login.js" defer></script>
+    <script src="./modais.js" defer></script>
     <title>StArt</title>
 </head>
 <body>
@@ -27,28 +28,85 @@
 
             <div class="conteiner-txt-cadastrar">
                 <p id="nao-possui-conta">Não possui uma conta?</p>
-                <p class="p-colorido">Cadastre-se</p>
+                <p class="p-colorido" id="cadastre-se">Cadastre-se</p>
             </div>
         </div>
 
-        <label>E-mail
+        <label>E-mail:
             <input type="text" id="input-email">
         </label>
 
         <div id="conteiner2">
-            <label id="label-senha">Senha
+            <label id="label-senha">Senha:
                 <input id="input-senha" type="password">
             </label>
     
-            <p class="p-colorido">Esqueceu sua senha?</p>
+            <p class="p-colorido" id="esqueceu_senha">Esqueceu sua senha?</p>
         </div>
 
-        <button id="button-logar">Entrar</button>
+        <button class="button_logar" id="button-logar">Entrar</button>
         </div> 
     </section>
 
     <section class="img-login">
         <img src="./img-login.jpg" alt="">
     </section>
+
+    <!-- MODAIS -->
+
+    <div class="container_cadastrar_como" id="container_cadastrar_como">
+        <img id="close_cadastrar_como" class="close2" src="img/close.png" alt=""> 
+
+        <div class="container_alinhar_opcoes" id="container_alinhar_opcoes">
+
+            <div class="cadastro_cliente" id="cadastro_cliente">
+
+                <img src="img/Blank-canvas-amico1.png" alt="" srcset="">
+                <p>Cadastre-se como artista</p>
+                <button id="button_continuar_artista" class="button_continuar">Continuar</button>
+            </div>
+            <div class="cadastro_artista" id="cadastro_artista">
+                <img src="img/Usability-testing-pana1.png" alt="" srcset="">
+                <p>Cadastre-se como cliente</p>
+                
+                    <button id="button_continuar_cliente" class="button_continuar">Continuar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container_esqueceu_senha" id="container_esqueceu_senha">
+
+        <img id="close_esqueceu_senha" class="close" src="img/close.png" alt=""> 
+        <img src="img/Forgot-password-amico.png" alt="">
+        <h2 id="esqueceu_senha">Esqueceu sua senha?</h2>
+        <p>Enviaremos um e-mail para você escolher uma nova!</p>
+
+        <form action="">
+            <input type="email" placeholder="Digite seu e-mail..." id="input_email_esqueceu_senha" class="input_email_esqueceu_senha">
+            <button class="enviar" id="button_enviar_email_esqueceu_senha">Enviar</button>
+        </form>
+
+    
+    </div>
+
+    <div class="container_reativar_conta" id="container_reativar_conta">
+        
+        <img src="" alt=""> 
+        <img src="" alt="">
+        <h2>Reativar sua conta?</h2>
+        <p>Parece que sua conta está desativada.</p>
+        <p>Enviaremo um e-mail para você reativá-la!</p>
+
+        <form action="">
+            <input type="email" value="Digite seu e-mail..." id="input_email_reativar_conta">
+            <button class="enviar" id="button_enviar_reativar_conta">Enviar</button>
+        </form>
+
+    
+    </div>
+
+
 </body>
 </html>
