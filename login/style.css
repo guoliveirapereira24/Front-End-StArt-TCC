@@ -102,6 +102,7 @@ input {
     border: 1px solid black;
     padding: 0% 5%;
     display: block;
+    font-size: 18px;
 }
 
 input:focus-within {
@@ -138,6 +139,102 @@ button:hover {
     object-fit: cover;
 }
 
+.container_cadastrar_como{
+    display: none;
+    background-color: white;
+    
+    margin-top: 8%;
+    margin-left: 24%;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+
+    height: 70%;
+    width: 50%;
+}
+.container_alinhar_opcoes{
+
+    /* background-color: #40E0D0; */
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+}
+.cadastro_cliente, .cadastro_artista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+
+}
+.cadastro_cliente img, .cadastro_artista img{
+    width: 100%;
+    height: 85%;
+}
+.cadastro_cliente{
+    border-right: 2px solid #40E0D0;
+}
+.button_continuar{
+    height: 10%;
+    width: 70%;
+}
+
+
+
+.container_reativar_conta{
+    display: none;
+    background-color: white;
+    
+    margin-top: 8%;
+    margin-left: 24%;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    height: 70%;
+    width: 50%;
+}
+.container_esqueceu_senha{
+    display: none;
+    background-color: white;
+    
+    margin-top: 8%;
+    margin-left: 24%;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    height: 70%;
+    width: 50%;
+}
+.close{
+    
+    margin-left: 80%;
+    margin-top: 3%;
+    /* background-color: #40E0D0; */
+}
+.close2{
+    position: absolute;
+    margin-left: 92%;
+    margin-bottom: 58%;
+
+}
+.input_email_esqueceu_senha{
+
+    height: 60%;
+    width: 30vw;
+    margin-top: 2%;
+}
+/* .container_esqueceu_senha img{
+    background-color: #40E0D0;
+} */
+
+.enviar{
+    height: 60%;
+    width: 70%;
+    margin-left: 16%;
+}
 
 @media (max-width: 1350px) {
     input {
