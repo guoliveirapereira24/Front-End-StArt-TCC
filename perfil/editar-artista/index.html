@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Editar Perfil</title>
 </head>
 <body>
 <div class="container_forms_buttons">
@@ -23,7 +23,13 @@
         </div>
 
     </div>
+
+    <!-- CONTEÚDO DE CADA ABA -->
+
     <div class="container">
+
+        <div id="conteudo_editar_perfil" class="editar_perfil">
+
         <form class="editar_perfil">
 
             <div class="img_nome">
@@ -34,7 +40,7 @@
                 <p id="nome_artista">VINCENT VAN GOGH</p>
                 
             </div>
-            <div class="input_nome_especialidade_nacionalidade_pais_biografia" id="input_nome_especialidade_nacionalidade_pais_biografia">
+            <div class="inputs" id="input_nome_especialidade_nacionalidade_pais_biografia">
                 <section>
                     <p>NOME ARTISTICO</p>
                     <input type="text">
@@ -60,16 +66,175 @@
                     </select>
                 </section>
     
-                <section>
+                <section class="textarea_biografia">
                     <p>BIOGRAFIA</p>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <textarea class="biografia" style="resize: none" name="" value="" id="" cols="30" rows="5"></textarea>
                 </section>
 
             </div>
             
-            
-            <button class="" id="">Salvar Alterações</button>
+            <button class="button-salvar_editar_perfil" id="">Salvar Alterações</button>
+
         </form>
+    </div>
+
+<!-- ABA DE ALTERAR SENHA -->
+
+    <div class="conteudo_alterar_senha">
+
+        <div class="img_nome">
+
+            <img class="" src="../img/artista1.png" alt=""> 
+            
+            <p id="nome_artista">VINCENT VAN GOGH</p>
+        </div>
+
+        <div class="inputs">
+            <form class="inputs_senha">
+                <section>
+                    <p>SENHA ATUAL</p>
+                    <input type="text">
+                </section>
+                <section>
+                    <p>NOVA SENHA</p>
+                    <input type="text">
+                </section>
+
+                <button>Alterar Senha</button>
+            </form>
+
+        </div> 
+    </div>
+        <!-- ABA DE INFORMAÇÕES PESSOAIS -->
+
+    <div id="conteudo_informacoes_pessoais" class="editar_informacoes_pessoais">
+            <div class="img_nome">
+                <img class="" src="../img/artista1.png" alt=""> 
+                <p id="nome_artista">VINCENT VAN GOGH</p>
+            </div>
+
+           
+             <div class="inputs" id="">
+                <form class="editar_informacoes_pessoais">
+
+                    <section>
+                        <p>NOME COMPLETO</p>
+                        <input type="text">
+                    </section>
+                    <section>
+                        <p>E-MAIL</p>                        
+                        <input type="text">                             
+                    </section>
+                    <section>
+                        <p>TELEFONE</p>                        
+                        <input type="text">  
+                    </section>
+                    <section>
+                        <p>DATA DE NASCIMENTO</p>                        
+                        <input type="text">  
+                    </section>
+    
+                
+                    <button class="button-salvar_editar_perfil" id="">Salvar Alterações</button>
+    
+                </form>
+            </div>
+
+    </div>
+
+    <!-- ABA FORMA DE RECEBIMENTO -->
+
+    <div class="editar_forma_recebimento"> 
+        <h2 class="h2_forma_recebimento">QUAL FORMA DE RECEBIMENTO VOCÊ PREFERE?</h2>
+        <div class="inputs" id="">
+            <form class="form_editar_forma_recebimento">
+
+                <div class="dados-pagamento">
+
+                    <div class="pix_trans_banco">
+                        <button class="pix" id="button_pix">PIX</button>
+    
+                        <button class="transferencia-bancaria" id="button_transferencia">TRANFERÊNCIA BANCÁRIA</button>
+                    </div>
+    
+                <div class="dados-pix" id="dados-pix">
+                    <div class="ajuste">
+                        <p class="cpf">CPF/CNPJ:</p>
+                            <img src="../img/chaves.png" alt="" srcset="">
+                        <label for="">
+                            <input type="text" name="codigo" id="" value="000.000.000-00"> 
+                        </label>
+                    </div>
+                </div>
+    
+                </div>
+    
+            </div>
+    
+            <!-- FORMULARIO DE TRANSFERÊNCIA BANCARIA -->
+    
+            <div class="formulario_dados_transferencia" id="formulario_dados_transferencia">
+                
+    
+                <div class="dados-transferencia" id="dados-transferencia">
+                    <div class="ajuste2">
+    
+                        <label for=""> BANCO:
+                            <select name="banco" id="banco"> 
+                                <option value=""></option>
+                                <option value="Santander">Santander</option>
+                                <option value="Bradesco">Bradesco</option>
+                                <option value="Itau">Itaú</option>
+                            </select>
+                        </label>
+                     
+    
+                        <label for=""> CPF DO TITULAR:
+                            <input type="text" name="cpf" id="cpf">
+                        </label>
+    
+                    </div>
+    
+    
+                    <label class="ajuste3" for=""> TITULAR:
+                        <input type="text" name="titular" id="titular">
+                    </label>
+    
+                    <div class="ajuste2">
+    
+                        <label for="">AGÊNCIA:
+                            <input type="number" name="agencia" id="agencia">
+                        </label>
+    
+                        <label for="">DIGITO (SE HOUVER):
+                            <input type="number" name="digito" id="digito">
+                        </label>
+    
+                    </div>
+    
+                    <div class="ajuste2">
+    
+                        <label for="">CONTA:
+                            <input type="number" name="conta" id="conta">
+                        </label>
+    
+                        <label for="">DÍGITO VERIFICADOR:
+                            <input type="number" name="digito_verificador" id="digito_verificador">
+                        </label>
+    
+                    </div>
+    
+            
+                </div>
+                
+                    
+            </div>
+
+    
+                <button class="button_salvar_dados_pagamento" id="">Salvar Alterações</button>
+            </form>
+        </div>
+
 
     </div>
 </div>
