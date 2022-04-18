@@ -1,13 +1,13 @@
 "use strict"
 
 
-const tokenCliente = localStorage.getItem('tokenCliente');
+// const tokenCliente = localStorage.getItem('tokenCliente');
 
 
-if(tokenCliente == "null" || tokenCliente == null || 
-   tokenCliente == "" || tokenCliente == "undefined") {
-  window.location.href = "../../index.html";
-} 
+// if(tokenCliente == "null" || tokenCliente == null || 
+//    tokenCliente == "" || tokenCliente == "undefined") {
+//   window.location.href = "../../index.html";
+// } 
 
 
 const slider = document.querySelector('.gallery');
