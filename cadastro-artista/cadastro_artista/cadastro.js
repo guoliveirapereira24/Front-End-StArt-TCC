@@ -113,14 +113,12 @@ const cadastrarArtista = (
         },
         body: JSON.stringify(artista)
     }
-
-    console.log(artista)
     
     fetch('http://localhost:3000/artista/cadastro', config)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
-            localStorage.setItem('tokenArtista', data.token); 
+            console.log(data);
+            localStorage.setItem('tokenArtista', data.response.artistaCadastrado.token); 
             window.location.href = "../cadastro_dados_pagamento/index.html";   
         });
-}
+} 

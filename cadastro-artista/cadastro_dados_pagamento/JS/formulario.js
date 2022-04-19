@@ -16,7 +16,7 @@ button_transferencia.addEventListener("click", function(){
     var formulario_pix = document.getElementById("dados-pix")
     // var formulario_transferencia = document.getElementById("dados-transferencia")
     
-    button_transferencia.style.border = "2px solid";
+    button_transferencia.style.border = "4px solid";
     button_transferencia.style.borderTopStyle = "none";
     button_transferencia.style.borderLeftStyle = "none";
     button_transferencia.style.borderRightStyle = "none";
@@ -40,7 +40,7 @@ button_pix.addEventListener("click", function(){
     // var formulario_pix = document.getElementById("dados-pix")
     // var formulario_transferencia = document.getElementById("dados-transferencia")
     
-    button_pix.style.border = "2px solid";
+    button_pix.style.border = "4px solid";
     button_pix.style.borderTopStyle = "none";
     button_pix.style.borderLeftStyle = "none";
     button_pix.style.borderRightStyle = "none";

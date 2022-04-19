@@ -159,7 +159,7 @@ const cadastrarCliente = (
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            localStorage.setItem('tokenCliente', data.token); 
+            localStorage.setItem('tokenCliente', data.response.clienteCadastrado.token); 
             window.location.href = "../home/home-cliente/cliente.html";
         });
 }

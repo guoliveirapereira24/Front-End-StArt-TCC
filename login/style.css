@@ -166,12 +166,21 @@ button:hover {
     object-fit: cover;
 }
 
+.fundo_cadastrar_como{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000007d;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
 .container_cadastrar_como{
     display: none;
     background-color: white;
-    
-    margin-top: 8%;
-    margin-left: 24%;
+
     position: absolute;
     flex-direction: row;
     align-items: center;
@@ -224,31 +233,55 @@ button:hover {
     height: 70%;
     width: 50%;
 }
+
+.fundo_esqueceu_senha{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000007d;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
 .container_esqueceu_senha{
     display: none;
     background-color: white;
     
-    margin-top: 8%;
-    margin-left: 24%;
     position: absolute;
     flex-direction: column;
     align-items: center;
 
-    height: 70%;
+    height: 60%;
     width: 50%;
 }
 .close{
     
     margin-left: 80%;
     margin-top: 3%;
+    font-size: 50px;
     /* background-color: #40E0D0; */
 }
+
+.close:hover{
+    cursor: pointer;
+    color: red;
+    transition: 0.3s;
+}
+
 .close2{
     position: absolute;
     margin-left: 92%;
     margin-bottom: 58%;
-
+    font-size: 50px;
 }
+
+.close2:hover{
+    cursor: pointer;
+    color: red;
+    transition: 0.3s;
+}
+
 .input_email_esqueceu_senha{
 
     height: 60%;

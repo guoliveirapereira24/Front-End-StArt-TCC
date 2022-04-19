@@ -92,17 +92,14 @@ h1{
     width: 200px;
     margin-left: 100px;
     font-size: 20px;
-    /* background-color: blueviolet; */
-    background-color: white;
+    font-weight: bold;
 
+    background-color: transparent;
 
-    /* border: none; */
-    /* border: 1px solid #000;
-    border-left: none;
-    border-radius: 15px; */
 }
+
 .pix{
-    border: 2px solid;
+    border: 4px solid;
     border-top: none;
     border-left: none ;
     border-right: none;
@@ -121,50 +118,48 @@ h1{
 
 .dados-pix{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
     width: 100%;
-    height: 350px;
+    height: 450px;
+    padding: 40px;
+   
+    gap: 30px;
     /* background-color: aquamarine; */
 }
-.dados-pix input{
-    width: 400px;
-    height: 60px;
 
-    padding: 10px;
+
+.tipoChavePix{
+    border-right: none;
+    border: 1px 1px 1px 0px solid;
+    height: 80px;
     font-size: 25px;
-    
-    margin-top: 30px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.chavePix{
+    width: 520px;
+    height: 80px;
+    padding: 10px;
+
+    font-size: 25px;
     
     border-radius: 0px 15px 15px 0px;
     border: 1px solid;
-    
 }
-.dados-pix img{
-    height: 60px;
-    width: 60px;
-    margin-top: 30px;
-    border: 1px solid;
-    border-left: none;
-    border-right: none;
 
-    /* background-color: white; */
-}
-.cpf{
-    border-right: none;
-    border: 1px solid;
-}
 .ajuste{
     display: flex;
     height: 100px;
     width: 100%;
-    margin-left: 5%;
-    margin-top: 100px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     /* background-color: beige; */
 }
-.ajuste input{
-    width: 420px;
-}
+
 .ajuste p{
     margin-top: 30px;
     height: 60px;
@@ -178,19 +173,27 @@ h1{
     border-radius: 15px 0px 0px 15px;
     font-size: 25px;
 }
-.button1{
 
-    width: 67%;
-    height: 5.5%;
+.buttonCadastrarPix{
+
+    width: 400px;
+    height: 55px;
     border-radius: 10px;
-    border: none;
     font-size: 30px;
     background-color: #40E0D0;
-    margin-left: 3%;
-    margin-bottom: 5%;
-    /* margin-left: 300px; */
+    border: 1px solid;
     
-    margin-top: 35%;
+}
+
+.buttonCadastrarTransferencia{
+
+    width: 400px;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: #40E0D0;
+    border: 1px solid;
+    
 }
 
 
@@ -200,8 +203,10 @@ h1{
 .formulario_dados_transferencia{
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 70%;
-    height: 420px;
+    height: 560px;
     /* margin-top: %; */
     /* margin-left: 300px; */
 

@@ -13,11 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
-    <script src="formulario.js" defer></script>
+    <script src="./JS/cadastroPix.js" defer></script>
+    <script src="./JS/formulario.js" defer></script>
+
     <title>Cadastro de Artista</title>
 </head>
 <body>
-    <form class="formulario" name="formulario" action="">
+    <div class="formulario" name="formulario" action="">
         <div class="formularios">
         <div class="formulario_dados_pagamento" id="formulario_dados_pagamento">
             <h1>Cadastro de Artista</h1>
@@ -33,32 +35,35 @@
                     <button class="transferencia-bancaria" id="button_transferencia">TRANFERÊNCIA BANCÁRIA</button>
                 </div>
 
-            <div class="dados-pix" id="dados-pix">
-                <div class="ajuste">
-                    <p class="cpf">CPF/CNPJ:</p>
-                    <!-- <label for="">
-                        <input type="text" class="cpf" name="cpf-cnpj" id="" value="CPF / CNPJ"> 
-                         <img src="img/vector.png" alt="" srcset=""> 
-                    </label> -->
-                        <img src="../img/chaves.png" alt="" srcset="">
-                    <label for="">
-                        <input type="text" name="codigo" id="" value="000.000.000-00"> 
-                    </label>
-                </div>
-            </div>
 
+                <form class="dados-pix" id="dados-pix">
+                    <div class="ajuste">
+                        <select id="tipoChavePix" class="tipoChavePix">
 
-                <!-- <button class="button1" id="buttonPix">
-                    Continuar
-                </button>
-                 -->
+                            <option value="cpf/cnpj">Cpf/Cnpj</option>
+                            <option value="telefone/celular">Telefone/Celular</option>
+                            <option value="email">E-mail</option>
+                            <option value="chaveAleatoria">Chave Aleatória</option>
+
+                        </select>
+                        
+                        <input id="inputChavePix" class="chavePix" type="text" placeholder="Digite sua chave">
+                    
+                    </div>
+
+                    <button class="buttonCadastrarPix" id="buttonCadastrarPix">
+                        Continuar
+                    </button>
+
+                </form>
+                
             </div>
 
         </div>
 
         <!-- FORMULARIO DE TRANSFERÊNCIA BANCARIA -->
 
-        <div class="formulario_dados_transferencia" id="formulario_dados_transferencia">
+        <form class="formulario_dados_transferencia" id="formulario_dados_transferencia">
             
 
             <div class="dados-transferencia" id="dados-transferencia">
@@ -111,16 +116,16 @@
         
             </div>
             
-                
-        </div>
+            <button class="buttonCadastrarTransferencia" id="buttonCadastrarTransferencia">
+                Continuar
+            </button>
+        </form>
 
-        <button class="button1" id="buttonTransferencia">
-            Continuar
-        </button>
+        
 
     </div>
     
-    </form>
+</div>
 
     <section class="img-cadastro-1" id="img-cadastro-1">
         
