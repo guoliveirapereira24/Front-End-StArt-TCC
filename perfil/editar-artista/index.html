@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="mudar_abas.js" defer></script>
+    <script src="formulario.js" defer></script>
+    <script src="modal_desativar_conta.js" defer></script>
+
     <link rel="stylesheet" href="style.css">
+ 
     <title>Editar Perfil</title>
 </head>
 <body>
-<div class="container_forms_buttons">
+<div id="container_forms_buttons" class="container_forms_buttons" >
     <div class="opcoes_edicao">
         <button id="button_editar_perfil">EDITAR PERFIL</button>
         <button id="button_alterar_senha">ALTERAR SENHA</button>
         <button id="button_informacoes_pessoais">INFORMAÇÕES PESSOAIS</button>
         <button id="button_forma_recebimento">FORMA DE RECEBIMENTO</button>
-        <button id="button_desativar_conta">DESATIVAR CONTA</button>
+        <button id="button_desativar_conta">
+            <p class="vermelho">
+                DESATIVAR CONTA
+            </p>
+            </button>
 
         <div class="logo">
             <h2>St</h2>
@@ -26,7 +35,7 @@
 
     <!-- CONTEÚDO DE CADA ABA -->
 
-    <div class="container">
+    <div id="container" class="container">
 
         <div id="conteudo_editar_perfil" class="editar_perfil">
 
@@ -160,21 +169,18 @@
                 <div class="dados-pix" id="dados-pix">
                     <div class="ajuste">
                         <p class="cpf">CPF/CNPJ:</p>
-                            <img src="../img/chaves.png" alt="" srcset="">
+                            <img src="./img/chaves.png" alt="" srcset="">
                         <label for="">
-                            <input type="text" name="codigo" id="" value="000.000.000-00"> 
+                            <input type="text" name="codigo" id="" placeholder="000.000.000-00"> 
                         </label>
                     </div>
                 </div>
     
                 </div>
     
-            </div>
+            
     
-            <!-- FORMULARIO DE TRANSFERÊNCIA BANCARIA -->
-    
-            <div class="formulario_dados_transferencia" id="formulario_dados_transferencia">
-                
+            <div class="formulario_dados_transferencia" id="formulario_dados_transferencia">        
     
                 <div class="dados-transferencia" id="dados-transferencia">
                     <div class="ajuste2">
@@ -224,19 +230,51 @@
     
                     </div>
     
+                    <label class="ajuste3" for="">TIPO DE CONTA:
+                        <select name="tipo_conta" class="tipo_conta" id="tipo_conta">
+                            <option value=""></option>
+                            <option value="Conta Corrente"></option>
+                            <option value="Conta Poupança"></option>
+                        </select>
+                    </label>
             
                 </div>
                 
                     
             </div>
 
+            <button class="button_salvar_dados_pagamento" id="button_salvar_dados_pagamento">Salvar Alterações</button>
     
-                <button class="button_salvar_dados_pagamento" id="">Salvar Alterações</button>
+                
             </form>
+
         </div>
 
 
     </div>
+<!-- ABA DESATIVAR CONTA -->
+    <div class="aba_desativar_conta" id="aba_desativar_conta">
+
+        <h2>VOCÊ TEM CERTEZA QUE DESEJA DESATIVAR A SUA CONTA?</h2>
+
+        <p>Após desativar sua conta, seu perfil, sua conta e suas obras serão apagados deste site,
+             tendo a chance de você recuperar-los a qualquer momento caso tente logar novamente nesta mesma conta.</p>
+
+        <button class="button_vermelho" id="button_desativar_conta_modal">DESATIVAR CONTA</button>
+
+        <div class="modal_desativar_conta" id="modal_desativar_conta">
+            <h2 class="h2_modal_desativar_conta">VOCÊ TEM CERTEZA DE QUE DESEJA DESATIVAR A SUA CONTA?</h2>
+            <div class="botoes_desativar_conta">
+                <button class="button_azul" id="button_negar_desativacao_conta">NÃO</button>
+                <button class="button_vermelho" id="button_confirmar_desativacao_conta">SIM</button>
+            </div>
+        </div>
+
+    </div>
+
+  
+
+
 </div>
 </body>
 </html>

@@ -240,7 +240,7 @@ h2{
     display: flex;
     width: 200px;
     flex-direction: row-reverse;
-    /* background-color: yellow; */
+    background-color: yellow;
     border: 10px solid;
     border-top: none;
     border-left: none;

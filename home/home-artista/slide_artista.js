@@ -1,4 +1,5 @@
-"use strict"
+'use strict'
+
 const tela = document.getElementById("tela");
 const recepcao = document.getElementById("recepcao");
 const container_slide = document.getElementById("container-slide");
@@ -8,7 +9,7 @@ const button_publicos = document.getElementById("button-pedidos-publicos");
 const button_para_mim = document.getElementById("button-pedidos-para-mim");
 const pedidos_categorias = document.getElementById("listagem_pedidos_genero")
 
-var button_saiba_mais = document.getElementById("saiba-mais");
+const button_saiba_mais = document.getElementById("saiba-mais");
 const button_ok = document.getElementById("ok");
 
 button_saiba_mais.addEventListener("click", function(){

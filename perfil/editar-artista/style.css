@@ -16,7 +16,7 @@ body{
 }
 
 .editar_perfil{
-    display: none;
+    display: flex;
     flex-direction: column;
     width:100%;
     height:100%;
@@ -43,7 +43,7 @@ body{
     gap: 2%;
 }
 .editar_forma_recebimento{
-    display: flex;
+    display: none;
     flex-direction: column;
     /* background-color:violet; */
     height: 100%;
@@ -54,15 +54,47 @@ body{
     display: flex;
     flex-direction: column;
     align-self: center;
+    justify-content: center;
     width: 100%;
     height: 60%;
     gap: 5%;
-    padding-left: 5%;
+    padding-left: 10%;
     padding-top: 2%;
     padding-right: 5%;
     font-size: 25px;
-    background-color:yellow
-    
+    /* background-color:violet; */ 
+}
+.aba_desativar_conta{
+    display: none;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10% 5% 10% 5%;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color:violet
+}
+.aba_desativar_conta h2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 30px;
+    /* background-color:yellow; */
+}
+
+.aba_desativar_conta p {
+    font-size:20px;
+    margin-top: 5%;
+}
+.aba_desativar_conta button{
+    height: 8%;
+    width: 30%;
+    margin-top: 10%;
+    font-size:20px;
+    border: none;
+    /* background: #D71B1B; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 .img_nome img{
@@ -166,19 +198,20 @@ textarea{
     display: flex;
     flex-direction: column;
     align-self: center;
+    justify-content: center;
     width: 100%;
-    height: 60%;
+    height: 65%;
     gap: 5%;
     padding-left: 5%;
     padding-top: 2%;
     padding-right: 5%;
     font-size: 25px;
-    background-color:yellow
+    background-color:yellow;
 
 }
 .inputs input, select{
     width: 65%;
-    height: 100%;
+    height: 75%;
     border: 1px solid #4C4E5F;
     box-sizing: border-box;
     border-radius: 10px;
@@ -268,13 +301,12 @@ input:focus-within {
     border-radius: 15px;
     /* background-color: blueviolet; */
 }
-
 .pix_trans_banco{
     display: flex;
     margin-top: 3%;
     width: 100%;
     height: 50px;
-    gap: 20px;
+    gap: 50px;
     /* background-color: yellow; */
 }
 .pix_trans_banco button{
@@ -313,7 +345,7 @@ input:focus-within {
     flex-direction: row;
     width: 100%;
     height: 350px;
-    /* background-color: aquamarine; */
+    /* background-color: aquamarine;  */
 }
 .dados-pix input{
     width: 400px;
@@ -389,8 +421,8 @@ input:focus-within {
 .formulario_dados_transferencia{
     display: none;
     flex-direction: column;
-    width: 70%;
-    height: 420px;
+    width: 100%;
+    height: 60%;
     /* margin-top: %; */
     /* margin-left: 300px; */
 
@@ -400,16 +432,17 @@ input:focus-within {
     /* background-color: brown; */
 }
 .dados-transferencia{
-    display: none;
-    height: 500px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
     flex-direction: column;
     /* background-color: green; */
 
-    margin-top: 2%;
+    /* margin-top: 2%; */
     /* margin-bottom: 100px; */
 
-    width: 100%;
-    /* gap: 20px;  */
+    /* gap: 1%;  */
 
 }
 input{
@@ -433,9 +466,9 @@ input{
 .ajuste2 input{
     /* display: none; */
     width: 100%;
-    height: 50%;
+    height: 68%;
     /* background-color: yellowgreen; */
-
+    border-radius: 10px;
     /* margin-left: 30px; */
     /* margin-top: 10px; */
 }
@@ -448,7 +481,7 @@ input{
 
     border-color: black;
     border-width: 1px;
-    border-radius: 5px;
+    border-radius: 10px;
 
     font-size: 25px;
     padding: 4px 8px;
@@ -459,25 +492,38 @@ input{
 .ajuste2{
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 100%;
 
     /* margin-top: 3%; */
     /* background-color: aquamarine; */
 }
 .ajuste3{
-    height: 15%;
+    height: 13%;
+    /* width: 0%; */
     margin-bottom: 35px;
+    /* background-color:steelblue; */
+}
+.ajuste3 input{
+    /* height: 13%; */
+    width: 99%;
+    /* margin-bottom: 0%; */
+    /* background-color:steelblue; */
+}
+.ajuste3 select{
+    width: 99%;
+    /* margin-bottom: 2%; */
 }
 .formulario_dados_transferencia label{
-    margin-left: 30px;
+    margin-left: 1%;
     width: 100%;
-    /* background-color: aliceblue; */
+    /* background-color: violet; */
 }
 .button_salvar_dados_pagamento{
-    height: 8%;
+    height: 10%;
     width: 30%;
 
-    margin-left: 40%;
+    margin-top:2%;
+    margin-left: 35%;
     font-size: 25px;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -485,4 +531,59 @@ input{
     color: white;
     border: none;
     background: #40E0D0;
+}
+
+.form_editar_forma_recebimento{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    /* background-color:violet */
+}
+.h2_forma_recebimento{
+    margin-top: 5%;
+    margin-left: 19%;
+    font-size: 25px;
+}
+.tipo_conta{
+    width: 9%;
+}
+.vermelho{
+    color:red;
+}
+.button_azul{
+    background-color:#40E0D0;
+    color: white;
+}
+.button_vermelho{
+    background-color:red;
+    color:white;
+}
+.modal_desativar_conta{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    height:25%;
+    width: 25%;
+    margin-top: 5%;
+    border-radius: 10px;
+    background-color:white;
+}
+.botoes_desativar_conta{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    gap: 5%;
+    /* background-color:#40E0D0 */
+}
+.botoes_desativar_conta button{
+    height: 100%;
+}
+
+.modal_desativar_conta h2{
+    height: 55%;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 5%;
+    /* background-color:tomato */
 }
