@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="formulario.js" defer></script>
+   
     <script src="modal_desativar_conta.js" defer></script>
     
     <link rel="stylesheet" href="style.css">
@@ -20,7 +20,8 @@
         <button id="button_alterar_senha">ALTERAR SENHA</button>
         <button id="button_informacoes_pessoais">INFORMAÇÕES PESSOAIS</button>
         <button id="button_endereco">ENDEREÇO</button>
-        <button id="botao_desativar_conta">DESATIVAR CONTA
+        <button id="botao_desativar_conta">
+            <p class="vermelho">DESATIVAR CONTA</p>
             </button>
 
         <div class="logo">
@@ -48,7 +49,7 @@
                 
             </div>
             <div class="inputs" id="input_nome_especialidade_nacionalidade_pais_biografia">
-                <section>
+                <section class="section_input">
                     <p>PREFERÊNCIA</p>
                     <select name="" id="">
                         <option value="">Fotografia</option>
@@ -56,7 +57,7 @@
 
                     </select>
                 </section>
-                <section>
+                <section class="section_input">
                     <p>NACIONALIDADE</p>
                     <select name="" id="">
                         <option value="">Holandês</option>
@@ -64,7 +65,7 @@
             
                     </select>
                 </section>
-                <section>
+                <section class="section_input">
                     <p>PAÍS</p>
                     <select name="" id="">
                         <option value="">Holanda</option>
@@ -89,9 +90,9 @@
 
         <div class="img_nome">
 
-            <img class="img_perfil" src="../img/artista1.png" alt=""> 
+            <img class="img_perfil" src="../img/cliente.png" alt=""> 
             
-            <p id="nome_artista">VINCENT VAN GOGH</p>
+            <p id="nome_cliente">GABRIEL GONÇALVES</p>
         </div>
 
         <div class="inputs">
@@ -114,8 +115,8 @@
 
     <div id="conteudo_informacoes_pessoais" class="editar_informacoes_pessoais">
             <div class="img_nome">
-                <img class="img_perfil" src="../img/artista1.png" alt=""> 
-                <p id="nome_artista">VINCENT VAN GOGH</p>
+                <img class="img_perfil" src="../img/cliente.png" alt=""> 
+                <p id="nome_cliente">VINCENT VAN GOGH</p>
             </div>
 
            
@@ -148,107 +149,56 @@
 
     </div>
 
-    <!-- ABA FORMA DE RECEBIMENTO -->
+    <!-- ABA FORMA DE ENDEREÇO -->
 
-    <div id="editar_forma_recebimento" class="editar_forma_recebimento"> 
-        <h2 class="h2_forma_recebimento">QUAL FORMA DE RECEBIMENTO VOCÊ PREFERE?</h2>
-        <div class="inputs" id="">
-            <form class="form_editar_forma_recebimento">
+    <div class="aba_endereco" id="aba_endereco">
+        <div class="div_input">
+            <p>CEP</p>
+            <input name="cep" id="cep" type="text">
+        </div>
 
-                <div class="dados-pagamento">
+        <div class="div_input">
+            <p>ENDEREÇO</p>
+            <input name="endereco" id="endereco" type="text">
+        </div>
 
-                    <div class="pix_trans_banco">
-                        <button class="pix" id="button_pix">PIX</button>
-    
-                        <button class="transferencia-bancaria" id="button_transferencia">TRANFERÊNCIA BANCÁRIA</button>
-                    </div>
-    
-                <div class="dados-pix" id="dados-pix">
-                    <div class="ajuste">
-                        <p class="cpf">CPF/CNPJ:</p>
-                            <img src="./img/chaves.png" alt="" srcset="">
-                        <label for="">
-                            <input type="text" name="codigo" id="" placeholder="000.000.000-00"> 
-                        </label>
-                    </div>
-                </div>
-    
-                </div>
-    
-            
-    
-            <div class="formulario_dados_transferencia" id="formulario_dados_transferencia">        
-    
-                <div class="dados-transferencia" id="dados-transferencia">
-                    <div class="ajuste2">
-    
-                        <label for=""> BANCO:
-                            <select name="banco" id="banco"> 
-                                <option value=""></option>
-                                <option value="Santander">Santander</option>
-                                <option value="Bradesco">Bradesco</option>
-                                <option value="Itau">Itaú</option>
-                            </select>
-                        </label>
-                     
-    
-                        <label for=""> CPF DO TITULAR:
-                            <input type="text" name="cpf" id="cpf">
-                        </label>
-    
-                    </div>
-    
-    
-                    <label class="ajuste3" for=""> TITULAR:
-                        <input type="text" name="titular" id="titular">
-                    </label>
-    
-                    <div class="ajuste2">
-    
-                        <label for="">AGÊNCIA:
-                            <input type="number" name="agencia" id="agencia">
-                        </label>
-    
-                        <label for="">DIGITO (SE HOUVER):
-                            <input type="number" name="digito" id="digito">
-                        </label>
-    
-                    </div>
-    
-                    <div class="ajuste2">
-    
-                        <label for="">CONTA:
-                            <input type="number" name="conta" id="conta">
-                        </label>
-    
-                        <label for="">DÍGITO VERIFICADOR:
-                            <input type="number" name="digito_verificador" id="digito_verificador">
-                        </label>
-    
-                    </div>
-    
-                    <label class="ajuste3" for="">TIPO DE CONTA:
-                        <select name="tipo_conta" class="tipo_conta" id="tipo_conta">
-                            <option value=""></option>
-                            <option value="Conta Corrente"></option>
-                            <option value="Conta Poupança"></option>
-                        </select>
-                    </label>
-            
-                </div>
-                
-                    
+        <div class="alinhar">
+            <div class="ajuste">
+                <p>NÚMERO</p>
+                <input type="text" name="numero" id="numero">
             </div>
 
-            <button class="button_salvar_dados_pagamento" id="button_salvar_dados_pagamento">Salvar Alterações</button>
-    
-                
-            </form>
+            <div class="ajuste">
+                <p>COMPLEMENTO</p>
+                <input type="text" id="complemento" name="complemento">
+            </div>
 
         </div>
 
+        <div class="div_input">
+            <p>BAIRRO</p>
+            <input type="text" id="bairro" name="bairro">
+        </div>
+
+        <div class="alinhar">
+            <div class="ajuste">
+                <p>CIDADE</p>
+                <input type="text" name="numero" id="numero">
+            </div>
+
+            <div class="ajuste">
+                <p>ESTADO</p>
+                <select name="" id="">
+                    <option value="São Paulo">São Paulo</option>
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+
+        <button class="button_salvar_alteracoes" id="button_salvar_alteracoes">Salvar Alterações</button>
 
     </div>
+
 <!-- ABA DESATIVAR CONTA -->
     <div class="aba_desativar_conta" id="conteudo_desativar_conta">
 

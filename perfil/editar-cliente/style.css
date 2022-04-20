@@ -15,7 +15,7 @@ body{
     /* background-color: aquamarine; */
 }
 
-#button_alterar_senha, #button_informacoes_pessoais, #button_forma_recebimento, #botao_desativar_conta{
+#button_alterar_senha, #button_informacoes_pessoais, #button_endereco, #botao_desativar_conta{
     border:none;
 }
 
@@ -46,14 +46,7 @@ body{
     width: 100%;
     gap: 2%;
 }
-.editar_forma_recebimento{
-    display: none;
-    flex-direction: column;
-    /* background-color:violet; */
-    height: 100%;
-    width: 100%;
-    /* gap: 2%; */
-}
+
 .form_editar_forma_recebimento{
     display: flex;
     flex-direction: column;
@@ -172,7 +165,7 @@ section{
    
     /* background-color:aqua; */
 }
-#nome_artista{
+#nome_cliente{
     font-size: 40px;
 }
 .img_texto{
@@ -190,9 +183,10 @@ section{
 }
 
 textarea{
-    width: 65%;
+    width: 80%;
     height: 100%;
     border-radius: 10px;
+    /* background-color:wheat */
 }
 
 .textarea_biografia p{
@@ -212,8 +206,12 @@ textarea{
     padding-top: 2%;
     padding-right: 5%;
     font-size: 25px;
-    /* background-color:yellow; */
+    background-color:yellow;
 
+}
+.section_input select{
+    width: 80%;
+    /* background-color:violet */
 }
 .inputs input, select{
     width: 65%;
@@ -297,253 +295,81 @@ input:focus-within {
 }
 .form_editar_informacoes_pessoais{
     background-color:yellow
-    height
+    
 }
 
-
-
-.formulario_dados_pagamento{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 300px;
-    margin-top: 6%;
-    /* margin-left: 300px; */
-
-    /* border: 1px solid; */
-    border-radius: 15px;
-    /* background-color: blueviolet; */
-}
-.pix_trans_banco{
-    display: flex;
-    margin-top: 3%;
+.aba_endereco{
+    display: none;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     width: 100%;
-    height: 50px;
-    gap: 50px;
-    /* background-color: yellow; */
-}
-.pix_trans_banco button{
-    width: 200px;
-    margin-left: 100px;
-    font-size: 20px;
-    /* background-color: blueviolet; */
-    background-color: white;
-
-
-    /* border: none; */
-    /* border: 1px solid #000;
-    border-left: none;
-    border-radius: 15px; */
-}
-.pix{
-    border: 2px solid;
-    border-top: none;
-    border-left: none ;
-    border-right: none;
-    /* border: none; */
-
-}
-.transferencia-bancaria{
-   
-    border: 2px solid;
-    border-top: none;
-    border-left: none ;
-    border-right: none;
-    border-bottom: none;
-    /* border: none; */
+    gap: 5%;
+    /* background-color:yellow */
 }
 
-.dados-pix{
-    display: flex;
-    flex-direction: row;
+.div_input{
+    /* background-color:tomato; */
+    width:80%;
+    height: 8%
+}
+.div_input p {
+    font-size: 24px;
+}
+.div_input input{
     width: 100%;
-    height: 350px;
-    /* background-color: aquamarine;  */
-}
-.dados-pix input{
-    width: 400px;
-    height: 60px;
-
-    padding: 10px;
+    height: 65%;
+    padding-left: 1%;
+    padding-right: 2%;
+    border: 1px solid;
+    border-radius:10px;
     font-size: 25px;
-    
-    margin-top: 30px;
-    
-    border-radius: 0px 15px 15px 0px;
-    border: 1px solid;
-    
 }
-.dados-pix img{
-    height: 60px;
-    width: 60px;
-    margin-top: 30px;
-    border: 1px solid;
-    border-left: none;
-    border-right: none;
-
-    /* background-color: white; */
+.alinhar{
+    display:flex;
+    
+    height:8%;
+    width: 80%;
+    gap: 2%;
+    flex-direction:row;
+    /* background-color: violet; */
 }
-.cpf{
-    border-right: none;
+.alinhar input, select{
+    width:100%;
+    height:65%;
+    padding-right: 2%;
     border: 1px solid;
+    border-radius:10px;
+    font-size: 25px;
 }
 .ajuste{
     display: flex;
-    height: 100px;
-    width: 100%;
-    margin-left: 5%;
-    margin-top: 100px;
-
-    /* background-color: beige; */
-}
-.ajuste input{
-    width: 420px;
+    width: 49%;
+    height: 100%;
+    flex-direction:column;
+    /* background-color: springgreen; */
 }
 .ajuste p{
-    margin-top: 30px;
-    height: 60px;
-    width: 150px;
-    padding-top: 15px;
-    padding-left: 15px;
-
-
-    /* background-color: white; */
-    border-right: none;
-    border-radius: 15px 0px 0px 15px;
+    /* padding-right: 20%; */
+    font-size: 24px;
+}
+.ajuste input{
+    width: 100%;
+    height: 65%;
+    padding-left: 1%;
+    padding-right: 2%;
+    border: 1px solid;
+    border-radius:10px;
     font-size: 25px;
 }
-.button1{
-
-    width: 67%;
-    height: 5.5%;
-    border-radius: 10px;
-    border: none;
-    font-size: 30px;
-    background-color: #40E0D0;
-    margin-left: 3%;
-    margin-bottom: 5%;
-    /* margin-left: 300px; */
-    
-    margin-top: 35%;
-}
-
-
-/* ESTILIZAÇÃO DO SEGUNDO FORMULÁRIO */
-
-
-.formulario_dados_transferencia{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    height: 60%;
-    /* margin-top: %; */
-    /* margin-left: 300px; */
-
-    /* gap: 20px; */
-    /* border: 1px solid; */
-    border-radius: 15px;
-    /* background-color: brown; */
-}
-.dados-transferencia{
-    display: flex;
-    height: 100%;
-    width: 100%;
-
-    flex-direction: column;
-    /* background-color: green; */
-
-    /* margin-top: 2%; */
-    /* margin-bottom: 100px; */
-
-    /* gap: 1%;  */
-
-}
-input{
-    display: flex;
-    width: 95.5%;
-    height: 80%;
-    /* margin-left: 30px; */
-
-    border-color: black;
-    border-width: 1px;
-    border-radius: 5px;
-
-    font-size: 25px;
-    padding: 4px 8px;
-
-    /* background-color: blueviolet; */
-}
-
-
-
-.ajuste2 input{
-    /* display: none; */
-    width: 100%;
-    height: 68%;
-    /* background-color: yellowgreen; */
-    border-radius: 10px;
-    /* margin-left: 30px; */
-    /* margin-top: 10px; */
-}
-
-.formulario_dados_transferencia select{
-
-    /* display: none; */
-    width: 100%;
-    height: 50px;
-
-    border-color: black;
-    border-width: 1px;
-    border-radius: 10px;
-
-    font-size: 25px;
-    padding: 4px 8px;
-
-    /* background-color: #40E0D0; */
-
-}
-.ajuste2{
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-
-    margin-top: 2%;
-    /* background-color: aquamarine; */
-}
-.ajuste3{
-    height: 13%;
-    /* width: 0%; */
-    margin-top: 1%;
-    margin-bottom: 3%;
-    /* background-color:steelblue; */
-}
-
-.ajuste3 input{
-    /* height: 13%; */
-    width: 99%;
-    height: 100%;
-    /* margin-bottom: 0%; */
-    /* background-color:steelblue; */
-}
-.ajuste3 select{
-    width: 99%;
-    height: 100%;
-    /* margin-bottom: 2%; */
-}
-
-.formulario_dados_transferencia label{
-    margin-left: 1%;
-    width: 100%;
-    /* background-color: violet; */
-}
-.button_salvar_dados_pagamento{
-    height: 10%;
+.button_salvar_alteracoes{
+    height: 8%;
     width: 30%;
-
-    margin-top:4%;
-    margin-left: 30%;
+    margin-top: 5%;
+    /* margin-left: 1%; */
     font-size: 25px;
-
+  
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     color: white;
@@ -551,17 +377,7 @@ input{
     background: #40E0D0;
 }
 
-.form_editar_forma_recebimento{
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
-    /* background-color:violet */
-}
-.h2_forma_recebimento{
-    margin-top: 5%;
-    margin-left: 19%;
-    font-size: 25px;
-}
+
 .tipo_conta{
     width: 9%;
 }
@@ -619,4 +435,7 @@ input{
 .conteudo_editar_informacoes_pessoais{
     display:none;
     flex-direction: column;
+}
+#botao_desativar_conta{
+    color: red;
 }
