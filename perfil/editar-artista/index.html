@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="mudar_abas.js" defer></script>
+
     <script src="formulario.js" defer></script>
     <script src="modal_desativar_conta.js" defer></script>
-
+    
     <link rel="stylesheet" href="style.css">
+    
  
     <title>Editar Perfil</title>
 </head>
 <body>
-<div id="container_forms_buttons" class="container_forms_buttons" >
+<div id="container_forms_buttons" class="container_forms_buttons">
     <div class="opcoes_edicao">
         <button id="button_editar_perfil">EDITAR PERFIL</button>
         <button id="button_alterar_senha">ALTERAR SENHA</button>
         <button id="button_informacoes_pessoais">INFORMAÇÕES PESSOAIS</button>
         <button id="button_forma_recebimento">FORMA DE RECEBIMENTO</button>
-        <button id="button_desativar_conta">
-            <p class="vermelho">
-                DESATIVAR CONTA
-            </p>
+        <button id="botao_desativar_conta">DESATIVAR CONTA
             </button>
 
         <div class="logo">
@@ -43,7 +41,7 @@
 
             <div class="img_nome">
                 <div class="img_texto">
-                    <img class="" src="../img/artista1.png" alt="">
+                    <img class="img_perfil" src="../img/artista1.png" alt="">
                     <p>ALTERAR FOTO DE PERFIL</p>
                 </div>  
                 <p id="nome_artista">VINCENT VAN GOGH</p>
@@ -89,11 +87,11 @@
 
 <!-- ABA DE ALTERAR SENHA -->
 
-    <div class="conteudo_alterar_senha">
+    <div id="conteudo_alterar_senha" class="conteudo_alterar_senha">
 
         <div class="img_nome">
 
-            <img class="" src="../img/artista1.png" alt=""> 
+            <img class="img_perfil" src="../img/artista1.png" alt=""> 
             
             <p id="nome_artista">VINCENT VAN GOGH</p>
         </div>
@@ -109,7 +107,7 @@
                     <input type="text">
                 </section>
 
-                <button>Alterar Senha</button>
+                <button class="button_alterar_senha">Alterar Senha</button>
             </form>
 
         </div> 
@@ -118,12 +116,13 @@
 
     <div id="conteudo_informacoes_pessoais" class="editar_informacoes_pessoais">
             <div class="img_nome">
-                <img class="" src="../img/artista1.png" alt=""> 
+                <img class="img_perfil" src="../img/artista1.png" alt=""> 
                 <p id="nome_artista">VINCENT VAN GOGH</p>
             </div>
 
            
-             <div class="inputs" id="">
+             <div class="inputs" id="editar_informacoes_pessoais">
+                 
                 <form class="editar_informacoes_pessoais">
 
                     <section>
@@ -153,7 +152,7 @@
 
     <!-- ABA FORMA DE RECEBIMENTO -->
 
-    <div class="editar_forma_recebimento"> 
+    <div id="editar_forma_recebimento" class="editar_forma_recebimento"> 
         <h2 class="h2_forma_recebimento">QUAL FORMA DE RECEBIMENTO VOCÊ PREFERE?</h2>
         <div class="inputs" id="">
             <form class="form_editar_forma_recebimento">
@@ -253,7 +252,7 @@
 
     </div>
 <!-- ABA DESATIVAR CONTA -->
-    <div class="aba_desativar_conta" id="aba_desativar_conta">
+    <div class="aba_desativar_conta" id="conteudo_desativar_conta">
 
         <h2>VOCÊ TEM CERTEZA QUE DESEJA DESATIVAR A SUA CONTA?</h2>
 
@@ -274,7 +273,9 @@
 
   
 
-
 </div>
+
 </body>
+<script src="mudar_abas.js" defer></script>
+
 </html>
