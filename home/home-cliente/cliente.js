@@ -1,14 +1,23 @@
 "use strict"
 
 
-// const tokenCliente = localStorage.getItem('tokenCliente');
+const tokenCliente = localStorage.getItem('tokenCliente');
 
 
-// if(tokenCliente == "null" || tokenCliente == null || 
-//    tokenCliente == "" || tokenCliente == "undefined") {
-//   window.location.href = "../../index.html";
-// } 
+if(tokenCliente == "null" || tokenCliente == null || 
+   tokenCliente == "" || tokenCliente == "undefined") {
+  window.location.href = "../../index.html";
+} 
 
+
+const buttonLogout = document.getElementById('logout');
+
+function functionLogout() {
+    localStorage.setItem('tokenCliente', null);
+    localStorage.setItem('tokenArtista', null);
+}
+
+buttonLogout.addEventListener('click', functionLogout());
 
 const slider = document.querySelector('.gallery');
 let isDown = false;

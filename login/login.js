@@ -60,7 +60,7 @@ const loginCliente = (email, senha) => {
             console.log(data)
             localStorage.setItem('tokenCliente', data.token);
             if(localStorage.getItem('tokenCliente') == data.token){
-            window.location.href = "../home/home-cliente/index.html";
+            window.location.href = "../home/home-cliente/cliente.html";
             }
         });
     

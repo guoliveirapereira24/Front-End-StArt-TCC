@@ -11,39 +11,47 @@ body{
     width: 100%;
     height: 100vh;
 
-    flex-direction: row;
-    /* background-color: tomato; */
-    /* font-family: 'Raleway', sans-serif; */
+
 
 }
+
+.msgErroPix{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.msgErroPix p{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 .formularios{
     display: flex;
     flex-direction: column;
     width: 50vw;
     height: 100%;
-    /* background-color: yellow; */
+
     align-items: center;
 
-    /* justify-content: center; */
 }
 h1{
     font-size: 60px;
 
-    /* margin-left:50px;
-    width: 600px; */
     font-family: 'Raleway', sans-serif;
-    /* background-color: blueviolet; */
+
 }
 .p-principal{
     font-size: 40px;
 
-    /* margin-left: 50px; */
+
     font-family: 'Raleway', sans-serif;
-    /* background-color: cadetblue; */
+
 }
 .p-secundario{
     margin-top: 2%;
-    /* margin-left: 50px; */
+
     font-size: 25px;
     font-family: 'Raleway', sans-serif;
 
@@ -54,11 +62,11 @@ h1{
     align-items: center;
     justify-content: center;
     width: 50%;
-    /* background-color: aqua; */
+
 }
 .img-cadastro-1 {
     background-image: url(../img/fundo6.jpg);
-    /* margin-left: 400px; */
+
 
     object-fit: cover;
     background-repeat: no-repeat;
@@ -73,11 +81,9 @@ h1{
     width: 70%;
     height: 300px;
     margin-top: 6%;
-    /* margin-left: 300px; */
 
-    /* border: 1px solid; */
     border-radius: 15px;
-    /* background-color: blueviolet; */
+
 }
 
 .pix_trans_banco{
@@ -113,7 +119,7 @@ h1{
     border-left: none ;
     border-right: none;
     border-bottom: none;
-    /* border: none; */
+
 }
 
 .dados-pix{
@@ -126,7 +132,7 @@ h1{
     padding: 40px;
    
     gap: 30px;
-    /* background-color: aquamarine; */
+
 }
 
 
@@ -157,7 +163,7 @@ h1{
     align-items: center;
     justify-content: center;
 
-    /* background-color: beige; */
+
 }
 
 .ajuste p{
@@ -168,7 +174,6 @@ h1{
     padding-left: 15px;
 
 
-    /* background-color: white; */
     border-right: none;
     border-radius: 15px 0px 0px 15px;
     font-size: 25px;
@@ -284,6 +289,21 @@ input{
     height: 15%;
     margin-bottom: 35px;
 }
+
+.ajuste3 select{
+    display: flex;
+    width: 95.5%;
+    height: 80%;
+    /* margin-left: 30px; */
+
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+
+    font-size: 25px;
+    padding: 4px 8px;
+}
+
 .formulario_dados_transferencia label{
     margin-left: 30px;
     width: 100%;

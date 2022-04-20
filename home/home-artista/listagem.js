@@ -1,11 +1,20 @@
 "use strict"
 
-// const tokenArtista = localStorage.getItem('tokenArtista');
+const tokenArtista = localStorage.getItem('tokenArtista');
 
-// if(tokenArtista === "null" || tokenArtista === null || 
-//    tokenArtista === "" || tokenArtista === "undefined") {
-//   window.location.href = "../../index.html";
-// } 
+if(tokenArtista === "null" || tokenArtista === null || 
+   tokenArtista === "" || tokenArtista === "undefined") {
+  window.location.href = "../../index.html";
+} 
+
+const buttonLogout = document.getElementById('logout');
+
+function functionLogout() {
+    localStorage.setItem('tokenCliente', null);
+    localStorage.setItem('tokenArtista', null);
+}
+
+buttonLogout.addEventListener('click', functionLogout());
 
 const button_pedidos_para_mim = document.getElementById("button-pedidos-para-mim");
 const button_pedidos_publicos = document.getElementById("button-pedidos-publicos")
