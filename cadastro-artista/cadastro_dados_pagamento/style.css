@@ -19,8 +19,6 @@ body{
     display: none;
     justify-content: center;
     align-items: center;
-}
-.msgErroPix p{
     color: red;
     font-size: 20px;
     font-weight: bold;

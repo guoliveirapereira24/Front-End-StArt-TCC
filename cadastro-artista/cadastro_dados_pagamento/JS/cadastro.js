@@ -14,6 +14,41 @@ const inputChavePix = document.getElementById('inputChavePix');
 var selectTipoChave= document.getElementById('tipoChavePix');
 const msgErroPix = document.getElementById('msgErroPix');
 
+
+selectTipoChave.addEventListener('change', function(e) {
+    event.preventDefault();
+    if(selectTipoChave.value === "email"){
+        inputChavePix.setAttribute('type', 'email');
+        inputChavePix.value = "";
+    } else if(selectTipoChave.value === "telefone/celular"){
+        inputChavePix.setAttribute('type', 'tel');
+        inputChavePix.setAttribute('maxLength', '15');
+        inputChavePix.value = "";
+    } else if(selectTipoChave.value === "cpf/cnpj"){
+        inputChavePix.setAttribute('type', 'text');
+        inputChavePix.value = "";
+    } else if(selectTipoChave.value === "chaveAleatoria"){
+        inputChavePix.setAttribute('type', 'text');
+        inputChavePix.value = "";
+    }
+});
+
+inputChavePix.addEventListener("keyup", function() {
+    event.preventDefault();
+    if(selectTipoChave.value === "telefone/celular"){
+        if(inputChavePix.value.length === 1){
+            inputChavePix.value = "(" + inputChavePix.value;
+        } else if(inputChavePix.value.length === 3){
+            inputChavePix.value += ") ";
+        } else if(inputChavePix.value.length === 4){
+            inputChavePix.value += " ";
+        } else if(inputChavePix.value.length === 10){
+            inputChavePix.value += "-";
+        }
+    }
+});
+
+
 const buttonCadastrarPix = document.getElementById('buttonCadastrarPix');
 
 const cadastrarPix = (tipoChave,chave) => {
@@ -44,9 +79,9 @@ const cadastrarPix = (tipoChave,chave) => {
 
 buttonCadastrarPix.addEventListener("click", function() {
 
-    if (inputChavePix.value == "" ||
-        inputChavePix.value == null ||
-        inputChavePix.value == "undefined") {
+    event.preventDefault();
+
+    if (inputChavePix.value == ""){
 
         msgErroPix.style.display = "flex";
 
@@ -118,6 +153,8 @@ const cadastrarContaBancaria = (tipoConta,agencia,conta,digito,cpf,titular,digit
 
 
 buttonCadastrarTransferencia.addEventListener("click", function() {
+
+    event.preventDefault();
 
     if (inputAgencia.value === "" ||
         selectBanco.value === "" ||
