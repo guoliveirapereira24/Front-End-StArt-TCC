@@ -37,15 +37,15 @@
                 </label>
     
                 <label >Data de nascimento:
-                    <input type="date"  id="inputDataNascimento" required>
+                    <input type="date" id="inputDataNascimento" required>
                 </label>
     
                 <label >Telefone(celular):
-                    <input type="text" id="inputTelefone" required>
+                    <input type="text" maxlength="15" id="inputTelefone" required>
                 </label>
     
                 <label >CPF/CNPJ:
-                    <input type="text" id="inputCpfCnpj" required>
+                    <input type="text" maxlength="17" id="inputCpfCnpj" required>
                 </label>
 
                 <div class="especialidade">
@@ -53,12 +53,6 @@
                     <p>Especialidade:</p>
 
                     <select name="selectEspecialidade" id="selectEspecialidade" required>
-                    
-                        <option value="">Selecione...</option>
-                        <option value="1">Ilustração</option>
-                        <option value="2">Pintura</option>
-                        <option value="3">Escultura</option>
-                        <option value="4">Fotografia</option>
                     
                     </select>
 

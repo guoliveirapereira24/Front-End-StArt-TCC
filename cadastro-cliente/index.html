@@ -37,15 +37,15 @@
             </label>
 
             <label >Data de nascimento:
-                <input type="date"  id="inputDataNascimento" required>
+                <input type="date" maxlength="10" id="inputDataNascimento" required>
             </label>
 
             <label >Telefone(celular):
-                <input type="text" id="inputTelefone" required>
+                <input type="text"  maxlength="15" id="inputTelefone" required>
             </label>
 
             <label >CPF/CNPJ:
-                <input type="text" id="inputCpfCnpj" required>
+                <input type="text" maxlength="18" id="inputCpfCnpj" required>
             </label>
 
             <p class="p-colorido" id="ja_possui_conta">Já possui uma conta?</p>
@@ -105,10 +105,6 @@
                     <p>Cidade:</p>
                     <select name="Cidade" id="selectCidade" required>
                         
-                        <option value="">Selecione...</option>
-                        <option value="1">Osasco</option>
-                        <option value="2">Jundiaí</option>
-                        <option value="3">Embu das Artes</option>
         
                     </select>
         
@@ -118,11 +114,7 @@
                     <p>Estado:</p>
                     <select name="Estado" id="selectEstado" required>
 
-                        <option value="">Selecione...</option>
-                        <option value="sp">SP</option>
-                        <option value="mg">MG</option>
-                        <option value="rj">RJ</option>
-        
+                        
                     </select>
                 </div>
 

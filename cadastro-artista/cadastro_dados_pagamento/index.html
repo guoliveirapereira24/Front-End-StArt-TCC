@@ -47,7 +47,7 @@
 
                         </select>
                         
-                        <input id="inputChavePix" class="chavePix" type="text" placeholder="Digite sua chave">
+                        <input id="inputChavePix" class="chavePix" type="text" maxlength="17" placeholder="Digite sua chave">
                     
                     </div>
 
@@ -80,7 +80,7 @@
                  
 
                     <label for=""> CPF DO TITULAR:
-                        <input type="text" name="cpf" id="cpf">
+                        <input type="text" maxlength="14" name="cpf" id="cpf">
                     </label>
 
                 </div>
@@ -123,6 +123,8 @@
 
         
             </div>
+
+            <span id="msgErroTransf" class="msgErroTransf">Por favor, preencha todos os campos!</span>
             
             <button class="buttonCadastrarTransferencia" id="buttonCadastrarTransferencia">
                 Continuar

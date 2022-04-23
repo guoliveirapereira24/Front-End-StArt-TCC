@@ -24,6 +24,15 @@ body{
     font-weight: bold;
 }
 
+.msgErroTransf{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 
 .formularios{
     display: flex;

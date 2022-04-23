@@ -12,6 +12,7 @@ const inputEmail = document.getElementById('inputEmail');
 const inputSenha = document.getElementById('inputSenha');
 const inputConfirmarSenha = document.getElementById('inputConfirmarSenha');
 var selectCidade = document.getElementById('selectCidade');
+var selectEstado = document.getElementById('selectEstado');
 
 const buttonContinuarDadosEndereco = document.getElementById("buttonContinuarDadosEndereco");
 const buttonContinuarDadosDeAcesso = document.getElementById("buttonContinuarDadosDeAcesso");
@@ -26,30 +27,128 @@ const msgAlertaErroDadosEndereco =  document.getElementById("msgAlertaErroDadosE
 const msgAlertaErroDadosAcesso =  document.getElementById("msgAlertaErroDadosAcesso")
 
 
+
+const getEstados = () => {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    
+    fetch('http://localhost:3000/diversas/estados', config)
+        .then((res) => res.json())
+        .then((data) => {
+            const estados = data.estados;
+        
+           
+           return estados.forEach(estado => {
+                const option = document.createElement('option');
+                option.id = "option" + estado.idEstado
+                option.value = estado.idEstado;
+                option.innerText = estado.nomeEstado;
+                selectEstado.appendChild(option);
+            });
+        });  
+}
+
+getEstados();
+
+const getCidades = () => {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const idEstado = selectEstado.value;
+    
+    fetch(`http://localhost:3000/diversas/cidades/${idEstado}`, config)
+        .then((res) => res.json())
+        .then((data) => {
+            const cidades = data.cidades;
+           
+           return cidades.forEach(cidade => {
+                const option = document.createElement('option');
+                option.value = cidade.idCidade;
+                option.innerText = cidade.nomeCidade;
+                selectCidade.appendChild(option);
+            });
+        });
+}
+
+
+selectEstado.addEventListener("change", function() {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const idEstado = selectEstado.value;
+    
+    fetch(`http://localhost:3000/diversas/cidades/${idEstado}`, config)
+        .then((res) => res.json())
+        .then((data) => {
+            const cidades = data.cidades;
+            selectCidade.innerHTML = "";
+           
+           return cidades.forEach(cidade => {
+                const option = document.createElement('option');
+                option.value = cidade.idCidade;
+                option.innerText = cidade.nomeCidade;
+                selectCidade.appendChild(option);
+            });
+        });
+} );
+
+
 buttonContinuarDadosEndereco.addEventListener("click", function() {
 
     if (inputNomeCompleto.value === "" ||
         inputDataNascimento.value === "" ||
         inputTelefoneCelular.value === "" ||
-        inputCpfCnpj.value === ""
+        inputCpfCnpj.value === "" 
     ) {     
 
             msgAlertaErroDadosPessoais.style.display = "flex"
 
-    }
-    else{
-         
+    }else{
     event.preventDefault();
+        if(inputCpfCnpj.value.length === 18 || inputCpfCnpj.value.length === 14){
 
-    formularioDadosPessoais.style.display = "none";
+            if(inputTelefoneCelular.value.length === 15){
 
-    formularioDadosEndereco.style.display = "flex";
-        if(msgAlertaErroDadosPessoais.style.display = "flex"){
+                if(inputDataNascimento.value.length === 10 && inputDataNascimento.value.substring(0,4) < 2022){
+                    formularioDadosPessoais.style.display = "none";
 
-            msgAlertaErroDadosPessoais.style.display = "none"
+                    formularioDadosEndereco.style.display = "flex";
+                    if(msgAlertaErroDadosPessoais.style.display = "flex"){
+
+                        msgAlertaErroDadosPessoais.style.display = "none"
+                    }
+
+                    getCidades();
+                }
+                else{
+                    msgAlertaErroDadosPessoais.innerText = "A data de nascimento deve ser menor que o ano atual"
+                    msgAlertaErroDadosPessoais.style.display = "flex"
+                }
+            }
+            else{
+                msgAlertaErroDadosPessoais.innerText = "Telefone inválido"
+                msgAlertaErroDadosPessoais.style.display = "flex"
+            }
+            
+        
+        } else {
+            msgAlertaErroDadosPessoais.innerText = "CPF ou CNPJ inválido"
+            msgAlertaErroDadosPessoais.style.display = "flex"
         }
-    
-    }
+
+}
 });
 
 
@@ -61,7 +160,7 @@ buttonContinuarDadosDeAcesso.addEventListener("click", function() {
         inputComplemento.value === ""||
         inputBairro.value === "" ||
         selectCidade.value === "" ||
-        selectEstado.value === "" 
+        selectEstado.value === ""
     ){   
         msgAlertaErroDadosEndereco.style.display = "flex"
     } else{
@@ -74,6 +173,59 @@ buttonContinuarDadosDeAcesso.addEventListener("click", function() {
 
     }   
 });
+
+
+
+inputTelefoneCelular.onkeypress = function(e){
+    var chr = String.fromCharCode(e.which);
+    if ("1234567890-()".indexOf(chr) < 0){
+        return false
+    }
+    if(inputTelefoneCelular.value.length === 1){
+    inputTelefoneCelular.value = "(" + inputTelefoneCelular.value;
+    } else if(inputTelefoneCelular.value.length === 3){
+        inputTelefoneCelular.value += ") ";
+    } else if(inputTelefoneCelular.value.length === 4){
+        inputTelefoneCelular.value += " ";
+    } else if(inputTelefoneCelular.value.length === 10){
+        inputTelefoneCelular.value += "-";
+    }
+}
+   
+
+inputDataNascimento.onkeydown = function(e){
+    if (inputDataNascimento.value.length === 11){
+        return false;
+    }
+
+}
+
+  
+inputCpfCnpj.onkeypress = function(e){
+    
+    var chr = String.fromCharCode(e.which);
+    if ("1234567890-/.".indexOf(chr) < 0){
+        return false
+    }
+    
+
+    if(inputCpfCnpj.value.length === 3){
+        inputCpfCnpj.value += ".";
+    } else if(inputCpfCnpj.value.length === 7){
+        inputCpfCnpj.value += ".";
+    } else if(inputCpfCnpj.value.length === 11){
+        inputCpfCnpj.value += "-";
+    } else if(inputCpfCnpj.value.length === 16){
+        inputCpfCnpj.value = inputCpfCnpj.value[0]+inputCpfCnpj.value[1]
+        +"."+inputCpfCnpj.value[2]+inputCpfCnpj.value[4]
+        +inputCpfCnpj.value[5]+"."+inputCpfCnpj.value[6]
+        +inputCpfCnpj.value[8]+inputCpfCnpj.value[9]
+        +"/"+inputCpfCnpj.value[10]+inputCpfCnpj.value[12]
+        +inputCpfCnpj.value[13]+inputCpfCnpj.value[14]+"-"
+        +inputCpfCnpj.value[15];
+    } 
+    
+}
 
 
 buttonCadastro.addEventListener("click", function() {
@@ -111,7 +263,6 @@ buttonCadastro.addEventListener("click", function() {
         }
     }
 });
-
 
 const cadastrarCliente = (
     nomeCompleto, 

@@ -19,6 +19,32 @@ const msgAlertaErroDadosAcesso =  document.getElementById("msgAlertaErroDadosAce
 var formularioDadosPessoais = document.getElementById("formulario-dados-pessoais");
 var formularioDadosAcesso = document.getElementById("formulario-dados-acesso");
 
+const getEspecialidades = () => {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    
+    fetch('http://localhost:3000/diversas/especialidades', config)
+        .then((res) => res.json())
+        .then((data) => {
+            const especialidades = data.especialidades;
+            console.log(especialidades)
+           
+           return especialidades.forEach(especialidade => {
+                const option = document.createElement('option');
+                console.log(especialidade);
+                option.value = especialidade.idEspecialidade;
+                option.innerText = especialidade.nomeEspecialidade;
+                selectEspecialidade.appendChild(option);
+            });
+        });
+}
+
+getEspecialidades();
+
 buttonContinuarDadosDeAcesso.addEventListener("click", function() {
 
     if (inputNomeCompleto.value === "" ||
@@ -32,16 +58,32 @@ buttonContinuarDadosDeAcesso.addEventListener("click", function() {
 
     }
     else{
+        event.preventDefault();
+        msgAlertaErroDadosPessoais.style.display = "none"
+        if(inputCpfCnpj.value.length === 18 || inputCpfCnpj.value.length === 14){
 
-        formularioDadosPessoais.style.display = "none";
+            if(inputTelefoneCelular.value.length === 15){
+                formularioDadosPessoais.style.display = "none";
 
-        formularioDadosAcesso.style.display = "flex";
+                formularioDadosAcesso.style.display = "flex";
+                
+                if(msgAlertaErroDadosPessoais.style.display = "flex"){
         
-        if(msgAlertaErroDadosPessoais.style.display = "flex"){
-
-            msgAlertaErroDadosPessoais.style.display = "none"
-
+                    msgAlertaErroDadosPessoais.style.display = "none"
+        
+                }
+            }
+            else{
+                msgAlertaErroDadosPessoais.innerText = "Telefone inválido"
+                msgAlertaErroDadosPessoais.style.display = "flex"
+            }
+            
+        
+        } else {
+            msgAlertaErroDadosPessoais.innerText = "CPF ou CNPJ inválido"
+            msgAlertaErroDadosPessoais.style.display = "flex"
         }
+
         
     }
 });
@@ -79,6 +121,56 @@ buttonCadastrarArtista.addEventListener("click", function() {
     }  
     
 });
+
+
+inputTelefoneCelular.onkeypress = function(e){
+
+        var chr = String.fromCharCode(e.which);
+        if ("1234567890-()".indexOf(chr) < 0){
+            return false
+        }
+      
+
+        if(inputTelefoneCelular.value.length === 1){
+            inputTelefoneCelular.value = "(" + inputTelefoneCelular.value;
+        } else if(inputTelefoneCelular.value.length === 3){
+            inputTelefoneCelular.value += ") ";
+        } else if(inputTelefoneCelular.value.length === 4){
+            inputTelefoneCelular.value += " ";
+        } else if(inputTelefoneCelular.value.length === 10){
+            inputTelefoneCelular.value += "-";
+        }
+
+
+}
+
+
+  
+inputCpfCnpj.onkeypress = function(e){
+    
+    var chr = String.fromCharCode(e.which);
+    if ("1234567890-/.".indexOf(chr) < 0){
+        return false
+    }
+
+
+    if(inputCpfCnpj.value.length === 3){
+        inputCpfCnpj.value += ".";
+    } else if(inputCpfCnpj.value.length === 7){
+        inputCpfCnpj.value += ".";
+    } else if(inputCpfCnpj.value.length === 11){
+        inputCpfCnpj.value += "-";
+    } else if(inputCpfCnpj.value.length === 17){
+        inputCpfCnpj.value = inputCpfCnpj.value[0]+inputCpfCnpj.value[1]
+        +"."+inputCpfCnpj.value[2]+inputCpfCnpj.value[4]
+        +inputCpfCnpj.value[5]+"."+inputCpfCnpj.value[6]
+        +inputCpfCnpj.value[8]+inputCpfCnpj.value[9]
+        +"/"+inputCpfCnpj.value[10]+inputCpfCnpj.value[12]
+        +inputCpfCnpj.value[13]+inputCpfCnpj.value[14]+"-"
+        +inputCpfCnpj.value[15]+inputCpfCnpj.value[16];
+    } 
+    
+}
 
 
 const cadastrarArtista = (
