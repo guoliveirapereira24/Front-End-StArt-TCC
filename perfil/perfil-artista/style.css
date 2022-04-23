@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Raleway', Regular; */
-    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Raleway';
 }
 
 #img_nome_avaliacao{
