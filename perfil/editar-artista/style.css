@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
 
 }
 body{
@@ -10,13 +9,18 @@ body{
     flex-direction:column;
     align-items: center;
     justify-content: center ;
+    font-family: 'Raleway', sans-serif;
     
 
     /* background-color: aquamarine; */
 }
-
+#button_editar_perfil{
+    font-size: 27px;
+}
 #button_alterar_senha, #button_informacoes_pessoais, #button_forma_recebimento, #botao_desativar_conta{
     border:none;
+    font-size: 27px;
+
 }
 
 .editar_perfil{
@@ -60,13 +64,13 @@ body{
     align-self: center;
     justify-content: center;
     width: 100%;
-    height: 60%;
+    height: 100%;
     gap: 5%;
-    padding-left: 10%;
+    /* padding-left: 10%; */
     padding-top: 2%;
-    padding-right: 5%;
+    /* padding-right: 5%; */
     font-size: 25px;
-    /* background-color:violet; */ 
+    /* background-color:violet;  */
 }
 .aba_desativar_conta{
     display: none;
@@ -149,10 +153,14 @@ section{
     margin-top: 16vh;
     align-items: center;
     justify-content: center ;
-    font-size: 30px;
-    height:20vh;
+    font-size: 60px;
+    height: 20vh;
     background-color: black;
     color:white;
+    font-family: 'Comforter', cursive;
+}
+.azul{
+    color: #40E0D0;
 }
 .container{
     display: flex;
@@ -211,13 +219,13 @@ textarea{
     padding-left: 5%;
     padding-top: 2%;
     padding-right: 5%;
-    font-size: 25px;
+    font-size: 24px;
     /* background-color:yellow; */
 
 }
 .inputs input, select{
     width: 65%;
-    height: 75%;
+    height: 100%;
     border: 1px solid #4C4E5F;
     box-sizing: border-box;
     border-radius: 10px;
@@ -260,7 +268,7 @@ textarea{
     border: 1px solid #4C4E5F;
     box-sizing: border-box;
     font-size: 25px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding-left: 1%;
     padding-right: 2%;
 }
@@ -297,7 +305,7 @@ input:focus-within {
 }
 .form_editar_informacoes_pessoais{
     background-color:yellow
-    height
+ 
 }
 
 
@@ -316,15 +324,16 @@ input:focus-within {
 }
 .pix_trans_banco{
     display: flex;
-    margin-top: 3%;
+    margin-top: 10%;
     width: 100%;
     height: 50px;
-    gap: 50px;
+    padding-left: 13%;
+    /* gap: 50px; */
     /* background-color: yellow; */
 }
 .pix_trans_banco button{
     width: 200px;
-    margin-left: 100px;
+    margin-left: 10%;
     font-size: 20px;
     /* background-color: blueviolet; */
     background-color: white;
@@ -358,6 +367,8 @@ input:focus-within {
     flex-direction: row;
     width: 100%;
     height: 350px;
+    padding-left: 6%;
+    /* justify-content: center; */
     /* background-color: aquamarine;  */
 }
 .dados-pix input{
@@ -435,8 +446,8 @@ input:focus-within {
     display: none;
     flex-direction: column;
     width: 100%;
-    height: 60%;
-    /* margin-top: %; */
+    height: 100%;
+    /* margin-top: 5%; */
     /* margin-left: 300px; */
 
     /* gap: 20px; */
@@ -537,11 +548,13 @@ input{
     /* background-color: violet; */
 }
 .button_salvar_dados_pagamento{
-    height: 10%;
-    width: 30%;
 
-    margin-top:4%;
-    margin-left: 30%;
+    position: absolute;
+    height: 5vh;
+    width: 30vw;
+
+    margin-top: 35%;
+    margin-left: 6%;
     font-size: 25px;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
