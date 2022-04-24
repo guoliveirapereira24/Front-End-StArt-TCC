@@ -39,7 +39,3 @@ button_minhas_obras.addEventListener("click", function(){
 
 const icon_editar = document.getElementById("icon_lapis");
 
-icon_editar.addEventListener("click", function(){
-    window.location.href = "../editar-artista/index.html"
-
-});
