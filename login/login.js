@@ -31,7 +31,7 @@ const loginArtista = (email, senha) => {
             console.log(data)
             localStorage.setItem('tokenArtista', data.token); 
             if(localStorage.getItem('tokenArtista') === data.token){
-            window.location.href = "../home/home-artista/index.html";
+            window.location.href = "../perfil/perfil-artista/index.html";
             }
         });
     
