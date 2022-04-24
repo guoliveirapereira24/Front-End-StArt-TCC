@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
 
 }
 body{
@@ -14,9 +14,13 @@ body{
 
     /* background-color: aquamarine; */
 }
+#button_editar_perfil{
+    font-size: 27px;
+}
 
 #button_alterar_senha, #button_informacoes_pessoais, #button_endereco, #botao_desativar_conta{
     border:none;
+    font-size: 27px;
 }
 
 .editar_perfil{
@@ -142,10 +146,15 @@ section{
     margin-top: 16vh;
     align-items: center;
     justify-content: center ;
-    font-size: 30px;
+    font-size: 60px;
     height:20vh;
     background-color: black;
     color:white;
+    font-family: 'Comforter', cursive;
+    
+}
+.azul{
+    color: #40E0D0;
 }
 .container{
     display: flex;
@@ -205,8 +214,8 @@ textarea{
     padding-left: 5%;
     padding-top: 2%;
     padding-right: 5%;
-    font-size: 25px;
-    background-color:yellow;
+    font-size: 24px;
+    /* background-color:yellow; */
 
 }
 .section_input select{
@@ -283,6 +292,7 @@ input:focus-within {
 }
 .editar_informacoes_pessoais{
     display: flex;
+    font-size: 24px;
 }
 .editar_informacoes_pessoais input{
     height: 60%;
@@ -293,10 +303,7 @@ input:focus-within {
     height: 35%;
 
 }
-.form_editar_informacoes_pessoais{
-    background-color:yellow
-    
-}
+
 
 .aba_endereco{
     display: none;
@@ -312,7 +319,7 @@ input:focus-within {
 .div_input{
     /* background-color:tomato; */
     width:80%;
-    height: 8%
+    height: 10%
 }
 .div_input p {
     font-size: 24px;
@@ -329,7 +336,7 @@ input:focus-within {
 .alinhar{
     display:flex;
     
-    height:8%;
+    height: 10%;
     width: 80%;
     gap: 2%;
     flex-direction:row;

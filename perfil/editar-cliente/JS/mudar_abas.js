@@ -10,7 +10,7 @@ const botao_desativar_conta = document.getElementById("botao_desativar_conta");
 const conteudo_editar_perfil = document.getElementById("conteudo_editar_perfil");
 const conteudo_alterar_senha = document.getElementById("conteudo_alterar_senha");
 const conteudo_informacoes_pessoais = document.getElementById("conteudo_informacoes_pessoais");
-const editar_forma_recebimento = document.getElementById("editar_forma_recebimento");
+const aba_endereco = document.getElementById("aba_endereco");
 const conteudo_desativar_conta = document.getElementById("conteudo_desativar_conta");
 
 button_editar_perfil.addEventListener("click", function(){
@@ -18,7 +18,7 @@ button_editar_perfil.addEventListener("click", function(){
     conteudo_editar_perfil.style.display = "flex";
     conteudo_alterar_senha.style.display = "none";
     conteudo_informacoes_pessoais.style.display = "none";
-    editar_forma_recebimento.style.display = "none";
+    aba_endereco.style.display = "none";
     conteudo_desativar_conta.style.display = "none";
 
     button_editar_perfil.style.borderLeft = "5px solid";
@@ -35,7 +35,7 @@ button_alterar_senha.addEventListener("click", function(){
 
     conteudo_editar_perfil.style.display = "none";
     conteudo_informacoes_pessoais.style.display = "none";
-    editar_forma_recebimento.style.display = "none";
+    aba_endereco.style.display = "none";
     conteudo_desativar_conta.style.display = "none";
 
     button_editar_perfil.style.borderLeft = "none";
@@ -50,7 +50,7 @@ botao_desativar_conta.addEventListener("click", function(){
 
     conteudo_editar_perfil.style.display = "none";
     conteudo_informacoes_pessoais.style.display = "none";
-    editar_forma_recebimento.style.display = "none";
+    aba_endereco.style.display = "none";
     conteudo_desativar_conta.style.display = "flex";
     conteudo_alterar_senha.style.display = "none";
 
@@ -66,7 +66,7 @@ button_endereco.addEventListener("click", function(){
 
     conteudo_editar_perfil.style.display = "none";
     conteudo_informacoes_pessoais.style.display = "none";
-    editar_forma_recebimento.style.display = "flex";
+    aba_endereco.style.display = "flex";
     conteudo_desativar_conta.style.display = "none";
     conteudo_alterar_senha.style.display = "none";
 
@@ -82,7 +82,7 @@ button_informacoes_pessoais.addEventListener("click", function(){
 
     conteudo_editar_perfil.style.display = "none";
     conteudo_informacoes_pessoais.style.display = "flex";
-    editar_forma_recebimento.style.display = "none";
+    aba_endereco.style.display = "none";
     conteudo_desativar_conta.style.display = "none";
     conteudo_alterar_senha.style.display = "none";
 
