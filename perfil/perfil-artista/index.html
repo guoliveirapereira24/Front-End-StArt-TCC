@@ -58,9 +58,32 @@
 
     <!-- FIM DA LISTAGEM DE OBRAS -->
 
+    <div class="div_button_adicionar_obra">
+
+        <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil" onclick="window.location.href = './adicionar-obra/'">
+            <img src="../img/plus.png" alt="" srcset="">
+        </button>
+
 
     </div>
+
     
+
+   
+        <!-- <div class="div_button_adicionar_obra">
+
+            <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil">
+                <img src="../img/plus.png" alt="" srcset="">
+            </button>
+
+        </div>
+        <div class="div_button_adicionar_obra">
+
+            <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil">
+                <img src="../img/plus.png" alt="" srcset="">
+            </button>
+
+        </div> -->
 
   
     </div>
@@ -429,14 +452,43 @@
 
         </div>
 
-        <div class="modal_excluir_proposta" id="modal_excluir_proposta">
+        <div class="fundo_modal_excluir_proposta">           
+      
+            <div class="modal_excluir_proposta" id="modal_excluir_proposta">
 
-            <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
-                <div class="botoes_excluir_proposta">
-                    <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
-                    <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
-                </div>
+                <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
+                    <div class="botoes_excluir_proposta">
+                        <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
+                        <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
+                    </div>
+            </div>
         </div>
+
+        <div class="fundo_modal_cancelar_proposta">
+            <div class="modal_cancelar_proposta" id="modal_cancelar_proposta">
+                <h2>VOCÊ TEM CERTEZA DE QUE DESEJA CANCELAR ESTA PROPOSTA?</h2>
+                <p>Será reembolsado apenas 50% do valor previamente pago.</p>
+                <div class="botoes_cancelar_proposta">
+                    <button class="button_azul" id="button_negar_exclusao_obra">NÃO</button>
+                    <button class="button_vermelho" id="button_confirmar_exclusao_obra">SIM</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div class="fundo_modal_finalizar_pedido">           
+      
+            <div class="modal_finalizar_pedido" id="modal_finalizar_pedido">
+
+                <h2>VOCÊ TEM CERTEZA DE QUE DESEJA FINALIZAR ESTE PEDIDO?</h2>
+                    <div class="botoes_finalizar_pedido">
+                        <button class="button_vermelho" id="button_negar_finalizar_pedido">NÃO</button>
+                        <button class="button_azul" id="button_confirmar_finalizar_pedido">SIM</button>
+                    </div>
+            </div>
+        </div>
+       
 
     </div>
 
