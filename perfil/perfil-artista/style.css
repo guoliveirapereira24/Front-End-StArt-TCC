@@ -35,6 +35,12 @@ h1{
     gap: 5px;
     font-size: 35px;
 }
+
+#icon_lapis:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 #avaliacao img{
     height: 50px;
     width: 50px;
