@@ -110,7 +110,7 @@ h1{
     height: 50vh;
     justify-content: center;
     margin-top: 1%;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
     /* position: absolute; */
     /* background-color: tomato; */
@@ -198,24 +198,75 @@ h1{
 .edit_delete{
     display: flex;
     height: 10%;
-    width: 112px;
+    width: 30%;
     gap: 15%;
-    padding-right: 15%;
+    /* padding-right: 15%; */
     
     align-items: center;
-    margin-left: 72.5%;
+    margin-left: 70%;
     position: absolute;
     background-color: rgb(0, 0, 0, 0.25);
     border-radius: 10px 10px 0px 10px;
+    /* background-color: #04BA00; */
+}
+.button_azul{
+    background-color:#40E0D0;
+    color: white;
+}
+.button_vermelho{
+    background-color:red;
+    color:white;
+}
+.modal_excluir_obra, .modal_excluir_proposta{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    height: 25%;
+    width: 25%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    background-color:white;
+}
+.modal_excluir_obra h2, .modal_excluir_proposta h2{
+    margin-left: 4%;
+}
+.botoes_excluir_obra, .botoes_excluir_proposta{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    gap: 5%;
+    /* background-color:#40E0D0 */
+}
+.botoes_excluir_obra button, .botoes_excluir_proposta button{
+    height: 100%;
+    width: 40%;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.modal_excluir_obra h2, .modal_excluir_proposta h2{
+    height: 55%;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 5%;
+    /* background-color:tomato */
+}
+.button_edit_delete{
+    width: 100%;
+    height: 100%;
+    background-color: #40E0D0;
 }
 .edit_delete img{
-    height: 4vh;
-    width: 50px;
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
 }
 .edit_delete button{
-    height: 4vh;
-    width: 50px;
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
     border: none;
     background-color: rgb(0, 0, 0, 0.25);
@@ -231,7 +282,7 @@ h1{
     align-items: center;
 }
 #card{
-    height: 400px;
+    height: 420px;
     width: 55vw;
     /* border: 1px solid; */
     border-radius: 15px;
@@ -266,6 +317,8 @@ h1{
 .nome{
     font-size: 25px;
     margin-left: 10px;
+    width: 30%;
+    /* background-color: #40E0D0; */
 }
 
 #avaliacao{
@@ -289,7 +342,7 @@ h1{
     height: 100%;
     align-items: center;
     flex-direction: row;
-    margin-left: 20%;
+    /* margin-left: 20%; */
     font-size: 25px;
     /* background-color: #40E0D0; */
 }
@@ -355,8 +408,8 @@ h1{
 .container_status{
     display: flex;
     flex-direction: row;
-    width: 230px;
-    margin-left: 21%;
+    width: 30%;
+    margin-left: 17%;
     gap: 3%;
     font-size: 25px;
     /* background-color: #40E0D0; */
@@ -367,7 +420,7 @@ h1{
 }
 .preco_prazo_buttons{
     display: flex;
-    height: 150px;
+    height: 50%;
     flex-direction: row;
     /* background-color: aqua; */
 }
@@ -378,6 +431,7 @@ h1{
     /* padding: 2%; */
     padding-left: 2%;
     font-size: 30px;
+    /* background-color: yellow; */
        
 }
 .preco{
@@ -389,8 +443,8 @@ h1{
 .prazo{
     display: flex;
     flex-direction: row;
-    width: 400px;
-    gap: 3%;
+    width: 100%;
+    /* gap: 1%; */
     /* background-color: brown; */
 }
 .button_ver_pedido{
@@ -422,3 +476,41 @@ h1{
     color: #FFC700;
 }
 
+.modal_ver_pedido{
+    display: none;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    top: 125vh;
+    height: 480px;
+    width: 50vw;
+    /* border: 1px solid; */
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 10%;
+    background-color: #FCFCFC;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    justify-content: center;
+    
+}
+.modal_excluir_proposta{
+    display: none;
+    top: 125vh;
+}
+.nome_tipo_contato{
+    width: 100%;
+    /* background-color: #04BA00; */
+}
+.img_exemplo{
+    height: 250px;
+    /* margin-left: 30%; */
+}
+.categoria_pedido{
+    margin-left: 25%;
+    /* background-color: #40E0D0; */
+}
+.fechar{
+    margin-left: 8%;
+    width: 3%;
+}

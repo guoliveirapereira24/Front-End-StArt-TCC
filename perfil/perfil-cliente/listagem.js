@@ -37,3 +37,10 @@ button_artistas_parceiros.addEventListener("click", function(){
     listagem_obras_favoritas.style.display = "none";
 
 });
+
+const icon_editar = document.getElementById("icon_lapis");
+
+icon_editar.addEventListener("click", function(){
+    window.location.href = "../editar-cliente/index.html"
+
+});

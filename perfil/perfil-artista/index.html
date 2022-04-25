@@ -61,10 +61,10 @@
                 </button>
 
                 <button>
-                    <img id="delete" src="../img/excluir.png" alt="">
+                    <img id="button_delete" src="../img/excluir.png" alt="">
                 </button>
             </div>
-  
+      
 
             <div class="nome_artista" id="">
                 <div class="nome_obra_artista" id="informacoes_obra">
@@ -94,7 +94,7 @@
                 </button>
 
                 <button>
-                    <img id="delete" src="../img/excluir.png" alt="">
+                    <img id="button_delete" src="../img/excluir.png" alt="">
                 </button>
             </div>
 
@@ -121,12 +121,12 @@
         <div class="card_minha_obra" id="minha_obra3">
             <img src="../img/obra2.png" alt="">
             <div class="edit_delete">
-                <button>
+                <button class="button_edit_delete">
                     <img id="edit" src="../img/editar.png" alt="">
                 </button>
 
-                <button>
-                    <img id="delete" src="../img/excluir.png" alt="">
+                <button class="button_edit_delete">
+                    <img id="button_delete" src="../img/excluir.png" alt="">
                 </button>
             </div>
             <div class="nome_artista" id="">
@@ -144,12 +144,26 @@
             </div>
 
         </div>
+     
+    
+
         <div class="div_button_adicionar_obra">
 
             <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil">
                 <img src="../img/plus.png" alt="" srcset="">
             </button>
 
+        </div>
+           
+        <div class="modal_excluir_obra" id="modal_excluir_obra">
+
+            <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA OBRA?</h2>
+                <div class="botoes_excluir_obra">
+                    <button class="button_azul" id="button_negar_exclusao_obra">NÃO</button>
+                    <button class="button_vermelho" id="button_confirmar_exclusao_obra">SIM</button>
+                </div>
+        </div>
+    
         </div>
         <!-- <div class="div_button_adicionar_obra">
 
@@ -223,6 +237,10 @@
 
 
             </div>
+
+        </div>
+
+        <div class="modal-ver-pedido" id="modal-ver-pedido">
 
         </div>
 
@@ -504,6 +522,41 @@
         </div>
 
 
+            <div class="modal_ver_pedido" id="modal_ver_pedido">
+                <div class="nome_tipo_contato" id="nome_tipo_contato">
+
+                    <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
+
+                    <p class="nome"  id="nome_cliente">Gabriel Gonçalves</p>
+                    <section id="avaliacao">
+                        <img id="estrelas" src="../img/estrela2.png" alt="">
+                        <p>4.5</p>
+                    </section>
+
+                    <section class="categoria_pedido" id="categoria_pedido">
+                        <p>Retrato</p>
+                    </section>
+
+                    <img id="fechar" class="fechar" src="../img/close.png" alt="">
+                </div>
+
+                <p id="descricao_pedido">
+                    Olá, Patrícia! Quero um desenho dessa foto da minha namorada. Se estiver disposta
+                a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                </p>
+
+                <img id="img_exemplo" class="img_exemplo" src="../img/exemplo2.png" alt="">
+
+        </div>
+
+        <div class="modal_excluir_proposta" id="modal_excluir_proposta">
+
+            <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
+                <div class="botoes_excluir_proposta">
+                    <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
+                    <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
+                </div>
+        </div>
 
     </div>
 
