@@ -1,10 +1,10 @@
 "use strict";
 
-// const tokenArtista = localStorage.getItem('tokenArtista');
-// if(tokenArtista === "null" || tokenArtista === null || 
-//    tokenArtista === "" || tokenArtista === "undefined") {
-//   window.location.href = "../../index.html";
-// } 
+const tokenArtista = localStorage.getItem('tokenArtista');
+if(tokenArtista === "null" || tokenArtista === null || 
+   tokenArtista === "" || tokenArtista === "undefined") {
+  window.location.href = "../../index.html";
+} 
 
 const informacoesArtistaDiv = document.getElementById('informacoesArtistaDiv');
 
@@ -14,6 +14,7 @@ function getInformacoesArtista(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
             'Authorization' : `Bearer ${tokenArtista}`
         }
     } 
@@ -95,7 +96,7 @@ fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configA
                     if(data.avaliacaoArtista == null) {
                         return avaliacaoArtista.innerHTML = 0 + ".00";
                     } else {
-                        return avaliacaoArtista.innerHTML = avaliacao.toFixed(2);
+                        return avaliacaoArtista.innerHTML = avaliacao;
                     }
             });
     

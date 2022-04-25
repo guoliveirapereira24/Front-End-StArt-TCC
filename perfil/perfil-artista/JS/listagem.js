@@ -44,20 +44,7 @@ icon_editar.addEventListener("click", function(){
 
 });
 
-const button_delete = document.getElementById("button_delete");
-const modal_excluir_obra = document.getElementById("modal_excluir_obra");
-const button_negar_exclusao_obra = document.getElementById("button_negar_exclusao_obra");
 
-button_delete.addEventListener("click", function(){
-
-    modal_excluir_obra.style.display = "flex";
-    
-});
-button_negar_exclusao_obra.addEventListener("click", function(){
-
-    modal_excluir_obra.style.display = "none";
-    
-});
 
 const modal_ver_pedido = document.getElementById("modal_ver_pedido");
 const fechar = document.getElementById("fechar");

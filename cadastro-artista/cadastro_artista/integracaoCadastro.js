@@ -27,17 +27,16 @@ const getEspecialidades = () => {
         }
     }
     
-    fetch('http://localhost:3000/diversas/especialidades', config)
+    fetch('http://localhost:3000/diversas/especialidadesArtista', config)
         .then((res) => res.json())
         .then((data) => {
-            const especialidades = data.especialidades;
+            const especialidades = data.especialidadesArtista;
             console.log(especialidades)
            
-           return especialidades.forEach(especialidade => {
+           return especialidades.forEach(especialidadeArtista => {
                 const option = document.createElement('option');
-                console.log(especialidade);
-                option.value = especialidade.idEspecialidade;
-                option.innerText = especialidade.nomeEspecialidade;
+                option.value = especialidadeArtista.idEspecialidadeArtista;
+                option.innerText = especialidadeArtista.nomeEspecialidadeArtista;
                 selectEspecialidade.appendChild(option);
             });
         });
