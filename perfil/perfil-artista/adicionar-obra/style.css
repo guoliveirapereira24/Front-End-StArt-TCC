@@ -10,7 +10,9 @@ body{
     justify-content: center;
     align-items: center;
 }
-
+h1{
+    margin-top: 3%;
+}
 h2{
     font-size: 30px;
     margin-top: 1%
@@ -31,6 +33,7 @@ p{
     height: 350px;
     width: 350px;
     border-radius: 10px;
+    border: 1px solid;
     filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
 }
 .button_adicionar_img button{
@@ -40,8 +43,8 @@ p{
 }
 .text_area_descricao{
     height: 350px;
-    width: 350px;
-    margin-top: 7%;
+    width: 550px;
+    margin-top: 5%;
     font-size: 20px;
     padding-top: 3%;
     padding-left: 5%;
@@ -66,7 +69,7 @@ p{
     width: 100%;
     margin-top: 2%;
     /* height: 100%; */
-    background-color: tomato;
+    /* background-color: tomato; */
 }
 .form_adicionar_obra{
     display: flex;
@@ -74,7 +77,7 @@ p{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #40E0D0;
+    /* background-color: #40E0D0; */
 }
 
 .alinhamento{
@@ -88,7 +91,7 @@ p{
     /* background-color: steelblue; */
 }
 .alinhamento label{
-    width: 40%;
+    width: 45%;
     height: 100%;
 }
 .inputs{
@@ -98,6 +101,8 @@ p{
     border-radius: 10px;
     font-size: 20px;
     padding-left: 2%;
+    padding-right: 3%;
+
     /* margin-left: 30px; */
     /* margin-top: 10px; */
 }
@@ -108,8 +113,9 @@ p{
     height: 61%;
     /* background-color: yellowgreen; */
     border-radius: 10px;
-    border: none;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    border: 1px solid;
+
+    /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.712); */
 
     /* margin-left: 30px; */
     /* margin-top: 10px; */
@@ -124,7 +130,7 @@ p{
     gap: 5%;
     
 
-    background-color: violet;
+    /* background-color: violet; */
 }
 .alinhamento_maior label{
     display: flex;
@@ -140,7 +146,7 @@ p{
     flex-direction: row;
     flex-wrap: wrap;
     /* margin-top: 3%; */
-    background-color: yellow;
+    /* background-color: yellow; */
     gap: 10%;
 }
 .img_opcionais div{
@@ -152,7 +158,12 @@ p{
 }
 
 .button_adicionar_obra{
-    margin-top: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     width: 30%;
-    height: 10%;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #40E0D0;;
 }
