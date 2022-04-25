@@ -101,11 +101,13 @@ h1{
 }
 .listagem_minhas_obras{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 50vh;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     margin-top: 1%;
-    gap: 40px;
+    flex-wrap: wrap;
+    /* gap: 40px; */
     /* padding-left: 50%; */
     /* padding-right: 50%; */
     /* background-color: tomato; */
@@ -119,7 +121,7 @@ h1{
     gap: 30px;
     flex-wrap: wrap;
     /* position: absolute; */
-    /* background-color: tomato; */
+    /* background-color: #04BA00; */
 }
 
 .card_minha_obra{
@@ -138,7 +140,8 @@ h1{
     
     /* background-color: #DCDCDC; */
     background-color: #FCFCFC;
-
+    margin-bottom: 4.2%;
+    margin-left: 2%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
