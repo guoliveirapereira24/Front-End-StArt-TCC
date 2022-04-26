@@ -8,6 +8,7 @@ function getObraPronta(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
             'Authorization' : `Bearer ${tokenArtista}`
         }
     } 

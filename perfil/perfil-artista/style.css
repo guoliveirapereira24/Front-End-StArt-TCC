@@ -140,7 +140,7 @@ h1{
     display: flex;
     
     /* background-color: #DCDCDC; */
-    background-color: #FCFCFC;
+    background-color: #ffffff;
     margin-bottom: 4.2%;
     margin-left: 2%;
     flex-direction: column;
@@ -149,7 +149,7 @@ h1{
     height: 515px;
     width: 410px;
     border-radius: 10px;
-    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+
 }
 .div_button_adicionar_obra button{
     height: 30%;
@@ -164,7 +164,7 @@ h1{
     border: 1px solid;
     font-size: 100px;
     background-color:#40E0D0;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 .nome_artista{
     display: flex;
@@ -259,7 +259,7 @@ h1{
     display: none;
 }
 .fundo_modal_cancelar_proposta{
-    /* display:none */
+    display:none;
 
 }
 .modal_cancelar_proposta{

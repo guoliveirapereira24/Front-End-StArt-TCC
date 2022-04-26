@@ -50,28 +50,28 @@ const modal_ver_pedido = document.getElementById("modal_ver_pedido");
 const fechar = document.getElementById("fechar");
 const button_ver_pedido= document.getElementById("button_ver_pedido");
 
-button_ver_pedido.addEventListener("click", function(){
+// button_ver_pedido.addEventListener("click", function(){
     
-    modal_ver_pedido.style.display = "flex";
+//     modal_ver_pedido.style.display = "flex";
 
-});
-fechar.addEventListener("click", function(){
+// });
+// fechar.addEventListener("click", function(){
     
-    modal_ver_pedido.style.display = "none";
+//     modal_ver_pedido.style.display = "none";
 
-});
+// });
 
 const modal_excluir_proposta = document.getElementById("modal_excluir_proposta");
 const excluir_proposta = document.getElementById("excluir_proposta");
 const button_negar_exclusao_proposta = document.getElementById("button_negar_exclusao_proposta");
 
-excluir_proposta.addEventListener("click", function(){
+// excluir_proposta.addEventListener("click", function(){
 
-    modal_excluir_proposta.style.display = "flex";
+//     modal_excluir_proposta.style.display = "flex";
 
-});
-button_negar_exclusao_proposta.addEventListener("click", function(){
+// });
+// button_negar_exclusao_proposta.addEventListener("click", function(){
 
-    modal_excluir_proposta.style.display = "none";
+//     modal_excluir_proposta.style.display = "none";
 
-});
+// });
