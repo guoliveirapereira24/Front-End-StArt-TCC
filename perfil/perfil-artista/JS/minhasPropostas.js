@@ -115,7 +115,7 @@ function getMinhasPropostas(){
                 buttonEditar.id = "excluir_proposta";
                 buttonEditar.innerHTML = "Excluir Proposta";
 
-                buttons.innerHTML = buttonIniciarPedido;
+                buttons.innerHTML = buttonIniciarPedido.outerHTML;
                 buttons.appendChild(buttonEditar);
                 buttons.appendChild(buttonExcluir);
 
