@@ -227,8 +227,8 @@ h1{
     background-color:red;
     color:white;
 }
-.modal_excluir_obra, .modal_excluir_proposta{
-    display: none;
+.modal_excluir_obra, .modal_excluir_proposta, .modal_finalizar_pedido{
+    display: flex;
     flex-direction: column;
     position: fixed;
     height: 100%;
@@ -253,7 +253,6 @@ h1{
 }
 .fundo_modal_finalizar_pedido{
     display:none;
-
 }
 .fundo_modal_excluir_proposta{
     display: none;
@@ -266,7 +265,6 @@ h1{
     display: flex;
     background-color: white;
     
-    
     position: fixed;
     flex-direction: column;
     align-items: center;
@@ -275,8 +273,8 @@ h1{
     top: 40%;
     /* padding-left: 2%; */
     font-size: 20px;
-    height:30%;
-    width: 33%;
+    height:25%;
+    width: 32%;
     border-radius: 10px;
     border: none;
 }
@@ -312,16 +310,16 @@ h1{
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 300px;
-    width: 30%;
-    top: 40%;
+    height: 23%;
+    width: 25%;
+    top: 30%;
     margin-top: 5%;
     border-radius: 10px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     background-color:white;
 }
 
-.botoes_excluir_obra, .botoes_excluir_proposta{
+.botoes_excluir_obra, .botoes_excluir_proposta, .botoes_finalizar_pedido{
     display:flex;
     align-items: center;
     justify-content: center;
@@ -329,7 +327,7 @@ h1{
     gap: 5%;
     /* background-color:#40E0D0 */
 }
-.botoes_excluir_obra button, .botoes_excluir_proposta button{
+.botoes_excluir_obra button, .botoes_excluir_proposta button, .botoes_finalizar_pedido button{
     height: 100%;
     width: 40%;
     border: 1px solid;
@@ -337,7 +335,7 @@ h1{
     font-size: 20px;
 }
 
-.modal_excluir_obra h2, .modal_excluir_proposta h2{
+.modal_excluir_obra h2, .modal_excluir_proposta h2, .modal_finalizar_pedido h2{
     height: 55%;
     padding-top: 5%;
     padding-left: 10%;
@@ -585,8 +583,10 @@ h1{
     
 }
 .modal_excluir_proposta{
-    display: none;
-    top: 125vh;
+    display: flex;
+    width:25%;
+    height:22%;
+    top: 15vh;
 }
 .nome_tipo_contato{
     width: 100%;
