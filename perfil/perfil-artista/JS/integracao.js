@@ -1,23 +1,23 @@
 "use strict";
 
-const tokenArtista = localStorage.getItem('tokenArtista');
-if(tokenArtista === "null" || tokenArtista === null || 
-   tokenArtista === "" || tokenArtista === "undefined") {
-  window.location.href = "../../index.html";
-} 
+// const tokenArtista = localStorage.getItem('tokenArtista');
+// if(tokenArtista === "null" || tokenArtista === null || 
+//    tokenArtista === "" || tokenArtista === "undefined") {
+//   window.location.href = "../../index.html";
+// } 
 
-const informacoesArtistaDiv = document.getElementById('informacoesArtistaDiv');
+// const informacoesArtistaDiv = document.getElementById('informacoesArtistaDiv');
 
-function getInformacoesArtista(){
+// function getInformacoesArtista(){
 
-    const configArtista = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenArtista}`
-        }
-    } 
+//     const configArtista = {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Cache-Control': 'no-cache',
+//             'Authorization' : `Bearer ${tokenArtista}`
+//         }
+//     } 
 
     
     
