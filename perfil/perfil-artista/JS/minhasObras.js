@@ -65,7 +65,7 @@ function getObraPronta(){
         }),
         obrasArtistas.innerHTML += `<div class="div_button_adicionar_obra">
 
-                <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil">
+                <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil" onclick="window.location.href = './adicionar-obra/index.html'">
                     <img src="../img/plus.png" alt="" srcset="">
                 </button>
         
@@ -78,8 +78,11 @@ function getObraPronta(){
                         <button class="button_azul" id="button_negar_exclusao_obra">NÃO</button>
                         <button class="button_vermelho" id="button_confirmar_exclusao_obra">SIM</button>
                     </div>
-            </div>`
+            </div>`;
+
+            
     });
+    
   
 }
 

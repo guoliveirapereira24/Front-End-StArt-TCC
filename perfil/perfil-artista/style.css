@@ -37,8 +37,9 @@ h1{
 }
 
 #icon_lapis:hover{
+    transition: all 0.3s;
     cursor: pointer;
-    transform: scale(1.1);
+    transform: rotate(360deg) scale(1.2);
 }
 
 #avaliacao img{
@@ -68,7 +69,7 @@ h1{
     font-size: 40px;
 }
 .transparente{
-    opacity: 50%;
+    color: rgba(0, 0, 0, 0.5)
 }
 .descricao_perfil_artista{
     height: 300px;
@@ -241,27 +242,7 @@ h1{
 .modal_excluir_obra h2, .modal_excluir_proposta h2{
     margin-left: 4%;
 }
-.fundo_modal_cancelar_proposta, .fundo_modal_excluir_proposta, .fundo_modal_finalizar_pedido{
-    width: 100vw;
-    height: 1000vh;
-    background-color: #0000007d;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-}
-.fundo_modal_finalizar_pedido{
-    display:none;
 
-}
-.fundo_modal_excluir_proposta{
-    display: none;
-}
-.fundo_modal_cancelar_proposta{
-    display:none;
-
-}
 .modal_cancelar_proposta{
     display: flex;
     background-color: white;
@@ -371,13 +352,12 @@ h1{
     justify-content: center;
     align-items: center;
 }
-#card{
+.card{
     height: 420px;
     width: 55vw;
     /* border: 1px solid; */
     border-radius: 15px;
     margin-top: 20px;
-    margin-left: 10%;
     background-color: #FCFCFC;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     
@@ -566,28 +546,93 @@ h1{
     color: #FFC700;
 }
 
-.modal_ver_pedido{
+.fundo_ver_pedido{
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+.fundo_modal_excluir_proposta{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+.fundo_modal_cancelar_proposta{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+.fundo_modal_finalizar_pedido{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+
+.modal_ver_pedido{
+    display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    position: absolute;
-    top: 125vh;
     height: 480px;
     width: 50vw;
     /* border: 1px solid; */
     border-radius: 15px;
-    margin-top: 20px;
-    margin-left: 10%;
-    background-color: #FCFCFC;
+  
+    background-color: #ffffff;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     justify-content: center;
     
 }
-.modal_excluir_proposta{
-    display: none;
-    top: 125vh;
+.modal_excluir_proposta, .modal_cancelar_proposta, .modal_finalizar_pedido{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 480px;
+    width: 50vw;
+    /* border: 1px solid; */
+    border-radius: 15px;
+  
+    background-color: #ffffff;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    justify-content: center;
 }
+
+.modal_excluir_proposta button{
+    width: 10vw;
+}
+
 .nome_tipo_contato{
     width: 100%;
     /* background-color: #04BA00; */
@@ -601,6 +646,21 @@ h1{
     /* background-color: #40E0D0; */
 }
 .fechar{
-    margin-left: 8%;
-    width: 3%;
+    margin-left: 10%;
+    font-size: 40px;
+}
+
+.fechar:hover{
+    cursor: pointer;
+    color: red;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+button{
+    transition: 0.2s;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);  
 }
