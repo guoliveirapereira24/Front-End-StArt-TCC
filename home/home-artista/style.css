@@ -240,11 +240,11 @@ h2{
     display: flex;
     width: 200px;
     flex-direction: row-reverse;
-    background-color: yellow;
+    /* background-color: yellow; */
     border: 10px solid;
     border-top: none;
     border-left: none;
-    /* margin-top: 10x; */
+    /* margin-top: 10px; */
     margin-left: 360px;
 }
 .botao button{

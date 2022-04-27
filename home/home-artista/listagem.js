@@ -2,10 +2,10 @@
 
 const tokenArtista = localStorage.getItem('tokenArtista');
 
-if(tokenArtista === "null" || tokenArtista === null || 
-   tokenArtista === "" || tokenArtista === "undefined") {
-  window.location.href = "../../index.html";
-} 
+// if(tokenArtista === "null" || tokenArtista === null || 
+//    tokenArtista === "" || tokenArtista === "undefined") {
+//   window.location.href = "../../index.html";
+// } 
 
 const buttonLogout = document.getElementById('logout');
 
