@@ -96,9 +96,10 @@ function getMinhasPropostas(){
                 buttonEditar.innerHTML = "Editar Proposta";
 
                 const buttonExcluir = document.createElement('button');
-                buttonEditar.id = "excluir_proposta";
-                buttonEditar.innerHTML = "Excluir Proposta";
-                buttons.appendChild(buttonEditar, buttonExcluir);
+                buttonExcluir.id = "excluir_proposta";
+                buttonExcluir.innerHTML = "Excluir Proposta";
+                buttons.appendChild(buttonEditar);
+                buttons.appendChild(buttonExcluir);
 
             } else if(status == "Aceita"){
                 const buttonIniciarPedido = document.createElement('button');
@@ -112,8 +113,8 @@ function getMinhasPropostas(){
    
 
                 const buttonExcluir = document.createElement('button');
-                buttonEditar.id = "excluir_proposta";
-                buttonEditar.innerHTML = "Excluir Proposta";
+                buttonExcluir.id = "excluir_proposta";
+                buttonExcluir.innerHTML = "Excluir Proposta";
 
                 buttons.innerHTML = buttonIniciarPedido.outerHTML;
                 buttons.appendChild(buttonEditar);
