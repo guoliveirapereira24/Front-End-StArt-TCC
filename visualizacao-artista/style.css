@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    margin-left: 25%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 545px;
+    width: 550px;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 1px solid; */
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 5%;
+    background-color: #FCFCFC;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712); 
+}
+.listagem_artistas{
+    display: flex;
+    flex-direction: row;
+    height: 55vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    flex-wrap: wrap;
+    width: 78%;
+    /* gap: 40px; */
+    /* padding-left: 50%; */
+    /* padding-right: 50%; */
+    background-color: slateblue;
+}
+.linha_artistas{
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 1%;
+    
+    flex-wrap: wrap;
+    width: 100%;
+    /* position: absolute; */
+    background-color: #04BA00;
+}
+
+
+
+.listagem_pedidos_genero{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 30px;
+    background-color: yellowgreen;
+}
+
+#listagem_genero{
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 1%;
+    background-color: #40E0D0;
+}
+.generos section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    /* background-color: yellowgreen; */
+}
+.generos section p{
+    font-size: 22px;
+}
+.generos{
+    display: flex;
+    flex-direction: column;
+
+    width: 18vw;
+    /* background-color: aqua; */
+    margin-top: 20px;
+    margin-left: 30px;
+    /* height: 550px; */
+}
+.generos input{
+    height: 30px;
+    width: 50px;
+    /* background-color: yellowgreen; */
+}
+
+.img_artista{
+    width: 100%;
+    height: 82%;
+    /* background-color:aqua */
+}
+.img_artista img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.nome_coracao{
+    display: flex;
+    flex-direction:row;
+    padding-left:5%;
+    
+    /* padding-right: 5%; */
+    background-color:yellow;
+    justify-content:space-between
+}
+.nome_coracao img{
+    width: 85%;  
+    /* margin-right: 5%;   */
+}
+.nome_coracao button{
+    width: 7%;
+    margin-right: 2%;
+    background-color:transparent;
+    border:none;
+}
+.especialidades_avaliacao{
+    display: flex;
+    flex-direction: row;
+    height:70%;
+    /* padding-left: 5%; */
+    /* padding-right: 5%; */
+    justify-content: space-between;
+    /* background-color:slategrey; */
+}
+.especialidades{
+    display: flex;
+    width:85%;
+    height: 100%;
+    padding-left: 5%;
+    flex-direction: column;
+    background-color:tomato
+}
+.especialidade{
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    width:100%;
+    /* background-color:violet; */
+}
+.avaliacao{
+    display: flex;
+    width:18%;
+    height: 85%;
+    align-items: center;
+    justify-content: center;
+    background-color:aqua;
+    font-size: 30px;
+    margin-right: 1%;
+    /* gap:5%; */
+}
+.avaliacao img{
+    width:45%;
+    height: 40px ;
+
+}
+.especialidade_artista_p{
+    width:80%;
+    /* background-color:steelblue; */
+}

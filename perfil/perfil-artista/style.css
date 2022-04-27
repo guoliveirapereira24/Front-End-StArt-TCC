@@ -5,6 +5,7 @@
     font-family: 'Raleway';
 }
 
+
 #img_nome_avaliacao{
     display: flex;
     flex-direction: row;
@@ -228,8 +229,8 @@ h1{
     background-color:red;
     color:white;
 }
-.modal_excluir_obra, .modal_excluir_proposta{
-    display: none;
+.modal_excluir_obra, .modal_excluir_proposta, .modal_finalizar_pedido{
+    display: flex;
     flex-direction: column;
     position: fixed;
     height: 100%;
@@ -239,14 +240,70 @@ h1{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     background-color:white;
 }
-.modal_excluir_obra h2, .modal_excluir_proposta h2{
+/* .modal_excluir_obra h2, .modal_excluir_proposta h2{
     margin-left: 4%;
+<<<<<<< HEAD
 }
 
+=======
+} */
+.fundo_modal_cancelar_proposta, .fundo_modal_excluir_proposta, 
+.fundo_modal_finalizar_pedido, .fundo_modal_avaliar_cliente{
+    width: 100vw;
+    height: 1000vh;
+    background-color: #0000007d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.fundo_modal_finalizar_pedido{
+    display:none;
+}
+.fundo_modal_excluir_proposta{
+    display: none;
+}
+.fundo_modal_cancelar_proposta{
+    display:none;
+}
+.fundo_modal_avaliar_cliente{
+    display:none;
+}
+.modal_avaliar_cliente{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 28%;
+    width: 25%;
+    top: 30%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    background-color:white;
+}
+.avaliacao_escrita_para_cliente{
+    width:80%;
+    border-radius:10px;
+}
+.avaliacao_modal_avaliar{
+    display: flex;
+    align-items: center;
+    font-size:24px;
+    gap: 3px;
+    padding-left: 4%;
+    margin-left: 7%;
+    margin-bottom: 1%;
+}
+.avaliacao_modal_avaliar img{
+    width:5%;
+}
+>>>>>>> fdfbccd9f129e7780dc7941eeb0f6cb517f1f64f
 .modal_cancelar_proposta{
     display: flex;
     background-color: white;
-    
     
     position: fixed;
     flex-direction: column;
@@ -256,8 +313,8 @@ h1{
     top: 40%;
     /* padding-left: 2%; */
     font-size: 20px;
-    height:30%;
-    width: 33%;
+    height:25%;
+    width: 32%;
     border-radius: 10px;
     border: none;
 }
@@ -293,37 +350,61 @@ h1{
     display: flex;
     flex-direction: column;
     position: fixed;
-    height: 300px;
-    width: 30%;
-    top: 40%;
+    height: 18%;
+    width: 25%;
+    top: 30%;
     margin-top: 5%;
     border-radius: 10px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     background-color:white;
 }
 
-.botoes_excluir_obra, .botoes_excluir_proposta{
+.botoes_excluir_obra, .botoes_excluir_proposta, 
+.botoes_finalizar_pedido, .botoes_modal_avaliar_cliente{
     display:flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    height: 20%;
+    height: 30%;
     gap: 5%;
     /* background-color:#40E0D0 */
 }
-.botoes_excluir_obra button, .botoes_excluir_proposta button{
+.botoes_modal_avaliar_cliente{
+    height: 20%;
+    margin-top: 1%;
+}
+.botoes_excluir_obra button, .botoes_excluir_proposta button,
+ .botoes_finalizar_pedido button{
     height: 100%;
     width: 40%;
     border: 1px solid;
     border-radius: 10px;
     font-size: 20px;
 }
+.botoes_modal_avaliar_cliente button{
+    height: 90%;
+    width: 40%;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 20px
 
-.modal_excluir_obra h2, .modal_excluir_proposta h2{
+}
+.modal_excluir_obra h2, .modal_excluir_proposta h2, .modal_finalizar_pedido h2{
     height: 55%;
     padding-top: 5%;
     padding-left: 10%;
     padding-right: 5%;
     /* background-color:tomato */
+}
+/* .modal_excluir_proposta h2{
+    height: 55%;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+} */
+.modal_avaliar_cliente h2{
+    font-size:30px;
+    padding-bottom: 1%;
 }
 .button_edit_delete{
     width: 100%;
@@ -614,6 +695,7 @@ h1{
     justify-content: center;
     
 }
+<<<<<<< HEAD
 .modal_excluir_proposta, .modal_cancelar_proposta, .modal_finalizar_pedido{
     display: flex;
     flex-direction: column;
@@ -627,6 +709,13 @@ h1{
     background-color: #ffffff;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     justify-content: center;
+=======
+.modal_excluir_proposta{
+    display: flex;
+    width:20%;
+    height:15%;
+    top: 30%;
+>>>>>>> fdfbccd9f129e7780dc7941eeb0f6cb517f1f64f
 }
 
 .modal_excluir_proposta button{
