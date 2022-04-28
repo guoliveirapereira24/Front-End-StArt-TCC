@@ -20,43 +20,16 @@ function getMinhasPropostas(){
 
         const propostas = data.proposta;
            
-        return propostas.forEach(proposta => {
-
-
-        const atualizarStatus = (idProposta) => {
-
-            const bodyAtualizarStatus = {
-                "descricao" : proposta.descricao, 
-                "preco" : proposta.preco,
-                "prazoEntrega" : proposta.prazoEntrega, 
-                "status" : "Em andamento"
-            }
-
-            const configAtualizarStatus = {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Cache-Control': 'no-cache',
-                    'Authorization' : `Bearer ${tokenArtista}`
-                },
-                body: JSON.stringify(bodyAtualizarStatus)
-            }
-        
-            fetch(`http://localhost:3000/proposta/atualizarProposta/${idProposta}`, configAtualizarStatus)
-            .then((res) => res.json())
-            .then((data) => {
-                window.reload();
-            });
-        } 
-
+        return propostas.map(proposta => {
 
             let prazoEntregaPadraoBanco = proposta.prazoEntrega;
             let prazoEntregaPadrao = prazoEntregaPadraoBanco[0] + prazoEntregaPadraoBanco[1] + prazoEntregaPadraoBanco[2] + prazoEntregaPadraoBanco[3] + prazoEntregaPadraoBanco[4] + prazoEntregaPadraoBanco[5] + prazoEntregaPadraoBanco[6] + prazoEntregaPadraoBanco[7] + prazoEntregaPadraoBanco[8] + prazoEntregaPadraoBanco[9];
             let prazoEntregaPadraoBrasileiro = prazoEntregaPadrao.split('-').reverse().join('/');
 
+
             let statusClass = "";
             let status = proposta.status;
-            if(status == "Aceita" || status == "Finalizada" || status == "Despachado"){
+            if(status == "Aceita" || status == "Finalizado" || status == "Despachado"){
                 statusClass = "aceita";
             } else if(status == "Recusada" || status == "Cancelada"){
                 statusClass = "recusada";
@@ -109,7 +82,7 @@ function getMinhasPropostas(){
                     
                 </div>
 
-                <div id="botoes" class="botoes">
+                <div id="botoes ${proposta.idProposta}" class="botoes">
                 </div>
 
 
@@ -118,82 +91,245 @@ function getMinhasPropostas(){
             `
             minhasPropostas.appendChild(div);
 
-            const buttons = document.getElementById('botoes');
+            const buttons = document.getElementById(`botoes ${proposta.idProposta}`);
+
+            const atualizarStatus = (idProposta, status) => {
+
+                let prazoEntregaPadraoBanco = proposta.prazoEntrega;
+                let prazoEntregaPadrao = prazoEntregaPadraoBanco[0] + prazoEntregaPadraoBanco[1] + prazoEntregaPadraoBanco[2] + prazoEntregaPadraoBanco[3] + prazoEntregaPadraoBanco[4] + prazoEntregaPadraoBanco[5] + prazoEntregaPadraoBanco[6] + prazoEntregaPadraoBanco[7] + prazoEntregaPadraoBanco[8] + prazoEntregaPadraoBanco[9];
+    
+                const bodyAtualizarStatus = {
+                    "descricao" : proposta.descricaoProposta, 
+                    "preco" : proposta.preco,
+                    "prazoEntrega" : prazoEntregaPadrao, 
+                    "status" : `${status}`
+                }
+    
+                const configAtualizarStatus = {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Cache-Control': 'no-cache',
+                        'Authorization' : `Bearer ${tokenArtista}`
+                    },
+                    body: JSON.stringify(bodyAtualizarStatus)
+                }
+            
+                fetch(`http://localhost:3000/proposta/atualizarProposta/${idProposta}`, configAtualizarStatus)
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                });
+            } 
 
             if(status == "Publicada"){
                 const buttonEditar = document.createElement('button');
-                buttonEditar.id = "editar_proposta";
+                buttonEditar.id = `editar_proposta ${proposta.idProposta}`;
+                buttonEditar.className = "editar_proposta";
                 buttonEditar.innerHTML = "Editar Proposta";
 
                 const buttonExcluir = document.createElement('button');
-                buttonExcluir.id = "excluir_proposta";
+                buttonExcluir.id = `excluir_proposta ${proposta.idProposta}`;
+                buttonExcluir.className = "excluir_proposta";
                 buttonExcluir.innerHTML = "Excluir Proposta";
 
+                buttons.innerHTML = ""
                 buttons.appendChild(buttonEditar);
                 buttons.appendChild(buttonExcluir);
+
+                const fundo_excluir_proposta = document.getElementById("fundo_excluir_proposta");
+    
+                buttonExcluir.addEventListener("click", function(){
+    
+                    fundo_excluir_proposta.innerHTML = 
+                    `
+                    <div class="modal_excluir_proposta" id="modal_excluir_proposta">
+                        <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
+                        <div class="botoes_excluir_proposta">
+                            <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
+                            <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
+                        </div>
+                    </div>
+                    `;
+    
+                    fundo_excluir_proposta.style.display = "flex";
+    
+                    const button_negar_exclusao_proposta = document.getElementById("button_negar_exclusao_proposta");
+    
+                    button_negar_exclusao_proposta.addEventListener("click", function(){
+    
+                        fundo_excluir_proposta.style.display = "none";
+        
+                    });
+            
+    
+                });
 
             } else if(status == "Aceita"){
                 const buttonIniciarPedido = document.createElement('button');
-                buttonIniciarPedido.id = "iniciar_pedido";
+                buttonIniciarPedido.id = `iniciar_pedido ${proposta.idProposta}`;
+                buttonIniciarPedido.className = "iniciar_pedido";
+                buttonIniciarPedido.onclick = atualizarStatus(proposta.idProposta, "Em andamento");
                 buttonIniciarPedido.innerHTML = "Iniciar Pedido";
- 
 
                 const buttonEditar = document.createElement('button');
-                buttonEditar.id = "editar_proposta";
+                buttonEditar.id = `editar_proposta ${proposta.idProposta}`;
+                buttonEditar.className = "editar_proposta";
                 buttonEditar.innerHTML = "Editar Proposta";
    
-
                 const buttonExcluir = document.createElement('button');
-                buttonExcluir.id = "excluir_proposta";
+                buttonExcluir.id = `excluir_proposta ${proposta.idProposta}`;
+                buttonExcluir.className = "excluir_proposta";
                 buttonExcluir.innerHTML = "Excluir Proposta";
 
-                buttons.innerHTML = buttonIniciarPedido.outerHTML;
+                buttons.innerHTML = ""
+                buttons.appendChild(buttonIniciarPedido);
                 buttons.appendChild(buttonEditar);
                 buttons.appendChild(buttonExcluir);
 
+                const fundo_excluir_proposta = document.getElementById("fundo_excluir_proposta");
+    
+                buttonExcluir.addEventListener("click", function(){
+    
+                    fundo_excluir_proposta.innerHTML = 
+                    `
+                    <div class="modal_excluir_proposta" id="modal_excluir_proposta">
+                        <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
+                        <div class="botoes_excluir_proposta">
+                            <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
+                            <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
+                        </div>
+                    </div>
+                    `;
+    
+                    fundo_excluir_proposta.style.display = "flex";
+    
+                    const button_negar_exclusao_proposta = document.getElementById("button_negar_exclusao_proposta");
+    
+                    button_negar_exclusao_proposta.addEventListener("click", function(){
+    
+                        fundo_excluir_proposta.style.display = "none";
+        
+                    });
+            
+    
+                });
+                
+                
             } else if(status == "Em andamento"){
                 const buttonFinalizarPedido = document.createElement('button');
-                buttonFinalizarPedido.id = "finalizar_pedido";
+                buttonFinalizarPedido.id = `finalizar_pedido ${proposta.idProposta}`;
+                buttonFinalizarPedido.className = "finalizar_pedido";
                 buttonFinalizarPedido.innerHTML = "Finalizar Pedido";
 
                 const buttonEntrarContato = document.createElement('button');
-                buttonEntrarContato.id = "entrar_em_contato";
+                buttonEntrarContato.id = `entrar_em_contato ${proposta.idProposta}`;
+                buttonEntrarContato.className = "entrar_em_contato";
                 buttonEntrarContato.innerHTML = "Entrar em contato";
 
                 const buttonCancelar = document.createElement('button');
-                buttonCancelar.id = "cancelar_proposta";
+                buttonCancelar.id = `cancelar_proposta ${proposta.idProposta}`;
+                buttonCancelar.className = "cancelar_proposta";
                 buttonCancelar.innerHTML = "Cancelar Proposta";
 
+                buttons.innerHTML = ""
                 buttons.appendChild(buttonFinalizarPedido);
                 buttons.appendChild(buttonEntrarContato);
                 buttons.appendChild(buttonCancelar);
 
+                const fundo_finalizar_pedido = document.getElementById("fundo_cancelar_proposta");
+            
+
+                buttonFinalizarPedido.addEventListener("click", function(){
+
+                    fundo_finalizar_pedido.innerHTML = 
+                    `
+                    <div class="modal_finalizar_pedido" id="modal_finalizar_pedido">
+
+                    <h2>VOCÊ TEM CERTEZA DE QUE DESEJA FINALIZAR ESTE PEDIDO?</h2>
+                        <div class="botoes_finalizar_pedido">
+                            <button class="button_vermelho" id="button_negar_finalizar_pedido">NÃO</button>
+                            <button class="button_azul" id="button_confirmar_finalizar_pedido">SIM</button>
+                        </div>
+                    </div>                
+                    `;
+
+                    fundo_finalizar_pedido.style.display = "flex";
+
+                    const button_confirmar_finalizar_pedido = document.getElementById("button_confirmar_finalizar_pedido");
+
+                    button_confirmar_finalizar_pedido.addEventListener("click", function(){
+
+                        atualizarStatus(proposta.idProposta, "Finalizado")
+                        fundo_finalizar_pedido.style.display = "none";
+
+                    })
+
+                    const button_negar_finalizar_pedido = document.getElementById("button_negar_finalizar_pedido");
+
+                    button_negar_finalizar_pedido.addEventListener("click", function(){
+
+                        fundo_finalizar_pedido.style.display = "none";
+        
+                    });
+            
+
+                });
+
+                const fundo_cancelar_proposta = document.getElementById("fundo_cancelar_proposta");
+          
+                buttonCancelar.addEventListener("click", function(){
+
+                    fundo_cancelar_proposta.innerHTML = 
+                    `
+                    <div class="modal_excluir_proposta" id="modal_excluir_proposta">
+                        <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
+                        <div class="botoes_excluir_proposta">
+                            <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
+                            <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
+                        </div>
+                    </div>
+                    `;
+
+                    fundo_cancelar_proposta.style.display = "flex";
+
+                    const button_negar_exclusao_proposta = document.getElementById("button_negar_exclusao_proposta");
+
+                    button_negar_exclusao_proposta.addEventListener("click", function(){
+
+                        fundo_cancelar_proposta.style.display = "none";
+        
+                    });
+                });
+
+
             } else if(status == "Finalizado"){
                 const buttonPedidoDespachado = document.createElement('button');
-                buttonPedidoDespachado.id = "pedido_despachado";
+                buttonPedidoDespachado.id = `pedido_despachado ${proposta.idProposta}`;
+                buttonPedidoDespachado.className = "pedido_despachado";
+                buttonPedidoDespachado.onclick = atualizarStatus(proposta.idProposta, "Despachado")
                 buttonPedidoDespachado.innerHTML = "Pedido Despachado";
 
                 const buttonEntrarContato = document.createElement('button');
-                buttonEntrarContato.id = "entrar_em_contato";
+                buttonEntrarContato.id = `entrar_em_contato ${proposta.idProposta}`;
+                buttonEntrarContato.className = "entrar_em_contato";
                 buttonEntrarContato.innerHTML = "Entrar em contato";
 
+                buttons.innerHTML = ""
                 buttons.appendChild(buttonPedidoDespachado);
                 buttons.appendChild(buttonEntrarContato);
+
 
             } else if(status == "Despachado"){
                 const buttonEntrarContato = document.createElement('button');
                 buttonEntrarContato.id = "entrar_em_contato";
+                buttonEntrarContato.className = "entrar_em_contato";
                 buttonEntrarContato.innerHTML = "Entrar em contato";
-
+                
+                buttons.innerHTML = ""
                 buttons.appendChild(buttonEntrarContato);
             }
 
-
-
-
-            const button_iniciar_pedido = document.getElementById('iniciar_pedido');
-
-            button_iniciar_pedido.addEventListener('click', atualizarStatus(proposta.idProposta))
 
 
             const fundo_ver_pedido = document.getElementById("fundo_ver_pedido");
@@ -243,112 +379,9 @@ function getMinhasPropostas(){
         
 
             });
-
-            const fundo_excluir_proposta = document.getElementById("fundo_excluir_proposta");
-          
-            const button_excluir_proposta = document.getElementById("excluir_proposta");
-
-            button_excluir_proposta.addEventListener("click", function(){
-
-                fundo_excluir_proposta.innerHTML = 
-                `
-                <div class="modal_excluir_proposta" id="modal_excluir_proposta">
-                    <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
-                    <div class="botoes_excluir_proposta">
-                        <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
-                        <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
-                    </div>
-                </div>
-                `;
-
-                fundo_excluir_proposta.style.display = "flex";
-
-                const button_negar_exclusao_proposta = document.getElementById("button_negar_exclusao_proposta");
-
-                button_negar_exclusao_proposta.addEventListener("click", function(){
-
-                    fundo_excluir_proposta.style.display = "none";
-    
-                });
-        
-
-            });
-
-            const fundo_cancelar_proposta = document.getElementById("fundo_cancelar_proposta");
-          
-            const button_cancelar_proposta = document.getElementById("cancelar_proposta");
-
-            button_cancelar_proposta.addEventListener("click", function(){
-
-                fundo_cancelar_proposta.innerHTML = 
-                `
-                <div class="modal_excluir_proposta" id="modal_excluir_proposta">
-                    <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA PROPOSTA?</h2>
-                    <div class="botoes_excluir_proposta">
-                        <button class="button_azul" id="button_negar_exclusao_proposta">NÃO</button>
-                        <button class="button_vermelho" id="button_confirmar_exclusao_proposta">SIM</button>
-                    </div>
-                </div>
-                `;
-
-                fundo_cancelar_proposta.style.display = "flex";
-
-                const button_negar_exclusao_proposta = document.getElementById("button_negar_exclusao_proposta");
-
-                button_negar_exclusao_proposta.addEventListener("click", function(){
-
-                    fundo_cancelar_proposta.style.display = "none";
-    
-                });
-        
-
-            });
-
-
-            const fundo_finalizar_pedido = document.getElementById("fundo_cancelar_proposta");
-          
-            const button_finalizar_pedido = document.getElementById("finalizar_pedido");
-
-            button_finalizar_pedido.addEventListener("click", function(){
-
-                fundo_finalizar_pedido.innerHTML = 
-                `
-                <div class="modal_finalizar_pedido" id="modal_finalizar_pedido">
-
-                <h2>VOCÊ TEM CERTEZA DE QUE DESEJA FINALIZAR ESTE PEDIDO?</h2>
-                    <div class="botoes_finalizar_pedido">
-                        <button class="button_vermelho" id="button_negar_finalizar_pedido">NÃO</button>
-                        <button class="button_azul" id="button_confirmar_finalizar_pedido">SIM</button>
-                    </div>
-                </div>                
-                `;
-
-                fundo_finalizar_pedido.style.display = "flex";
-
-                const button_negar_finalizar_pedido = document.getElementById("button_negar_finalizar_pedido");
-
-                button_negar_finalizar_pedido.addEventListener("click", function(){
-
-                    fundo_finalizar_pedido.style.display = "none";
-    
-                });
-        
-
-            });
-
-
-  
-            
-       
-
-
         })
         
-    })
-
-    
-
-  
+    })  
 }
 
 getMinhasPropostas();

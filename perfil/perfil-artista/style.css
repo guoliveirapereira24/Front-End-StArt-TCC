@@ -541,7 +541,7 @@ h1{
     justify-content: center;
     /* background-color: yellow; */
 }
-#botoes button{
+.botoes button{
     height: 55px;
     border: none;
     border-radius: 15px;
@@ -608,13 +608,13 @@ h1{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#editar_proposta, #entrar_em_contato{
+.editar_proposta, .entrar_em_contato{
     background-color: #40E0D0;
 }
-#rejeitar, #excluir_proposta, #cancelar_proposta{
+.rejeitar, .excluir_proposta, .cancelar_proposta{
     background-color: #E14A4A;
 }
-#iniciar_pedido, #finalizar_pedido, #pedido_despachado{
+.iniciar_pedido, .finalizar_pedido, .pedido_despachado{
     background-color: #04BA00;
 }
 .recusada{

@@ -14,13 +14,33 @@ body{
 
     /* background-color: aquamarine; */
 }
+
+button{
+    transition: 0.15s;
+}
+button:hover{
+
+    transform:scale(1.1);
+}
+
+button p{
+    transition: 0.15s;
+}
+button p:hover{
+
+    transform:scale(1.1);
+}
+
 #button_editar_perfil{
     font-size: 27px;
+    transform: none;
+    background-color:transparent;
 }
 #button_alterar_senha, #button_informacoes_pessoais, #button_forma_recebimento, #botao_desativar_conta{
     border:none;
     font-size: 27px;
-
+    transform: none;
+    background-color:transparent;
 }
 
 .editar_perfil{
