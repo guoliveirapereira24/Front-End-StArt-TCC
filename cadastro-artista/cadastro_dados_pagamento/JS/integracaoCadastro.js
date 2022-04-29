@@ -204,6 +204,7 @@ const cadastrarContaBancaria = (tipoConta,agencia,conta,digito,cpf,titular,digit
         .then((res) => res.json())
         .then((data) => {
             window.location.href = "../../../home/home-artista/index.html";
+            window.location.href = "../../../perfil/perfil-artista/index.html";
         });
 } 
 

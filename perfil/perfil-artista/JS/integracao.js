@@ -96,7 +96,7 @@ fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configA
                     if(data.avaliacaoArtista == null) {
                         return avaliacaoArtista.innerHTML = 0 + ".00";
                     } else {
-                        return avaliacaoArtista.innerHTML = avaliacao;
+                        return avaliacaoArtista.innerHTML = avaliacao.toFixed(2);
                     }
             });
     

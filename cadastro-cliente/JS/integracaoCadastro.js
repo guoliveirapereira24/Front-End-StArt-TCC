@@ -311,6 +311,6 @@ const cadastrarCliente = (
         .then((data) => {
             console.log(data)
             localStorage.setItem('tokenCliente', data.response.clienteCadastrado.token); 
-            window.location.href = "../home/home-cliente/cliente.html";
+            window.location.href = "../perfil/perfil-cliente/index.html";
         });
 }
