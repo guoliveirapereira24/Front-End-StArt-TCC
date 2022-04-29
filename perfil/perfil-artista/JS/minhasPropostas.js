@@ -95,13 +95,7 @@ function getMinhasPropostas(){
 
             const atualizarStatus = (idProposta, status) => {
 
-                let prazoEntregaPadraoBanco = proposta.prazoEntrega;
-                let prazoEntregaPadrao = prazoEntregaPadraoBanco[0] + prazoEntregaPadraoBanco[1] + prazoEntregaPadraoBanco[2] + prazoEntregaPadraoBanco[3] + prazoEntregaPadraoBanco[4] + prazoEntregaPadraoBanco[5] + prazoEntregaPadraoBanco[6] + prazoEntregaPadraoBanco[7] + prazoEntregaPadraoBanco[8] + prazoEntregaPadraoBanco[9];
-    
                 const bodyAtualizarStatus = {
-                    "descricao" : proposta.descricaoProposta, 
-                    "preco" : proposta.preco,
-                    "prazoEntrega" : prazoEntregaPadrao, 
                     "status" : `${status}`
                 }
     
@@ -115,7 +109,7 @@ function getMinhasPropostas(){
                     body: JSON.stringify(bodyAtualizarStatus)
                 }
             
-                fetch(`http://localhost:3000/proposta/atualizarProposta/${idProposta}`, configAtualizarStatus)
+                fetch(`http://localhost:3000/proposta/atualizarStatus/${idProposta}`, configAtualizarStatus)
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data);
@@ -341,7 +335,7 @@ function getMinhasPropostas(){
                fundo_ver_pedido.innerHTML = 
 
                 ` 
-                <div class="modal_ver_pedido" id="modal_ver_pedido">
+                <div class="modal_ver_pedido" id="modal_ver_pedido ${proposta.idProposta}">
                     <div class="nome_tipo_contato" id="nome_tipo_contato">
 
                         <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
