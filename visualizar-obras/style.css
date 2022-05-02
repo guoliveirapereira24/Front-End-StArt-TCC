@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    margin-left: 25%;
+}
+.aba_categoria{
+    display: flex;
+
+    height: 50px; 
+    width: 90%;
+    /* background-color: #04BA00; */
+    /* border-bottom: 2px solid; */
+    justify-content: space-between;
+    align-items: center;
+}
+.aba_categoria img{
+    width: 18%;
+    height: 65%;
+    /* margin-right: 10%; */
+}
+.listagem_pedidos_genero{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top:2%;
+    /* background-color: yellowgreen; */
+}
+
+.listagem_genero{
+    display: flex;
+    position: fixed;
+    width: 15%;
+    height: 100%;
+    overflow: scroll;
+	scroll-snap-type: both mandatory;
+    overflow-y: auto;
+    flex-direction: column;
+    border-right: 1px solid;
+    /* margin-left: 1%; */
+    /* margin-bottom:10vh; */
+    padding-bottom: 4%;
+    background-color: #40E0D0;
+}
+.generos section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    /* background-color: yellowgreen; */
+}
+.generos section p{
+    font-size: 22px;
+}
+.generos{
+    display: flex;
+    flex-direction: column;
+    /* border-bottom: 2px solid; */
+    width: 100%;
+    padding-bottom: 10%;
+    /* background-color: aqua; */
+    /* margin-top: 20px; */
+    padding-left: 10%;
+    /* height: 550px; */
+}
+.generos input{
+    height: 30px;
+    width: 50px;
+    /* background-color: yellowgreen; */
+}
+
+
+.listagem_obras{
+    display: flex;
+    flex-direction: row;
+    /* height: 500vh; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1%;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    /* gap: 40px; */
+    /* padding-left: 50%; */
+    /* padding-right: 50%; */
+    margin-left: 15%;
+    /* background-color: slateblue; */
+}
+.linha_obras{
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    
+    flex-wrap: wrap;
+    width: 95%;
+    margin-left: 5%;
+    gap: 5%;
+
+    /* margin-right: 5%; */
+    /* position: absolute; */
+    /* background-color: #04BA00; */
+}
+.obra{
+    
+    /* background-color: #DCDCDC; */
+    background-color: #FCFCFC;
+
+    display: flex;
+    flex-direction: column;
+    height: 515px;
+    border-radius: 15px;
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+}
+
+.nome_artista_preco{
+    display: flex;
+    flex-direction: row;
+
+    height: 20%;
+
+}
+.nome_obra_artista_categoria_tecnica{
+
+    /* gap: 10px; */
+    width: 100%;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.nome_obra_artista{
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+
+}
+.nome_obra_artista_categoria_tecnica p{
+    margin-top: 7px;
+    font-size: 18px;
+    /* background-color: violet; */
+
+}
+.categoria_tecnica{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    /* background-color: #04BA00; */
+}
+.img_favoritada_preco{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 56%;
+    gap: 5%;
+    /* background-color: tomato; */
+    align-items: flex-end;
+    justify-items: center;
+}
+.img_favoritada_preco img{
+    margin-top: 2px;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+    /* background-color: #40E0D0; */
+}
+.img_favoritada_preco p{
+    font-size: 25px;
+    /* height: 20px; */
+    /* background-color: yellow; */
+    /* margin-top: 5%; */
+    /* margin-right: 10px; */
+}
+.preco_obra_favorita{
+    margin-top: 1%;
+    margin-right: 5%;
+}
+.parcelas{
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 1%; */
+    height: 10%;
+    /* align-items: center; */
+    justify-content: end;
+    padding-right: 2%;
+    /* background-color: yellow; */
+    
+}
+.parcelas p{
+    font-size: 20px;
+    /* margin-left: 50%; */
+}
+.promocao{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: brown; */
+}
+.promocao_desativada{
+    display: none;
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: brown; */
+}
+.promocao p{
+    font-size: 20px;
+
+}
+.porcentagem_desconto{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+    padding-left: 7%;
+    border-radius: 15px 0px 0px 15px;
+    background-color:  rgba(46, 244, 224, 0.68);
+}
+.preco_original{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    border-radius: 0px 15px 15px 0px;
+    text-decoration: line-through;
+    background-color:  rgba(253, 0, 0, 0.5);;
+}
