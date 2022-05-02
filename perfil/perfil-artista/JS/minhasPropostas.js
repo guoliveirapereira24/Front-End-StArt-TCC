@@ -19,7 +19,9 @@ function getMinhasPropostas(){
         .then((data) => {
 
         const propostas = data.proposta;
-           
+
+
+        if(propostas !== undefined){   
         return propostas.map(proposta => {
 
             let prazoEntregaPadraoBanco = proposta.prazoEntrega;
@@ -121,9 +123,9 @@ function getMinhasPropostas(){
                 fetch(`http://localhost:3000/proposta/${idProposta}`, configExcluirProposta)
                     .then((res) => res.json())
                     .then((data) => {
-                        if(data.status == "success"){
+                
                             window.location.reload();
-                        } 
+                        
                     })
             }
 
@@ -619,8 +621,10 @@ function getMinhasPropostas(){
 
             });
         })
-        
-    })  
+    } else {
+        minhasPropostas.innerHTML = "<h2 id='semProposta'>Você não possui propostas...</h2>";
+    }
+    }) 
 }
 
 getMinhasPropostas();

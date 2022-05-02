@@ -11,44 +11,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
-    <script src="./index.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>ADICIONAR OBRA</title>
+    <title>EDITAR OBRA</title>
 </head>
 <body>
-        <h1>ADICIONAR OBRA</h1>
+        <h1>EDITAR OBRA</h1>
     <form class="form_adicionar_obra" id="form_adicionar_obra" action="">
 
     <div class="adicionar_obra_inputs">
         <div class="alinhamento">
 
             <label for="">
-                <input class="inputs" id="inputNome" type="text" placeholder="NOME">
+                <input class="inputs" id="input_text_nome" type="text" placeholder="NOME">
             </label>
 
             <label for="">
-                <input class="inputs" id="inputPreco" type="text" placeholder="PREÇO (SEM DESCONTO)">
-            </label>
-
-        </div>
-        <div class="alinhamento">
-
-            <label for="">
-                <input type="number" class="inputs" id="inputQuantidade" placeholder="QUANTIDADE">
-            </label>
-
-            <label for="">
-                <input class="inputs" id="inputTecnica" type="text" placeholder="TÉCNICA">
+                <input class="inputs" id="input_text_preco" type="text" placeholder="PREÇO (SEM DESCONTO)">
             </label>
 
         </div>
         <div class="alinhamento">
+
             <label for="">
-                <input type="text" class="inputs" id="inputDesconto" placeholder="DESCONTO">
+                <input type="number" class="inputs" id="input_number_quantidade_adicionar_obras" placeholder="QUANTIDADE">
             </label>
 
             <label for="">
-                <select class="inputs" name="categoria" id="selectCategoria">
+                <select class="inputs" name="tecnica" id="select_tecnica">
+                    <option value="">TÉCNICA</option>
+                    <option value=""></option>
+                </select>
+            </label>
+
+        </div>
+        <div class="alinhamento">
+            <label for="">
+                <input type="text" class="inputs" id="input_number_desconto_adicionar_obras" placeholder="DESCONTO">
+            </label>
+
+            <label for="">
+                <select class="inputs" name="categoria" id="select_categoria">
                     <option value="">CATEGORIA</option>
                     <option value=""></option>
                 </select>
@@ -56,7 +58,7 @@
         </div>
         <div class="alinhamento">
             <label for="">
-                <select class="inputs" name="exclusividade" id="selectExclusividade">
+                <select class="inputs" name="exclusividade" id="select_exclusividade">
                     <option value="">EXCLUSIVIDADE</option>
                     <option value=""></option>
                 </select>
@@ -72,7 +74,7 @@
 
         <div class="alinhamento_maior">
             <label for="">
-                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="textAreaDescricao" cols="30" rows="10" placeholder="DESCRIÇÃO"></textarea>
+                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="text_area_descricao" cols="30" rows="10" placeholder="DESCRIÇÃO"></textarea>
             </label>
             <label for="">
                 <p>IMAGEM (OBRIGATÓRIA)</p>

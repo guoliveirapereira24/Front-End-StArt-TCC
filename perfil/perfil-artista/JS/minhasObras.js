@@ -2,6 +2,28 @@
 
 const obrasArtistas = document.getElementById('linha_obrasArtistas');
 
+const deleteObraById = (idObraPronta) => {
+    const configObra = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+            'Authorization' : `Bearer ${tokenArtista}`
+        }
+    } 
+
+    fetch(`http://localhost:3000/obraPronta/${idObraPronta}`, configObra)
+        .then((res) => res.json())
+        .then((data) => {
+            window.location.reload();
+        });
+};
+
+const redirectEditObra = (idObraPronta) => {
+    window.location.href = `./editar-obra/index.html?${idObraPronta}`;
+}
+
+
 function getObraPronta(){
 
     const configObras = {
@@ -19,25 +41,20 @@ function getObraPronta(){
         .then((res) => res.json())
         .then((data) => {
             const obraPronta = data.obraPronta;
-           
-           return obraPronta.forEach(obraPronta => {
 
-            const div = document.createElement('div');
+            
+           if(obraPronta !== undefined){
+            return obraPronta.forEach(obraPronta => {
+
+                const idObraPronta = obraPronta.idObraPronta;
+
+                const div = document.createElement('div');
                 div.className = 'card_minha_obra';
                 div.id = obraPronta.idObraPronta;
                 div.innerHTML = 
                 `
-
                     <img src="../img/minha_obra1.png" alt="">
-                    <div class="edit_delete">
-
-                        <button>
-                            <img id="edit" src="../img/editar.png" alt="">
-                        </button>
-
-                        <button>
-                            <img id="button_delete" src="../img/excluir.png" alt="">
-                        </button>
+                    <div id="edit_delete ${idObraPronta}" class="edit_delete">    
                     </div>
             
 
@@ -55,51 +72,80 @@ function getObraPronta(){
                             </div>
                         </div>
                     </div>
-
                 `
+
                 obrasArtistas.appendChild(div);
 
+                const edit_delete = document.getElementById('edit_delete ' + idObraPronta);
+
+                const btnEdit = document.createElement('button');
+                btnEdit.className = 'btn_edit';
+                btnEdit.id = `btn_edit ${obraPronta.idObraPronta}`;
+                btnEdit.innerHTML = `<img id="edit" src="../img/editar.png" alt="" onclick="javascript:redirectEditObra(${obraPronta.idObraPronta})">`;
+                edit_delete.appendChild(btnEdit)
+
+                const btnDelete = document.createElement('button');
+                btnDelete.className = 'btn_delete';
+                btnDelete.id = `btn_delete ${obraPronta.idObraPronta}`;
+                btnDelete.innerHTML = `<img id="button_delete" src="../img/excluir.png" alt="" onclick="javascript:deleteObraById(${obraPronta.idObraPronta})">`;
+                edit_delete.appendChild(btnDelete);
                 
 
+                // const modal_excluir_obra = document.getElementById("modal_excluir_obra");
+                
+                // btnEdit.onclick = () => redirectEditObra(obraPronta.idObraPronta);
+        
+                // btnDelete.onclick = () => {
 
-        }),
-        obrasArtistas.innerHTML += `<div class="div_button_adicionar_obra">
+                
+                //     // modal_excluir_obra.appendChild(stringModalExcluirObra);
+                //     // modal_excluir_obra.style.display = 'flex';
+
+                //     // const button_negar_exclusao= document.getElementById("button_negar_exclusao_obra");
+                //     // const button_confirmar_exclusao = document.getElementById("button_confirmar_exclusao_obra");
+
+                //     // button_negar_exclusao.onclick = () => {
+                //     //         modal_excluir_obra.style.display = "none";
+                //     // }
+                //     // button_confirmar_exclusao.onclick = () => {
+                //     //     modal_excluir_obra.style.display = "none";
+                //     //     deleteObraById(button_delete.value);
+                //     //     window.location.reload();
+                //     // }
+                // } 
+
+            }),
+            obrasArtistas.innerHTML += 
+                `
+                <div class="div_button_adicionar_obra">
+
+                    <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil" onclick="window.location.href = './adicionar-obra/index.html'">
+                        <img src="../img/plus.png" alt="" srcset="">
+                    </button>   
+                
+            
+                </div>
+                `;    
+        } else {
+            obrasArtistas.innerHTML += 
+            `
+            <div class="div_button_adicionar_obra">
 
                 <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil" onclick="window.location.href = './adicionar-obra/index.html'">
                     <img src="../img/plus.png" alt="" srcset="">
-                </button>
+                </button>   
+            
         
             </div>
-               
-            <div class="modal_excluir_obra" id="modal_excluir_obra">
-        
-                <h2>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTA OBRA?</h2>
-                    <div class="botoes_excluir_obra">
-                        <button class="button_azul" id="button_negar_exclusao_obra">NÃO</button>
-                        <button class="button_vermelho" id="button_confirmar_exclusao_obra">SIM</button>
-                    </div>
-            </div>`;
-
-            
+            `;    
+        }
     });
-    
-  
 }
+
 
 getObraPronta();
 
 
-// const button_delete = document.getElementById("button_delete");
-// const modal_excluir_obra = document.getElementById("modal_excluir_obra");
-// const button_negar_exclusao_obra = document.getElementById("button_negar_exclusao_obra");
 
-// button_delete.addEventListener("click", function(){
 
-//     modal_excluir_obra.style.display = "flex";
     
-// });
-// button_negar_exclusao_obra.addEventListener("click", function(){
-
-//     modal_excluir_obra.style.display = "none";
-    
-// });

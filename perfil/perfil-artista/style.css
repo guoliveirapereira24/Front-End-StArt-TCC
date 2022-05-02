@@ -230,7 +230,7 @@ h1{
     color:white;
 }
 .modal_excluir_obra, .modal_excluir_proposta, .modal_finalizar_pedido{
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     height: 100%;
@@ -239,6 +239,8 @@ h1{
     border-radius: 10px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     background-color:white;
+    top: 0;
+    left: 0;
 }
 /* .modal_excluir_obra h2, .modal_excluir_proposta h2{
     margin-left: 4%;
@@ -696,7 +698,7 @@ h1{
     
 }
 .modal_excluir_proposta, .modal_cancelar_proposta, .modal_finalizar_pedido{
-    display: flex;
+    display: none;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
@@ -711,7 +713,7 @@ h1{
 }
 
 .modal_excluir_proposta{
-    display: flex;
+    display: none;
     width:20%;
     height:15%;
     top: 30%;
@@ -833,4 +835,7 @@ button:hover{
 }
 .enviar{
     background-color: turquoise;
+}
+#semProposta{
+    padding-top: 30px;
 }
