@@ -18,6 +18,7 @@
 <body>
         <h1>ADICIONAR OBRA</h1>
     <form class="form_adicionar_obra" id="form_adicionar_obra" action="">
+        <p id="msgErro" class="msgErro"></p>
 
     <div class="adicionar_obra_inputs">
         <div class="alinhamento">
@@ -49,22 +50,16 @@
 
             <label for="">
                 <select class="inputs" name="categoria" id="selectCategoria">
-                    <option value="">CATEGORIA</option>
-                    <option value=""></option>
                 </select>
             </label>
         </div>
         <div class="alinhamento">
             <label for="">
                 <select class="inputs" name="exclusividade" id="selectExclusividade">
-                    <option value="">EXCLUSIVIDADE</option>
-                    <option value=""></option>
                 </select>
             </label>
             <label for="">
-                <select class="inputs" name="sub-categoria" id="select_sub_categoria">
-                    <option value="">SUB-CATEGORIA</option>
-                    <option value=""></option>
+                <select class="inputs" name="sub-categoria" id="selectSubCategoria">
                 </select>
             </label>
 

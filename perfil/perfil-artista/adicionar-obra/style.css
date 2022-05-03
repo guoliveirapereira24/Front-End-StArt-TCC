@@ -21,6 +21,12 @@ p{
     font-size: 20px;
 }
 
+.msgErro{
+    display: none;
+    color: red;
+    font-size: 30px;
+}
+
 .button_adicionar_img{
     display: flex;
     
