@@ -11,12 +11,15 @@
     <h1>ARTISTAS</h1>
 
     <div class="listagem_pedidos_genero" id="listagem_pedidos_genero">
-        <div id="listagem_genero">
+        <div class="listagem_genero" id="listagem_genero">
 <!--  -->
 <!-- LISTAGEM POR GENEROS DE PINTURA -->
 <!--  -->
             <div class="generos" id="checkbox_categorias_pintura">
-                <h2>Pintura:</h2>
+                <section class="aba_categoria">
+                    <h2>Pintura:</h2>
+                     <!-- <img src="img/plus.png" alt=""> -->
+                </section>
 
                 <section>
                     <input type="checkbox" name="Abstrato" id="checkbox_abstrato_pintura">
@@ -242,7 +245,7 @@
                                 
                                 <div class="especialidade">
                                     <p id="especialidade-artista">Especialidades:</p>
-                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Especialidades: Realismo, Modernismo, Impressionismo</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
     
                                     <!-- <p id="especialidade-artista">Especialidade:</p>
                                     <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
@@ -252,7 +255,7 @@
                         
                             <section class="avaliacao">
                                 <img src="img/estrela2.png" alt="">
-                                <p id="avaliacaoArtista"> 5.0</p>
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
                                 <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
                             </section>
 
@@ -283,7 +286,7 @@
                                 
                                 <div class="especialidade">
                                     <p id="especialidade-artista">Especialidades:</p>
-                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Especialidades: Realismo, Modernismo, Impressionismo</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
     
                                     <!-- <p id="especialidade-artista">Especialidade:</p>
                                     <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
@@ -293,7 +296,7 @@
                         
                             <section class="avaliacao">
                                 <img src="img/estrela2.png" alt="">
-                                <p id="avaliacaoArtista"> 5.0</p>
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
                                 <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
                             </section>
 
@@ -325,7 +328,7 @@
                                 
                                 <div class="especialidade">
                                     <p id="especialidade-artista">Especialidades:</p>
-                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Especialidades: Realismo, Modernismo</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias"> Realismo, Modernismo</p>
     
                                     <!-- <p id="especialidade-artista">Especialidade:</p>
                                     <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
@@ -335,7 +338,307 @@
                         
                             <section class="avaliacao">
                                 <img src="img/estrela2.png" alt="">
-                                <p id="avaliacaoArtista"> 5.0</p>
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
+                                <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
+                            </section>
+
+                        </div>
+                 
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="img_artista">
+                        <img src="./img/minha_obra1.png" id="img_perfil_artista" alt="" srcset="">
+                    </div>
+ 
+                    <div class="text_informacoes_artista">
+
+                        <div class="nome_coracao">
+                            <h2>Vincent Van Gogh</h2>
+                            <!-- <p>${artista.nomeCompleto}</p> -->
+                            <button>
+                                <img id="coracao" src="img/coracao-favorito.png" alt="">
+                            </button>
+                        </div>
+
+                        <div class="especialidades_avaliacao">
+
+                            <div class="especialidades">
+                                <p class="especialidade_categoria">Pintor</p>
+                                
+                                <div class="especialidade">
+                                    <p id="especialidade-artista">Especialidades:</p>
+                                    <p class="especialidade_artista_p" id="text_especialidades_artista_sub_categorias">Realismo, Modernismo, Impressionismo</p>
+    
+                                    <!-- <p id="especialidade-artista">Especialidade:</p>
+                                    <p id="text_especialidade_artista">${artista.nomeEspecialidadeArtista}</p> -->
+                                </div>
+    
+                            </div>
+                        
+                            <section class="avaliacao">
+                                <img src="img/estrela2.png" alt="">
+                                <p class="amarelo" id="avaliacaoArtista"> 5.0</p>
                                 <!-- <p id="avaliacaoArtista" value="${artista.idArtista}"></p> -->
                             </section>
 
