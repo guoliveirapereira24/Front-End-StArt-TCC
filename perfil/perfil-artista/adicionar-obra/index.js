@@ -47,25 +47,35 @@ const configureImagePreview = () => {
     inputImage6.addEventListener('change', handleFileImage6)
 }
 
-const cadastrarObra = (
+const cadastrarObra = async (
     nome, 
-    preco,
-    quantidade, 
+    preco, 
+    quantidade,
     desconto, 
     tecnica, 
     descricao, 
-    exclusividade,
-    categoria,
+    exclusividade, 
+    categoria, 
     subCategoria,
-    inputImgObrigatoria,
-    inputImg2Opcional,
-    inputImg3Opcional,
-    inputImg4Opcional,
-    inputImg5Opcional,
-    inputImg6Opcional) => {
+    inputImg1,
+    inputImg2,
+    inputImg3,
+    inputImg4,
+    inputImg5,
+    inputImg6) => {
 
     event.preventDefault();
-    const obra =  new FormData();
+
+console.log(inputImg2.files[0].name.toString())
+
+    const nameimg1 = inputImg1.files[0].name.toString();
+    const nameimg2 = inputImg2.files[0].name.toString();
+    const nameimg3 = inputImg3.files[0].name.toString();
+    const nameimg4 = inputImg4.files[0].name.toString();
+    const nameimg5 = inputImg5.files[0].name.toString();
+    const nameimg6 = inputImg6.files[0].name.toString();
+
+    var obra =  new FormData();
 
     obra.append('nomeObra', nome);
     obra.append('preco', preco);
@@ -76,39 +86,30 @@ const cadastrarObra = (
     obra.append('eExclusiva', exclusividade);
     obra.append('idCategoria', categoria);
     obra.append('idEspecialidade', subCategoria);
-    obra.append('imagem1obrigatoria', inputImgObrigatoria, 'imagem1obrigatoria');
-    obra.append('imagem2opcional', inputImg2Opcional, 'imagem2opcional');
-    obra.append('imagem3opcional', inputImg3Opcional, 'imagem3opcional');
-    obra.append('imagem4opcional', inputImg4Opcional, 'imagem4opcional');
-    obra.append('imagem5opcional', inputImg5Opcional, 'imagem5opcional');
-    obra.append('imagem6opcional', inputImg6Opcional, 'imagem6opcional');
-    
-    
+    obra.append('imagem1obrigatoria', inputImg1.files[0], nameimg1);
+    obra.append('imagem2opcional', inputImg2.files[0], nameimg2);
+    obra.append('imagem3opcional', inputImg3.files[0], nameimg3);
+    obra.append('imagem4opcional', inputImg4.files[0], nameimg4);
+    obra.append('imagem5opcional', inputImg5.files[0], nameimg5);
+    obra.append('imagem6opcional', inputImg6.files[0], nameimg6);
+
+    console.log(obra);
     
     const config = {
         method: 'POST',
         headers: {
             'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
-            'Content-Length': '<calculated when request is sent>',
-            'Host': '<calculated when request is sent>',
-            'Accept': '*/*',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Connection': 'keep-alive',
             'Cache-Control': 'no-cache',
             'Authorization': `Bearer ${tokenArtista}`
         },
         body: obra
     }
-    
+
     fetch('http://localhost:3000/obraPronta/inserirObra', config)
         .then((res) => res.json())
         .then((data) => {
-            if (data.erro) {
-                msgErro.innerText = data.erro;
-            } 
             console.log(data);
         })
-        .catch((err) => console.log(err));
 } 
 
 const getEspecialidades = () => {
@@ -167,20 +168,17 @@ btnAddObra.addEventListener('click', () => {
     const exclusividade = selectExclusividade.value;
     const categoria = selectCategoria.value;
     const subCategoria = selectSubcategoria.value;
-    const inputImg1 = inputImg1Obrigatoria.files[0];
-    const inputImg2 = inputImg2Opcional.files[0];
-    const inputImg3 = inputImg3Opcional.files[0];
-    const inputImg4 = inputImg4Opcional.files[0];
-    const inputImg5 = inputImg5Opcional.files[0];
-    const inputImg6 = inputImg6Opcional.files[0];
+
+
+//    return console.log(inputImg1Obrigatoria.files[0].name)
     
-    if (nome == '' || preco == '' || quantidade == '' || desconto == '' || tecnica == '' || descricao == '' || exclusividade == '' || categoria == '' || subCategoria == '' || inputImg1 == null || inputImg1 == undefined) {
+    if (nome == '' || preco == '' || quantidade == '' || desconto == '' || tecnica == '' || descricao == '' || exclusividade == '' || categoria == '' || subCategoria == '' || inputImg1Obrigatoria == null || inputImg1Obrigatoria == undefined) {
         msgErro.innerText = 'Preencha todos os Campos Obrigatórios!';
         msgErro.style.display = 'flex';
     } else {
         cadastrarObra(nome, preco, quantidade, desconto, tecnica, descricao, 
-            exclusividade, categoria, subCategoria, inputImg1, inputImg2, 
-            inputImg3, inputImg4, inputImg5, inputImg6);
+            exclusividade, categoria, subCategoria, inputImg1Obrigatoria, inputImg2Opcional, 
+            inputImg3Opcional, inputImg4Opcional, inputImg5Opcional, inputImg6Opcional);
     }
 })
 
