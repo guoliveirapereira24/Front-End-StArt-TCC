@@ -66,43 +66,62 @@ const cadastrarObra = async (
 
     event.preventDefault();
 
-console.log(inputImg2.files[0].name.toString())
+    var nameimg1 = '';
+    var nameimg2 = '';
+    var nameimg3 = '';
+    var nameimg4 = '';
+    var nameimg5 = '';
+    var nameimg6 = '';
 
-    const nameimg1 = inputImg1.files[0].name.toString();
-    const nameimg2 = inputImg2.files[0].name.toString();
-    const nameimg3 = inputImg3.files[0].name.toString();
-    const nameimg4 = inputImg4.files[0].name.toString();
-    const nameimg5 = inputImg5.files[0].name.toString();
-    const nameimg6 = inputImg6.files[0].name.toString();
 
-    var obra =  new FormData();
+    let formData =  new FormData();
 
-    obra.append('nomeObra', nome);
-    obra.append('preco', preco);
-    obra.append('quantidade', quantidade);
-    obra.append('desconto', desconto);
-    obra.append('tecnica', tecnica);
-    obra.append('descricao', descricao);
-    obra.append('eExclusiva', exclusividade);
-    obra.append('idCategoria', categoria);
-    obra.append('idEspecialidade', subCategoria);
-    obra.append('imagem1obrigatoria', inputImg1.files[0], nameimg1);
-    obra.append('imagem2opcional', inputImg2.files[0], nameimg2);
-    obra.append('imagem3opcional', inputImg3.files[0], nameimg3);
-    obra.append('imagem4opcional', inputImg4.files[0], nameimg4);
-    obra.append('imagem5opcional', inputImg5.files[0], nameimg5);
-    obra.append('imagem6opcional', inputImg6.files[0], nameimg6);
+    formData.append('nomeObra', nome);
+    formData.append('preco', preco);
+    formData.append('quantidade', quantidade);
+    formData.append('desconto', desconto);
+    formData.append('tecnica', tecnica);
+    formData.append('descricao', descricao);
+    formData.append('eExclusiva', exclusividade);
+    formData.append('idCategoria', categoria);
+    formData.append('idEspecialidade', subCategoria);
+    
+    if(inputImg1.files[0] != undefined){
+        nameimg1 = inputImg1.files[0].name;
+        formData.append('imagem1obrigatoria', inputImg1.files[0], nameimg1);
+    }
+    if(inputImg2.files[0] != undefined){
+        nameimg2 = inputImg2.files[0].name;
+        formData.append('imagem2opcional', inputImg2.files[0], nameimg2);
+    }
+    if(inputImg3.files[0] != undefined){
+        nameimg3 = inputImg3.files[0].name;
+        formData.append('imagem3opcional', inputImg3.files[0], nameimg3);
+    }
+    if(inputImg4.files[0] != undefined){
+        nameimg4 = inputImg4.files[0].name;
+        formData.append('imagem4opcional', inputImg4.files[0], nameimg4);
+    }
+    if(inputImg5.files[0] != undefined){
+        nameimg5 = inputImg5.files[0].name;
+        formData.append('imagem5opcional', inputImg5.files[0], nameimg5);
+    }
+    if(inputImg6.files[0] != undefined){
+        nameimg6 = inputImg6.files[0].name;
+        formData.append('imagem6opcional', inputImg6.files[0], nameimg6);
+    }
 
-    console.log(obra);
+   
     
     const config = {
+        mode: 'no-cors',
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
-            'Cache-Control': 'no-cache',
             'Authorization': `Bearer ${tokenArtista}`
         },
-        body: obra
+        body: formData
     }
 
     fetch('http://localhost:3000/obraPronta/inserirObra', config)
