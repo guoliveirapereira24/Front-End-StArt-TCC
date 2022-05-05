@@ -14,12 +14,17 @@ body{
 
     /* background-color: aquamarine; */
 }
+.img_perfil{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+}
 
 button{
     transition: 0.15s;
 }
-button:hover{
 
+button:hover{
     transform:scale(1.1);
 }
 
@@ -125,11 +130,7 @@ button p:hover{
     border-radius: 10px;
 }
 
-.img_nome img{
-    width: 20%;
-    padding-left: 1%;
-    margin-left: 5%;
-}
+
 
 .container_forms_buttons{
     display: flex;
@@ -384,7 +385,7 @@ input:focus-within {
 
 .dados-pix{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 350px;
     padding-left: 6%;

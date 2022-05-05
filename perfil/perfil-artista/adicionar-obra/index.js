@@ -47,7 +47,7 @@ const configureImagePreview = () => {
     inputImage6.addEventListener('change', handleFileImage6)
 }
 
-const cadastrarObra = async (
+const cadastrarObra = (
     nome, 
     preco, 
     quantidade,
@@ -65,6 +65,8 @@ const cadastrarObra = async (
     inputImg6) => {
 
     event.preventDefault();
+
+    var imgIsSet = false;
 
     var nameimg1 = '';
     var nameimg2 = '';
@@ -84,51 +86,110 @@ const cadastrarObra = async (
     formData.append('descricao', descricao);
     formData.append('eExclusiva', exclusividade);
     formData.append('idCategoria', categoria);
-    formData.append('idEspecialidade', subCategoria);
+    formData.append('idEspecialidade', subCategoria)
     
     if(inputImg1.files[0] != undefined){
-        nameimg1 = inputImg1.files[0].name;
-        formData.append('imagem1obrigatoria', inputImg1.files[0], nameimg1);
+        imgIsSet = false
+        const file = inputImg1.files[0]
+        const nameFile = file.name
+
+        const fileReader = new FileReader(file)
+        fileReader.readAsDataURL(file)
+        fileReader.onloadend = () => {
+            imgIsSet = true
+        }
+
+            formData.append('imagem1obrigatoria', inputImg1.files[0], nameFile);
+
     }
     if(inputImg2.files[0] != undefined){
-        nameimg2 = inputImg2.files[0].name;
-        formData.append('imagem2opcional', inputImg2.files[0], nameimg2);
+        imgIsSet = false
+        const file = inputImg2.files[0]
+        const nameFile = file.name
+
+        const fileReader = new FileReader(file)
+        fileReader.readAsDataURL(file)
+        fileReader.onloadend = () => {
+            imgIsSet = true
+        }
+        
+        formData.append('imagem2opcional', inputImg1.files[0], nameFile);
+
     }
-    if(inputImg3.files[0] != undefined){
-        nameimg3 = inputImg3.files[0].name;
-        formData.append('imagem3opcional', inputImg3.files[0], nameimg3);
+    if(inputImg3.files[0] != undefined){  
+        imgIsSet = false
+        const file = inputImg3.files[0]
+        const nameFile = file.name
+
+        const fileReader = new FileReader(file)
+        fileReader.readAsDataURL(file)
+        fileReader.onloadend = () => {
+            imgIsSet = true
+        }
+
+
+        formData.append('imagem3opcional', inputImg3.files[0], nameFile);
+
     }
     if(inputImg4.files[0] != undefined){
-        nameimg4 = inputImg4.files[0].name;
-        formData.append('imagem4opcional', inputImg4.files[0], nameimg4);
+        imgIsSet = false
+        const file = inputImg4.files[0]
+        const nameFile = file.name
+
+        const fileReader = new FileReader(file)
+        fileReader.readAsDataURL(file)
+        fileReader.onloadend = () => {
+            imgIsSet = true
+        }
+
+        formData.append('imagem4opcional', inputImg4.files[0], nameFile);
+
     }
     if(inputImg5.files[0] != undefined){
-        nameimg5 = inputImg5.files[0].name;
-        formData.append('imagem5opcional', inputImg5.files[0], nameimg5);
+        imgIsSet = false
+        const file = inputImg5.files[0]
+        const nameFile = file.name
+
+        const fileReader = new FileReader(file)
+        fileReader.readAsDataURL(file)
+        fileReader.onloadend = () => {
+            imgIsSet = true
+        }
+
+        formData.append('imagem5opcional', inputImg5.files[0], nameFile);
+
     }
     if(inputImg6.files[0] != undefined){
-        nameimg6 = inputImg6.files[0].name;
-        formData.append('imagem6opcional', inputImg6.files[0], nameimg6);
+        imgIsSet = false
+        const file = inputImg6.files[0]
+        const nameFile = file.name
+
+        const fileReader = new FileReader(file)
+        fileReader.readAsDataURL(file)
+        fileReader.onloadend = () => {
+            imgIsSet = true
+        }
+
+        formData.append('imagem6opcional', inputImg6.files[0], nameFile);
+
     }
 
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${tokenArtista}`);
    
     
     const config = {
-        mode: 'no-cors',
         method: 'POST',
-        credentials: 'include',
-        headers: {
-            'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
-            'Authorization': `Bearer ${tokenArtista}`
-        },
-        body: formData
+        headers: myHeaders,
+        body: formData,
+        redirect: 'follow'
     }
 
+
     fetch('http://localhost:3000/obraPronta/inserirObra', config)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-        })
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 } 
 
 const getEspecialidades = () => {
@@ -183,7 +244,7 @@ btnAddObra.addEventListener('click', () => {
     const quantidade = inputQuantidade.value.toString();
     const desconto = inputDesconto.value.toString();
     const tecnica = inputTecnica.value;
-    const descricao = textAreaDescricao.value;
+    const descricao = textAreaDescricao.innerHTML;
     const exclusividade = selectExclusividade.value;
     const categoria = selectCategoria.value;
     const subCategoria = selectSubcategoria.value;

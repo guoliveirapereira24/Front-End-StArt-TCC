@@ -9,13 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
     
     <script src="./JS/formulario.js" defer></script>
     <script src="./JS/modal_desativar_conta.js" defer></script>
+    <script src="./JS/mudar_abas.js" defer></script>
+    <script src="./JS/integracao.js" defer></script>
+
     
     <link rel="stylesheet" href="style.css">
     
@@ -52,7 +54,7 @@
 
             <div class="img_nome">
                 <div class="img_texto">
-                    <img class="img_perfil" src="../img/artista1.png" alt="">
+                    <img class="img_perfil" src="../img/obra2.png" alt="">
                     <p>ALTERAR FOTO DE PERFIL</p>
                 </div>  
                 <p id="nome_artista">VINCENT VAN GOGH</p>
@@ -91,7 +93,7 @@
 
             </div>
             
-            <button class="button-salvar_editar_perfil" id="">Salvar Alterações</button>
+            <button class="button-salvar_editar_perfil" id="button-meuPerfil">Salvar Alterações</button>
 
         </form>
     </div>
@@ -176,16 +178,18 @@
                         <button class="transferencia-bancaria" id="button_transferencia">TRANFERÊNCIA BANCÁRIA</button>
                     </div>
     
-                <div class="dados-pix" id="dados-pix">
-                    <div class="ajuste">
-                        <p class="cpf">CPF/CNPJ:</p>
-                            <img src="./img/chaves.png" alt="" srcset="">
-                        <label for="">
-                            <input type="text" name="codigo" id="" placeholder="000.000.000-00"> 
-                        </label>
+                    <div class="dados-pix" id="dados-pix">
+                        <div class="ajuste">
+                            <p class="cpf">CPF/CNPJ:</p>
+                                <img src="./img/chaves.png" alt="" srcset="">
+                            <label for="">
+                                <input type="text" name="codigo" id="" placeholder="000.000.000-00"> 
+                            </label>
+                        </div>
+
+                        <button class="button_salvar_dados_pagamento" id="button_salvar_pix">Salvar Alterações</button>
                     </div>
-                </div>
-    
+                
                 </div>
     
             
@@ -250,10 +254,10 @@
             
                 </div>
                 
-                    
+                <button class="button_salvar_dados_pagamento" id="button_salvar_transf">Salvar Alterações</button>
             </div>
 
-            <button class="button_salvar_dados_pagamento" id="button_salvar_dados_pagamento">Salvar Alterações</button>
+   
     
                 
             </form>

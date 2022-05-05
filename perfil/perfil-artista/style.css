@@ -13,6 +13,13 @@
     padding: 100px;
     /* background-color: yellowgreen; */
 }
+#img_perfil_artista{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
 h1{
     font-size: 60px;
     font-family: 'Raleway', regular;

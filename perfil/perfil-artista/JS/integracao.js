@@ -31,7 +31,7 @@ function getInformacoesArtista(){
                 informacoesArtistaDiv.innerHTML = 
                 `
                 <div id="img_nome_avaliacao">
-                <img src="../img/artista1.png" id="img_perfil_artista" alt="" srcset="">
+                <img src="${artista.fotoPerfilArtista}" id="img_perfil_artista" alt="" srcset="">
         
                 <div id="nome_avaliacao">
                    <h1>${artista.nomeArtistico}</h1>

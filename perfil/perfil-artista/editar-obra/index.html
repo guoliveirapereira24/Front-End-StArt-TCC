@@ -11,62 +11,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="./index.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>EDITAR OBRA</title>
+    <title>ADICIONAR OBRA</title>
 </head>
 <body>
-        <h1>EDITAR OBRA</h1>
+        <h1>ADICIONAR OBRA</h1>
     <form class="form_adicionar_obra" id="form_adicionar_obra" action="">
+        <p id="msgErro" class="msgErro"></p>
 
     <div class="adicionar_obra_inputs">
         <div class="alinhamento">
 
             <label for="">
-                <input class="inputs" id="input_text_nome" type="text" placeholder="NOME">
+                <input class="inputs" id="inputNome" type="text" placeholder="NOME" value="TESTE">
             </label>
 
             <label for="">
-                <input class="inputs" id="input_text_preco" type="text" placeholder="PREÇO (SEM DESCONTO)">
+                <input class="inputs" id="inputPreco" type="number" placeholder="PREÇO (SEM DESCONTO)" value="10">
             </label>
 
         </div>
         <div class="alinhamento">
 
             <label for="">
-                <input type="number" class="inputs" id="input_number_quantidade_adicionar_obras" placeholder="QUANTIDADE">
+                <input type="number" class="inputs" id="inputQuantidade" placeholder="QUANTIDADE" value="5">
             </label>
 
             <label for="">
-                <select class="inputs" name="tecnica" id="select_tecnica">
-                    <option value="">TÉCNICA</option>
-                    <option value=""></option>
-                </select>
+                <input class="inputs" id="inputTecnica" type="text" placeholder="TÉCNICA" value="10">
             </label>
 
         </div>
         <div class="alinhamento">
             <label for="">
-                <input type="text" class="inputs" id="input_number_desconto_adicionar_obras" placeholder="DESCONTO">
+                <input type="text" class="inputs" id="inputDesconto" placeholder="DESCONTO" value="6">
             </label>
 
             <label for="">
-                <select class="inputs" name="categoria" id="select_categoria">
-                    <option value="">CATEGORIA</option>
-                    <option value=""></option>
+                <select class="inputs" name="categoria" id="selectCategoria">
                 </select>
             </label>
         </div>
         <div class="alinhamento">
             <label for="">
-                <select class="inputs" name="exclusividade" id="select_exclusividade">
-                    <option value="">EXCLUSIVIDADE</option>
-                    <option value=""></option>
+                <select class="inputs" name="exclusividade" id="selectExclusividade">
+                    <option value="1">Exclusiva</option>
+                    <option value="0">Não Exclusiva</option>
                 </select>
             </label>
             <label for="">
-                <select class="inputs" name="sub-categoria" id="select_sub_categoria">
-                    <option value="">SUB-CATEGORIA</option>
-                    <option value=""></option>
+                <select class="inputs" name="sub-categoria" id="selectSubCategoria">
                 </select>
             </label>
 
@@ -74,14 +69,15 @@
 
         <div class="alinhamento_maior">
             <label for="">
-                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="text_area_descricao" cols="30" rows="10" placeholder="DESCRIÇÃO"></textarea>
+                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="textAreaDescricao" cols="30" rows="10" placeholder="DESCRIÇÃO" >gfgfgfd</textarea>
             </label>
-            <label for="">
+            <div for="" class="image-field">
                 <p>IMAGEM (OBRIGATÓRIA)</p>
-                <button class="button_adicionar_img" id="button_adicionar_img">
-                    <img src="../../img/plus2.png" alt="" srcset="">
-                </button>
-            </label>
+                <input class="input-image" id="inputImage1" type="file" accept="image/png,image/jpeg,image/gif" required />
+                <label class="input-text" for="inputImage1">
+                        <img src="../../img/plus2.png" id="imagePreview1" />
+                    </label>
+                </div>
         </div>
 
     </div>
@@ -90,40 +86,45 @@
       
     <div class="img_opcionais">
 
-        <div>
+        <div class="image-field">
             <p>SEGUNDA IMAGEM</p>
-            <button class="button_adicionar_img" id="button_adicionar_img2">
-                <img src="../../img/plus2.png" alt="" srcset="">
-            </button>
+            <input  class="input-image" id="inputImage2" type="file" accept="image/png,image/jpeg,image/gif" required />
+                <label class="input-text" for="inputImage2">
+                        <img src="../../img/plus2.png" id="imagePreview2" />
+                    </label>
         </div>
 
-        <div>
+        <div class="image-field">
             <p>TERCEIRA IMAGEM</p>
-            <button class="button_adicionar_img" id="button_adicionar_img3">
-                <img src="../../img/plus2.png" alt="" srcset="">
-            </button>
+            <input  class="input-image" id="inputImage3" type="file" accept="image/png,image/jpeg,image/gif" required />
+                <label class="input-text" for="inputImage3">
+                        <img src="../../img/plus2.png" id="imagePreview3" />
+                    </label>
         </div>
-        <div>
+        <div class="image-field">
             <p>QUARTA IMAGEM</p>
-            <button class="button_adicionar_img" id="button_adicionar_img4">
-                <img src="../../img/plus2.png" alt="" srcset="">
-            </button>
+            <input class="input-image" id="inputImage4" type="file" accept="image/png,image/jpeg,image/gif" required />
+                <label class="input-text" for="inputImage4">
+                        <img src="../../img/plus2.png" id="imagePreview4" />
+                    </label>
         </div>
 
-        <div>
+        <div class="image-field">
             <p>QUINTA IMAGEM</p>
-            <button class="button_adicionar_img" id="button_adicionar_img5">
-                <img src="../../img/plus2.png" alt="" srcset="">
-            </button>
+            <input class="input-image" id="inputImage5" type="file" accept="image/png,image/jpeg,image/gif" required />
+                <label class="input-text" for="inputImage5">
+                        <img src="../../img/plus2.png" id="imagePreview5" />
+                    </label>
         </div>
-        <div>
+        <div class="image-field">
             <p>SEXTA IMAGEM</p>
-            <button class="button_adicionar_img" id="button_adicionar_img6">
-                <img src="../../img/plus2.png" alt="" srcset="">
-            </button>
+            <input class="input-image" id="inputImage6" type="file" accept="image/png,image/jpeg,image/gif" required />
+                <label class="input-text" for="inputImage6">
+                        <img src="../../img/plus2.png" id="imagePreview6" />
+                    </label>
         </div>
     </div>
-    <button class="button_adicionar_obra" id="button_adicionar_obra" >
+    <button type="button" class="button_adicionar_obra" id="button_adicionar_obra" >
         ADICIONAR
     </button>
     </form>

@@ -53,7 +53,7 @@ function getObraPronta(){
                 div.id = obraPronta.idObraPronta;
                 div.innerHTML = 
                 `
-                    <img src="../img/minha_obra1.png" alt="">
+                    <img src="${obraPronta.imagem1obrigatoria}" alt="">
                     <div id="edit_delete ${idObraPronta}" class="edit_delete">    
                     </div>
             
@@ -62,7 +62,7 @@ function getObraPronta(){
                         <div class="nome_obra_artista" id="informacoes_obra">
                             <div class="nome_obra_artista">
                                 <p id="nome_minha_obra1">${obraPronta.nomeObra}</p>
-                                <p id="nome_artista">${obraPronta.nomeArtista}</p>
+                                <p id="nome_artista">${obraPronta.nomeCategoria}</p>
                             </div>
                             
                             <div class="categoria_tecnica" id="categoria_tecnica">
