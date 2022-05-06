@@ -325,23 +325,35 @@ h2{
 }
 .listagem_pedidos_genero{
     display: flex;
+    width: 100%;
     flex-direction: row;
     margin-top: 30px;
-    /* background-color: yellowgreen; */
+    background-color:#D71B1B;
 }
 .listagem_pedidos{
     display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
     flex-direction: column;
     /* margin-top: 20px; */
-    /* background-color: yellowgreen; */
+    background-color: yellowgreen;
     
 }
-#listagem_genero{
+.listagem_genero{
     display: flex;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    /* overflow: scroll; */
+	scroll-snap-type: both mandatory;
+    overflow-y: auto;
     flex-direction: column;
-    
-    margin-left: 1%;
-    /* background-color: #40E0D0; */
+    border-right: 1px solid;
+    /* margin-left: 1%; */
+    /* margin-bottom:10vh; */
+    padding-bottom: 4%;
+    background-color: #40E0D0;
 }
 .generos section{
     display: flex;
@@ -358,14 +370,14 @@ h2{
 
     width: 18vw;
     /* background-color: aqua; */
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-left: 30px;
     /* height: 550px; */
 }
 .generos input{
     height: 30px;
     width: 50px;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 
 .pedidos-publicos{
@@ -397,23 +409,32 @@ h2{
 }
 #card{
     height: 500px;
-    width: 55vw;
+    width: 50%;
     /* border: 1px solid; */
     border-radius: 15px;
     margin-top: 20px;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     background-color: #FCFCFC;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     
+}
+.img_nome_avaliacao{
+    display: flex;
+    flex-direction: row;
+    background-color: #D71B1B;
+    width: 40%;
+
 }
 #nome_tipo_contato{
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 12%;
+    /* justify-content: space-around; */
     height: 80px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-
+    background-color: azure;
 }
 
 #img_perfil{
@@ -423,10 +444,19 @@ h2{
     width: 70px;
     /* background-color: #40E0D0; */
 }
+.img_nome{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #40E0D0;
+    width: 75%;
+    gap: 5%;
+}
+
 
 .nome{
     font-size: 25px;
-    margin-left: 10px;
+    /* margin-left: 1%; */
 }
 
 #avaliacao{
@@ -434,7 +464,9 @@ h2{
     flex-direction: row;
     align-items: center;
     font-size: 30px;
-    margin-left: 1%;
+    width: 25%;
+    /* margin-left: 1%; */
+    background-color: violet;
 }
 #avaliacao img{
     width: 45px;
@@ -450,14 +482,14 @@ h2{
     height: 100%;
     align-items: center;
     flex-direction: row;
-    margin-left: 20%;
+    /* margin-left: 15%; */
     font-size: 25px;
     /* background-color: #40E0D0; */
 }
 #contatar{
     display: flex;
     align-items: center;
-    margin-left: 20%;
+    /* margin-left: 10%; */
     font-size: 25px;
     /* background-color: #40E0D0; */
 }
@@ -475,14 +507,16 @@ h2{
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* background-color: brown; */
+    background-color: brown;
+    padding-left: 5%;
+    gap: 15%;
     height: 50%;
 }
 
 #exemplo_botoes img{
-    width: 35%;
+    width: 40%;
     height: 100%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 
 }
 
@@ -492,8 +526,8 @@ h2{
 
     width: 300px;
     height: 150px;
-    gap: 18px;
-    margin-left: 30%;
+    gap: 8%;
+    /* margin-left: 26%; */
 
     /* background-color: yellow; */
 }
