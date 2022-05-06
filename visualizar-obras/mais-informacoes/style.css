@@ -20,7 +20,7 @@ body{
     width: 90vw;
     margin-top: 2%;
     margin-left: 5%;
-    background-color: aqua;
+    /* background-color: aqua; */
     gap: 5%;
 }
 .imgs{
@@ -40,8 +40,8 @@ body{
     width: 100%;
     height: 20%;
     border: 1px solid;
-    border-radius: 10px;
-    background-color: yellow;
+    /* border-radius: 10px; */
+    /* background-color: yellow; */
 }
 .img_pequena img{
     width: 100%;
@@ -76,7 +76,7 @@ body{
     height: 6vh;
     width: 30vw;
     /* gap: 10%; */
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .nome_favorito img{
     height: 80%;
@@ -96,6 +96,7 @@ body{
 .categoria_sub_categoria{
     display: flex;
     flex-direction: row;
+    font-size: 1.5vh;
     gap: 1%;
 }
 
@@ -104,7 +105,7 @@ body{
     /* height: 20%; */
     font-size: 3vw;
     margin-top: 15%;
-    background-color: violet;
+    /* background-color: violet; */
 }
 
 .frete_gratis{
@@ -139,7 +140,7 @@ body{
     width: 65%;
     border-radius: 10px;
     border: 1px solid;
-    font-size: 2vh;
+    font-size: 1.8vh;
     background-color: #88EAE0;
 }
 .select_buttons{
@@ -149,7 +150,7 @@ body{
     width: 30vw;
     gap: 5%;
     margin-top: 5%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 .select_buttons select{
     width: 50%;
@@ -178,7 +179,7 @@ body{
     display: flex;
     /* height: 100%; */
     flex-direction: column;
-    background-color: yellow;
+    /* background-color: yellow; */
     margin-top: 2%;
     padding-left: 5%;
     gap: 2%;
@@ -351,8 +352,8 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 60%;
-    /* gap: 0%; */
+    width: 56%;
+    gap: 5%;
     /* background-color: tomato; */
     align-items: flex-end;
     justify-items: center;
@@ -360,8 +361,8 @@ body{
 .img_favoritada_preco img{
     margin-top: 2px;
     margin-right: 20px;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     /* background-color: #40E0D0; */
 }
 .img_favoritada_preco p{
@@ -398,7 +399,7 @@ body{
     flex-direction: row;
     /* align-items: center; */
     justify-content: center;
-    background-color: brown;
+    /* background-color: brown; */
 }
 .promocao_desativada{
     display: none;
@@ -433,7 +434,7 @@ body{
     height: 100%;
     border-radius: 0px 15px 15px 0px;
     text-decoration: line-through;
-    background-color:  rgba(253, 0, 0, 0.5);;
+    background-color:  rgba(253, 0, 0, 0.5);
 }
 
 /* 
@@ -464,7 +465,7 @@ body{
     /* padding-left: 50%; */
     /* padding-right: 50%; */
     /* margin-left: 15%; */
-    background-color: slateblue;
+    /* background-color: slateblue; */
 }
 .linha_obras{
     display: flex;
@@ -481,12 +482,12 @@ body{
 
     /* margin-right: 5%; */
     /* position: absolute; */
-    background-color: #04BA00;
+    /* background-color: #04BA00; */
 }
 
 .linha_obras{
     width: 100%;
-    background-color: tomato;
+    /* background-color: tomato; */
 }
 .mais_deste_artista_p{
     margin-top: 1%;
