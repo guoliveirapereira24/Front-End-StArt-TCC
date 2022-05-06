@@ -4,10 +4,14 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
+h2{
+    font-size: 35px;
+}
 body{
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
 }
 .img_card{
     display: flex;
@@ -28,7 +32,7 @@ body{
     /* background-color: violet; */
 }
 .imgs_pequenas{
-    width: 25%;
+    width: 20%;
     /* background-color: aquamarine; */
 }
 .img_pequena{
@@ -68,7 +72,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 7%;
+    height: 8%;
     width: 100%;
     /* gap: 10%; */
     background-color: aqua;
@@ -147,6 +151,7 @@ body{
     background-color: yellow;
 }
 .select_buttons select{
+    width: 50%;
     height: 30%;
     font-size: 25px;
     padding-left: 2%;
@@ -157,4 +162,298 @@ body{
     border: 1px solid;
     border-radius: 10px;
     font-size: 25px;
+}
+
+.compre_agora{
+    background-color: #88EAE0;
+}
+.adicionar_carrinho{
+    background-color: #fcfcfc;
+}
+
+/* PARTE DE DESCRIÇÕES DA OBRA */
+
+.informacoes_obra{
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    margin-top: 2%;
+    padding-left: 5%;
+    gap: 2%;
+}
+.feito_por{
+    font-size: 20px;
+}
+.informacoes_artista{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10%;
+    width: 800px;
+    gap: 1%;
+    /* background-color: violet; */
+
+}
+.div_img_perfil_artista{
+    height: 100%;
+    width: 15%;
+    /* background-color: aqua; */
+
+}
+.div_img_perfil_artista img{
+    height: 100%;
+    width: 100%;
+    border-radius: 70%;
+}
+
+.div_nome_artista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    height: 100%;
+    /* padding-left: 1%;
+    padding-right: 2%; */
+    width: 40%;
+    /* background-color: brown; */
+}
+.avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    font-size: 30px;
+    gap: 10%;
+    width: 20%;
+    /* background-color: tomato; */
+}
+
+.avaliacao img{
+    height: 50%;
+}
+
+.tabela_informações_obra{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    width: 800px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: white;
+}
+.linha_tabela, .linha_tabela_baixo{
+    display: flex;
+    flex-direction: row;
+
+    height: 34%;
+}
+.linha_tabela{
+    
+    border-bottom: 2px solid;
+}
+.box, .box_valor{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    /* justify-content: center; */
+}
+.box{
+    height: 100%;
+    width: 70%;
+    /* background-color: violet; */
+    padding-left: 5%;
+    /* border-bottom: 2px solid; */
+}
+.box_valor{
+    justify-content: center;
+    width: 30%;
+    border-left: 2px solid;
+    height: 100%;
+    /* background-color: tomato; */
+}
+.div_textarea{
+    width: 1000px;
+    height: 30%;
+
+    /* background-color: tomato; */
+}
+.div_textarea textarea{
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+
+/* LISTAGEM DE OBRAS */
+
+.listagem_obras{
+    display: flex;
+    flex-direction: row;
+    /* height: 500vh; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1%;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    /* gap: 40px; */
+    /* padding-left: 50%; */
+    /* padding-right: 50%; */
+    margin-left: 15%;
+    /* background-color: slateblue; */
+}
+.linha_obras{
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    
+    flex-wrap: wrap;
+    width: 95%;
+    margin-left: 5%;
+    gap: 5%;
+
+    /* margin-right: 5%; */
+    /* position: absolute; */
+    /* background-color: #04BA00; */
+}
+.obra{
+    
+    /* background-color: #DCDCDC; */
+    background-color: #FCFCFC;
+
+    display: flex;
+    flex-direction: column;
+    height: 515px;
+    border-radius: 15px;
+    filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+}
+
+.nome_artista_preco{
+    display: flex;
+    flex-direction: row;
+
+    height: 20%;
+
+}
+.nome_obra_artista_categoria_tecnica{
+
+    /* gap: 10px; */
+    width: 100%;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.nome_obra_artista{
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+
+}
+.nome_obra_artista_categoria_tecnica p{
+    margin-top: 7px;
+    font-size: 18px;
+    /* background-color: violet; */
+
+}
+.categoria_tecnica{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    /* background-color: #04BA00; */
+}
+.img_favoritada_preco{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 56%;
+    gap: 5%;
+    /* background-color: tomato; */
+    align-items: flex-end;
+    justify-items: center;
+}
+.img_favoritada_preco img{
+    margin-top: 2px;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+    /* background-color: #40E0D0; */
+}
+.img_favoritada_preco p{
+    font-size: 25px;
+    /* height: 20px; */
+    /* background-color: yellow; */
+    /* margin-top: 5%; */
+    /* margin-right: 10px; */
+}
+.preco_obra_favorita{
+    margin-top: 1%;
+    margin-right: 5%;
+}
+.parcelas{
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 1%; */
+    height: 10%;
+    /* align-items: center; */
+    justify-content: end;
+    padding-right: 2%;
+    /* background-color: yellow; */
+    
+}
+.parcelas p{
+    font-size: 20px;
+    /* margin-left: 50%; */
+}
+.promocao{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: brown; */
+}
+.promocao_desativada{
+    display: none;
+    width: 100%;
+    height: 30px;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: brown; */
+}
+.promocao p{
+    font-size: 20px;
+
+}
+.porcentagem_desconto{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+    padding-left: 7%;
+    border-radius: 15px 0px 0px 15px;
+    background-color:  rgba(46, 244, 224, 0.68);
+}
+.preco_original{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+    border-radius: 0px 15px 15px 0px;
+    text-decoration: line-through;
+    background-color:  rgba(253, 0, 0, 0.5);;
 }
