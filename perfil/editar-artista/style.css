@@ -14,10 +14,10 @@ body{
 
     /* background-color: aquamarine; */
 }
-.img_perfil{
+.imgPerfil{
     height: 150px;
     width: 150px;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 button{
@@ -63,9 +63,7 @@ button p:hover{
     height: 100%;
     width: 100%;
 }
-.conteudo_alterar_senha img{
-    width: 20%;
-}
+
 
 .editar_informacoes_pessoais{
     display: none;
@@ -201,8 +199,8 @@ section{
    
     /* background-color:aqua; */
 }
-#nome_artista{
-    font-size: 40px;
+#nomeArtista{
+    font-size: 2.5rem;
 }
 .img_texto{
     display: flex;
@@ -211,11 +209,6 @@ section{
     font-size: 18px;
     color:#40E0D0;
     align-items: center;
-}
-.img_texto img{
-    height: 150px;
-    border-radius: 50px;
-    width: 150px;
 }
 
 textarea{
@@ -640,10 +633,7 @@ input{
     padding-right: 5%;
     /* background-color:tomato */
 }
-.img_editar_perfil{
-    width:50%;
-    height:50%;
-}
+
 .button_alterar_senha{
     color:white;
 }
@@ -653,4 +643,25 @@ input{
 .conteudo_editar_informacoes_pessoais{
     display:none;
     flex-direction: column;
+}
+
+
+
+.img_texto input {
+    display: none;
+}
+
+.img_texto label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+}
+
+.img_texto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }

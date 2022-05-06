@@ -24,28 +24,28 @@
         <div class="alinhamento">
 
             <label for="">
-                <input class="inputs" id="inputNome" type="text" placeholder="NOME" value="TESTE">
+                <input class="inputs" id="inputNome" type="text" placeholder="NOME">
             </label>
 
             <label for="">
-                <input class="inputs" id="inputPreco" type="number" placeholder="PREÇO (SEM DESCONTO)" value="10">
-            </label>
-
-        </div>
-        <div class="alinhamento">
-
-            <label for="">
-                <input type="number" class="inputs" id="inputQuantidade" placeholder="QUANTIDADE" value="5">
-            </label>
-
-            <label for="">
-                <input class="inputs" id="inputTecnica" type="text" placeholder="TÉCNICA" value="10">
+                <input class="inputs" id="inputPreco" type="number" placeholder="PREÇO (SEM DESCONTO)">
             </label>
 
         </div>
         <div class="alinhamento">
+
             <label for="">
-                <input type="text" class="inputs" id="inputDesconto" placeholder="DESCONTO" value="6">
+                <input type="number" class="inputs" id="inputQuantidade" placeholder="QUANTIDADE">
+            </label>
+
+            <label for="">
+                <input class="inputs" id="inputTecnica" type="text" placeholder="TÉCNICA">
+            </label>
+
+        </div>
+        <div class="alinhamento">
+            <label for="">
+                <input type="number" id="inputDesconto" placeholder="DESCONTO" min="0" max="99" maxlength="2" class="inputs">
             </label>
 
             <label for="">
@@ -56,8 +56,8 @@
         <div class="alinhamento">
             <label for="">
                 <select class="inputs" name="exclusividade" id="selectExclusividade">
-                    <option value="1">Exclusiva</option>
                     <option value="0">Não Exclusiva</option>
+                    <option value="1" selected>Exclusiva</option>
                 </select>
             </label>
             <label for="">
@@ -69,7 +69,7 @@
 
         <div class="alinhamento_maior">
             <label for="">
-                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="textAreaDescricao" cols="30" rows="10" placeholder="DESCRIÇÃO" >gfgfgfd</textarea>
+                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="textAreaDescricao" cols="30" rows="10" placeholder="DESCRIÇÃO"></textarea>
             </label>
             <div for="" class="image-field">
                 <p>IMAGEM (OBRIGATÓRIA)</p>

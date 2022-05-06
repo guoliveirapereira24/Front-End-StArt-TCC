@@ -20,7 +20,7 @@ const deleteObraById = (idObraPronta) => {
 };
 
 const redirectEditObra = (idObraPronta) => {
-    window.location.href = `./editar-obra/index.html?${idObraPronta}`;
+    window.location.href = `./editar-obra/index.html?q=${idObraPronta}`;
 }
 
 
@@ -90,29 +90,6 @@ function getObraPronta(){
                 btnDelete.innerHTML = `<img id="button_delete" src="../img/excluir.png" alt="" onclick="javascript:deleteObraById(${obraPronta.idObraPronta})">`;
                 edit_delete.appendChild(btnDelete);
                 
-
-                // const modal_excluir_obra = document.getElementById("modal_excluir_obra");
-                
-                // btnEdit.onclick = () => redirectEditObra(obraPronta.idObraPronta);
-        
-                // btnDelete.onclick = () => {
-
-                
-                //     // modal_excluir_obra.appendChild(stringModalExcluirObra);
-                //     // modal_excluir_obra.style.display = 'flex';
-
-                //     // const button_negar_exclusao= document.getElementById("button_negar_exclusao_obra");
-                //     // const button_confirmar_exclusao = document.getElementById("button_confirmar_exclusao_obra");
-
-                //     // button_negar_exclusao.onclick = () => {
-                //     //         modal_excluir_obra.style.display = "none";
-                //     // }
-                //     // button_confirmar_exclusao.onclick = () => {
-                //     //     modal_excluir_obra.style.display = "none";
-                //     //     deleteObraById(button_delete.value);
-                //     //     window.location.reload();
-                //     // }
-                // } 
 
             }),
             obrasArtistas.innerHTML += 

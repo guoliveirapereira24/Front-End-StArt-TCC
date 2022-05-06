@@ -180,6 +180,8 @@ section{
 }
 .img_texto{
     display: flex;
+    width : 300px;
+    height: 250px;
     flex-direction:column;
     gap: 10px;
     font-size: 18px;

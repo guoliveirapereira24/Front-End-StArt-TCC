@@ -188,7 +188,9 @@ const cadastrarObra = (
 
     fetch('http://localhost:3000/obraPronta/inserirObra', config)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then((result) => {
+            window.location.href = "../index.html"
+        })
         .catch(error => console.log('error', error));
 } 
 
@@ -244,15 +246,16 @@ btnAddObra.addEventListener('click', () => {
     const quantidade = inputQuantidade.value.toString();
     const desconto = inputDesconto.value.toString();
     const tecnica = inputTecnica.value;
-    const descricao = textAreaDescricao.innerHTML;
+    const descricao = textAreaDescricao.value;
     const exclusividade = selectExclusividade.value;
     const categoria = selectCategoria.value;
     const subCategoria = selectSubcategoria.value;
 
+    console.log(nome, preco, quantidade, desconto, tecnica, descricao, exclusividade, categoria, subCategoria);
+    console.log(inputImg1Obrigatoria.files)
 
-//    return console.log(inputImg1Obrigatoria.files[0].name)
     
-    if (nome == '' || preco == '' || quantidade == '' || desconto == '' || tecnica == '' || descricao == '' || exclusividade == '' || categoria == '' || subCategoria == '' || inputImg1Obrigatoria == null || inputImg1Obrigatoria == undefined) {
+    if (nome == '' || preco == '' || quantidade == '' || desconto == '' || tecnica == '' || descricao == '' || exclusividade == '' || categoria == '' || subCategoria == '' || inputImg1Obrigatoria.files.length == 0) {
         msgErro.innerText = 'Preencha todos os Campos Obrigatórios!';
         msgErro.style.display = 'flex';
     } else {

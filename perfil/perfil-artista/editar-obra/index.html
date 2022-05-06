@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
     <script type="module" src="./index.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>ADICIONAR OBRA</title>
+    <title>EDITAR OBRA</title>
 </head>
 <body>
-        <h1>ADICIONAR OBRA</h1>
+        <h1>EDITAR OBRA</h1>
     <form class="form_adicionar_obra" id="form_adicionar_obra" action="">
         <p id="msgErro" class="msgErro"></p>
 
@@ -24,28 +24,28 @@
         <div class="alinhamento">
 
             <label for="">
-                <input class="inputs" id="inputNome" type="text" placeholder="NOME" value="TESTE">
+                <input class="inputs" id="inputNome" type="text" placeholder="NOME">
             </label>
 
             <label for="">
-                <input class="inputs" id="inputPreco" type="number" placeholder="PREÇO (SEM DESCONTO)" value="10">
-            </label>
-
-        </div>
-        <div class="alinhamento">
-
-            <label for="">
-                <input type="number" class="inputs" id="inputQuantidade" placeholder="QUANTIDADE" value="5">
-            </label>
-
-            <label for="">
-                <input class="inputs" id="inputTecnica" type="text" placeholder="TÉCNICA" value="10">
+                <input class="inputs" id="inputPreco" type="number" placeholder="PREÇO (SEM DESCONTO)">
             </label>
 
         </div>
         <div class="alinhamento">
+
             <label for="">
-                <input type="text" class="inputs" id="inputDesconto" placeholder="DESCONTO" value="6">
+                <input type="number" class="inputs" id="inputQuantidade" placeholder="QUANTIDADE">
+            </label>
+
+            <label for="">
+                <input class="inputs" id="inputTecnica" type="text" placeholder="TÉCNICA">
+            </label>
+
+        </div>
+        <div class="alinhamento">
+            <label for="">
+                <input type="text" class="inputs" id="inputDesconto" placeholder="DESCONTO">
             </label>
 
             <label for="">
@@ -56,8 +56,8 @@
         <div class="alinhamento">
             <label for="">
                 <select class="inputs" name="exclusividade" id="selectExclusividade">
-                    <option value="1">Exclusiva</option>
                     <option value="0">Não Exclusiva</option>
+                    <option value="1" selected>Exclusiva</option>
                 </select>
             </label>
             <label for="">
@@ -69,13 +69,13 @@
 
         <div class="alinhamento_maior">
             <label for="">
-                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="textAreaDescricao" cols="30" rows="10" placeholder="DESCRIÇÃO" >gfgfgfd</textarea>
+                <textarea class="text_area_descricao" style="resize: none" name="text_area_descricao" id="textAreaDescricao" cols="30" rows="10" placeholder="DESCRIÇÃO"></textarea>
             </label>
             <div for="" class="image-field">
                 <p>IMAGEM (OBRIGATÓRIA)</p>
                 <input class="input-image" id="inputImage1" type="file" accept="image/png,image/jpeg,image/gif" required />
                 <label class="input-text" for="inputImage1">
-                        <img src="../../img/plus2.png" id="imagePreview1" />
+                        <img src="" id="imagePreview1" />
                     </label>
                 </div>
         </div>
@@ -90,7 +90,7 @@
             <p>SEGUNDA IMAGEM</p>
             <input  class="input-image" id="inputImage2" type="file" accept="image/png,image/jpeg,image/gif" required />
                 <label class="input-text" for="inputImage2">
-                        <img src="../../img/plus2.png" id="imagePreview2" />
+                        <img src="" id="imagePreview2" />
                     </label>
         </div>
 
@@ -98,14 +98,14 @@
             <p>TERCEIRA IMAGEM</p>
             <input  class="input-image" id="inputImage3" type="file" accept="image/png,image/jpeg,image/gif" required />
                 <label class="input-text" for="inputImage3">
-                        <img src="../../img/plus2.png" id="imagePreview3" />
+                        <img src="" id="imagePreview3" />
                     </label>
         </div>
         <div class="image-field">
             <p>QUARTA IMAGEM</p>
             <input class="input-image" id="inputImage4" type="file" accept="image/png,image/jpeg,image/gif" required />
                 <label class="input-text" for="inputImage4">
-                        <img src="../../img/plus2.png" id="imagePreview4" />
+                        <img src="" id="imagePreview4" />
                     </label>
         </div>
 
@@ -113,14 +113,14 @@
             <p>QUINTA IMAGEM</p>
             <input class="input-image" id="inputImage5" type="file" accept="image/png,image/jpeg,image/gif" required />
                 <label class="input-text" for="inputImage5">
-                        <img src="../../img/plus2.png" id="imagePreview5" />
+                        <img src="" id="imagePreview5" />
                     </label>
         </div>
         <div class="image-field">
             <p>SEXTA IMAGEM</p>
             <input class="input-image" id="inputImage6" type="file" accept="image/png,image/jpeg,image/gif" required />
                 <label class="input-text" for="inputImage6">
-                        <img src="../../img/plus2.png" id="imagePreview6" />
+                        <img src="" id="imagePreview6" />
                     </label>
         </div>
     </div>

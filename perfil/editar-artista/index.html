@@ -53,47 +53,45 @@
         <form class="editar_perfil">
 
             <div class="img_nome">
-                <div class="img_texto">
-                    <img class="img_perfil" src="../img/obra2.png" alt="">
-                    <p>ALTERAR FOTO DE PERFIL</p>
+                <div class="img_texto">                    
+                    <input class="input-image" id="inputImage" type="file" accept="image/png,image/jpeg,image/gif" required />
+                    <label class="input-text" for="inputImage">
+                        <img src="../img/obra2.png" id="imgPerfil" />
+                        <p>ALTERAR FOTO</p>
+                    </label>
                 </div>  
-                <p id="nome_artista">VINCENT VAN GOGH</p>
-                
+                <p id="nomeArtista">VINCENT VAN GOGH</p>  
             </div>
+
             <div class="inputs" id="input_nome_especialidade_nacionalidade_pais_biografia">
                 <section>
                     <p>NOME ARTISTICO</p>
-                    <input type="text">
+                    <input type="text" id="nomeArtistico">
                 </section>
                 <section>
                     <p>ESPECIALIDADE</p>
-                    <select name="" id="">
-                        <option value="">Pintor</option>
-                        <option value=""></option>
+                    <select name="" id="selectEspecialidadeArtista">
                     </select>
                 </section>
                 <section>
                     <p>NACIONALIDADE</p>
-                    <select name="" id="">
-                        <option value="">Holandês</option>
-    
-                    </select>
+                    <input type="text" id="nacionalidadeArtista">
                 </section>
                 <section>
                     <p>PAÍS</p>
-                    <select name="" id="">
-                        <option value="">Holanda</option>
+                    <select name="" id="selectPais">
+
                     </select>
                 </section>
     
                 <section class="textarea_biografia">
                     <p>BIOGRAFIA</p>
-                    <textarea id="textarea_biografia" class="biografia" style="resize: none" name="" value="" id="" cols="30" rows="5"></textarea>
+                    <textarea id="textAreaBiografia" class="biografia" style="resize: none" name="" value="" id="" cols="30" rows="5"></textarea>
                 </section>
 
             </div>
             
-            <button class="button-salvar_editar_perfil" id="button-meuPerfil">Salvar Alterações</button>
+            <button class="button-salvar_editar_perfil" id="buttonMeuPerfil">Salvar Alterações</button>
 
         </form>
     </div>
@@ -104,9 +102,9 @@
 
         <div class="img_nome">
 
-            <img class="img_perfil" src="../img/artista1.png" alt=""> 
+            <img class="imgPerfil" id="imgPerfil" src="../img/artista1.png" alt=""> 
             
-            <p id="nome_artista">VINCENT VAN GOGH</p>
+            <p id="nomeArtista">VINCENT VAN GOGH</p>
         </div>
 
         <div class="inputs">
@@ -129,8 +127,8 @@
 
     <div id="conteudo_informacoes_pessoais" class="editar_informacoes_pessoais">
             <div class="img_nome">
-                <img class="img_perfil" src="../img/artista1.png" alt=""> 
-                <p id="nome_artista">VINCENT VAN GOGH</p>
+                <img class="imgPerfil" id="imgPerfil" src="../img/artista1.png" alt=""> 
+                <p id="nomeArtista">VINCENT VAN GOGH</p>
             </div>
 
            
@@ -156,7 +154,7 @@
                     </section>
     
                 
-                    <button class="button-salvar_editar_perfil" id="">Salvar Alterações</button>
+                    <button class="button-salvar_editar_perfil" id="buttonInformacoesPessoais">Salvar Alterações</button>
     
                 </form>
             </div>
