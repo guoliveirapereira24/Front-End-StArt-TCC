@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: azure; */
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.descricao_imgs{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 60vh;
+    gap: 5%;
+    /* background-color: aqua; */
+}
+
+.div_descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    /* background-color: yellow; */
+}
+p{
+    font-size: 25px;
+}
+textarea{
+    border:2px solid;
+    width: 100%;
+    border-radius: 15px;
+    height: 90%;
+
+}
+.img_exemplo{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    /* background-color: violet; */
+}
+.img_grande{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    border: 2px solid;
+    border-radius: 15px;
+    /* background-color: bisque; */
+}
+.img_adicionais{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 15%;
+    gap: 2.5%;
+    /* background-color: tomato; */
+}
+.img_grande img{
+    height: 65%;
+    width: 80%;
+    /* background-color: steelblue; */
+}
+.img_adicionais{
+    height: 100%;
+}
+.img_pequena{
+    display: flex;
+    border: 2px solid;
+    border-radius: 15px;
+    height: 40%;
+    width: 100%;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+}
+.img_adicionais img{
+    width: 80%;
+    height: 70%;
+}
+.selects_button{
+    display: flex;
+    width: 80%;
+    height: 30vh;
+    gap: 1%;
+    flex-direction: row;
+    /* background-color: tan; */
+}
+.categoria_genero{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: 10%;
+    /* background-color: blueviolet; */
+}
+.categoria, .genero{
+    height: 50%;
+    /* background-color: brown; */
+}
+.categoria select, .genero select{
+    width: 100%;
+    height: 50%;
+    font-size: 25px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.select_visibilidade{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+    /* background-color: chartreuse; */
+}
+.select_visibilidade select{
+    height: 28%;
+    font-size: 25px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.button{
+    display: flex;
+    width: 25%;
+    height: 100%;
+    /* background-color: yellow; */
+    justify-content: center;
+    align-items: center;
+}
+.button button{
+    width: 70%;
+    height: 25%;
+    background-color: turquoise;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 25px;
+    /* margin-top: 2%; */
+}
+.fundo_modal_escolher_artista{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000007d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.modal_escolher_artista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 35%;
+    background-color: white;
+}
+.barra_pesquisa{
+    display: flex;
+    width: 80%;
+    height: 20%;
+    background-color: yellow;
+}
+.barra_pesquisa input{
+    height: 100%;
+    width: 95%;
+}
+
+.listagem_artistas{
+    display: flex;
+    width: 80%;
+    height: 60%;
+    background-color: violet;
+}
+.card_artista{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: wheat;
+    width: 80%;
+    height: 30%;
+    gap:2%;
+}
+.card_artista img{
+    width: 11%;
+    height: 100%;
+}
