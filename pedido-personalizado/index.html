@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
+    <script src="modal.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Pedido Personalizado</title>
 </head>
@@ -71,13 +72,14 @@
     
             <p>Visibilidade:</p>
     
-            <select name="" id="">
-                <option value="">Para todos os artistas</option>
-                <option value="">Para um ou alguns alguns artista</option>
+            <select name="select_visibilidade" id="select_visibilidade">
+                <option value="Para todos os artistas" >Para todos os artistas</option>
+                <option value="Para um ou alguns alguns artista">Para um ou alguns alguns artista</option>
             </select>
-            <div class="artistas_escolhidos">
+        
+            <div id="artistas_escolhidos" class="artistas_escolhidos">
                 <p>Para:</p>
-                <p></p>
+                <p class=""></p>
             </div>
       
         </section>  
@@ -92,21 +94,89 @@
         <div class="modal_escolher_artista">
             <section class="barra_pesquisa">
                 <input placeholder="Busque o(s) artista(s) para quem você vai fazer o pedido" type="text">
-                <img src="img/loupe.png" alt="" srcset="">
+                <button class="button_pesquisar">
+                    <img src="img/loupe.png" alt="" srcset="">
+                </button>
             </section>
             <div class="listagem_artistas">
                 <div class="card_artista">
-                    <img class="img_artista" src="./img/cliente.png" alt="">
-                    <p class="nome_artista">Igor Carvalho</p>
-                    <img src="./img/close.png" alt="">
+                    <div class="div_img_artista">
+                        <img class="img_artista" src="./img/cliente.png" alt="">
+                    </div>
+                    <div class="div_nome_artista">
+                        <p class="nome_artista">Igor Carvalho</p>
+                    </div>
+
+                    <div class="div_img_close">
+                        <img class="img_close" src="./img/close.png" alt="">
+                    </div>
                 </div>
+<!-- Card 2 -->
+                <div class="card_artista">
+                    <div class="div_img_artista">
+                        <img class="img_artista" src="./img/cliente.png" alt="">
+                    </div>
+                    <div class="div_nome_artista">
+                        <p class="nome_artista">Igor Carvalho</p>
+                    </div>
+
+                    <div class="div_img_close">
+                        <img class="img_close" src="./img/close.png" alt="">
+                    </div>
+                </div>
+<!-- Card 3 -->
+
+                <div class="card_artista">
+                    <div class="div_img_artista">
+                        <img class="img_artista" src="./img/cliente.png" alt="">
+                    </div>
+                    <div class="div_nome_artista">
+                        <p class="nome_artista">Igor Carvalho</p>
+                    </div>
+
+                    <div class="div_img_close">
+                        <img class="img_close" src="./img/close.png" alt="">
+                    </div>
+                </div>
+<!-- Card 4  -->
+                <div class="card_artista">
+                    <div class="div_img_artista">
+                        <img class="img_artista" src="./img/cliente.png" alt="">
+                    </div>
+                    <div class="div_nome_artista">
+                        <p class="nome_artista">Igor Carvalho</p>
+                    </div>
+
+                    <div class="div_img_close">
+                        <img class="img_close" src="./img/close.png" alt="">
+                    </div>
+                </div>
+<!-- Card 5 -->
+                <div class="card_artista">
+                    <div class="div_img_artista">
+                        <img class="img_artista" src="./img/cliente.png" alt="">
+                    </div>
+                    <div class="div_nome_artista">
+                        <p class="nome_artista">Igor Carvalho</p>
+                    </div>
+
+                    <div class="div_img_close">
+                        <img class="img_close" src="./img/close.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Fim da listagem -->
+
             </div>
-
-
             <div class="button_modal">
-                <button class="vermelho">Cancelar</button>
+                <button id="cancelar" class="vermelho">Cancelar</button>
                 <button class="azul">Confirmar</button>
             </div>
+
+            </div>
+
+
+         
         </div>
     </div>
 
