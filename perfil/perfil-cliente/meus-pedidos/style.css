@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+}
+.fundo_listagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+    background-color: green;
+}
+.listagem_cards{
+    display: flex;
+    flex-direction: column;
+   
+    width: 50%;
+    height: 100%;
+    background-color: yellow;
+}
+.card{
+    height: 100%;
+    width: 100%;
+    background-color: tomato;
+}
+.genero_enviado_status{
+    display: flex;
+    flex-direction: row;
+    height: 8%;
+    width: 100%;
+    gap: 10%;
+    background-color: aqua;
+}
+.genero, .enviado_para, .status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 27%;
+    gap: 2%;
+    font-size: 2vh;
+    background-color: brown;
+} 
