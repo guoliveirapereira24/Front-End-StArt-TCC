@@ -13,12 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
     
-    <script src="./JS/formulario.js" defer></script>
-    <script src="./JS/modal_desativar_conta.js" defer></script>
-    <script src="./JS/mudar_abas.js" defer></script>
-    <script src="./JS/integracao.js" defer></script>
-
-    
     <link rel="stylesheet" href="style.css">
     
  
@@ -56,42 +50,42 @@
                 <div class="img_texto">                    
                     <input class="input-image" id="inputImage" type="file" accept="image/png,image/jpeg,image/gif" required />
                     <label class="input-text" for="inputImage">
-                        <img src="../img/obra2.png" id="imgPerfil" />
+                        <img src="" id="imgPerfil1" />
                         <p>ALTERAR FOTO</p>
                     </label>
                 </div>  
-                <p id="nomeArtista">VINCENT VAN GOGH</p>  
+                <p id="nome_artista1">VINCENT VAN GOGH</p>  
             </div>
 
             <div class="inputs" id="input_nome_especialidade_nacionalidade_pais_biografia">
                 <section>
                     <p>NOME ARTISTICO</p>
-                    <input type="text" id="nomeArtistico">
+                    <input type="text" id="nome_artistico">
                 </section>
                 <section>
                     <p>ESPECIALIDADE</p>
-                    <select name="" id="selectEspecialidadeArtista">
+                    <select id="selectEspecialidadeArtista">
                     </select>
                 </section>
                 <section>
                     <p>NACIONALIDADE</p>
-                    <input type="text" id="nacionalidadeArtista">
+                    <input type="text" id="nacionalidade_artista">
                 </section>
                 <section>
                     <p>PAÍS</p>
-                    <select name="" id="selectPais">
+                    <select id="selectPais">
 
                     </select>
                 </section>
     
                 <section class="textarea_biografia">
                     <p>BIOGRAFIA</p>
-                    <textarea id="textAreaBiografia" class="biografia" style="resize: none" name="" value="" id="" cols="30" rows="5"></textarea>
+                    <textarea id="textAreaBiografia" class="biografia" style="resize: none" cols="30" rows="5"></textarea>
                 </section>
 
             </div>
             
-            <button class="button-salvar_editar_perfil" id="buttonMeuPerfil">Salvar Alterações</button>
+            <button type="button" class="button-salvar_editar_perfil" id="buttonMeuPerfil">Salvar Alterações</button>
 
         </form>
     </div>
@@ -102,23 +96,23 @@
 
         <div class="img_nome">
 
-            <img class="imgPerfil" id="imgPerfil" src="../img/artista1.png" alt=""> 
+            <img class="imgPerfil" id="imgPerfil2" src="" alt=""> 
             
-            <p id="nomeArtista">VINCENT VAN GOGH</p>
+            <p id="nome_artista2"></p>
         </div>
 
         <div class="inputs">
             <form class="inputs_senha">
                 <section>
                     <p>SENHA ATUAL</p>
-                    <input type="text">
+                    <input type="password" id="senha_antiga">
                 </section>
                 <section>
                     <p>NOVA SENHA</p>
-                    <input type="text">
+                    <input type="password" id="senha_nova">
                 </section>
 
-                <button class="button_alterar_senha">Alterar Senha</button>
+                <button type="button" class="button_alterar_senha" id="btnAlterarSenha">Alterar Senha</button>
             </form>
 
         </div> 
@@ -127,10 +121,9 @@
 
     <div id="conteudo_informacoes_pessoais" class="editar_informacoes_pessoais">
             <div class="img_nome">
-                <img class="imgPerfil" id="imgPerfil" src="../img/artista1.png" alt=""> 
-                <p id="nomeArtista">VINCENT VAN GOGH</p>
+                <img class="imgPerfil" id="imgPerfil3" src="" alt=""> 
+                <p id="nome_artista3"></p>
             </div>
-
            
              <div class="inputs" id="editar_informacoes_pessoais">
                  
@@ -138,23 +131,27 @@
 
                     <section>
                         <p>NOME COMPLETO</p>
-                        <input type="text">
+                        <input type="text" id="nome_completo_artista">
                     </section>
                     <section>
                         <p>E-MAIL</p>                        
-                        <input type="text">                             
+                        <input type="text" id="email_artista">                             
                     </section>
                     <section>
                         <p>TELEFONE</p>                        
-                        <input type="text">  
+                        <input type="text" id="telefone_artista">  
+                    </section>
+                    <section>
+                        <p>CPF/CNPJ</p>                        
+                        <input type="text" id="cpf_cnpj_artista">  
                     </section>
                     <section>
                         <p>DATA DE NASCIMENTO</p>                        
-                        <input type="text">  
+                        <input type="date" id="data_nascimento_artista">  
                     </section>
     
                 
-                    <button class="button-salvar_editar_perfil" id="buttonInformacoesPessoais">Salvar Alterações</button>
+                    <button type="button" class="button-salvar_editar_perfil" id="btnDadosPessoais">Salvar Alterações</button>
     
                 </form>
             </div>
@@ -178,14 +175,24 @@
     
                     <div class="dados-pix" id="dados-pix">
                         <div class="ajuste">
-                            <p class="cpf">CPF/CNPJ:</p>
-                                <img src="./img/chaves.png" alt="" srcset="">
-                            <label for="">
-                                <input type="text" name="codigo" id="" placeholder="000.000.000-00"> 
-                            </label>
+                            <select id="tipoChavePix" class="tipoChavePix">
+                                <option value="email">E-mail</option>
+                                <option value="cpf/cnpj">Cpf/Cnpj</option>
+                                <option value="telefone/celular">Telefone/Celular</option>
+                                <option value="chaveAleatoria">Chave Aleatória</option>
+    
+                            </select>
+                            
+                            <input id="inputChavePix" class="chavePix" type="text" maxlength="200" placeholder="Digite sua chave">
+                        
                         </div>
-
-                        <button class="button_salvar_dados_pagamento" id="button_salvar_pix">Salvar Alterações</button>
+    
+                        <span id="msgErroPix" class="msgErroPix">Por favor, preencha todos os campos!</span>
+    
+                        <button class="button_salvar_dados_pagamento1" id="button_salvar_pix">
+                            Salvar Alterações
+                        </button>
+    
                     </div>
                 
                 </div>
@@ -199,7 +206,6 @@
     
                         <label for=""> BANCO:
                             <select name="banco" id="banco"> 
-                                <option value=""></option>
                                 <option value="Santander">Santander</option>
                                 <option value="Bradesco">Bradesco</option>
                                 <option value="Itau">Itaú</option>
@@ -244,15 +250,16 @@
     
                     <label class="ajuste3" for="">TIPO DE CONTA:
                         <select name="tipo_conta" class="tipo_conta" id="tipo_conta">
-                            <option value=""></option>
-                            <option value="Conta Corrente"></option>
-                            <option value="Conta Poupança"></option>
+                            <option value="Conta Corrente">Conta Corrente</option>
+                            <option value="Conta Poupança">Conta Poupança</option>
                         </select>
                     </label>
             
                 </div>
+
+                <span id="msgErroTransf" class="msgErroTransf">Por favor, preencha todos os campos!</span>
                 
-                <button class="button_salvar_dados_pagamento" id="button_salvar_transf">Salvar Alterações</button>
+                <button type="button" class="button_salvar_dados_pagamento2" id="button_salvar_transf">Salvar Alterações</button>
             </div>
 
    
@@ -289,6 +296,11 @@
 </div>
 
 </body>
-<script src="./JS/mudar_abas.js" defer></script>
+
+<script src="./JS/formulario.js" defer></script>
+<script type="module" src="./JS/meuPerfil.js" defer></script>
+<script type="module" src="./JS/alterarPerfil.js" defer></script>
+<script type="module" src="./JS/alterarSenhaDadosPessoais.js" defer></script>
+<script type="module" src="./JS/formaRecebimento_desativacaoConta.js" defer></script>
 
 </html>

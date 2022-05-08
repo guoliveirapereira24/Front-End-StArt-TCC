@@ -7,82 +7,96 @@ if(tokenArtista === "null" || tokenArtista === null ||
   window.location.href = "../../../index.html";
 } 
 
-
 // CADASTRO DE PIX
 
 const inputChavePix = document.getElementById('inputChavePix');
-var selectTipoChave= document.getElementById('tipoChavePix');
+const selectTipoChave= document.getElementById('tipoChavePix');
 const msgErroPix = document.getElementById('msgErroPix');
 
 
 selectTipoChave.addEventListener('change', function(e) {
-    event.preventDefault();
-    if(selectTipoChave.value === "email"){
-        inputChavePix.setAttribute('type', 'email');
+
+    if(selectTipoChave.value == "email"){
+        inputChavePix.setAttribute('type', 'text');
+        inputChavePix.setAttribute('maxLength', '200');
         inputChavePix.value = "";
-    } else if(selectTipoChave.value === "telefone/celular"){
+    } else if(selectTipoChave.value == "telefone/celular"){
         inputChavePix.setAttribute('type', 'tel');
         inputChavePix.setAttribute('maxLength', '15');
         inputChavePix.value = "";
-    } else if(selectTipoChave.value === "cpf/cnpj"){
+    } else if(selectTipoChave.value == "cpf/cnpj"){
         inputChavePix.setAttribute('type', 'text');
         inputChavePix.setAttribute('maxLength', '17');
         inputChavePix.value = "";
-    } else if(selectTipoChave.value === "chaveAleatoria"){
+    } else if(selectTipoChave.value == "chaveAleatoria"){
         inputChavePix.setAttribute('type', 'text');
+        inputChavePix.setAttribute('maxLength', '1000');
         inputChavePix.value = "";
     }
+
+    inputChavePix.onkeypress = function(e){
+
+        if(selectTipoChave.value == "telefone/celular"){
+    
+            inputChavePix.onkeypress = function(e){
+                var chr = String.fromCharCode(e.which);
+                if ("1234567890-()".indexOf(chr) < 0){
+                    return false
+                }
+                
+    
+                if(inputChavePix.value.length === 1){
+                    inputChavePix.value = "(" + inputChavePix.value;
+                } else if(inputChavePix.value.length === 3){
+                    inputChavePix.value += ") ";
+                } else if(inputChavePix.value.length === 4){
+                    inputChavePix.value += " ";
+                } else if(inputChavePix.value.length === 10){
+                    inputChavePix.value += "-";
+                }
+            }
+    
+        } else if(selectTipoChave.value == "cpf/cnpj"){
+    
+            inputChavePix.onkeypress = function(e){
+                
+                var chr = String.fromCharCode(e.which);
+                if ("1234567890-/.".indexOf(chr) < 0){
+                    return false
+                }
+    
+                if(inputChavePix.value.length === 3){
+                    inputChavePix.value += ".";
+                } else if(inputChavePix.value.length === 7){
+                    inputChavePix.value += ".";
+                } else if(inputChavePix.value.length === 11){
+                    inputChavePix.value += "-";
+                } else if(inputChavePix.value.length === 17){
+                inputChavePix.value = inputChavePix.value[0]+inputChavePix.value[1]
+                    +"."+inputChavePix.value[2]+inputChavePix.value[4]
+                    +inputChavePix.value[5]+"."+inputChavePix.value[6]
+                    +inputChavePix.value[8]+inputChavePix.value[9]
+                    +"/"+inputChavePix.value[10]+inputChavePix.value[12]
+                    +inputChavePix.value[13]+inputChavePix.value[14]+"-"
+                    +inputChavePix.value[15]+inputChavePix.value[16];
+                }  
+            }
+        } else if (inputChavePix.value == "email"){
+          
+            inputChavePix.onkeypress = function(e){
+                var chr = String.fromCharCode(e.which);
+                if ("abcdefghijklmnopqrstuvwxyz1234567890@.".indexOf(chr) < 0){
+                    return false
+                }
+            }
+        }
+
+        
+    };
+
 });
 
-inputChavePix.onkeypress = function(e){
-    event.preventDefault();
-    if(selectTipoChave.value === "telefone/celular"){
 
-        inputChavePix.onkeypress = function(e){
-            var chr = String.fromCharCode(e.which);
-            if ("1234567890-()".indexOf(chr) < 0){
-                return false
-            }
-            
-
-            if(inputChavePix.value.length === 1){
-                inputChavePix.value = "(" + inputChavePix.value;
-            } else if(inputChavePix.value.length === 3){
-                inputChavePix.value += ") ";
-            } else if(inputChavePix.value.length === 4){
-                inputChavePix.value += " ";
-            } else if(inputChavePix.value.length === 10){
-                inputChavePix.value += "-";
-            }
-        }
-
-    } else if(selectTipoChave.value === "cpf/cnpj"){
-
-        inputChavePix.onkeypress = function(e){
-            var chr = String.fromCharCode(e.which);
-            if ("1234567890-/.".indexOf(chr) < 0){
-                return false
-            }
-
-            if(inputChavePix.value.length === 3){
-                inputChavePix.value += ".";
-            } else if(inputChavePix.value.length === 7){
-                inputChavePix.value += ".";
-            } else if(inputChavePix.value.length === 11){
-                inputChavePix.value += "-";
-            } else if(inputChavePix.value.length === 17){
-            inputChavePix.value = inputChavePix.value[0]+inputChavePix.value[1]
-                +"."+inputChavePix.value[2]+inputChavePix.value[4]
-                +inputChavePix.value[5]+"."+inputChavePix.value[6]
-                +inputChavePix.value[8]+inputChavePix.value[9]
-                +"/"+inputChavePix.value[10]+inputChavePix.value[12]
-                +inputChavePix.value[13]+inputChavePix.value[14]+"-"
-                +inputChavePix.value[15]+inputChavePix.value[16];
-            }  
-        }
-    }
-    
-};
 
 
 

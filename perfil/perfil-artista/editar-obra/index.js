@@ -55,8 +55,7 @@ const configureImagePreview = () => {
 
 const query = location.search.slice(1)
 const idObra = query.split('=')[1]
-console.log(query)
-console.log(idObra)
+
 
 const getObraPronta = () => {
 
@@ -85,12 +84,12 @@ const getObraPronta = () => {
 
                 let {idCategoria} = obraPronta;
                 selectCategoria.options[(idCategoria) - 1].selected = true;
+
                 let {idEspecialidade} = obraPronta;
                 selectSubcategoria.options[(idEspecialidade) - 1].selected = true;
 
                 let {eExclusiva} = obraPronta;
                 selectExclusividade.options[eExclusiva].selected = true;
-
 
 
 
@@ -188,6 +187,8 @@ const cadastrarObra = (
 
         formData.append('imagem1obrigatoria', inputImg1.files[0], nameFile);
 
+    } else{
+        formData.append('img1', imagePreview1.src);
     }
     if(inputImg2.files[0] != undefined){
         imgIsSet = false
@@ -202,6 +203,8 @@ const cadastrarObra = (
         
         formData.append('imagem2opcional', inputImg1.files[0], nameFile);
 
+    } else {
+        formData.append('img2', imagePreview2.src);
     }
     if(inputImg3.files[0] != undefined){  
         imgIsSet = false
@@ -217,6 +220,8 @@ const cadastrarObra = (
 
         formData.append('imagem3opcional', inputImg3.files[0], nameFile);
 
+    } else {
+        formData.append('img3', imagePreview3.src);
     }
     if(inputImg4.files[0] != undefined){
         imgIsSet = false
@@ -231,6 +236,8 @@ const cadastrarObra = (
 
         formData.append('imagem4opcional', inputImg4.files[0], nameFile);
 
+    } else {
+        formData.append('img4', imagePreview4.src);
     }
     if(inputImg5.files[0] != undefined){
         imgIsSet = false
@@ -245,6 +252,8 @@ const cadastrarObra = (
 
         formData.append('imagem5opcional', inputImg5.files[0], nameFile);
 
+    } else {
+        formData.append('img5', imagePreview5.src);
     }
     if(inputImg6.files[0] != undefined){
         imgIsSet = false
@@ -259,6 +268,8 @@ const cadastrarObra = (
 
         formData.append('imagem6opcional', inputImg6.files[0], nameFile);
 
+    } else {
+        formData.append('img6', imagePreview6.src);
     }
 
     var myHeaders = new Headers();
@@ -275,7 +286,7 @@ const cadastrarObra = (
 
     fetch(`http://localhost:3000/obraPronta/atualizarObra/${idObra}`, config)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => window.location.href = '../index.html')
         .catch(error => console.log('error', error));
 } 
 

@@ -268,3 +268,5 @@ btnAddObra.addEventListener('click', () => {
 getEspecialidades();
 getCategorias();
 configureImagePreview()
+
+
