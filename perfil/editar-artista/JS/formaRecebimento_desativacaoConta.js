@@ -224,3 +224,26 @@ btnSaveTransf.addEventListener("click", () => {
         msgErroTransf.style.display = "flex";
     }
 })
+
+const btnDesativarConta = document.getElementById("button_confirmar_desativacao_conta");
+
+btnDesativarConta.addEventListener("click", () => {
+    const tokenArtista = localStorage.getItem('tokenArtista');
+
+    const requestOptions = {
+        method: 'PATCH',
+        headers:{
+            "Authorization": `Bearer ${tokenArtista}`, 
+            "Cache-Control": "no-cache", 
+            "Content-Type": "application/json"
+        }
+    }
+
+    fetch("http://localhost:3000/artista/desativarConta", requestOptions)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            localStorage.setItem('tokenArtista', undefined)
+            window.location.href = "../../../login/index.html";
+        })
+})
