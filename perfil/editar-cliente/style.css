@@ -39,9 +39,7 @@ body{
     height: 100%;
     width: 100%;
 }
-.conteudo_alterar_senha img{
-    width: 20%;
-}
+
 
 .editar_informacoes_pessoais{
     display: none;
@@ -100,7 +98,7 @@ body{
 }
 
 .img_nome img{
-    width: 20%;
+
     padding-left: 1%;
     margin-left: 5%;
 }
@@ -166,6 +164,12 @@ section{
     height: 100%;
 }
 
+.img_perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
 .img_nome{
     display: flex;
     align-items: center;
@@ -175,9 +179,10 @@ section{
    
     /* background-color:aqua; */
 }
-#nome_cliente{
+#nome_cliente1, #nome_cliente2, #nome_cliente3, #nome_cliente{
     font-size: 40px;
 }
+
 .img_texto{
     display: flex;
     width : 300px;
@@ -448,4 +453,23 @@ input:focus-within {
 }
 #botao_desativar_conta{
     color: red;
+}
+
+.img_texto input {
+    display: none;
+}
+
+.img_texto label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+}
+
+.img_texto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }

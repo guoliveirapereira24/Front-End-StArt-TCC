@@ -14,8 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-    <script src="./JS/modal_desativar_conta.js" defer></script>
-    <script src="./JS/mudar_abas_cliente.js" defer></script>
 
     <link rel="stylesheet" href="style.css">
     
@@ -51,39 +49,34 @@
 
             <div class="img_nome">
                 <div class="img_texto">
-                    <img class="img_perfil" src="../img/cliente.png" alt="">
-                    <p>ALTERAR FOTO DE PERFIL</p>
+                    <input class="input-image" id="inputImage" type="file" accept="image/png,image/jpeg,image/gif" required />
+                    <label class="input-text" for="inputImage">
+                        <img  class="img_perfil" src="" id="imgPerfil1" />
+                        <p>ALTERAR FOTO</p>
+                    </label>
                 </div>  
-                <p id="nome_cliente">GABRIEL GONÇALVES</p>
+                <p id="nome_cliente1"></p>
                 
             </div>
             <div class="inputs" id="input_nome_especialidade_nacionalidade_pais_biografia">
                 <section class="section_input">
                     <p>PREFERÊNCIA</p>
-                    <select name="" id="">
-                        <option value="">Fotografia</option>
-                        <option value=""></option>
-
+                    <select id="selectPreferencia">
                     </select>
                 </section>
                 <section class="section_input">
                     <p>NACIONALIDADE</p>
-                    <select name="" id="">
-                        <option value="">Holandês</option>
-                        <option value=""></option>
-            
-                    </select>
+                    <input type="text" id="nacionalidade_cliente">
                 </section>
                 <section class="section_input">
                     <p>PAÍS</p>
-                    <select name="" id="">
-                        <option value="">Holanda</option>
+                    <select id="selectPais">
                     </select>
                 </section>
     
                 <section class="textarea_biografia">
                     <p>BIOGRAFIA</p>
-                    <textarea id="textarea_biografia" class="biografia" style="resize: none" name="" value="" id="" cols="30" rows="5"></textarea>
+                    <textarea id="textAreaBiografia" class="biografia" style="resize: none" name="" value="" id="" cols="30" rows="5"></textarea>
                 </section>
 
             </div>
@@ -99,23 +92,23 @@
 
         <div class="img_nome">
 
-            <img class="img_perfil" src="../img/cliente.png" alt=""> 
+            <img class="img_perfil"  id="imgPerfil2" src="" alt=""> 
             
-            <p id="nome_cliente">GABRIEL GONÇALVES</p>
+            <p id="nome_cliente2"></p>
         </div>
 
         <div class="inputs">
             <form class="inputs_senha">
                 <section>
                     <p>SENHA ATUAL</p>
-                    <input type="text">
+                    <input type="text" id="senha_antiga">
                 </section>
                 <section>
                     <p>NOVA SENHA</p>
-                    <input type="text">
+                    <input type="text" id="senha_nova">
                 </section>
 
-                <button class="button_alterar_senha">Alterar Senha</button>
+                <button type="button" class="button_alterar_senha" id="btnAlterarSenha">Alterar Senha</button>
             </form>
 
         </div> 
@@ -124,8 +117,8 @@
 
     <div id="conteudo_informacoes_pessoais" class="editar_informacoes_pessoais">
             <div class="img_nome">
-                <img class="img_perfil" src="../img/cliente.png" alt=""> 
-                <p id="nome_cliente">GABRIEL GONÇALVES</p>
+                <img class="img_perfil" id="imgPerfil3" src="" alt=""> 
+                <p id="nome_cliente3"></p>
             </div>
 
            
@@ -135,23 +128,27 @@
 
                     <section>
                         <p>NOME COMPLETO</p>
-                        <input type="text">
+                        <input type="text" id="nome_completo_cliente">
                     </section>
                     <section>
                         <p>E-MAIL</p>                        
-                        <input type="text">                             
+                        <input type="text" id="email_cliente">                             
                     </section>
                     <section>
                         <p>TELEFONE</p>                        
-                        <input type="text">  
+                        <input type="text" id="telefone_cliente">  
+                    </section>
+                    <section>
+                        <p>CPF/CNPJ</p>                        
+                        <input type="text" id="cpf_cnpj_cliente">  
                     </section>
                     <section>
                         <p>DATA DE NASCIMENTO</p>                        
-                        <input type="text">  
+                        <input type="date" id="data_nascimento_cliente">  
                     </section>
     
                 
-                    <button class="button-salvar_editar_perfil" id="">Salvar Alterações</button>
+                    <button type="button" class="button-salvar_editar_perfil" id="btnDadosPessoais">Salvar Alterações</button>
     
                 </form>
             </div>
@@ -233,6 +230,9 @@
 </div>
 
 </body>
-<script src="./JS/mudar_abas.js" defer></script>
+
+<script src="./JS/modal_desativar_conta.js" defer></script>
+<script src="./JS/mudar_abas_cliente.js" defer></script>
+<script src="./JS/meuPerfil.js" defer></script>
 
 </html>

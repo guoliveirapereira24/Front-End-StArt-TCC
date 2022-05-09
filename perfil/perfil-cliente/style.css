@@ -2,8 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Raleway', Regular; */
-    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Raleway'; 
+
+}
+
+#icon_lapis:hover{
+    transition: all 0.3s;
+    cursor: pointer;
+    transform: rotate(360deg) scale(1.2);
+}
+
+.nome_artista_parceiro{
+    align-self: center;
+    text-align: center;
+    width: 400px;
 }
 
 #img_nome_avaliacao{
@@ -13,6 +25,21 @@
     padding: 100px;
     /* background-color: yellowgreen; */
 }
+
+#img_perfil_cliente{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.img_artista_parceiro{
+    display: flex;
+    width: 317px;
+    height: 317px;
+    border-radius: 50%;
+}
+
 h1{
     font-size: 60px;
     font-family: 'Raleway', regular;
@@ -122,6 +149,10 @@ h1{
     font-size: 40px;
 }
 
+.img_obra{
+        width: 464px;
+        height: 387px
+}
 .nome_artista_parceiro{
     margin-top: 20px;
 }

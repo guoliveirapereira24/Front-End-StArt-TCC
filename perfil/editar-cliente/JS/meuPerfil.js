@@ -1,21 +1,20 @@
 "use strict"
 
-const nomeArtista1 = document.getElementById("nome_artista1");
-const nomeArtista2 = document.getElementById("nome_artista2");
-const nomeArtista3 = document.getElementById("nome_artista3");
+const nomeCliente1 = document.getElementById("nome_cliente1");
+const nomeCliente2 = document.getElementById("nome_cliente2");
+const nomeCliente3 = document.getElementById("nome_cliente3");
 const imgPerfil1 = document.getElementById("imgPerfil1");
 const imgPerfil2 = document.getElementById("imgPerfil2");
 const imgPerfil3 = document.getElementById("imgPerfil3");
-const inputNomeCompleto = document.getElementById("nome_completo_artista");
-const inputNomeArtistico = document.getElementById("nome_artistico");
-const inputNacionalidade = document.getElementById("nacionalidade_artista");
+const inputNomeCompleto = document.getElementById("nome_completo_cliente");
+const inputNacionalidade = document.getElementById("nacionalidade_cliente");
 const selectPais = document.getElementById("selectPais")
 const inputBiografia = document.getElementById("textAreaBiografia")
-const inputDataNascimento = document.getElementById("data_nascimento_artista");
-const inputTelefoneCelular = document.getElementById("telefone_artista");
-const inputEmail = document.getElementById("email_artista");
-const selectEspecialidade = document.getElementById("selectEspecialidadeArtista");
-const inputCpfCnpj = document.getElementById("cpf_cnpj_artista");
+const inputDataNascimento = document.getElementById("data_nascimento_cliente");
+const inputTelefoneCelular = document.getElementById("telefone_cliente");
+const inputEmail = document.getElementById("email_cliente");
+const selectPreferencia = document.getElementById("selectPreferencia");
+const inputCpfCnpj = document.getElementById("cpf_cnpj_cliente");
 
 
 const getEspecialidades = () => {
@@ -36,7 +35,7 @@ const getEspecialidades = () => {
                 const option = document.createElement('option');
                 option.value = especialidadeArtista.idEspecialidadeArtista;
                 option.innerText = especialidadeArtista.nomeEspecialidadeArtista;
-                selectEspecialidade.appendChild(option);
+                selectPreferencia.appendChild(option);
             });
         });
 }
@@ -49,31 +48,31 @@ const meuPerfil = () => {
         headers: {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache',
-            'Authorization': `Bearer ${localStorage.getItem('tokenArtista')}`
+            'Authorization': `Bearer ${localStorage.getItem('tokenCliente')}`
         }
     }
     
-    fetch('http://localhost:3000/artista/meuPerfil', config)
+    fetch('http://localhost:3000/cliente/meuPerfil', config)
         .then((res) => res.json())
         .then((data) => {
-            const artista = data.artista;
-           
-           return artista.forEach(artista => {
-                inputTelefoneCelular.value = artista.telefoneCelular;
-                inputEmail.value = artista.email;
-                inputNomeCompleto.value = artista.nomeCompleto;
-                inputNomeArtistico.value = artista.nomeArtistico;
-                inputNacionalidade.value = artista.nacionalidade;
-                inputBiografia.innerHTML = artista.biografia;
-                inputCpfCnpj.value = artista.cpfCnpj;
-                nomeArtista1.innerHTML = artista.nomeCompleto;
-                nomeArtista2.innerHTML = artista.nomeCompleto;
-                nomeArtista3.innerHTML = artista.nomeCompleto;
-                imgPerfil1.src = artista.fotoPerfilArtista;
-                imgPerfil2.src = artista.fotoPerfilArtista;
-                imgPerfil3.src = artista.fotoPerfilArtista;
+            const cliente = data.cliente;
+      
+           return cliente.forEach(cliente => {
+                inputTelefoneCelular.value = cliente.telefoneCelular;
+                inputEmail.value = cliente.email;
+                inputNomeCompleto.value = cliente.nomeCompleto;
 
-                let dataNascimento = artista.dataNascimento;
+                inputNacionalidade.value = cliente.nacionalidade;
+                inputBiografia.innerHTML = cliente.biografia;
+                inputCpfCnpj.value = cliente.cpf_cnpj;
+                nomeCliente1.innerHTML = cliente.nomeCompleto;
+                nomeCliente2.innerHTML = cliente.nomeCompleto;
+                nomeCliente3.innerHTML = cliente.nomeCompleto;
+                imgPerfil1.src = cliente.fotoPerfilCliente;
+                imgPerfil2.src = cliente.fotoPerfilCliente;
+                imgPerfil3.src = cliente.fotoPerfilCliente;
+
+                let dataNascimento = cliente.dataNascimento;
                 let dataNascimentoSplit = dataNascimento[0] + dataNascimento[1] + 
                 dataNascimento[2] + dataNascimento[3] + dataNascimento[4] + 
                 dataNascimento[5] + dataNascimento[6] + dataNascimento[7] +
@@ -81,10 +80,12 @@ const meuPerfil = () => {
             
                 inputDataNascimento.value = dataNascimentoSplit;
 
-                let {idEspecialidadeArtista} = artista;
-                selectEspecialidade.options[(idEspecialidadeArtista) - 1].selected = true;
+                let {preferencia} = cliente;
+                if(preferencia != null){
+                    selectPreferencia.value = idEspecialidadeArtista
+                }
 
-                let {pais} = artista;
+                let {pais} = cliente;
                 if(pais !== null) {
                     selectPais.innerHTML = listaPaises;
                     selectPais.value = pais
