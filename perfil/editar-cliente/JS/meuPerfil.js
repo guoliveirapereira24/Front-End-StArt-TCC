@@ -16,11 +16,99 @@ const inputEmail = document.getElementById("email_cliente");
 const selectPreferencia = document.getElementById("selectPreferencia");
 const inputCpfCnpj = document.getElementById("cpf_cnpj_cliente");
 
+const inputCep = document.getElementById("cep");
+const inputEndereco = document.getElementById("endereco")
+const inputNumero = document.getElementById("numero")
+const inputComplemento = document.getElementById("complemento")
+const inputBairro = document.getElementById("bairro")
+var selectCidade = document.getElementById("cidade")
+var selectEstado = document.getElementById("estado")
+
+const getEstados = () => {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    
+    fetch('http://localhost:3000/diversas/estados', config)
+        .then((res) => res.json())
+        .then((data) => {
+            const estados = data.estados;
+        
+           
+           return estados.forEach(estado => {
+                const option = document.createElement('option');
+                option.id = "option" + estado.idEstado
+                option.value = estado.idEstado;
+                option.innerText = estado.nomeEstado;
+                selectEstado.appendChild(option);
+            });
+        });  
+}
+
+getEstados();
+
+const getCidades = () => {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Cache-Control': 'no-cache',
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const idEstado = selectEstado.value;
+    
+    fetch(`http://localhost:3000/diversas/cidades/${idEstado}`, config)
+        .then((res) => res.json())
+        .then((data) => {
+            const cidades = data.cidades;
+           
+           return cidades.forEach(cidade => {
+                const option = document.createElement('option');
+                option.value = cidade.idCidade;
+                option.innerText = cidade.nomeCidade;
+                selectCidade.appendChild(option);
+            });
+        });
+}
+
+
+
+selectEstado.addEventListener("change", () => {
+    const config = {
+        method: 'GET',
+        headers: {
+            'Cache-Control': 'no-cache',
+            'Content-Type': 'application/json'
+        }
+    }
+
+    const idEstado = selectEstado.value;
+    
+    fetch(`http://localhost:3000/diversas/cidades/${idEstado}`, config)
+        .then((res) => res.json())
+        .then((data) => {
+            const cidades = data.cidades;
+            selectCidade.innerHTML = "";
+           
+           return cidades.forEach(cidade => {
+                const option = document.createElement('option');
+                option.value = cidade.idCidade;
+                option.innerText = cidade.nomeCidade;
+                selectCidade.appendChild(option);
+            });
+        });
+});
+
 
 const getEspecialidades = () => {
     const config = {
         method: 'GET',
         headers: {
+            'Cache-Control': 'no-cache',
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache',
         }
@@ -72,6 +160,7 @@ const meuPerfil = () => {
                 imgPerfil2.src = cliente.fotoPerfilCliente;
                 imgPerfil3.src = cliente.fotoPerfilCliente;
 
+
                 let dataNascimento = cliente.dataNascimento;
                 let dataNascimentoSplit = dataNascimento[0] + dataNascimento[1] + 
                 dataNascimento[2] + dataNascimento[3] + dataNascimento[4] + 
@@ -82,7 +171,7 @@ const meuPerfil = () => {
 
                 let {preferencia} = cliente;
                 if(preferencia != null){
-                    selectPreferencia.value = idEspecialidadeArtista
+                    selectPreferencia.value = preferencia
                 }
 
                 let {pais} = cliente;
@@ -93,12 +182,30 @@ const meuPerfil = () => {
                     selectPais.innerHTML = listaPaises;
                 }
 
+                
+                inputEndereco.value = cliente.rua;
+                inputNumero.value = cliente.numero;
+                inputBairro.value = cliente.bairro;
+                inputCep.value = cliente.cep;
+                inputComplemento.value = cliente.complemento;
+
+             
+                
+                selectEstado.value = cliente.idEstado;
+
+                getCidades();
+                
+                selectCidade.value = cliente.idCidade;
+
+
             });
         });
 }
 
+
 getEspecialidades();
 meuPerfil();
+
 
 const listaPaises = `
 <option value="Afeganistão">Afeganistão</option>

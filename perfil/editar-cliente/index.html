@@ -81,7 +81,7 @@
 
             </div>
             
-            <button class="button-salvar_editar_perfil" id="">Salvar Alterações</button>
+            <button type="button" class="button-salvar_editar_perfil" id="buttonMeuPerfil">Salvar Alterações</button>
 
         </form>
     </div>
@@ -189,14 +189,13 @@
         <div class="alinhar">
             <div class="ajuste">
                 <p>CIDADE</p>
-                <input type="text" name="numero" id="numero">
+                <select name="cidade" id="cidade">
+                </select>
             </div>
 
             <div class="ajuste">
                 <p>ESTADO</p>
-                <select name="" id="">
-                    <option value="São Paulo">São Paulo</option>
-                    <option value=""></option>
+                <select name="estado" id="estado">
                 </select>
             </div>
         </div>
@@ -233,6 +232,8 @@
 
 <script src="./JS/modal_desativar_conta.js" defer></script>
 <script src="./JS/mudar_abas_cliente.js" defer></script>
-<script src="./JS/meuPerfil.js" defer></script>
+<script type="module" src="./JS/meuPerfil.js" defer></script>
+<script type="module" src="./JS/alterarPerfil.js" defer></script>
+<script type="module" src="./JS/alterarSenhaDadosPessoais.js" defer></script>
 
 </html>
