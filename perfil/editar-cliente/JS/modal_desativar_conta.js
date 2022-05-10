@@ -25,3 +25,27 @@ button_negar_desativacao_conta.addEventListener("click", function(){
     modal_desativar_conta.style.display = "none";
 
 })
+
+
+const btnDesativarConta = document.getElementById("button_confirmar_desativacao_conta");
+
+btnDesativarConta.addEventListener("click", () => {
+    const tokenCliente = localStorage.getItem('tokenCliente');
+
+    const requestOptions = {
+        method: 'PATCH',
+        headers:{
+            "Authorization": `Bearer ${tokenCliente}`, 
+            "Cache-Control": "no-cache", 
+            "Content-Type": "application/json"
+        }
+    }
+
+    fetch("http://localhost:3000/cliente/desativarConta", requestOptions)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            localStorage.setItem('tokenCliente', undefined)
+            window.location.href = "../../../login/index.html";
+        })
+})

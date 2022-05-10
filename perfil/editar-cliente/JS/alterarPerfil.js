@@ -41,10 +41,7 @@ const atualizarPerfil = (nacionalidade, pais, biografia, preferencia, imgPerfil,
 
         formdata.append('fotoPerfilCliente', inputImgPerfil.files[0], nameFile);
 
-    } else{
-        formdata.append('img1', urlImg.src);
-    }
-
+    } 
 
     var requestOptions = {
     method: 'PATCH',
@@ -55,9 +52,10 @@ const atualizarPerfil = (nacionalidade, pais, biografia, preferencia, imgPerfil,
 
     fetch("http://localhost:3000/cliente/perfil", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(data => console.log(data))
         .catch(error => console.log('error', error));
 
+    window.location.reload();
 }
 
 btnSavePerfil.addEventListener('click', () => {

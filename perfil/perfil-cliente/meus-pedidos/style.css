@@ -40,6 +40,8 @@ h1{
     background-color: yellow;
 }
 .card{
+    display: flex;
+    flex-direction: column;
     height: 45vh;
     width: 100%;
     background: #FCFCFC;
