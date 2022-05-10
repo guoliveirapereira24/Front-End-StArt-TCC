@@ -21,10 +21,8 @@ const inputEndereco = document.getElementById("endereco")
 const inputNumero = document.getElementById("numero")
 const inputComplemento = document.getElementById("complemento")
 const inputBairro = document.getElementById("bairro")
-var selectCidade = document.getElementById("cidade")
 var selectEstado = document.getElementById("estado")
-
-var valorCidade = 0
+var selectCidade = document.getElementById("cidade")
 
 const getEstados = () => {
     const config = {
@@ -54,7 +52,7 @@ const getEstados = () => {
 
 getEstados();
 
-const getCidades = () => {
+const getCidades = (idCidadeSelecionada) => {
     const config = {
         method: 'GET',
         headers: {
@@ -72,11 +70,14 @@ const getCidades = () => {
            
            return cidades.forEach(cidade => {
                 const option = document.createElement('option');
+                option.id = "option" + cidade.idCidade;
                 option.value = cidade.idCidade;
                 option.innerText = cidade.nomeCidade;
                 selectCidade.appendChild(option);
-            });
+            }), selectCidade.value = idCidadeSelecionada;
         });
+
+        
 }
 
 
@@ -118,15 +119,16 @@ const getEspecialidades = () => {
         }
     }
     
-    fetch('http://localhost:3000/diversas/especialidadesArtista', config)
+    fetch('http://localhost:3000/diversas/categorias', config)
         .then((res) => res.json())
         .then((data) => {
-            const especialidades = data.especialidadesArtista;
+            const categoria = data.categorias;
            
-           return especialidades.map(especialidadeArtista => {
+           return categoria.map(categoria => {
                 const option = document.createElement('option');
-                option.value = especialidadeArtista.idEspecialidadeArtista;
-                option.innerText = especialidadeArtista.nomeEspecialidadeArtista;
+                option.id = categoria.idCategoria;   
+                option.value = categoria.nomeCategoria;
+                option.innerText = categoria.nomeCategoria;
                 selectPreferencia.appendChild(option);
             });
         });
@@ -153,9 +155,6 @@ const meuPerfil = () => {
                 inputTelefoneCelular.value = cliente.telefoneCelular;
                 inputEmail.value = cliente.email;
                 inputNomeCompleto.value = cliente.nomeCompleto;
-
-                selectEstado.value = cliente.idEstado;
-                getCidades();
 
                 inputNacionalidade.value = cliente.nacionalidade;
                 inputBiografia.innerHTML = cliente.biografia;
@@ -196,14 +195,10 @@ const meuPerfil = () => {
                 inputCep.value = cliente.cep;
                 inputComplemento.value = cliente.complemento;
 
-               
-             
-                valorCidade = cliente.idCidade;
+                selectEstado.value = cliente.idEstado;
+
+                getCidades(cliente.idCidade);
                 
-                console.log(selectCidade.value)
-               
-
-
             });
         });
 }
@@ -211,6 +206,7 @@ const meuPerfil = () => {
 
 getEspecialidades();
 meuPerfil();
+
 
 
 

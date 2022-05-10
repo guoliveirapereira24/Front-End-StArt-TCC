@@ -46,8 +46,6 @@ const atualizarPerfil = (nomeArtistico, nacionalidade, pais, biografia, idEspeci
 
         formdata.append('fotoPerfilArtista', inputImgPerfil.files[0], nameFile);
 
-    } else{
-        formdata.append('img1', urlImg.src);
     }
 
 
@@ -89,7 +87,7 @@ const imagePreview = (idFile, idImagem) => {
     if (file) {
         fileReader.readAsDataURL(file)
     } else {
-        preview.src = urlImg.src
+        preview.src = imgPerfil
     }
 
     fileReader.onloadend = () => (preview.src = fileReader.result)

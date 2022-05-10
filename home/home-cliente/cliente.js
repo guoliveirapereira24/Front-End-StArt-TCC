@@ -3,21 +3,18 @@
 
 const tokenCliente = localStorage.getItem('tokenCliente');
 
-
-// if(tokenCliente == "null" || tokenCliente == null || 
-//    tokenCliente == "" || tokenCliente == "undefined") {
-//   window.location.href = "../../index.html";
-// } 
-
-
 const buttonLogout = document.getElementById('logout');
 
-function functionLogout() {
-    localStorage.setItem('tokenCliente', null);
-    localStorage.setItem('tokenArtista', null);
+const logout = () => {
+  localStorage.setItem("tokenCliente", undefined);
+  localStorage.setItem("tokenArtista", undefined);
+  window.location.href = "../../login/index.html";
 }
 
-buttonLogout.addEventListener('click', functionLogout());
+
+buttonLogout.addEventListener('click', () => {
+  logout();
+});
 
 const slider = document.querySelector('.gallery');
 let isDown = false;
@@ -47,10 +44,9 @@ slider.addEventListener('mousemove', e => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
-function logout() {
-  localStorage.setItem("tokenCliente", null);
-  localStorage.setItem("tokenArtista", null);
-  window.location.href = "../../login/index.html";
-}
 
 
+if(tokenCliente == "null" || tokenCliente == null || 
+   tokenCliente == "" || tokenCliente == "undefined") {
+    window.location.href = "../../login/index.html";
+} 
