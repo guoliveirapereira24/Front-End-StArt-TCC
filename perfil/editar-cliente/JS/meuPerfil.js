@@ -24,10 +24,13 @@ const inputBairro = document.getElementById("bairro")
 var selectCidade = document.getElementById("cidade")
 var selectEstado = document.getElementById("estado")
 
+var valorCidade = 0
+
 const getEstados = () => {
     const config = {
         method: 'GET',
         headers: {
+            'Cache-Control': 'no-cache',
             'Content-Type': 'application/json'
         }
     }
@@ -46,6 +49,7 @@ const getEstados = () => {
                 selectEstado.appendChild(option);
             });
         });  
+
 }
 
 getEstados();
@@ -150,6 +154,9 @@ const meuPerfil = () => {
                 inputEmail.value = cliente.email;
                 inputNomeCompleto.value = cliente.nomeCompleto;
 
+                selectEstado.value = cliente.idEstado;
+                getCidades();
+
                 inputNacionalidade.value = cliente.nacionalidade;
                 inputBiografia.innerHTML = cliente.biografia;
                 inputCpfCnpj.value = cliente.cpf_cnpj;
@@ -189,13 +196,12 @@ const meuPerfil = () => {
                 inputCep.value = cliente.cep;
                 inputComplemento.value = cliente.complemento;
 
+               
              
+                valorCidade = cliente.idCidade;
                 
-                selectEstado.value = cliente.idEstado;
-
-                getCidades();
-                
-                selectCidade.value = cliente.idCidade;
+                console.log(selectCidade.value)
+               
 
 
             });
@@ -205,6 +211,8 @@ const meuPerfil = () => {
 
 getEspecialidades();
 meuPerfil();
+
+
 
 
 const listaPaises = `
