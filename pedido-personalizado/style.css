@@ -68,11 +68,8 @@ textarea{
 }
 
 .img_grande img{
-    height: 65%;
-    width: 80%;
-    max-height: 280px;
-    max-width: 300px;
-
+    height: 90%;
+    width: 90%;
     min-width: none;
     min-height: none;
     background-color: steelblue;
@@ -103,9 +100,7 @@ textarea{
 }
 .img_adicionais img{
     width: 80%;
-    height: 70%;
-    max-width: 150px;
-    max-height: 150px;
+    height: 90%;
     min-width: none;
     min-height: none;
 }
@@ -127,6 +122,9 @@ textarea{
 .categoria, .genero{
     height: 50%;
     /* background-color: brown; */
+}
+.input-image{
+    display: none;
 }
 .categoria select, .genero select{
     width: 100%;
@@ -156,6 +154,7 @@ textarea{
 .artistas_escolhidos{
     display: none;
     flex-direction: row;
+    gap: 10px;
     align-items: center;
     height: 15%;
     /* background-color: #40E0D0; */
@@ -270,8 +269,8 @@ textarea{
     /* background-color: yellow; */
 }
 .div_img_artista img{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 90%;
 }
 .div_nome_artista{
     display: flex;
@@ -294,6 +293,25 @@ textarea{
     align-items: center;
     /* background-color: tomato; */
 }
+
+.add-artista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px solid;
+    width: 90%;
+    height: 90%;
+}
+
+.img_add{
+    width: 50px;
+    height: 50px;
+}
+
+
+
 .button_modal{
     display: flex;
     flex-direction: row;

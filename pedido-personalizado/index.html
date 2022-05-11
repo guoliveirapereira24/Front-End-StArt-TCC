@@ -15,8 +15,10 @@
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
-    <script src="./modal.js" defer></script>
+    <script src="./JS/modal.js" defer></script>
     <script src="./JS/integracao.js" defer></script>
+    <script src="./JS/categoriaGenero.js" defer></script>
+
     <link rel="stylesheet" href="style.css">
     <title>Pedido Personalizado</title>
 </head>
@@ -31,19 +33,22 @@
     
         <div class="img_exemplo">
             <p>Imagens (opcionais):</p>
-            <section class="img_grande">
+            <input class="input-image" id="inputImage1" type="file" accept="image/png,image/jpeg,image/gif"/>
+            <label class="img_grande" for="inputImage1">
                 <img src="./img/add.png" alt="" srcset="">
-            </section>
+            </label>
         </div>
     
         <div class="img_adicionais">
-            <div class="img_pequena">
+            <input class="input-image" id="inputImage2" type="file" accept="image/png,image/jpeg,image/gif"/>
+            <label class="img_pequena" for="inputImage2">
                 <img src="./img/add.png" alt="" srcset="">
-            </div>
+            </label>
     
-            <div class="img_pequena">
+            <input class="input-image" id="inputImage3" type="file" accept="image/png,image/jpeg,image/gif"/>
+            <label class="img_pequena" for="inputImage3">
                 <img src="./img/add.png" alt="" srcset="">
-            </div>
+            </label>
         </div>
     
     </div>
@@ -55,15 +60,13 @@
             <section class="categoria">
     
                 <p>Categoria:</p>
-                <select name="" id="">
-                    <option>Ilustração</option>
+                <select id="selectCategoria">
                 </select>
             </section>
     
             <section class="genero">
                 <p>Gênero:</p>
-                <select name="" id="">
-                    <option>Retrato</option>
+                <select id="selectGenero">  
                 </select>
             </section>
         
@@ -74,8 +77,8 @@
             <p>Visibilidade:</p>
     
             <select name="select_visibilidade" id="select_visibilidade">
-                <option value="Para todos os artistas" >Para todos os artistas</option>
-                <option value="Para um ou alguns alguns artista">Para um ou alguns alguns artista</option>
+                <option value="1" >Para todos os artistas</option>
+                <option value="0">Para um ou alguns alguns artista</option>
             </select>
         
             <div id="artistas_escolhidos" class="artistas_escolhidos">
@@ -91,7 +94,7 @@
 
     </div>
 
-    <div class="fundo_modal_escolher_artista">
+    <div class="fundo_modal_escolher_artista" id="fundo_modal_escolher_artista">
         <div class="modal_escolher_artista">
             <section class="barra_pesquisa">
                 <input placeholder="Busque o(s) artista(s) para quem você vai fazer o pedido" type="text">
@@ -109,7 +112,9 @@
                     </div>
 
                     <div class="div_img_close">
-                        <img class="img_close" src="./img/close.png" alt="">
+                        <button class="add-artista">
+                            <img class="img_add" src="./img/add.png" alt="">
+                        </button>
                     </div>
                 </div>
 <!-- Card 2 -->
