@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: azure; */
+    font-family: 'Raleway', sans-serif;
+}
+.fundo_carrinho{
+    display: flex;
+    height: 60vh;
+    width: 100vw;
+    background-color: burlywood;
+}
+.linha_produtos{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 5vh;
+    background-color: aquamarine;
+}
+.listagem_carrinho{
+    display: flex;
+    position: fixed;
+    overflow: scroll;
+	scroll-snap-type: both mandatory;
+    overflow-y: auto;
+    height: 65vh;
+    width: 100%;
+    margin-top: 5vh;
+    flex-direction: column;
+    background-color: chartreuse;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    font-size: 2vh;
+    background-color: yellow;
+}
+.nome_artista_categoria{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    padding-top: 3%;
+    padding-left: 2%;
+    gap: 15%;
+    flex-direction: column;
+    background-color: blueviolet;
+}
+.categoria_subcategoria{
+    display: flex;
+    flex-direction: row;
+    background-color: slategrey;
+}
+.div_quantidade_excluir{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    background-color: tomato;
+}
