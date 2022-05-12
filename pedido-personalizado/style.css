@@ -103,8 +103,6 @@ textarea{
 .img_adicionais img{
     width: 80%;
     height: 90%;
-    min-width: none;
-    min-height: none;
 }
 
 .selects_button{
@@ -164,7 +162,15 @@ textarea{
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    justify-content: center;
     height: 15%;
+}
+
+.artistas_escolhidos button {
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
 }
 
 .button{

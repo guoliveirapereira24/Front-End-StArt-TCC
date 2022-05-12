@@ -7,9 +7,53 @@ const imgOpcional3 = document.getElementById("inputImage3");
 var selectCategoria = document.getElementById("selectCategoria");
 var selectGenero = document.getElementById("selectGenero");
 
+const btnCadastrar = document.getElementById("btnCadastrar")
+
 const inputPesquisa = document.getElementById("inputPesquisa");
 var listagem_artistas_pesquisados = document.getElementById("listagem_artistas_pesquisados");
-var arrayVisibilidade = {}
+var arrayVisibilidade = [];
+
+const fundo_modal_escolher_artista = document.getElementById("fundo_modal_escolher_artista");
+const para_alguns_artistas = document.getElementById("para_alguns_artistas");
+
+const select_visibilidade = document.getElementById("select_visibilidade");
+
+const button_cancelar = document.getElementById("cancelar");
+const btnConfimar = document.getElementById("btnConfirmar")
+const div_artistas_escolhidos = document.getElementById("artistas_escolhidos");
+const text_artistas_escolhidos = document.getElementById("text_artistas_escolhidos");
+
+const btnEscolherArtista = document.getElementById("escolherArtista")
+
+
+select_visibilidade.addEventListener("change", () => {
+    const visibilidade = select_visibilidade.value;
+
+    if (visibilidade == 0) {
+        div_artistas_escolhidos.style.display = "flex";
+
+    } else if (visibilidade == 1) {
+        div_artistas_escolhidos.style.display = "none";
+        arrayVisibilidade = []
+    }
+});
+btnEscolherArtista.addEventListener("click", () => {
+     fundo_modal_escolher_artista.style.display = "flex";
+})
+
+button_cancelar.addEventListener("click", () => {
+    fundo_modal_escolher_artista.style.display = "none";
+    div_artistas_escolhidos.style.display = "none";
+    div_artistas_escolhidos.innerHTML = ""; 
+    select_visibilidade.value = 1; 
+    arrayVisibilidade = []
+});
+
+btnConfirmar.addEventListener("click", () => {
+    fundo_modal_escolher_artista.style.display = "none";
+})
+
+
 
 const imagePreview = (idFile, idImagem) => {
     const file = document.getElementById(idFile).files[0]
@@ -59,7 +103,6 @@ inputPesquisa.addEventListener('keyup', () => {
             .then((res) => res.json())
             .then((data) => {
                 const artista = data.artista;
-
             
             return artista.map(artista => {
                 var nomeArtista = artista.nomeArtista.split(' ')[0]
@@ -69,10 +112,12 @@ inputPesquisa.addEventListener('keyup', () => {
                 if(artista.nomeArtista.split(' ').length > 2){
                     nomeArtista += ' ' + artista.nomeArtista.split(' ')[2]
                 }
+
+                const idArtista = artista.idArtista
             
                 const div = document.createElement('div');
                     div.className = 'card_artista';
-                    div.id = "card " + artista.idArtista;
+                    div.id = "card " + idArtista;
                     div.innerHTML = `
                         <div class="div_img_artista">
                             <img class="img_artista" src="${artista.fotoPerfilArtista}" alt="">
@@ -81,28 +126,41 @@ inputPesquisa.addEventListener('keyup', () => {
                             <p class="nome_artista">${nomeArtista}</p>
                         </div>
 
-                        <div class="div_img_close" id="div_img_close ${artista.idArtista}">
+                        <div class="div_img_close" id="div_img_close ${idArtista}">
                         </div>
                     `;
 
                     listagem_artistas_pesquisados.appendChild(div);
 
-                    const divButtons = document.getElementById(`div_img_close ${artista.idArtista}`);
+                    const divButtons = document.getElementById(`div_img_close ${idArtista}`);
 
                     const btnAddArtistaVisibilidade = document.createElement('button');
-                    btnAddArtistaVisibilidade.id = `btnAddArtistaVisibilidade ${artista.idArtista}`;
+                    btnAddArtistaVisibilidade.id = `btnAddArtistaVisibilidade ${idArtista}`;
                     btnAddArtistaVisibilidade.className = "add-artista";
-                    btnAddArtistaVisibilidade.onclick = () => addArtista(artista.idArtista);
+                    btnAddArtistaVisibilidade.onclick = () => addArtista(idArtista);
                     btnAddArtistaVisibilidade.innerHTML = `<img class="img_add" src="./img/add.png" alt="">`;
 
                     const btnRemoveArtistaVisibilidade = document.createElement('button');
-                    btnRemoveArtistaVisibilidade.id = `btnRemoveArtistaVisibilidade ${artista.idArtista}`;
+                    btnRemoveArtistaVisibilidade.id = `btnRemoveArtistaVisibilidade ${idArtista}`;
                     btnRemoveArtistaVisibilidade.className = "remove-artista";
-                    btnRemoveArtistaVisibilidade.onclick = () => removeArtista(artista.idArtista);
+                    btnRemoveArtistaVisibilidade.onclick = () => removeArtista(idArtista);
                     btnRemoveArtistaVisibilidade.innerHTML = `<img class="img_add" src="./img/close.png" alt="">`;
 
                     divButtons.appendChild(btnAddArtistaVisibilidade);
                     divButtons.appendChild(btnRemoveArtistaVisibilidade);
+
+                    if(arrayVisibilidade[idArtista] == idArtista){
+                        btnAddArtistaVisibilidade.style.display = 'none';
+                        btnRemoveArtistaVisibilidade.style.display = 'flex';
+                    } else if(arrayVisibilidade[idArtista] != idArtista){
+                        btnAddArtistaVisibilidade.style.display = 'flex';
+                        btnRemoveArtistaVisibilidade.style.display = 'none';
+                    }
+
+                    button_cancelar.addEventListener("click", () => {
+                        btnAddArtistaVisibilidade.style.display = 'flex';
+                        btnRemoveArtistaVisibilidade.style.display = 'none';
+                    });
 
                 });
             });
@@ -112,14 +170,13 @@ inputPesquisa.addEventListener('keyup', () => {
 });
 
 const addArtista = (idArtista) => {
-
     const buttonAdd = document.getElementById(`btnAddArtistaVisibilidade ${idArtista}`);
     buttonAdd.style.display = 'none';
 
     const buttonRemove = document.getElementById(`btnRemoveArtistaVisibilidade ${idArtista}`);
     buttonRemove.style.display = 'flex';
 
-    arrayVisibilidade[idArtista] = idArtista;
+    arrayVisibilidade.push(idArtista);
     console.log(arrayVisibilidade);
 }
 
@@ -130,10 +187,111 @@ const removeArtista = (idArtista) => {
         const buttonRemove = document.getElementById(`btnRemoveArtistaVisibilidade ${idArtista}`);
         buttonRemove.style.display = 'none';
 
-        delete arrayVisibilidade[idArtista];
+        var myIndex = arrayVisibilidade.indexOf(idArtista);
+        if (myIndex !== -1) {
+            arrayVisibilidade.splice(myIndex, 1);
+        }
         console.log(arrayVisibilidade);
 }
 
+
+const cadastrarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional2, 
+    imgOpcional3, visibilidade) => {
+        event.preventDefault();
+
+        var imgIsSet = false;
+    
+        let formData =  new FormData();
+    
+        formData.append('descricao', descricao);
+        formData.append('genero', genero);
+        formData.append('status', 'Publicada');
+        formData.append('idCategoria', categoria);
+        formData.append('visibilidadeArray', `{ "array": ${visibilidade} }`);
+
+
+   
+        
+        if(imgOpcional1.files[0] != undefined){
+            imgIsSet = false
+            const file = imgOpcional2.files[0]
+            const nameFile = file.name
+    
+            const fileReader = new FileReader(file)
+            fileReader.readAsDataURL(file)
+            fileReader.onloadend = () => {
+                imgIsSet = true
+            }
+    
+                formData.append('imagem1opcional', imgOpcional1.files[0], nameFile);
+    
+        }
+        if(imgOpcional2.files[0] != undefined){
+            imgIsSet = false
+            const file = imgOpcional2.files[0]
+            const nameFile = file.name
+    
+            const fileReader = new FileReader(file)
+            fileReader.readAsDataURL(file)
+            fileReader.onloadend = () => {
+                imgIsSet = true
+            }
+            
+            formData.append('imagem2opcional', imgOpcional2.files[0], nameFile);
+    
+        }
+        if(imgOpcional3.files[0] != undefined){  
+            imgIsSet = false
+            const file = imgOpcional3.files[0]
+            const nameFile = file.name
+    
+            const fileReader = new FileReader(file)
+            fileReader.readAsDataURL(file)
+            fileReader.onloadend = () => {
+                imgIsSet = true
+            }
+    
+    
+            formData.append('imagem3opcional', imgOpcional3.files[0], nameFile);
+    
+        }
+
+    
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${tokenCliente}`);
+       
+        
+        const config = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formData,
+            redirect: 'follow'
+        }
+    
+    
+        fetch('http://localhost:3000/obraPronta/inserirObra', config)
+            .then(response => response.text())
+            .then((result) => {
+                console.log(result)
+            })
+            .catch(error => console.log('error', error));
+ 
+    
+}
+
+
+btnCadastrar.addEventListener("click", () => {
+    const descricao = inputDescricao.value;
+    const categoria = selectCategoria.value;
+    const genero = selectGenero.value;
+    
+    if (descricao == '' || categoria == '' || genero == '') {
+       alert('Preencha todos os Campos Obrigatórios!');
+    } else {
+        cadastrarPedido(descricao, categoria, genero, imgOpcional1, imgOpcional2, 
+            imgOpcional3, arrayVisibilidade);
+    }
+})
 
 
 

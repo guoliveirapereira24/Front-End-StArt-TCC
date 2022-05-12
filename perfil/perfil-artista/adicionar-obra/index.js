@@ -68,13 +68,6 @@ const cadastrarObra = (
 
     var imgIsSet = false;
 
-    var nameimg1 = '';
-    var nameimg2 = '';
-    var nameimg3 = '';
-    var nameimg4 = '';
-    var nameimg5 = '';
-    var nameimg6 = '';
-
 
     let formData =  new FormData();
 
@@ -251,8 +244,6 @@ btnAddObra.addEventListener('click', () => {
     const categoria = selectCategoria.value;
     const subCategoria = selectSubcategoria.value;
 
-    console.log(nome, preco, quantidade, desconto, tecnica, descricao, exclusividade, categoria, subCategoria);
-    console.log(inputImg1Obrigatoria.files)
 
     
     if (nome == '' || preco == '' || quantidade == '' || desconto == '' || tecnica == '' || descricao == '' || exclusividade == '' || categoria == '' || subCategoria == '' || inputImg1Obrigatoria.files.length == 0) {
