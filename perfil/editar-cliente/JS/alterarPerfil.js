@@ -55,7 +55,7 @@ const atualizarPerfil = (nacionalidade, pais, biografia, preferencia, imgPerfil,
         .then(data => console.log(data))
         .catch(error => console.log('error', error));
 
-    window.location.reload();
+
 }
 
 btnSavePerfil.addEventListener('click', () => {
