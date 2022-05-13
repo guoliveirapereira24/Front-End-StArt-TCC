@@ -46,6 +46,7 @@ btnAlterarSenha.addEventListener('click', () => {
     if(inputSenhaAntiga.value == '' || inputSenhaNova.value == ''){
         alert("Preencha todos os campos!");
     } else {
+        console.log("Teste")
         atualizarSenha();
     }
 });

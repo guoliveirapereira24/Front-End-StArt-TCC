@@ -341,7 +341,7 @@ h2{
     
 }
 .listagem_genero{
-    display: flex;
+    display: none;
     position: fixed;
     width: 20%;
     height: 100%;
