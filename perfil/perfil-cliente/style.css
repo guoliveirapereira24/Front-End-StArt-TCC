@@ -103,6 +103,10 @@ h1{
     border-radius: 10px;
     background: #40E0D0;
 }
+.button_meus_pedidos:hover{
+    transition: all 0.3s;
+    transform: scale(1.2);
+}
 .descricao_perfil_cliente{
     height: 300px;
     

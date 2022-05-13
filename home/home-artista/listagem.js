@@ -14,7 +14,7 @@ function functionLogout() {
     localStorage.setItem('tokenArtista', null);
 }
 
-buttonLogout.addEventListener('click', functionLogout());
+// buttonLogout.addEventListener('click', functionLogout());
 
 const button_pedidos_para_mim = document.getElementById("button-pedidos-para-mim");
 const button_pedidos_publicos = document.getElementById("button-pedidos-publicos")
@@ -59,4 +59,4 @@ function logout() {
     localStorage.setItem("tokenCliente", null);
     localStorage.setItem("tokenArtista", null);
     window.location.href = "../../login/index.html";
-  }
+}

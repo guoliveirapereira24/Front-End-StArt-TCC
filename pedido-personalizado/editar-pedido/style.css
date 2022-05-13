@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: azure; */
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+button:hover{
+    transition: all 0.3s;
+    cursor: pointer;
+    transform: scale(1.1);  
+}
+
+.descricao_imgs{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: 60vh;
+    gap: 5%;
+}
+
+.div_descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+h1{
+    font-size: 3vh;
+}
+
+p{
+    font-size: 2.5vh;
+}
+
+textarea{
+    border:2px solid;
+    width: 40vw;
+    border-radius: 15px;
+    height: 54vh;
+    padding: 2%;
+    font-size: 2.5vh;
+
+}
+
+.img_exemplo{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 25vw;
+    height: 60vh;
+}
+
+.img_grande{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 54vh;
+    border: 2px solid;
+    border-radius: 15px;
+    /* background-color: bisque; */
+}
+
+.img_grande img{
+    height: 80%;
+    width: 90%;
+}
+
+.img_adicionais{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 15%;
+    gap: 5%;
+    /* padding-top: 3%;
+    padding-bottom: 3%; */
+}
+
+.img_pequena{
+    display: flex;
+    border: 2px solid;
+    border-radius: 15px;
+    height: 40%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_adicionais img{
+    width: 80%;
+    height: 90%;
+}
+
+.selects_button{
+    display: flex;
+    width: 80%;
+    height: 30vh;
+    gap: 1%;
+    flex-direction: row;
+    /* background-color: tan; */
+}
+
+.categoria_genero{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: 10%;
+    /* background-color: blueviolet; */
+}
+
+.categoria, .genero{
+    height: 50%;
+    /* background-color: brown; */
+}
+
+.input-image{
+    display: none;
+}
+
+.categoria select, .genero select{
+    width: 100%;
+    height: 7vh;
+    font-size: 3vh;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-left: 2%;
+}
+
+.select_visibilidade{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+}
+
+.select_visibilidade select{
+    height: 7vh;
+    font-size: 3vh;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding-left: 1%;
+}
+
+.artistas_escolhidos{
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+}
+
+.artistas_escolhidos button {
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+}
+
+.button{
+    display: flex;
+    width: 25%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button button{
+    width: 70%;
+    height: 25%;
+    background-color: turquoise;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 2.5vh;
+}
+
+.fundo_modal_escolher_artista{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000007d;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.modal_escolher_artista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 57%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.barra_pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 15%;
+    margin-top: 2%;
+}
+
+.barra_pesquisa input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.7vh;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.button_pesquisar{
+    height: 100%;
+    width: 10%;
+    border: 1px ;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.barra_pesquisa img{
+    height: 50%;
+    width: 50%;
+    margin-left: 2%;
+}
+
+.listagem_artistas{
+    margin-top: 2%;
+    display: block;
+    overflow-x: scroll;
+	scroll-snap-type: both mandatory;
+    width: 80%;
+    height: 59%;
+    gap: 5px;
+}
+.card_artista{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    flex-direction: row;
+    background-color: white;
+    width: 80%;
+    height: 70px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* gap:2%; */
+}
+.card_artista:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    transform: scale(1.05);  
+}
+.div_img_artista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 15%;
+    border-radius: 40px;
+    /* background-color: yellow; */
+}
+.div_img_artista img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.div_nome_artista{
+    display: flex;
+    padding-left: 2%;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    /* font-size: vh; */
+    /* background-color: aqua; */
+}
+.nome_artista{
+    font-size: 2.5vh;
+}
+.div_img_close{
+    display: flex;
+    width: 10%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: tomato; */
+}
+
+.add-artista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px solid;
+    width: 45px;
+    height: 45px;
+}
+
+.remove-artista{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px solid;
+    width: 90%;
+    height: 90%;
+}
+
+.img_add{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.button_modal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    width: 70%;
+    margin-top: 1%;
+    gap: 10%;
+    /* background-color: violet; */
+}
+.button_modal button{
+    height: 90%;
+    width: 45%;
+    border:1px solid;
+    border-radius: 10px;
+    font-size: 2.3vh;
+    color: #FFF;
+}
+.azul{
+    background-color: #40E0D0;
+}
+.vermelho{
+    background-color: #D71B1B;
+}
+/* .card_artista img{
+    width: 7%;
+    height: 50%;
+} */

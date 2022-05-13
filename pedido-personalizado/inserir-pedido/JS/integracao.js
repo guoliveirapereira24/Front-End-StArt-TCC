@@ -1,5 +1,7 @@
 "use strict";
 
+const tokenCliente = localStorage.getItem('tokenCliente');
+
 const inputDescricao = document.getElementById("textAreaDescricao");
 const imgOpcional1 = document.getElementById("inputImage1");
 const imgOpcional2 = document.getElementById("inputImage2");
@@ -204,17 +206,17 @@ const cadastrarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional
         let formData =  new FormData();
     
         formData.append('descricao', descricao);
-        formData.append('genero', genero);
+        formData.append('idEspecialidade', genero);
         formData.append('status', 'Publicada');
         formData.append('idCategoria', categoria);
-        formData.append('visibilidadeArray', `{ "array": ${visibilidade} }`);
+        formData.append('visibilidadeArray', `{ "array": [${visibilidade}] }`);
 
-
+        console.log(formData);
    
-        
+        console.log(imgOpcional1.files[0])
         if(imgOpcional1.files[0] != undefined){
             imgIsSet = false
-            const file = imgOpcional2.files[0]
+            const file = imgOpcional1.files[0]
             const nameFile = file.name
     
             const fileReader = new FileReader(file)
@@ -269,7 +271,7 @@ const cadastrarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional
         }
     
     
-        fetch('http://localhost:3000/obraPronta/inserirObra', config)
+        fetch('http://localhost:3000/pedidosPersonalizados/cadastrarPedido', config)
             .then(response => response.text())
             .then((result) => {
                 console.log(result)

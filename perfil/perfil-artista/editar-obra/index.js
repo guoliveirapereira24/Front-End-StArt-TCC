@@ -27,6 +27,13 @@ const imagePreview4 = document.getElementById('imagePreview4');
 const imagePreview5 = document.getElementById('imagePreview5');
 const imagePreview6 = document.getElementById('imagePreview6');
 
+var img1 = "";
+var img2 = "";
+var img3 = "";
+var img4 = "";
+var img5 = "";
+var img6 = "";
+
 const configureImagePreview = () => {
     const inputImage1 = document.querySelector('#inputImage1')
     const handleFileImage1 = () => imagePreview('inputImage1', 'imagePreview1')
@@ -56,7 +63,6 @@ const configureImagePreview = () => {
 const query = location.search.slice(1)
 const idObra = query.split('=')[1]
 
-
 const getObraPronta = () => {
 
     const configObras = {
@@ -83,15 +89,20 @@ const getObraPronta = () => {
                 textAreaDescricao.innerHTML = obraPronta.descricao;
 
                 let {idCategoria} = obraPronta;
-                selectCategoria.options[(idCategoria) - 1].selected = true;
+                selectCategoria.value = idCategoria
 
                 let {idEspecialidade} = obraPronta;
-                selectSubcategoria.options[(idEspecialidade) - 1].selected = true;
+                selectSubcategoria.value = idEspecialidade
 
                 let {eExclusiva} = obraPronta;
                 selectExclusividade.options[eExclusiva].selected = true;
 
-
+                img1 = obraPronta.imagem1obrigatoria;
+                img2 = obraPronta.imagem2opcional;
+                img3 = obraPronta.imagem3opcional;
+                img4 = obraPronta.imagem4opcional;
+                img5 = obraPronta.imagem5opcional;
+                img6 = obraPronta.imagem6opcional;
 
                 if (obraPronta.imagem1obrigatoria != '') {
                     imagePreview1.src = `${obraPronta.imagem1obrigatoria}`;
@@ -134,7 +145,7 @@ const getObraPronta = () => {
 }
 
 
-const cadastrarObra = (
+const editarObra = (
     nome, 
     preco, 
     quantidade,
@@ -154,13 +165,6 @@ const cadastrarObra = (
     event.preventDefault();
 
     var imgIsSet = false;
-
-    var nameimg1 = '';
-    var nameimg2 = '';
-    var nameimg3 = '';
-    var nameimg4 = '';
-    var nameimg5 = '';
-    var nameimg6 = '';
 
     let formData =  new FormData();
 
@@ -188,7 +192,11 @@ const cadastrarObra = (
         formData.append('imagem1obrigatoria', inputImg1.files[0], nameFile);
 
     } else{
-        formData.append('img1', imagePreview1.src);
+        if (imagePreview1.src == img1) {
+            formData.append('img1', imagePreview1.src);
+        } else {
+            formData.append('img1', '');
+        }
     }
     if(inputImg2.files[0] != undefined){
         imgIsSet = false
@@ -204,7 +212,11 @@ const cadastrarObra = (
         formData.append('imagem2opcional', inputImg1.files[0], nameFile);
 
     } else {
-        formData.append('img2', imagePreview2.src);
+        if (imagePreview2.src == img2) {
+            formData.append('img2', imagePreview2.src);
+        } else {
+            formData.append('img2', '');
+        }
     }
     if(inputImg3.files[0] != undefined){  
         imgIsSet = false
@@ -221,7 +233,11 @@ const cadastrarObra = (
         formData.append('imagem3opcional', inputImg3.files[0], nameFile);
 
     } else {
-        formData.append('img3', imagePreview3.src);
+        if (imagePreview3.src == img3) {
+            formData.append('img3', imagePreview3.src);
+        } else {
+            formData.append('img3', '');
+        }
     }
     if(inputImg4.files[0] != undefined){
         imgIsSet = false
@@ -237,7 +253,11 @@ const cadastrarObra = (
         formData.append('imagem4opcional', inputImg4.files[0], nameFile);
 
     } else {
-        formData.append('img4', imagePreview4.src);
+        if (imagePreview4.src == img4) {
+            formData.append('img4', imagePreview4.src);
+        } else {
+            formData.append('img4', '');
+        }
     }
     if(inputImg5.files[0] != undefined){
         imgIsSet = false
@@ -253,7 +273,11 @@ const cadastrarObra = (
         formData.append('imagem5opcional', inputImg5.files[0], nameFile);
 
     } else {
-        formData.append('img5', imagePreview5.src);
+        if (imagePreview5.src == img5) {
+            formData.append('img5', imagePreview5.src);
+        } else {
+            formData.append('img5', '');
+        }
     }
     if(inputImg6.files[0] != undefined){
         imgIsSet = false
@@ -269,7 +293,11 @@ const cadastrarObra = (
         formData.append('imagem6opcional', inputImg6.files[0], nameFile);
 
     } else {
-        formData.append('img6', imagePreview6.src);
+        if (imagePreview6.src == img6) {
+            formData.append('img6', imagePreview6.src);
+        } else {
+            formData.append('img6', '');
+        }
     }
 
     var myHeaders = new Headers();
@@ -354,14 +382,14 @@ btnAddObra.addEventListener('click', () => {
         msgErro.innerText = 'Preencha todos os Campos Obrigatórios!';
         msgErro.style.display = 'flex';
     } else {
-        cadastrarObra(nome, preco, quantidade, desconto, tecnica, descricao, 
+        editarObra(nome, preco, quantidade, desconto, tecnica, descricao, 
             exclusividade, categoria, subCategoria, inputImg1Obrigatoria, inputImg2Opcional, 
             inputImg3Opcional, inputImg4Opcional, inputImg5Opcional, inputImg6Opcional);
     }
 })
 
+configureImagePreview()
 getEspecialidades();
 getCategorias();
-configureImagePreview()
 getObraPronta();
 

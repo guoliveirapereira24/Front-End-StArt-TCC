@@ -80,6 +80,13 @@ function getInformacoesCliente(){
                 window.location.href = "../editar-cliente/index.html"
             }
 
+            const btnMeusPedidos = document.getElementById("button_meus_pedidos")
+
+            btnMeusPedidos.addEventListener("click", () => {
+                
+                window.location.href = "./meus-pedidos/index.html"
+            })
+
         });
     });
 
@@ -221,7 +228,6 @@ fetch(`http://localhost:3000/diversas/obrasFavoritas`, configObrasFavoritas)
                         desfavoritar.onclick = () => {
                             deleteObraFavorita(obrasFavoritas.idObrasFavoritas)
                         }
-
 
 
                     })
