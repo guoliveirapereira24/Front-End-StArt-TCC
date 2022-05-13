@@ -171,16 +171,12 @@ const editarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional2,
             formData.append('imagem3opcional', imgOpcional3.files[0], nameFile);
     
         } else {
-            if (imagePreview3.src == img2) {
+            if (imagePreview3.src == img3) {
                 formData.append('img3', imagePreview3.src);
             } else {
                 formData.append('img3', '');
             }
         }
-
-        console.log(imgOpcional1.files[0])
-        console.log(imgOpcional2.files[0])
-        console.log(imgOpcional3.files[0])
         
     
         var myHeaders = new Headers();

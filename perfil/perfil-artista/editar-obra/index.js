@@ -177,7 +177,7 @@ const editarObra = (
     formData.append('eExclusiva', exclusividade);
     formData.append('idCategoria', categoria);
     formData.append('idEspecialidade', subCategoria)
-    
+
     if(inputImg1.files[0] != undefined){
         imgIsSet = false
         const file = inputImg1.files[0]
@@ -209,7 +209,7 @@ const editarObra = (
             imgIsSet = true
         }
         
-        formData.append('imagem2opcional', inputImg1.files[0], nameFile);
+        formData.append('imagem2opcional', inputImg2.files[0], nameFile);
 
     } else {
         if (imagePreview2.src == img2) {
