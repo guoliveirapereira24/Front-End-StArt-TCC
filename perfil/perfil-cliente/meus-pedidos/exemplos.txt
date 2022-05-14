@@ -1,0 +1,278 @@
+ <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Enviado para:</p>
+                        <p>Todos</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p>Publicado</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="editar_pedido" id="editar_pedido">Editar Pedido</button>
+                            <button class="excluir_pedido" id="button_excluir_pedido">Excluir Pedido</button>
+                        </div>
+    
+    
+                    </div>
+                
+
+            </div>
+
+
+             <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Enviado para:</p>
+                        <p>Todos</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p class="aceito">Aceito</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="visualizar_proposta" id="visualizar_proposta">Visualizar Propostas</button>
+                            <button class="recusar" id="button_cancelar">Cancelar Pedido</button>
+                        </div>
+    
+    
+                    </div>
+                
+
+            </div>
+
+
+            <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Aceito por:</p>
+                        <p>Van Gogh</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p class="em_andamento">Em andamento</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="entrar_contato" id="entrar_contato">Entrar em contato</button>
+                            <button class="recusar" id="button_cancelar">Cancelar Pedido</button>
+                        </div>
+    
+    
+                    </div>
+                
+
+            </div>
+
+
+            <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Aceito por:</p>
+                        <p>Van Gogh</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p class="finalizado">Finalizado</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="avaliar_artista" id="button_avaliar_artista">Avaliar Artista</button>
+                            <button class="entrar_contato" id="button_entrar_contato">Entrar em Contato</button>
+                        </div>
+    
+                    </div>
+            </div>
+
+
+            <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Aceito por:</p>
+                        <p>Van Gogh</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p class="finalizado">Finalizado</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="avaliar_artista" id="button_avaliar_artista">Avaliar Artista</button>
+                            <button class="entrar_contato" id="button_entrar_contato">Entrar em Contato</button>
+                        </div>
+    
+                    </div>
+                
+            </div>
+
+
+
+            <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Aceito por:</p>
+                        <p>Van Gogh</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p class="despachado">Despachado</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="avaliar_artista" id="button_avaliar_artista">Avaliar Artista</button>
+                            <button class="entrar_contato" id="button_entrar_contato">Entrar em Contato</button>
+                        </div>
+    
+    
+                    </div>
+                
+
+            </div>
+
+
+            <div class="card">
+                <div class="genero_enviado_status">
+
+                    <div class="genero">
+                        <p class="translucido">Gênero:</p>
+                        <p>Retrato</p>
+                    </div>
+
+                    <div class="enviado_para">
+                        <p class="translucido">Enviado para:</p>
+                        <p>Pi’erre Bourne</p>
+                    </div>
+
+                    <div class="status">
+                        <p class="translucido">Status:</p>
+                        <p class="recusado">Recusado</p>
+                    </div>
+                </div>
+
+                    <p class="descricao_pedido">
+                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
+                            a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
+                    </p>
+
+                    <div class="exemplo_botoes" id="exemplo_botoes">
+                        <div class="exemplo">
+                            <img src="../../img/exemplo2.png" alt="">  
+                        </div>
+    
+                        <div class="botoes" id="botoes">
+                            <button class="editar_pedido" id="editar_pedido">Editar Pedido</button>
+                            <button class="excluir_pedido" id="button_excluir_pedido">Excluir Pedido</button>
+                        </div>
+    
+                    </div>
+            </div>

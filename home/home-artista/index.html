@@ -19,6 +19,9 @@
     <script src="proposta.js" defer></script>
     <script src="slide_artista.js" defer></script>
     <script src="listagem.js" defer></script>
+    <script type="module" src="pedidos.js" defer></script>
+
+
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
@@ -322,143 +325,20 @@
         <div class="listagem_pedidos">
 
             <!-- CARD DE PEDIDOS PUBLICOS -->
-            <div class="publicos" id="listagem_pedidos_publicos">
-    
-                <div id="card">
-                    <div id="nome_tipo_contato">
-                        
-                        <section class="img_nome_avaliacao">
-                            <section class="img_nome">
-                                <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
-        
-                                <p class="nome" id="nome_cliente">Gabriel Gonçalves</p>
-                            </section>
-                     
-                            
-                            <section id="avaliacao">
-                                <img id="estrelas" src="../img/estrela2.png" alt="">
-                                <p>4.5</p>
-                            </section>
-        
-                        </section>
-               
-                        <section id="categoria_pedido">
-                            
-                            <p>Retrato</p>
-                            
-                        </section>
-                       
-                        <section id="contatar">
-                            <img src="../img/contatar.png" alt="">
-                            <p>Contatar</p>
-                        </section>
-                        
-                    </div>
-                    <p id="descricao_pedido">
-                        Olá! Quero um desenho dessa foto da minha querida avó. Quem estiver disposto 
-    a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
-                    </p>
-    
-                    <div id="exemplo_botoes">
-                        <img src="../img/exemplo.png" alt="">
-    
-                        <div id="botoes">
-                            <button class="fazer_proposta" id="fazer_proposta">Fazer Proposta</button>
-                            <button class="recusar" id="button_recusar">Recusar Pedido</button>
-                        </div>
-    
-                    </div>
-    
-                </div>
-                    
+            <div class="publicos" id="listagem_pedidos_publicos">                
             </div>
     
-    <!-- CARD DE PEDIDOS PARA MIM -->
+            <!-- CARD DE PEDIDOS PARA MIM -->
             <div class="para-mim" id="listagem_pedidos_para_mim">
-    
-                    <div id="card">
-                        <div id="nome_tipo_contato">
-        
-                            <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
-        
-                            
-
-                            <p class="nome"  id="nome_cliente">Gabriel Gonçalves</p>
-                            <section id="avaliacao">
-                                <img id="estrelas" src="../img/estrela2.png" alt="">
-                                <p>4.5</p>
-                            </section>
-
-                            <section id="categoria_pedido">
-                                <p>Retrato</p>
-                            </section>
-
-                            <section id="contatar">
-                                <img src="../img/contatar.png" alt="">
-                                <p>Contatar</p>
-                            </section>
-                           
-                        </div>
-
-                        <p id="descricao_pedido">
-                            Olá, Patrícia! Quero um desenho dessa foto da minha namorada. Se estiver disposta
-                        a fazer, entre contato comigo para negociarmos e acertarmos os detalhes.
-                        </p>
-        
-                        <div id="exemplo_botoes">
-                            <img src="../img/exemplo2.png" alt="">  
-        
-                            <div id="botoes">
-                                <button class="fazer_proposta" id="fazer_proposta1">Fazer Proposta</button>
-                                <button class="recusar" id="button_recusar1">Recusar Pedido</button>
-                            </div>
-        
-        
-                        </div>
-        
-                    </div>
-            
-
-
-
             </div>
+                   
 
         </div>    
       
     </div>
     
-    <form class="modal_proposta" id="modal_proposta">
-
-        <h1 class="h1_proposta">Faça a sua proposta para esse pedido personalizado</h1>
-
-        <div class="descricao_preco_prazo_buttons">
-            <section>  
-                <p>Descrição:</p>
-                <textarea name="modal_proposta" style="resize: none" id="modal_proposta" class="descricao_pedido_personalizado" cols="13" rows="13"></textarea>
-                <!-- <input aria-rowspan="10" class="descricao_pedido_personalizado" id="input_text_descricao_proposta_pedido_personalizado" type="text" value="">  -->
-            </section>
-     
-
-            <div class="inputs_buttons">
-                <section>
-                    <p>Preço:</p>
-                    <input type="text" name="preco" class="input_text_preco"  id="input_text_preco_proposta_pedido_personalizado" value="">
-                </section>
-                <section>
-                    <p>Prazo de entrega:</p>
-                    <input type="text" name="prazo" class="input_text_prazo" id="input_text_prazo_proposta_pedido_personalizado">
-                </section>
-
-                <div class="buttons_proposta_pedido_personalizado">
-                    <button class="cancelar" id="button_cancelar_proposta_pedido_personalizado">Cancelar</button>
-                    <button class="enviar" id="button_enviar_proposta_pedido_personalizado">Enviar</button>
-                </div>
-
-            </div>
-
-
-        </div>
-    </form>
+    <div class="modal_proposta" id="modal_proposta">
+    </div>
 
     <form class="exclusao_pedido" id="modal_exclusao_pedido">
         <p>VOCÊ TEM CERTEZA DE QUE DESEJA EXCLUIR ESTE PEDIDO?
