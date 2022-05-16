@@ -30,7 +30,7 @@ selectTipoChave.addEventListener('change', function(e) {
         inputChavePix.value = "";
     } else if(selectTipoChave.value == "chaveAleatoria"){
         inputChavePix.setAttribute('type', 'text');
-        inputChavePix.setAttribute('maxLength', '1000');
+        inputChavePix.setAttribute('maxLength', '36');
         inputChavePix.value = "";
     }
 
@@ -89,6 +89,27 @@ selectTipoChave.addEventListener('change', function(e) {
                     return false
                 }
             }
+        }
+        else if (inputChavePix.value == "chaveAleatoria"){
+
+            inputChavePix.onkeypress = function(e){
+
+                var chr = String.fromCharCode(e.which);
+                if ("abcdefghijklmnopqrstuvwxyz1234567890.-".indexOf(chr) < 0){
+                    return false;
+                }
+                
+                if(inputChavePix.value.length === 8){
+                    inputChavePix.value += "-";
+                } else if(inputChavePix.value.length === 13){
+                    inputChavePix.value += ".";
+                } else if(inputChavePix.value.length === 18){
+                    inputChavePix.value += "-";
+                } 
+
+
+            }
+
         }
 
         
