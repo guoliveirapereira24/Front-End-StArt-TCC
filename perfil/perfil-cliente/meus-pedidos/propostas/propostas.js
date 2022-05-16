@@ -117,7 +117,7 @@ const getPropostas = () => {
                             </div>
                         </div>
 
-                        <div class="buttons" id="buttons">
+                        <div class="buttons" id="buttons ${proposta.idProposta}">
                         </div>
                     </div>
                 `;	
@@ -125,7 +125,7 @@ const getPropostas = () => {
 
                 listagem_propostas.appendChild(divCard);
 
-                const buttons = document.getElementById('buttons');
+                const buttons = document.getElementById(`buttons ${proposta.idProposta}`);
 
                 const botaoContatar = document.getElementById('contatar');
                 botaoContatar.addEventListener('click', () => {
@@ -145,6 +145,7 @@ const getPropostas = () => {
 
                 botaoAceitar.addEventListener('click', () => {
                     aceitarProposta(proposta.idProposta, proposta.idPedidoPersonalizado);
+                    window.location.href = "../index.html"
                 });
 
                 botaoRecusar.addEventListener('click', () => {

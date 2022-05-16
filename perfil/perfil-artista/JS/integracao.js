@@ -88,18 +88,22 @@ function getAvaliacaoArtista(idArtista){
         }
     } 
 
-    const avaliacaoArtista = document.getElementById('avaliacaoArtista');
+    const divAvaliacaoArtista = document.getElementById('avaliacaoArtista');
 
 fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configAvaliacao)
                 .then((res) => res.json())
                 .then((data) => {
-                    const avaliacao = data.avaliacaoArtista;
-                    if(data.avaliacaoArtista == null) {
-                        return avaliacaoArtista.innerHTML = 0 + ".00";
+                    const avaliacaoArtista = data.avaliacaoArtista;
+                    return avaliacaoArtista.map(avaliacaoArtista => {
+                         if(avaliacaoArtista.notaArtista == null) {
+                        return divAvaliacaoArtista.innerHTML = 0 + ".00";
                     } else {
-                        return avaliacaoArtista.innerHTML = avaliacao.toFixed(2);
+                        return divAvaliacaoArtista.innerHTML = avaliacaoArtista.notaArtista.toFixed(2);
                     }
             });
+                    })
+
+                   
     
 const nacionalidade = document.getElementById('text_nacionalidade_artista');
 const pais = document.getElementById('text_pais_artistas');

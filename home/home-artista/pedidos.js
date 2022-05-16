@@ -79,14 +79,9 @@ const getPedidosPublicos = () => {
                         buttonFazerProposta.className = "fazer_proposta";
                         buttonFazerProposta.innerHTML = "Fazer Proposta";
         
-                        const buttonExcluirProposta = document.createElement('button');
-                        buttonExcluirProposta.id = `button_recusar ${idPedidoPersonalizado}`;
-                        buttonExcluirProposta.className = "recusar";
-                        buttonExcluirProposta.innerHTML = "Recusar Pedido";
         
                         botoes.innerHTML = ""
                         botoes.appendChild(buttonFazerProposta);
-                        botoes.appendChild(buttonExcluirProposta);
                         
                         buttonFazerProposta.addEventListener('click', () => {
 

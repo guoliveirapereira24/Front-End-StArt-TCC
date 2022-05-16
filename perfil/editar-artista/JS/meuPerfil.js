@@ -82,7 +82,7 @@ const meuPerfil = () => {
                 inputDataNascimento.value = dataNascimentoSplit;
 
                 let {idEspecialidadeArtista} = artista;
-                selectEspecialidade.options[(idEspecialidadeArtista) - 1].selected = true;
+                selectEspecialidade.value = idEspecialidadeArtista
 
                 let {pais} = artista;
                 if(pais !== null) {

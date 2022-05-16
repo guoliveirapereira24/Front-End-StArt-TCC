@@ -98,6 +98,7 @@ const getMeusPedidos = () => {
                         fetch(`http://localhost:3000/pedidosPersonalizados/${idPedido}`, configExcluirPedido)
                             .then((res) => res.json())
                             .then((data) => {
+                                console.log(data);
                                 divCard.remove();
                             })
                     }

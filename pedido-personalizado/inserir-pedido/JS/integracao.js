@@ -292,6 +292,7 @@ btnCadastrar.addEventListener("click", () => {
     } else {
         cadastrarPedido(descricao, categoria, genero, imgOpcional1, imgOpcional2, 
             imgOpcional3, arrayVisibilidade);
+        window.location.href = "../../../home/home-cliente/index.html"
     }
 })
 
