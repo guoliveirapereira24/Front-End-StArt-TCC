@@ -48,7 +48,7 @@ function getMinhasPropostas(){
             <div id="nome_tipo_contato">
                 <p class="text_para">Para:</p>
 
-                <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
+                <img id="img_perfil" src="${proposta.fotoPerfilCliente}" alt="" srcset="">
 
                 <p class="nome"  id="nome_cliente">${proposta.nomeCliente}</p>
 
@@ -568,6 +568,24 @@ function getMinhasPropostas(){
                 
                 buttons.innerHTML = ""
                 buttons.appendChild(buttonEntrarContato);
+
+
+            } else if(status == "Recusada"){
+
+                const buttonExcluir = document.createElement('button');
+                buttonExcluir.id = `excluir_proposta ${proposta.idProposta}`;
+                buttonExcluir.className = "excluir_proposta";
+                buttonExcluir.innerHTML = "Excluir Proposta";
+
+                buttons.innerHTML = ""
+                buttons.appendChild(buttonExcluir);
+
+             
+                buttonExcluir.addEventListener("click", () => {
+                    excluirProposta(proposta.idProposta);
+                    div.remove();
+                });
+
             }
 
 

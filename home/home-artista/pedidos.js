@@ -91,7 +91,6 @@ const getPedidosPublicos = () => {
                         buttonFazerProposta.addEventListener('click', () => {
 
                             const date = new Date();
-
                             const currentYear = date.getFullYear();
                             const today = date.getDate();
                             const currentMonth = date.getMonth() + 1; 
@@ -132,6 +131,7 @@ const getPedidosPublicos = () => {
                                 </div>
                             `;
                             divModalProposta.style.display = "flex";
+                            console.log("sfjdsfds");
 
                             const buttonCancelarProposta = document.getElementById('button_cancelar_proposta_pedido_personalizado');
                             buttonCancelarProposta.addEventListener('click', () => {
@@ -273,11 +273,11 @@ const getPedidosParaMim = () => {
                         
                         buttonFazerProposta.addEventListener('click', () => {
 
+                            const date = new Date();
+
                             const currentYear = date.getFullYear();
                             const today = date.getDate();
                             const currentMonth = date.getMonth() + 1; 
-
-
                            
 
                             const divModalProposta = document.getElementById('modal_proposta');

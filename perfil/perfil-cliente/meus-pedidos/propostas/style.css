@@ -75,7 +75,8 @@ h1{
 }
 .img_nome img{
     height: 100%;
-
+    border-radius: 50%;
+    margin-left: 10px;
 }
 .contatar{
     display: flex;

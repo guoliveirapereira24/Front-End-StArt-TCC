@@ -472,6 +472,7 @@ h1{
     margin-left: 10px;
     height: 70px;
     width: 70px;
+    border-radius: 50%;
     /* background-color: #40E0D0; */
 }
 
@@ -693,7 +694,6 @@ h1{
 .modal_ver_pedido{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     height: 480px;
     width: 50vw;
@@ -706,7 +706,7 @@ h1{
     
 }
 .modal_excluir_proposta, .modal_cancelar_proposta, .modal_finalizar_pedido{
-    display: none;
+    display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
@@ -721,7 +721,7 @@ h1{
 }
 
 .modal_excluir_proposta{
-    display: none;
+    display: flex;
     width:20%;
     height:15%;
     top: 30%;

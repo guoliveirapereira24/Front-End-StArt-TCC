@@ -28,7 +28,7 @@ const getMeusPedidos = () => {
 
                     let statusClass = "";
                     let status = pedidoPersonalizado.status;
-                    if(status == "Aceito" || status == "Finalizado" || status == "Despachado" || status == "Despachado e Artista Avaliado"){
+                    if(status == "Aceito" || status == "Esperando execução"|| status == "Finalizado" || status == "Despachado" || status == "Despachado e Artista Avaliado"){
                         statusClass = "aceito";
                     } else if(status == "Recusado" || status == "Cancelado"){
                         statusClass = "recusado";
@@ -237,6 +237,61 @@ const getMeusPedidos = () => {
             
                         });
                         
+                    } else if (status == "Esperando execução"){
+                        const buttonEntrarContato = document.createElement('button');
+                        buttonEntrarContato.id = `entrar_contato ${idPedidoPersonalizado}`;
+                        buttonEntrarContato.className = "entrar_contato";
+                        buttonEntrarContato.innerHTML = "Entrar em contato";
+        
+                        const buttonCancelar = document.createElement('button');
+                        buttonCancelar.id = `cancelar_pedido ${idPedidoPersonalizado}`;
+                        buttonCancelar.className = "recusar";
+                        buttonCancelar.innerHTML = "Cancelar Pedido";
+        
+                        botoes.innerHTML = ""
+                        botoes.appendChild(buttonEntrarContato);
+                        botoes.appendChild(buttonCancelar);
+        
+                        buttonEntrarContato.addEventListener('click', () => {
+                            // window.location.href = `../../../chat/index.html?q=${idPedidoPersonalizado}`;
+                        });
+        
+                        const fundo_modal_cancelar_pedido = document.getElementById("fundo_modal_cancelar_pedido");
+                  
+                        buttonCancelar.addEventListener("click", function(){
+        
+                            fundo_modal_cancelar_pedido.innerHTML = 
+                            `
+                            <div class="modal_cancelar_pedido">
+                                <h2>VOCÊ TEM CERTEZA DE QUE DESEJA CANCELAR ESTE PEDIDO?</h2>
+                                <p>Será reembolsado apenas 50% do valor previamente pago.</p>
+                                <div class="buttons">
+                                    <button class="azul" id="negar_cancelamento">NÃO</button>
+                                    <button class="vermelho"  id="confirmar_cancelamento">SIM</button>
+                                </div>
+                            </div>    
+                            `;
+        
+                            fundo_modal_cancelar_pedido.style.display = "flex";
+        
+                            const button_confirmar_cancelamento = document.getElementById("confirmar_cancelamento");
+                            button_confirmar_cancelamento.addEventListener("click", function(){
+        
+                                cancelarPedido(idPedidoPersonalizado);
+                                fundo_modal_cancelar_pedido.innerHTML = "";
+                                fundo_modal_cancelar_pedido.style.display = "none";
+                
+                            });
+        
+                            const button_negar_cancelamento = document.getElementById("negar_cancelamento");
+                            button_negar_cancelamento.addEventListener("click", function(){
+                                fundo_modal_cancelar_pedido.innerHTML = "";
+                                fundo_modal_cancelar_pedido.style.display = "none";
+                
+                            });
+                        });
+        
+        
                     } else if(status == "Em andamento"){
                         const buttonEntrarContato = document.createElement('button');
                         buttonEntrarContato.id = `entrar_contato ${idPedidoPersonalizado}`;
