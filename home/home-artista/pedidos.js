@@ -5,6 +5,19 @@ const tokenArtista = localStorage.getItem('tokenArtista');
 const listagemPedidosPublicos = document.getElementById('listagem_pedidos_publicos');
 const listagemPedidosParaMim = document.getElementById('listagem_pedidos_para_mim');
 
+const buttonLogout = document.getElementById('logout');
+
+const logout = () => {
+    localStorage.setItem("tokenCliente", undefined);
+    localStorage.setItem("tokenArtista", undefined);
+    window.location.href = "../../login/index.html";
+  }
+  
+  
+  buttonLogout.addEventListener('click', () => {
+    logout();
+  });
+  
 
 const getPedidosPublicos = () => {
     const configPedidosPublicos = {
