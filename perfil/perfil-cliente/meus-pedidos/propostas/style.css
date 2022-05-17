@@ -30,7 +30,6 @@ h1{
     height: 1000vh;
     
     /* padding-bottom: 5%; */
-    background-color: green;
 }
 .listagem_cards{
     display: flex;
@@ -39,8 +38,6 @@ h1{
     width: 50%;
     height: 100%;
     margin-bottom: 3%;
-
-    background-color: yellow;
 }
 .card{
     display: flex;

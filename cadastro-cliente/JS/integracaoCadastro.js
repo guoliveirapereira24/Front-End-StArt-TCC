@@ -27,6 +27,35 @@ const msgAlertaErroDadosEndereco =  document.getElementById("msgAlertaErroDadosE
 const msgAlertaErroDadosAcesso =  document.getElementById("msgAlertaErroDadosAcesso")
 
 
+const loginCliente = (email, senha) => {
+
+    const loginCliente = {
+        "emailLogin": email,
+        "senhaLogin": senha
+    };
+    
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginCliente)
+    }
+
+    fetch('http://localhost:3000/cliente/login', config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            localStorage.setItem('tokenCliente', data.token);
+            if(localStorage.getItem('tokenCliente') == data.token){
+                window.location.href = "../home/home-cliente/index.html";
+            }
+        });
+    
+}
+
+
+
 
 const getEstados = () => {
     const config = {
@@ -310,7 +339,6 @@ const cadastrarCliente = (
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            localStorage.setItem('tokenCliente', data.response.clienteCadastrado.token); 
-            window.location.href = "../home/home-cliente/index.html";
+            loginCliente(email, senha)
         });
 }

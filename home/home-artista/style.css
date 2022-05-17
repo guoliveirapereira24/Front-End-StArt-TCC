@@ -328,7 +328,6 @@ h2{
     width: 100%;
     flex-direction: row;
     margin-top: 30px;
-    background-color:#D71B1B;
 }
 .listagem_pedidos{
     display: flex;
@@ -337,7 +336,6 @@ h2{
     /* align-items: flex-start; */
     flex-direction: column;
     /* margin-top: 20px; */
-    background-color: yellowgreen;
     
 }
 .listagem_genero{
@@ -353,7 +351,6 @@ h2{
     /* margin-left: 1%; */
     /* margin-bottom:10vh; */
     padding-bottom: 4%;
-    background-color: #40E0D0;
 }
 .generos section{
     display: flex;
@@ -421,7 +418,6 @@ h2{
 .img_nome_avaliacao{
     display: flex;
     flex-direction: row;
-    background-color: #D71B1B;
     width: 40%;
 
 }
@@ -434,7 +430,6 @@ h2{
     height: 80px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    background-color: azure;
 }
 
 #img_perfil{
@@ -449,7 +444,6 @@ h2{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #40E0D0;
     width: 75%;
     gap: 5%;
 }
@@ -467,7 +461,6 @@ h2{
     font-size: 30px;
     width: 25%;
     /* margin-left: 1%; */
-    background-color: violet;
 }
 #avaliacao img{
     width: 45px;

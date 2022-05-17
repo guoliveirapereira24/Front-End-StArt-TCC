@@ -19,6 +19,34 @@ const msgAlertaErroDadosAcesso =  document.getElementById("msgAlertaErroDadosAce
 var formularioDadosPessoais = document.getElementById("formulario-dados-pessoais");
 var formularioDadosAcesso = document.getElementById("formulario-dados-acesso");
 
+
+const loginArtista = (email, senha) => {
+
+    const loginArtista = {
+        "emailLogin": email,
+        "senhaLogin": senha
+    };
+    
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginArtista)
+    }
+ 
+    fetch('http://localhost:3000/artista/login', config)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            localStorage.setItem('tokenArtista', data.token); 
+            if(localStorage.getItem('tokenArtista') == data.token){
+                window.location.href = "../cadastro_dados_pagamento/index.html";   
+            }
+        });
+    
+}
+
 const getEspecialidades = () => {
     const config = {
         method: 'GET',
@@ -209,7 +237,6 @@ const cadastrarArtista = (
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-            localStorage.setItem('tokenArtista', data.response.artistaCadastrado.token); 
-            window.location.href = "../cadastro_dados_pagamento/index.html";   
+            loginArtista(email, senha);
         });
 } 
