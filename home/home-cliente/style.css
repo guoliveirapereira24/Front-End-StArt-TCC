@@ -71,11 +71,13 @@ header img{
 
  .submenu {
     background-color: #000000BB;
+    z-index: 2;
  }
 
 .submenu a{
     display: flex;
     justify-content: flex-start;
+    padding-top: 2px;
     padding-left: 10px;
 }
 
@@ -92,7 +94,7 @@ header img{
 .select-obras{
     border: 0px;
     font-weight: bold;
-    font-size: 1.16rem;
+    font-size: 2.5vh;
 }
 
 :root {
@@ -159,6 +161,7 @@ header img{
 }
 
 .header2 a{
+    font-size: 2.5vh;
     color: black;
     text-decoration: none;
 }
@@ -176,11 +179,12 @@ li select{
 }
   
     .form-field {
+        /* height: 10s0%; */
         display: block;
-        width: 210%;
+        width: 100%;
         padding: 8px 16px;
         line-height: 25px;
-        font-size: 14px;
+        font-size: 1.5vh;
         /* font-weight: 500; */
         font-family: inherit;
         border-radius: 2px;
@@ -190,14 +194,16 @@ li select{
         /* background: var(--input-background); */
         transition: border 0.3s ease;
         color: var(--input-placeholder);
+
         }
     
     
      .form-group {
         position: relative;
         display: flex;
-        width: 200%;
-        max-width: 360px;
+        /* background-color: #40E0D0; */
+        width: 30vw;
+        max-width: 400px;
     
         }
 
@@ -229,6 +235,7 @@ li select{
     
  #linha {
     width: 100%;
+    background-color: #40E0D0;
     border-bottom: 10px solid #000000;
     margin-bottom: 2%;
 }
@@ -248,7 +255,7 @@ li select{
 }
 
 .icon-chat img{
-  width: 45px;
+  width: 55px;
 }
 
 .icon-profile img{
@@ -486,18 +493,20 @@ p{
 .personalizado{
     display: flex;
     flex-direction: row;
-
+    height: 40vh;
+    /* background-color: #40E0D0; */
     align-items: center;
-    margin-top: 50px;
-    margin-left: 20vw;
-    gap: 200px;
+    margin-top: 9vh;
+    margin-left: 10vw;
+    /* gap: 2%; */
 }
 .personalizado h2{
-    width: 500px;
-    padding: 50px;
+    width: 60%;
+    /* background-color: #727070; */
+    padding: 1%;
 }
 .personalizado button{
-    width: 270px;
+    width: 15%;
     height: 128px;
     font-size: 40px;
     margin-top: 3vh;
@@ -510,7 +519,7 @@ p{
 .indicacao{
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
+    margin-top: 5%;
 
     font-size: 38px;
     /* background-color: bisque; */
