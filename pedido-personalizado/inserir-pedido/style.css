@@ -60,6 +60,7 @@ textarea{
     flex-direction: column;
     width: 25vw;
     height: 60vh;
+    /* background-color: #40E0D0; */
 }
 
 .img_grande{
@@ -76,6 +77,11 @@ textarea{
 .img_grande img{
     height: 80%;
     width: 90%;
+    min-width: 10vw;
+    min-height: 4vh;
+    /* max-width: 14vw;
+    max-height: 20vh; */
+    border-radius: 15px;
 }
 
 .img_adicionais{
@@ -86,6 +92,7 @@ textarea{
     height: 100%;
     width: 15%;
     gap: 5%;
+    border-radius: 15px;
     /* padding-top: 3%;
     padding-bottom: 3%; */
 }
@@ -102,7 +109,7 @@ textarea{
 
 .img_adicionais img{
     width: 80%;
-    height: 90%;
+    height: 85%;
 }
 
 .selects_button{

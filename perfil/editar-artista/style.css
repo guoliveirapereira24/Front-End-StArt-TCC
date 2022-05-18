@@ -398,7 +398,7 @@ input:focus-within {
     padding: 10px;
     font-size: 25px;
     
-    margin-top: 30px;
+    /* margin-top: 30px; */
     
     border-radius: 0px 15px 15px 0px;
     border: 1px solid;
@@ -411,7 +411,9 @@ input:focus-within {
 }
 .ajuste{
     display: flex;
-    height: 100px;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
     width: 100%;
     margin-left: 5%;
     margin-top: 100px;
@@ -685,14 +687,17 @@ input{
     width: 300px;
     height: 60px;
     font-size: 25px;
+    /* background-color: #40E0D0; */
     border-radius: 15px 0px 0px 15px;
 }
 
 .chavePix{
     width: 520px;
     height: 80px;
-    padding: 10px;
+    /* padding: 10px; */
 
+
+    /* background-color: blueviolet; */
     font-size: 25px;
     
     border-radius: 0px 15px 15px 0px;
