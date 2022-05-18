@@ -30,9 +30,10 @@ const aceitarProposta = (idProposta, idPedidoPersonalizado) => {
 
 }
 
-const recusarProposta = (idProposta, idArtista) => {
+const recusarProposta = (idProposta, idArtista, idPedidoPersonalizado) => {
 
     const body = {
+        idPedidoPersonalizado: idPedidoPersonalizado,
         idProposta: idProposta,
         idArtista: idArtista
     }
@@ -149,7 +150,7 @@ const getPropostas = () => {
                 });
 
                 botaoRecusar.addEventListener('click', () => {
-                    recusarProposta(proposta.idProposta, proposta.idArtista);
+                    recusarProposta(proposta.idProposta, proposta.idArtista, proposta.idPedidoPersonalizado);
                     divCard.remove();
                 });
  

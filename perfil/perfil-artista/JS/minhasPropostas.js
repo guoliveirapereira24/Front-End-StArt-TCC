@@ -660,12 +660,12 @@ function getMinhasPropostas(){
                 <div class="modal_ver_pedido" id="modal_ver_pedido ${proposta.idProposta}">
                     <div class="nome_tipo_contato" id="nome_tipo_contato">
 
-                        <img id="img_perfil" src="../img/cliente.png" alt="" srcset="">
+                        <img id="img_perfil" src="${proposta.fotoPerfilCliente}" alt="" srcset="">
 
                         <p class="nome"  id="nome_cliente">${proposta.nomeCliente}</p>
                         <section id="avaliacao">
                             <img id="estrelas" src="../img/estrela2.png" alt="">
-                            <p>4.5</p>
+                            <p>${(proposta.notaCliente).toFixed(2)}</p>
                         </section>
 
                         <section class="categoria_pedido" id="categoria_pedido">
@@ -679,7 +679,7 @@ function getMinhasPropostas(){
                         ${proposta.descricaoPedidoPersonalizado}
                     </p>
 
-                    <img id="img_exemplo" class="img_exemplo" src="../img/exemplo2.png" alt="">
+                    <img id="img_exemplo" class="img_exemplo" src="${proposta.imagem1opcional}" alt="">
 
                 </div>`;
 
