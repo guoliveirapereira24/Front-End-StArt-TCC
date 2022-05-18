@@ -23,6 +23,7 @@ const getPedidosPublicos = () => {
     const configPedidosPublicos = {
         method: "GET",
         headers: {
+            'Content-Type': 'application/json',
             "Authorization": `Bearer ${tokenArtista}`,
             'Cache-Control': 'no-cache'
         }
@@ -201,6 +202,7 @@ const getPedidosParaMim = () => {
     const configPedidosPublicos = {
         method: "GET",
         headers: {
+            'Content-Type': 'application/json',
             "Authorization": `Bearer ${tokenArtista}`,
             'Cache-Control': 'no-cache'
         }
