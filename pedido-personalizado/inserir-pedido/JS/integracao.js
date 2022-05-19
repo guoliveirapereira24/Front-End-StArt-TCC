@@ -207,7 +207,7 @@ const cadastrarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional
     
         formData.append('descricao', descricao);
         formData.append('idEspecialidade', genero);
-        formData.append('status', 'Publicada');
+        formData.append('status', 'Publicado');
         formData.append('idCategoria', categoria);
         formData.append('visibilidadeArray', `{ "array": [${visibilidade}] }`);
 

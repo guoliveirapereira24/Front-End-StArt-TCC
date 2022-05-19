@@ -3,21 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="listagemObras.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar obras</title>
 </head>
+
 <body>
+
+    <header>
+        <a href="" class="icon-home">
+            <img src="../img/home.png" alt="icon home">
+        </a>
+        <a href="" class="icon-cart">
+            <img src="../img/carrinho.png" alt="icon cart">
+        </a>
+        <a href="" class="logo">
+            <img src="../img/StArt.png" alt="logo StArt">
+        </a>
+        <a href="" class="icon-chat">
+            <img src="../img/chat.png" alt="icon chat">
+        </a>
+        
+        <nav class="links">
+            <ul>
+                <li>
+                   <img src="../img/perfil.png" alt="icon profile" width="85%">
+                    <ul class="submenu">
+                        <li><a href="../../perfil/perfil-cliente/index.html">Perfil</a></li>
+                       <li><a href= "../../perfil/editar-cliente/index.html">Configurações</a></li>
+                       <li><a id="logout">Logout</a></li>
+                    </ul>
+                </li>  
+
+            </ul>
+        </nav>
+        
+    </header>
+
+
+    <div class="header2">
+        <div class="row-header">
+
+        
+                    <li class="li">
+                        <div class="form-group">
+                            <input class="form-field" type="text" placeholder="O que você está buscando?     &#128269;" >
+                        </div>  
+                    </li>
+
+        </div>
+
+
+    </div>
+
     <h1>Obras</h1>
-    <div class="listagem_pedidos_genero" id="listagem_pedidos_genero">
+    <!-- <div class="listagem_pedidos_genero" id="listagem_pedidos_genero">
         <div class="listagem_genero" id="listagem_genero">
-<!--  -->
-<!-- LISTAGEM POR GENEROS DE PINTURA -->
-<!--  -->
+
             <div class="generos" id="checkbox_categorias_pintura">
                 <section class="aba_categoria">
                     <h2>Pintura:</h2>
-                     <!-- <img src="img/plus.png" alt=""> -->
                 </section>
 
                 <section>
@@ -85,7 +131,7 @@
                     <p>Veduta</p>
                 </section>
             </div>
-<!-- LISTAGEM POR GENERO DE ILUSTRAÇÃO -->
+
            <div class="generos" id="ilustracao">
             <h2>Ilustração:</h2>
                 <section>
@@ -129,7 +175,7 @@
                     <p>Xilogravura</p>
                 </section>
            </div>
-<!-- LISTAGEM POR GENERO DE ESCULTURAS -->
+
                 <div class="generos" id="esculturas">
                     <h2>Esculturas:</h2>
 
@@ -184,7 +230,7 @@
                     </section>
                 </div>
 
-<!--LISTAGEM POR GENERO DE FOTOGRAFIA  -->
+
 
                 <div class="generos" id="fotografia">
                     <h2>Fotografia:</h2>
@@ -217,164 +263,11 @@
                         <p>Subaquática</p>
                     </section>
                 </div>
-        </div>
+        </div> -->
 
-        <!-- FIM DA LISTAGEM DE CATEGORIAS -->
 
         <div class="listagem_obras">
-            <div class="linha_obras">
-
-                <div class="obra" id="obra">
-                    <img src="./img/obra1.png" alt="">
-        
-                    <div class="nome_artista_preco" id="">
-                        <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">
-                            <div class="nome_obra_artista" >
-                                <p id="nome_obra_favorita1">MOÇA COM BRINCO DE PÉROLA</p>
-                                <p id="nome_artista_favorita1">JOHANNES VERMEER</p>
-                            </div>
-                            
-                            <div class="categoria_tecnica" id="categoria_tecnica_obra_favorita1">
-                                <p id="categoria_obra_favorita1">Pintura</p>
-                                <p>-</p>
-                                <p id="tecnica_obra1">Óleo sobre tela</p>
-                            </div>
-                        </div>
-            
-                        <div class="img_favoritada_preco">
-        
-                            <img id="img_favoritada" src="./img/favorito.png" alt="">
-                            <div class="promocao">
-                                <p class="porcentagem_desconto">20%</p>
-                                <p class="preco_original">R$1140,00</p>
-                            </div>
-                            <p class="preco_obra_favorita" id="preco_obra_favorita1">R$350,00</p>
-        
-                        </div>
-        
-                    </div>
-        
-                    <div class="parcelas">
-                        <p id="parcelas_obra_favorita1">5x sem juros</p>
-                    </div>
-                   
-                </div>
-
-<!-- OBRA 2 -->
-
-                <div class="obra" id="obra">
-                    <img src="./img/obra1.png" alt="">
-        
-                    <div class="nome_artista_preco" id="">
-                        <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">
-                            <div class="nome_obra_artista" >
-                                <p id="nome_obra_favorita1">MOÇA COM BRINCO DE PÉROLA</p>
-                                <p id="nome_artista_favorita1">JOHANNES VERMEER</p>
-                            </div>
-                            
-                            <div class="categoria_tecnica" id="categoria_tecnica_obra_favorita1">
-                                <p id="categoria_obra_favorita1">Pintura</p>
-                                <p>-</p>
-                                <p id="tecnica_obra1">Óleo sobre tela</p>
-                            </div>
-                        </div>
-            
-                        <div class="img_favoritada_preco">
-        
-                            <img id="img_favoritada" src="./img/favorito.png" alt="">
-                            <div class="promocao">
-                                <p class="porcentagem_desconto">20%</p>
-                                <p class="preco_original">R$140,00</p>
-                            </div>
-                            <p class="preco_obra_favorita" id="preco_obra_favorita1">R$350,00</p>
-        
-                        </div>
-        
-                    </div>
-        
-                    <div class="parcelas">
-                        <p id="parcelas_obra_favorita1">5x sem juros</p>
-                    </div>
-                   
-                </div>
-
-                    
-
-                <!-- OBRA 3 -->
-<div class="obra" id="obra">
-    <img src="./img/obra1.png" alt="">
-
-    <div class="nome_artista_preco" id="">
-        <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">
-            <div class="nome_obra_artista" >
-                <p id="nome_obra_favorita1">MOÇA COM BRINCO DE PÉROLA</p>
-                <p id="nome_artista_favorita1">JOHANNES VERMEER</p>
-            </div>
-            
-            <div class="categoria_tecnica" id="categoria_tecnica_obra_favorita1">
-                <p id="categoria_obra_favorita1">Pintura</p>
-                <p>-</p>
-                <p id="tecnica_obra1">Óleo sobre tela</p>
-            </div>
-        </div>
-
-        <div class="img_favoritada_preco">
-
-            <img id="img_favoritada" src="./img/favorito.png" alt="">
-            <div class="promocao_desativada">
-                <p class="porcentagem_desconto">20%</p>
-                <p class="preco_original">R$140,00</p>
-            </div>
-            <p class="preco_obra_favorita" id="preco_obra_favorita1">R$350,00</p>
-
-        </div>
-
-    </div>
-
-    <div class="parcelas">
-        <p id="parcelas_obra_favorita1">5x sem juros</p>
-    </div>
-   
-</div>
- 
-<!-- OBRA 4 -->
-
-<div class="obra" id="obra">
-    <img src="./img/obra1.png" alt="">
-
-    <div class="nome_artista_preco" id="">
-        <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">
-            <div class="nome_obra_artista" >
-                <p id="nome_obra_favorita1">MOÇA COM BRINCO DE PÉROLA</p>
-                <p id="nome_artista_favorita1">JOHANNES VERMEER</p>
-            </div>
-            
-            <div class="categoria_tecnica" id="categoria_tecnica_obra_favorita1">
-                <p id="categoria_obra_favorita1">Pintura</p>
-                <p>-</p>
-                <p id="tecnica_obra1">Óleo sobre tela</p>
-            </div>
-        </div>
-
-        <div class="img_favoritada_preco">
-
-            <img id="img_favoritada" src="./img/favorito.png" alt="">
-            <div class="promocao_desativada">
-                <p class="porcentagem_desconto">20%</p>
-                <p class="preco_original">R$140,00</p>
-            </div>
-            <p class="preco_obra_favorita" id="preco_obra_favorita1">R$350,00</p>
-
-        </div>
-
-    </div>
-
-    <div class="parcelas">
-        <p id="parcelas_obra_favorita1">5x sem juros</p>
-    </div>
-   
-</div>
-
+            <div class="linha_obras" id="listagemObras">
                 
             </div>  <!-- FIM DA LINHA DE OBRAS -->
             

@@ -102,40 +102,37 @@ function getAvaliacaoCliente(idCliente){
         headers: {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenCliente}`
         }
     } 
 
-    const avaliacaoCliente = document.getElementById('avaliacaoCliente');
+    const divAvaliacaoCliente = document.getElementById('avaliacaoCliente');
 
 fetch(`http://localhost:3000/avaliacao/avaliacaoDeCliente/${idCliente}`, configAvaliacao)
                 .then((res) => res.json())
                 .then((data) => {
-                    const avaliacao = data.avaliacaoCliente;
-                    if(data.avaliacaoCliente == null) {
-                        return avaliacaoCliente.innerHTML = 0 + ".00";
-                    } else {
-                        return avaliacaoCliente.innerHTML = avaliacao.toFixed(2);
-                    }
+                    const avaliacaoCliente = data.avaliacaoCliente;
+                    return avaliacaoCliente.map(avaliacaoCliente => {
+                        divAvaliacaoCliente.innerHTML = (avaliacaoCliente.notaCliente).toFixed(2);
+                    })
             });
 
-const preferencia = document.getElementById('text_preferencia_cliente')
-const nacionalidade = document.getElementById('text_nacionalidade_cliente');
-const pais = document.getElementById('text_pais');
-const descricao = document.getElementById('descricao_perfil_cliente');
+    const preferencia = document.getElementById('text_preferencia_cliente')
+    const nacionalidade = document.getElementById('text_nacionalidade_cliente');
+    const pais = document.getElementById('text_pais');
+    const descricao = document.getElementById('descricao_perfil_cliente');
 
-if(nacionalidade.innerHTML == "null"){
-    nacionalidade.innerHTML = "Não informado";
-}
-if(pais.innerHTML == "null"){
-    pais.innerHTML = "Não informado";
-}
-if(preferencia.innerHTML == "null"){
-    preferencia.innerHTML = "Não informado";
-}
-if(descricao.innerHTML == "null"){
-    descricao.innerHTML = "";
-}
+    if(nacionalidade.innerHTML == "null"){
+        nacionalidade.innerHTML = "Não informado";
+    }
+    if(pais.innerHTML == "null"){
+        pais.innerHTML = "Não informado";
+    }
+    if(preferencia.innerHTML == "null"){
+        preferencia.innerHTML = "Não informado";
+    }
+    if(descricao.innerHTML == "null"){
+        descricao.innerHTML = "";
+    }
 
 }
 

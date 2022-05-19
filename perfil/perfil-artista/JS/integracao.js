@@ -95,13 +95,9 @@ fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configA
                 .then((data) => {
                     const avaliacaoArtista = data.avaliacaoArtista;
                     return avaliacaoArtista.map(avaliacaoArtista => {
-                         if(avaliacaoArtista.notaArtista == null) {
-                        return divAvaliacaoArtista.innerHTML = 0 + ".00";
-                    } else {
-                        return divAvaliacaoArtista.innerHTML = avaliacaoArtista.notaArtista.toFixed(2);
-                    }
-            });
+                       divAvaliacaoArtista.innerHTML = (avaliacaoArtista.notaArtista).toFixed(2);
                     })
+                })
 
                    
     

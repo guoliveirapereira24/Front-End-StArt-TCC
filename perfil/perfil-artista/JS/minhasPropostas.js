@@ -3,6 +3,29 @@
 
 const minhasPropostas = document.getElementById('listagem_minhas_propostas');
 
+
+function getAvaliacaoCliente(idCliente, idProposta) {
+
+    const configAvaliacao = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+        }
+    } 
+
+    const divAvaliacaoCliente = document.getElementById(`avaliacaoCliente ${idProposta}`);
+
+            fetch(`http://localhost:3000/avaliacao/avaliacaoDeCliente/${idCliente}`, configAvaliacao)
+                .then((res) => res.json())
+                .then((data) => {
+                    const avaliacaoCliente = data.avaliacaoCliente;
+                    return avaliacaoCliente.map(avaliacaoCliente => {
+                        divAvaliacaoCliente.innerHTML = (avaliacaoCliente.notaCliente).toFixed(1);
+                    })
+            });
+}
+
 function getMinhasPropostas(){
 
     const configPropostas = {
@@ -665,7 +688,7 @@ function getMinhasPropostas(){
                         <p class="nome"  id="nome_cliente">${proposta.nomeCliente}</p>
                         <section id="avaliacao">
                             <img id="estrelas" src="../img/estrela2.png" alt="">
-                            <p>${(proposta.notaCliente).toFixed(2)}</p>
+                            <p id="avaliacaoCliente ${proposta.idProposta}"></p>
                         </section>
 
                         <section class="categoria_pedido" id="categoria_pedido">
@@ -682,6 +705,8 @@ function getMinhasPropostas(){
                     <img id="img_exemplo" class="img_exemplo" src="${proposta.imagem1opcional}" alt="">
 
                 </div>`;
+
+                getAvaliacaoCliente(proposta.idCliente, proposta.idProposta);
 
                 fundo_ver_pedido.style.display = "flex";
 

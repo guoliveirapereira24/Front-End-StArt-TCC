@@ -17,6 +17,28 @@ const logout = () => {
   buttonLogout.addEventListener('click', () => {
     logout();
   });
+
+function getAvaliacaoCliente(idCliente, idPedidoPersonalizado){
+
+    const configAvaliacao = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+        }
+    } 
+
+    const divAvaliacaoCliente = document.getElementById(`avaliacaoCliente ${idPedidoPersonalizado}`);
+
+            fetch(`http://localhost:3000/avaliacao/avaliacaoDeCliente/${idCliente}`, configAvaliacao)
+                .then((res) => res.json())
+                .then((data) => {
+                    const avaliacaoCliente = data.avaliacaoCliente;
+                    return avaliacaoCliente.map(avaliacaoCliente => {
+                        divAvaliacaoCliente.innerHTML = (avaliacaoCliente.notaCliente).toFixed(1);
+                    })
+            });
+}
   
 
 const getPedidosPublicos = () => {
@@ -55,7 +77,7 @@ const getPedidosPublicos = () => {
                                 
                                 <section id="avaliacao">
                                     <img id="estrelas" src="../img/estrela2.png" alt="">
-                                    <p>4.5</p>
+                                    <p id="avaliacaoCliente ${pedidoPersonalizado.idPedidoPersonalizado}"></p>
                                 </section>
             
                             </section>
@@ -84,6 +106,8 @@ const getPedidosPublicos = () => {
                     `;
                     
                     listagemPedidosPublicos.appendChild(divCard);
+
+                    getAvaliacaoCliente(pedidoPersonalizado.idCliente, idPedidoPersonalizado);
 
                     const botoes = document.getElementById(`botoes ${idPedidoPersonalizado}`);
 
@@ -234,7 +258,7 @@ const getPedidosParaMim = () => {
                                 
                                 <section id="avaliacao">
                                     <img id="estrelas" src="../img/estrela2.png" alt="">
-                                    <p>4.5</p>
+                                    <p id="avaliacaoCliente ${pedidoPersonalizado.idPedidoPersonalizado}"></p>
                                 </section>
             
                             </section>
@@ -264,6 +288,8 @@ const getPedidosParaMim = () => {
                     
                     listagemPedidosParaMim.appendChild(divCard);
 
+                    getAvaliacaoCliente(pedidoPersonalizado.idCliente, idPedidoPersonalizado);
+
                     const botoes = document.getElementById(`botoes ${idPedidoPersonalizado}`);
 
      
@@ -280,6 +306,28 @@ const getPedidosParaMim = () => {
                         botoes.innerHTML = ""
                         botoes.appendChild(buttonFazerProposta);
                         botoes.appendChild(buttonExcluirProposta);
+
+                        buttonExcluirProposta.addEventListener('click', () => {
+                                const configRecusarPedidoPersonalizado = {
+                                    method: "DELETE",
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        "Authorization": `Bearer ${tokenArtista}`,
+                                        'Cache-Control': 'no-cache'
+                                    }
+                                }
+                            
+                            fetch(`http://localhost:3000/pedidosPersonalizados/recusarPedidoPersonalizado/${idPedidoPersonalizado}`, configRecusarPedidoPersonalizado)
+                                .then((res) => res.json())
+                                .then((data) => {
+                                    console.log(data);
+                                    divCard.remove()
+                                })
+                                .catch((error) => console.log(error));
+
+                        })
+
+            
                         
                         buttonFazerProposta.addEventListener('click', () => {
 

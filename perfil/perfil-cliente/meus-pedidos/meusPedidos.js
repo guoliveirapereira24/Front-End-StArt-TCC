@@ -121,7 +121,7 @@ const getMeusPedidos = () => {
 
                     const botoes = document.getElementById(`botoes ${idPedidoPersonalizado}`);
 
-                    if(status == "Publicada"){
+                    if(status == "Publicado"){
                         const buttonEditar = document.createElement('button');
                         buttonEditar.id = `editar_pedido ${idPedidoPersonalizado}`;
                         buttonEditar.className = "editar_pedido";
