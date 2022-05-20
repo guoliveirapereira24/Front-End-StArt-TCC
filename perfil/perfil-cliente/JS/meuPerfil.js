@@ -192,6 +192,9 @@ fetch(`http://localhost:3000/diversas/obrasFavoritas`, configObrasFavoritas)
                         const div = document.createElement('div');
                         div.className = 'obra_favorita';
                         div.id = obrasFavoritas.idObraPronta;
+
+                        const idObraPronta = obrasFavoritas.idObraPronta
+
                         div.innerHTML = `
                             <img class="img_obra" src="${obrasFavoritas.imagem1obrigatoria}" alt="">
 
@@ -211,7 +214,12 @@ fetch(`http://localhost:3000/diversas/obrasFavoritas`, configObrasFavoritas)
                     
                                 <div class="img_favoritada_preco">
                 
-                                    <img id="img_favoritada" src="../img/favorito.png" alt="">
+                                    <input type="checkbox" id="favoritar ${idObraPronta}" class="coracao"/>
+                                    <label for="favoritar ${idObraPronta}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#19b425">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </label>
                                     <p id="preco_obra_favorita">R$${(obrasFavoritas.preco).toFixed(2).replace('.', ',')}</p>
                 
                                 </div>
@@ -220,12 +228,14 @@ fetch(`http://localhost:3000/diversas/obrasFavoritas`, configObrasFavoritas)
                         `
                         listarObrasFavoritas.appendChild(div)
 
-                        const desfavoritar = document.getElementById("img_favoritada")
 
-                        desfavoritar.onclick = () => {
-                            deleteObraFavorita(obrasFavoritas.idObrasFavoritas)
-                        }
+                        const divFavoritar = document.getElementById(`favoritar ${idObraPronta}`)
 
+                        divFavoritar.checked = true;
+
+                        divFavoritar.addEventListener('change', () => {
+                            favoritarDesfavoritar(`favoritar ${idObraPronta}`, idObraPronta)
+                        });
 
                     })
                     
@@ -234,7 +244,30 @@ fetch(`http://localhost:3000/diversas/obrasFavoritas`, configObrasFavoritas)
 
 listarObrasFavoritas()
 
-const deleteObraFavorita = (idObraFavorita) => {
+const favoritarObra = (idObraPronta) => {
+
+    const body = {
+        idObraPronta: idObraPronta
+    }
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+            'Authorization' : `Bearer ${tokenCliente}`
+        },
+        body: JSON.stringify(body)
+    }
+
+    fetch(`http://localhost:3000/favoritarObras/favoritarObra`, config)
+        .then((res) => res.json())
+        .then((data) => {
+        }
+    );  
+}
+
+const deleteObraFavorita = (idObraPronta) => {
     const configObrasFavoritas = {
         method: 'DELETE',
         headers: {
@@ -244,9 +277,23 @@ const deleteObraFavorita = (idObraFavorita) => {
         }
     } 
 
-    fetch(`http://localhost:3000/diversas/desfavoritarObras/${idObraFavorita}`, configObrasFavoritas)
-                .then((res) => res.json())
-                .then((data) => {
-                   window.location.reload(); 
-            });
+    fetch(`http://localhost:3000/favoritarObras/desfavoritarObra/${idObraPronta}`, configObrasFavoritas)
+        .then((res) => res.json())
+        .then((data) => {
+        }
+    );
+}
+
+const favoritarDesfavoritar = (divFavoritar,idObraPronta) => {
+                
+    const favoritar = document.getElementById(divFavoritar)
+
+    if(favoritar.checked == true) {
+        favoritar.checked = true
+        favoritarObra(idObraPronta)
+    }else{
+        favoritar.checked = false
+        deleteObraFavorita(idObraPronta)
+    }
+
 }

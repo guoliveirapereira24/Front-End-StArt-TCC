@@ -245,3 +245,23 @@ h1{
 .parcelas p{
     font-size: 25px;
 }
+
+label{ cursor: pointer;
+    margin-top: 2px;
+    margin-right: 20px;}
+     svg{ stroke: black;}
+     .coracao { display: none;}
+     .coracao:checked+label>svg {
+         animation: preencher;
+         animation-duration: .3s;
+         animation-fill-mode: forwards;
+     }
+     @keyframes preencher {
+         0% {
+             fill: transparent;
+         }
+         100% {
+             stroke: turquoise;
+             fill: turquoise;
+         }
+     }

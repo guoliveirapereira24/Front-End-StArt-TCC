@@ -275,6 +275,7 @@ const cadastrarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional
             .then(response => response.text())
             .then((result) => {
                 console.log(result)
+                window.location.href = "../../home/home-cliente/index.html";
             })
             .catch(error => console.log('error', error));
  
@@ -292,7 +293,6 @@ btnCadastrar.addEventListener("click", () => {
     } else {
         cadastrarPedido(descricao, categoria, genero, imgOpcional1, imgOpcional2, 
             imgOpcional3, arrayVisibilidade);
-        window.location.href = "../../home/home-cliente/index.html"
     }
 })
 
