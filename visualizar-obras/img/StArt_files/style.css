@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Raleway', sans-serif;
+}
+
+.conteiner-formulario-login {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#msgAlertaErro{
+
+    display: none;
+    align-self: center;
+
+    height: 45px;
+    width: 635px;
+    padding-left: 10px;
+    padding-top: 5px;
+    color: rgb(255, 90, 76);
+
+
+    font-size: 30px;
+
+}
+
+.conteudo-formulario-login {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    margin-top: 30%;
+}
+
+#conteiner2 {
+    width: 100%;
+    height: 16%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#conteiner1 {
+    margin-bottom: 8%;
+}
+
+
+h1 {
+    font-style: normal;
+    font-size: clamp(2em, 1em + 3vw, 4em);
+    margin-bottom: 2%;
+}
+
+.conteiner-txt-cadastrar {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+p{
+    font-size: 20px;
+}
+.p-colorido {
+    color: #40E0D0;
+    font-weight: 600;
+   
+}
+
+.p-colorido:hover {
+    cursor: pointer;
+}
+
+label {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    gap: 10%;
+    font-size: 24px;
+}
+
+#label-senha {
+    height: 70%;
+}
+
+input {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 0% 2%;
+    display: block;
+    font-size: 20px;
+}
+
+input:focus-within {
+    border: 1px solid #40E0D0;
+    box-shadow: 0 0 0 0; /* retira a borda padrão do input ao clicar */
+    outline: 0;
+}
+
+button {
+    width: 50%;
+    height: 5%;
+    border-radius: 10px;
+    background-color: #40E0D0;
+    border: 1px solid black;
+    font-size: 100%;
+    margin-top: 5%;
+}
+a button{
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: yellow;
+    /* border: 1px solid black; */
+    font-size: 100%;
+    margin-top: 5%; 
+}
+a{
+    width: 50%;
+    height: 5%;
+    border-radius: 10px;
+    background-color: #40E0D0;
+    border: 1px solid black;
+    font-size: 100%;
+    margin-top: 5%;
+
+    background-color: violet;
+
+
+}
+button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.7s;
+}
+
+
+.img-login {
+    width: 50%;
+    height: 100%;
+}
+
+.img-login img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container_cadastrar_como{
+    display: none;
+    background-color: white;
+    
+    margin-top: 8%;
+    margin-left: 24%;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+
+    height: 70%;
+    width: 50%;
+}
+.container_alinhar_opcoes{
+
+    /* background-color: #40E0D0; */
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+}
+.cadastro_cliente, .cadastro_artista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+
+}
+.cadastro_cliente img, .cadastro_artista img{
+    width: 100%;
+    height: 85%;
+}
+.cadastro_cliente{
+    border-right: 2px solid #40E0D0;
+}
+.button_continuar{
+    height: 10%;
+    width: 70%;
+    font-size: 20px;
+    /* background-color:#40E0D0; */
+}
+
+
+
+.container_reativar_conta{
+    display: none;
+    background-color: white;
+    
+    margin-top: 8%;
+    margin-left: 24%;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    height: 70%;
+    width: 50%;
+}
+.container_esqueceu_senha{
+    display: none;
+    background-color: white;
+    
+    margin-top: 8%;
+    margin-left: 24%;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+
+    height: 70%;
+    width: 50%;
+}
+.close{
+    
+    margin-left: 80%;
+    margin-top: 3%;
+    /* background-color: #40E0D0; */
+}
+.close2{
+    position: absolute;
+    margin-left: 92%;
+    margin-bottom: 58%;
+
+}
+.input_email_esqueceu_senha{
+
+    height: 60%;
+    width: 30vw;
+    margin-top: 2%;
+}
+/* .container_esqueceu_senha img{
+    background-color: #40E0D0;
+} */
+
+.enviar{
+    height: 60%;
+    width: 70%;
+    margin-left: 16%;
+}
+
+@media (max-width: 1350px) {
+    input {
+        width: 70%;
+    } 
+    button {
+        width: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+    .conteiner-txt-cadastrar {
+        flex-direction: column;
+    }
+}
