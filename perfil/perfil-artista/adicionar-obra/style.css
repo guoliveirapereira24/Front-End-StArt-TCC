@@ -4,6 +4,269 @@
     box-sizing: border-box;
     font-family: 'Raleway', regular;
 }
+
+header{
+    display: flex;
+    width:100vw;
+    background-color: black;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 10vw 1vh 10vw; 
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    width: 50px;
+    height: 50px;
+}
+
+.links ul {
+    padding-top: 1.5%;
+    padding-right: 1%;
+    display: flex;
+    /* gap: 10%; */
+    list-style-type: none;
+}
+
+.links li{
+    list-style: none;
+    /* width: 150px; */
+    height: 60px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    user-select: none;
+    transition: all 0.5s;
+   
+}
+
+
+
+.links a:hover {
+    color: #40E0D0;
+}
+
+.links ul .submenu {
+    display: none;
+    position: absolute;
+    font-size: 12px;
+}
+
+.links li ul{
+    position: relative;
+}
+
+ .submenu {
+    background-color: #000000BB;
+    z-index: 2;
+ }
+
+.submenu a{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 2px;
+    padding-left: 10px;
+}
+
+.submenu a:hover {
+    border-left: 10px solid  #40E0D0;
+}
+
+.links li:hover > .submenu{
+    display: flex;
+    flex-direction: column;
+    /* gap: 2px; */
+}
+
+.select-obras{
+    border: 0px;
+    font-weight: bold;
+    font-size: 2.5vh;
+}
+
+:root {
+    --input-color: #000000;
+    --input-border: #000000;
+    --input-background: #f0f0f0;
+    --input-placeholder: #727070;
+
+    --input-border-focus: #f0f0f0;
+    --select-border-focus: #f0f0f0;
+
+    --group-color: var(--input-color);
+    --group-border: var(--input-border);
+    --group-background: #f0f0f0;
+
+    --group-color-focus: #f0f0f0;
+    --group-border-focus: var(--input-border-focus);
+    --group-background-focus: #f0f0f0;
+}
+
+
+
+
+/* .group-row{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+} */
+
+.row-header{
+    margin-block-start: 2rem;
+    margin-block-end: 3rem;
+    margin-inline-start: 15%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* gap: 2rem; */
+}
+
+.header2{
+
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.obras-row{
+    /* width: 3%; */
+    margin: 0;
+    padding: 0;
+}
+
+.artistas-row{
+    width: 53%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.header2 a{
+    font-size: 2.5vh;
+    color: black;
+    text-decoration: none;
+}
+.li{
+    list-style-type: none;
+}
+
+li select{
+    list-style-type: none;
+    height: 47px;
+    border-color: #000000;
+    border-width: 0.2rem;
+    border-right-width: 0.1rem ;
+ 
+}
+  
+    .form-field {
+        /* height: 10s0%; */
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        line-height: 25px;
+        font-size: 1.5vh;
+        /* font-weight: 500; */
+        font-family: inherit;
+        border-radius: 2px;
+        -webkit-appearance: none;
+        color: var(--input-color);
+        border: 3px solid var(--input-border);
+        /* background: var(--input-background); */
+        transition: border 0.3s ease;
+        color: var(--input-placeholder);
+
+        }
+    
+    
+     .form-group {
+        position: relative;
+        display: flex;
+        /* background-color: #40E0D0; */
+        width: 30vw;
+        max-width: 400px;
+    
+        }
+
+
+    .form-group {
+        max-width: 360px;
+        /* margin-bottom: 10%; */
+        }
+/* 
+    .container {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: right;
+        }
+                  
+             
+    .btn-buscar-top {
+        width: 20px!important;
+        height: 22px;
+        background: url(http://www.devmedia.com.br/imagens/2013/buscar_grey.png) no-repeat;
+        cursor: pointer!important;
+        border: none;
+        transform: translateY(-50%);
+        padding: 0;
+         
+        } */
+
+        
+    
+ #linha {
+    width: 100%;
+    background-color: #40E0D0;
+    border-bottom: 10px solid #000000;
+    margin-bottom: 2%;
+}
+
+
+.logo img{
+  width: 120px;
+
+}
+
+.icon-home img{
+  width: 45px;
+}
+
+.icon-cart img{
+  width: 45px;
+}
+
+.icon-chat img{
+  width: 55px;
+}
+
+.icon-profile img{
+  width: 45px;
+}
+
+input{
+    border-radius: 0%;
+}
+
+
+
+/* ----------------------- */
 body{
     display: flex;
     flex-direction: column;
