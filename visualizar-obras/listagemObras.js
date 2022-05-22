@@ -100,9 +100,13 @@ const getObras = () => {
     .then(data => {
         const obrasProntas = data.obrasProntas
         obrasProntas.map(obraPronta => {
+
+            const idObraPronta = obraPronta.idObraPronta
+
             const div = document.createElement('div')
             div.className = 'obra'
             div.id = `obra ${obraPronta.idObraPronta}`
+            div.onclick = () => {window.location.href = `./mais-informacoes/index.html?q=${idObraPronta}`}
 
             const desconto = obraPronta.desconto
             const preco = obraPronta.preco
@@ -117,8 +121,7 @@ const getObras = () => {
                     nomeArtista += ' ' + obraPronta.nomeArtista.split(' ')[2]
                 }
             
-            const idObraPronta = obraPronta.idObraPronta
-
+            
             div.innerHTML = `
 
                 <img src="${obraPronta.imagem1obrigatoria}" alt="">
@@ -198,9 +201,13 @@ inputPesquisa.addEventListener('keyup', () => {
             .then((data) => {
                 const obrasProntas = data.obrasProntas
                 obrasProntas.map(obraPronta => {
+
+                    const idObraPronta = obraPronta.idObraPronta
+        
                     const div = document.createElement('div')
                     div.className = 'obra'
                     div.id = `obra ${obraPronta.idObraPronta}`
+                    div.onclick = () => {window.location.href = `./mais-informacoes/index.html?q=${idObraPronta}`}
         
                     const desconto = obraPronta.desconto
                     const preco = obraPronta.preco
@@ -215,8 +222,7 @@ inputPesquisa.addEventListener('keyup', () => {
                             nomeArtista += ' ' + obraPronta.nomeArtista.split(' ')[2]
                         }
                     
-                    const idObraPronta = obraPronta.idObraPronta
-        
+                    
                     div.innerHTML = `
         
                         <img src="${obraPronta.imagem1obrigatoria}" alt="">
