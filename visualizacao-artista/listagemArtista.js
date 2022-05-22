@@ -1,92 +1,212 @@
 "use strict";
 
+const tokenArtista = localStorage.getItem('tokenArtista');
 
-// Função const para listar artistas no modal usando fetch e o método GET
+const inputPesquisa = document.getElementById('inputPesquisa')
+
+const listagem = document.getElementById("linha_artistas");
+
 const listarArtistas = () => {
 
-    fetch("http://localhost:3000/artista/")
+    const config = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache"
+        }
+    }
+
+    fetch("http://localhost:3000/artista/listagemArtistas", config)
         .then(response => response.json())
         .then(data => {
-            const listaArtistas = document.getElementById("linha_artistas");
-            listaArtistas.innerHTML = "";
+            
+            listagem.innerHTML = "";
 
             const artista = data.artista
 
             artista.map(artista => {
 
+                const idArtista = artista.idArtista
+                    
                 const div = document.createElement('div')
                 div.className = 'card'
-                div.id = `artista ${artista.idArtista}`
-    
-                const desconto = artista.desconto
-                const preco = artista.preco
-            
-                const precoComDesconto = preco - ((preco * desconto) / 100)
-    
-                var nomeArtista = artista.nomeArtista.split(' ')[0]
-                    if(artista.nomeArtista.split(' ').length > 1){
-                        nomeArtista += ' ' + artista.nomeArtista.split(' ')[1]
+                div.id = `artista ${idArtista}`
+
+                var nomeArtista = artista.nomeArtistico.split(' ')[0]
+                    if(artista.nomeArtistico.split(' ').length > 1){
+                        nomeArtista += ' ' + artista.nomeArtistico.split(' ')[1]
                     }
-                    if(artista.nomeArtista.split(' ').length > 2){
-                        nomeArtista += ' ' + artista.nomeArtista.split(' ')[2]
+                    if(artista.nomeArtistico.split(' ').length > 2){
+                        nomeArtista += ' ' + artista.nomeArtistico.split(' ')[2]
                     }
                 
-                const idartista = artista.idartista
-    
+                
                 div.innerHTML = `
     
-                    <img src="${artista.imagem1obrigatoria}" alt="">
-            
-                    <div class="nome_artista_preco" id="">
-                        <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">
-                            <div class="nome_obra_artista" >
-                                <p id="nome_obra_favorita1">${artista.nomeObra}</p>
-                                <p id="nome_artista_favorita1">${nomeArtista}</p>
-                            </div>
-                            
-                            <div class="categoria_tecnica" id="categoria_tecnica_obra_favorita1">
-                                <p id="categoria_obra_favorita1">${artista.nomeCategoria}</p>
-                                <p>-</p>
-                                <p id="tecnica_obra1">${artista.tecnica}</p>
-                            </div>
-                        </div>
-            
-                        <div class="img_favoritada_preco">
-        
-                            <input type="checkbox" id="favoritar ${idartista}" class="coracao"/>
-                            <label for="favoritar ${idartista}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#19b425">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
-                            </label>
-                            <div class="promocao" id="promocao ${idartista}">
-                                <p class="porcentagem_desconto">${desconto}%</p>
-                                <p class="preco_original">R$ ${preco.toFixed(2).replace('.', ',')}</p>
-                            </div>
-                            <p class="preco_obra_favorita" id="preco_obra_favorita1">R$ ${precoComDesconto.toFixed(2).replace('.', ',')}</p>
-        
-                        </div>
-        
-                    </div>
-                       
-    
-                `
-                listagemObras.appendChild(div)
-    
-                const divDesconto = document.getElementById(`promocao ${idartista}`)
-    
+                <div class="img_artista">
+                    <img src="${artista.fotoPerfilArtista}" id="img_perfil_artista" alt="" srcset="">
+                </div>
 
-                listaArtistas.innerHTML += `
-                    <div class="artista">
-                        <img src="${artista.foto}" alt="${artista.nome}" class="foto-artista">
-                        <div class="nome-artista">${artista.nome}</div>
-                        <div class="botao-artista">
-                            <button class="btn btn-primary" onclick="visualizarArtista('${artista.id}')">Ver mais</button>
-                        </div>
+                <div class="text_informacoes_artista">
+
+                    <div class="nome_coracao">
+                        <h2>${nomeArtista}</h2>
                     </div>
-                `;
+
+                    <div class="especialidades_avaliacao">
+                    
+                        <h2 class="especialidade_categoria">${artista.nomeEspecialidadeArtista}</h2>
+
+                        <section class="avaliacao" id="avaliacaoArtista">
+                        </section>
+
+                    </div>
+            
+                </div>
+                `
+
+                listagem.appendChild(div)
+
+
+                const getAvaliacaoArtista = (idArtista) => {
+
+                    const configAvaliacao = {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Cache-Control': 'no-cache',
+                            'Authorization' : `Bearer ${tokenArtista}`
+                        }
+                    } 
+                
+                    const avaliacao = document.getElementById(`avaliacaoArtista`);
+                
+                fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configAvaliacao)
+                                .then((res) => res.json())
+                                .then((data) => {
+                                    const avaliacaoArtista = data.avaliacaoArtista;
+                                    return avaliacaoArtista.map(avaliacaoArtista => {
+                                        avaliacao.innerHTML = `
+                                            <img src="img/estrela2.png" alt="">
+                                            <p class="amarelo" id="avaliacaoArtista">${(avaliacaoArtista.notaArtista).toFixed(2)}</p>
+                                        `
+                                    })
+                                })
+                                .catch((err) => console.log(err))
+                
+                }
+
+                getAvaliacaoArtista(idArtista)
+
             });
         });
 }
 
+listarArtistas();
+
+
+inputPesquisa.addEventListener('keyup', () => {
+    const pesquisa = inputPesquisa.value;
+    listagem.innerHTML = "";
+
+    const config = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+        }
+    }
+
+    if(pesquisa != ""){
+        
+        fetch(`http://localhost:3000/pesquisa/pesquisarArtista/${pesquisa}`, config)
+        .then(response => response.json())
+        .then(data => {
+            
+            listagem.innerHTML = "";
+            console.log(data)
+
+            const artista = data.artista
+
+            artista.map(artista => {
+
+                const idArtista = artista.idArtista
+                    
+                const div = document.createElement('div')
+                div.className = 'card'
+                div.id = `artista ${idArtista}`
+
+                var nomeArtista = artista.nomeArtistico.split(' ')[0]
+                    if(artista.nomeArtistico.split(' ').length > 1){
+                        nomeArtista += ' ' + artista.nomeArtistico.split(' ')[1]
+                    }
+                    if(artista.nomeArtistico.split(' ').length > 2){
+                        nomeArtista += ' ' + artista.nomeArtistico.split(' ')[2]
+                    }
+                
+                
+                div.innerHTML = `
+
+                <div class="img_artista">
+                    <img src="${artista.fotoPerfilArtista}" id="img_perfil_artista" alt="" srcset="">
+                </div>
+
+                <div class="text_informacoes_artista">
+
+                    <div class="nome_coracao">
+                        <h2>${nomeArtista}</h2>
+                    </div>
+
+                    <div class="especialidades_avaliacao">
+                    
+                        <h2 class="especialidade_categoria">${artista.nomeEspecialidadeArtista}</h2>
+
+                        <section class="avaliacao" id="avaliacaoArtista">
+                        </section>
+
+                    </div>
+            
+                </div>
+                `
+
+                listagem.appendChild(div)
+
+
+                const getAvaliacaoArtista = (idArtista) => {
+
+                    const configAvaliacao = {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Cache-Control': 'no-cache',
+                            'Authorization' : `Bearer ${tokenArtista}`
+                        }
+                    } 
+                
+                    const avaliacao = document.getElementById(`avaliacaoArtista`);
+                
+                fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configAvaliacao)
+                                .then((res) => res.json())
+                                .then((data) => {
+                                    const avaliacaoArtista = data.avaliacaoArtista;
+                                    return avaliacaoArtista.map(avaliacaoArtista => {
+                                        avaliacao.innerHTML = `
+                                            <img src="img/estrela2.png" alt="">
+                                            <p class="amarelo" id="avaliacaoArtista">${(avaliacaoArtista.notaArtista).toFixed(2)}</p>
+                                        `
+                                    })
+                                })
+                                .catch((err) => console.log(err))
+                
+                }
+
+                getAvaliacaoArtista(idArtista)
+
+            });
+        });
+    } else {
+        listarArtistas();
+    }
+
+});
 
