@@ -22,10 +22,9 @@
     <div class="img_card">
         <div class="imgs">
             <div class="imgs_pequenas" id="listaImagens">
-                
             </div>
 
-            <div class="img_grande" id="img-1">
+            <div class="img_grande" id="imgPrincipal">
                 
             </div>
 
@@ -33,7 +32,7 @@
 
 
         <div class="card">
-            <div class="nome_favorito">
+            <div class="nome_favorito" id="nome_favorito">
 
                 <div class="nome_categoria">
                     <h2 class="nome_obra" id="nomeObra">NOITE ESTRELADA</h2>
@@ -45,7 +44,12 @@
                   
                 </div>
 
-                <img src="../img/formato-de-coracao.png" alt="">
+                <input type="checkbox" id="favoritar" class="coracao"/>
+                <label for="favoritar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#19b425">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </label>
             </div>
             
                 <h2 class="preco_obra" id="preco">R$477,90</h2>
