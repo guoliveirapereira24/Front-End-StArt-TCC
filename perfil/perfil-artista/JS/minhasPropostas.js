@@ -21,7 +21,7 @@ function getAvaliacaoCliente(idCliente, idProposta) {
                 .then((data) => {
                     const avaliacaoCliente = data.avaliacaoCliente;
                     return avaliacaoCliente.map(avaliacaoCliente => {
-                        divAvaliacaoCliente.innerHTML = (avaliacaoCliente.notaCliente).toFixed(1);
+                        divAvaliacaoCliente.innerHTML = (avaliacaoCliente.notaCliente).toFixed(2);
                     })
             });
 }
@@ -159,7 +159,7 @@ function getMinhasPropostas(){
                 }
     
                 const configAtualizarStatus = {
-                    method: 'PATCH',
+                    method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
                         'Cache-Control': 'no-cache',
@@ -182,7 +182,7 @@ function getMinhasPropostas(){
                 }
     
                 const configAtualizarStatus = {
-                    method: 'PATCH',
+                    method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
                         'Cache-Control': 'no-cache',
@@ -287,7 +287,7 @@ function getMinhasPropostas(){
                                             }
                     
                                             const configAtualizarProposta = {
-                                                method: 'PATCH',
+                                                method: 'PUT',
                                                 headers: {
                                                     'Content-Type': 'application/json',
                                                     'Cache-Control': 'no-cache',
@@ -453,7 +453,7 @@ function getMinhasPropostas(){
                                             }
                     
                                             const configAtualizarProposta = {
-                                                method: 'PATCH',
+                                                method: 'PUT',
                                                 headers: {
                                                     'Content-Type': 'application/json',
                                                     'Cache-Control': 'no-cache',

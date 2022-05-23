@@ -33,7 +33,7 @@ btnDesativarConta.addEventListener("click", () => {
     const tokenCliente = localStorage.getItem('tokenCliente');
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Authorization": `Bearer ${tokenCliente}`, 
             "Cache-Control": "no-cache", 

@@ -21,7 +21,7 @@ const atualizarSenha = () => {
     }
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Content-Type": "application/json",
             "Authorization": `Bearer ${tokenCliente}`
@@ -85,7 +85,7 @@ const alterarDadosPessoais = () => {
     }
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Content-Type": "application/json",
             "Authorization": `Bearer ${tokenCliente}`

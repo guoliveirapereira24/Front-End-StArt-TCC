@@ -107,12 +107,12 @@ inputPesquisa.addEventListener('keyup', () => {
                 const artista = data.artista;
             
             return artista.map(artista => {
-                var nomeArtista = artista.nomeArtista.split(' ')[0]
-                if(artista.nomeArtista.split(' ').length > 1){
-                    nomeArtista += ' ' + artista.nomeArtista.split(' ')[1]
+                var nomeArtista = artista.nomeArtistico.split(' ')[0]
+                if(artista.nomeArtistico.split(' ').length > 1){
+                    nomeArtista += ' ' + artista.nomeArtistico.split(' ')[1]
                 }
-                if(artista.nomeArtista.split(' ').length > 2){
-                    nomeArtista += ' ' + artista.nomeArtista.split(' ')[2]
+                if(artista.nomeArtistico.split(' ').length > 2){
+                    nomeArtista += ' ' + artista.nomeArtistico.split(' ')[2]
                 }
 
                 const idArtista = artista.idArtista

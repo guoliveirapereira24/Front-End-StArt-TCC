@@ -246,15 +246,22 @@ h1{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: left;
     gap: 1%;
+    width: 100%;
     font-size: 2.2vh;
     color: #FFC700;
-    /* background-color: #04BA00; */
-    padding-left: 8%;
     margin-bottom: 2%;
+    padding-left: 8%;
 }
-.modal_avaliar_artista img{
-    width: 5%;
+
+
+
+
+
+.estrelas_nota img{
+    width: 40px;
+    height: 40px;
 }
 textarea{
     width: 85%;

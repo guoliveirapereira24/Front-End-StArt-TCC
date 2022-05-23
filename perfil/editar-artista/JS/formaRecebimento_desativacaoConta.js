@@ -84,7 +84,7 @@ const patchPix = () => {
     }
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Authorization": `Bearer ${tokenArtista}`,
             "Cache-Control": "no-cache",
@@ -181,7 +181,7 @@ const patchContaBancaria = () => {
     }
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Authorization": `Bearer ${tokenArtista}`, 
             "Cache-Control": "no-cache", 
@@ -231,7 +231,7 @@ btnDesativarConta.addEventListener("click", () => {
     const tokenArtista = localStorage.getItem('tokenArtista');
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Authorization": `Bearer ${tokenArtista}`, 
             "Cache-Control": "no-cache", 

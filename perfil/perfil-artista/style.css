@@ -543,7 +543,7 @@ h1{
     display:none;
 }
 .fundo_modal_avaliar_cliente{
-    display:none;
+    display:flex;
 }
 .modal_avaliar_cliente{
     display:flex;

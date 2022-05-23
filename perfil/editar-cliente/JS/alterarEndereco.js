@@ -22,7 +22,7 @@ const patchEndereco = () => {
     }
 
     const requestOptions = {
-        method: 'PATCH',
+        method: 'PUT',
         headers:{
             "Authorization": `Bearer ${tokenCliente}`, 
             "Cache-Control": "no-cache", 

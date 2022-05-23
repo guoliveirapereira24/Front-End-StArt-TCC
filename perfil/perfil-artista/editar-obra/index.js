@@ -305,7 +305,7 @@ const editarObra = (
    
     
     const config = {
-        method: 'PATCH',
+        method: 'PUT',
         headers: myHeaders,
         body: formData,
         redirect: 'follow'

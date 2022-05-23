@@ -50,7 +50,7 @@ const atualizarPerfil = (nomeArtistico, nacionalidade, pais, biografia, idEspeci
 
 
     var requestOptions = {
-    method: 'PATCH',
+    method: 'PUT',
     headers: myHeaders,
     body: formdata,
     redirect: 'follow'

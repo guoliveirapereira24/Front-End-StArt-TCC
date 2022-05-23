@@ -106,7 +106,6 @@ const getObras = () => {
             const div = document.createElement('div')
             div.className = 'obra'
             div.id = `obra ${obraPronta.idObraPronta}`
-            div.onclick = () => {window.location.href = `./mais-informacoes/index.html?q=${idObraPronta}`}
 
             const desconto = obraPronta.desconto
             const preco = obraPronta.preco
@@ -124,7 +123,7 @@ const getObras = () => {
             
             div.innerHTML = `
 
-                <img src="${obraPronta.imagem1obrigatoria}" alt="">
+                <img src="${obraPronta.imagem1obrigatoria}" onclick="window.location.href = './mais-informacoes/index.html?q=${idObraPronta}'"alt="">
         
                 <div class="nome_artista_preco" id="">
                     <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">
@@ -207,7 +206,6 @@ inputPesquisa.addEventListener('keyup', () => {
                     const div = document.createElement('div')
                     div.className = 'obra'
                     div.id = `obra ${obraPronta.idObraPronta}`
-                    div.onclick = () => {window.location.href = `./mais-informacoes/index.html?q=${idObraPronta}`}
         
                     const desconto = obraPronta.desconto
                     const preco = obraPronta.preco
@@ -225,7 +223,7 @@ inputPesquisa.addEventListener('keyup', () => {
                     
                     div.innerHTML = `
         
-                        <img src="${obraPronta.imagem1obrigatoria}" alt="">
+                        <img src="${obraPronta.imagem1obrigatoria}" onclick="window.location.href = './mais-informacoes/index.html?q=${idObraPronta}'"alt="">
                 
                         <div class="nome_artista_preco" id="">
                             <div class="nome_obra_artista_categoria_tecnica" id="informacoes_obra">

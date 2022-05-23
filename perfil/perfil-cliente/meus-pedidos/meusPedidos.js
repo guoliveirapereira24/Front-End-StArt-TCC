@@ -4,7 +4,100 @@ const tokenCliente = localStorage.getItem('tokenCliente');
 
 const listagemMeusPedidos = document.getElementById('listagemMeusPedidos');
 
-console.log(listagemMeusPedidos);
+const Avaliar = (estrela) => {
+    var url = window.location;
+    url = url.toString()
+    url = url.split("index.html");
+    url = url[0];
+
+    console.log(url);
+   
+    var s1 = document.getElementById("s1").src;
+    var s2 = document.getElementById("s2").src;
+    var s3 = document.getElementById("s3").src;
+    var s4 = document.getElementById("s4").src;
+    var s5 = document.getElementById("s5").src;
+    var avaliacao = 0;
+   
+   if (estrela == 5){ 
+    
+    document.getElementById("s1").src = "../../img/star1.png";
+    document.getElementById("s2").src = "../../img/star1.png";
+    document.getElementById("s3").src = "../../img/star1.png";
+    document.getElementById("s4").src = "../../img/star1.png";
+    document.getElementById("s5").src = "../../img/star1.png";
+    avaliacao = 5;
+   
+   }
+    
+    //ESTRELA 4
+   if (estrela == 4){ 
+    document.getElementById("s1").src = "../../img/star1.png";
+    document.getElementById("s2").src = "../../img/star1.png";
+    document.getElementById("s3").src = "../../img/star1.png";
+    document.getElementById("s4").src = "../../img/star1.png";
+    document.getElementById("s5").src = "../../img/star0.png";
+    avaliacao = 4;
+   }
+   
+   //ESTRELA 3
+   if (estrela == 3){ 
+    document.getElementById("s1").src = "../../img/star1.png";
+    document.getElementById("s2").src = "../../img/star1.png";
+    document.getElementById("s3").src = "../../img/star1.png";
+    document.getElementById("s4").src = "../../img/star0.png";
+    document.getElementById("s5").src = "../../img/star0.png";
+    avaliacao = 3;
+ }
+    
+   //ESTRELA 2
+   if (estrela == 2){ 
+    document.getElementById("s1").src = "../../img/star1.png";
+    document.getElementById("s2").src = "../../img/star1.png";
+    document.getElementById("s3").src = "../../img/star0.png";
+    document.getElementById("s4").src = "../../img/star0.png";
+    document.getElementById("s5").src = "../../img/star0.png";
+    avaliacao = 2;
+   }
+    
+    //ESTRELA 1
+   if (estrela == 1){ 
+    document.getElementById("s1").src = "../../img/star1.png";
+    document.getElementById("s2").src = "../../img/star0.png";
+    document.getElementById("s3").src = "../../img/star0.png";
+    document.getElementById("s4").src = "../../img/star0.png";
+    document.getElementById("s5").src = "../../img/star0.png";
+    avaliacao = 1;
+   }
+    
+    document.getElementById('rating').innerHTML = avaliacao.toFixed(1);
+    
+}
+
+const avaliarArtista = (idArtista, avaliacao, descricao) => {
+
+    const body = {
+        idArtista: idArtista,
+        avaliacaoArtista: avaliacao,
+        descricao: descricao
+    }
+
+    const config = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokenCliente}`
+        },
+        body: JSON.stringify(body)
+    }
+
+
+    fetch(`http://localhost:3000/avaliacao/avaliarArtista`, config)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        });
+}
 
 const getMeusPedidos = () => {
 
@@ -385,17 +478,29 @@ const getMeusPedidos = () => {
         
                             fundo_modal_avaliar_artista.innerHTML = 
                             `
-                            <div class="modal_avaliar_artista">
+                            <div class="modal_avaliar_artista" id="modal_avaliar_artista${proposta.idArtista}">
                                 <h2>Avalie seu artista</h2>
                                 <div class="estrelas_nota">
-                                    <img src="../../img/estrela2.png" alt="" srcset="">
-                                    <img src="../../img/estrela2.png" alt="" srcset="">
-                                    <img src="../../img/estrela2.png" alt="" srcset="">
-                                    <img src="../../img/estrela2.png" alt="" srcset="">
-                                    <img src="../../img/estrela2.png" alt="" srcset="">
-                                    <p class="avaliacao">5.0</p>
+                                    <div class="estrelas" id="estrelas_nota">
+                                        <a href="javascript:void(0)" id="avaliar1">
+                                        <img src="../../img/star0.png" id="s1"></a>
+                                        
+                                        <a href="javascript:void(0)" id="avaliar2">
+                                        <img src="../../img/star0.png" id="s2"></a>
+                                        
+                                        <a href="javascript:void(0)" id="avaliar3">
+                                        <img src="../../img/star0.png" id="s3"></a>
+                                        
+                                        <a href="javascript:void(0)" id="avaliar4">
+                                        <img src="../../img/star0.png" id="s4"></a>
+                                        
+                                        <a href="javascript:void(0)" id="avaliar5">
+                                        <img src="../../img/star0.png" id="s5"></a>
+                                    </div>
+                                    
+                                    <p class="avaliacao" id="rating"></p>
                                 </div>
-                                <textarea name="" placeholder="Digite aqui sua avaliação" style="resize: none;" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" placeholder="Digite aqui sua avaliação" style="resize: none;" id="textAreaDescricao" cols="30" rows="10"></textarea>
                                 <div class="buttons">
                                     <button class="vermelho" id="cancelar_avaliacao">CANCELAR</button>
                                     <button class="azul" id="confirmar_avaliacao">ENVIAR</button>
@@ -404,13 +509,149 @@ const getMeusPedidos = () => {
                             `;
         
                             fundo_modal_avaliar_artista.style.display = "flex";
-        
+
+                            const estrelasParaArtista = document.getElementById("estrelas_nota");
+
+                            const star1 = document.getElementById("s1");
+                            const star2 = document.getElementById("s2");
+                            const star3 = document.getElementById("s3");
+                            const star4 = document.getElementById("s4");
+                            const star5 = document.getElementById("s5");
+
+                            const avaliar1 = document.getElementById("avaliar1");
+                            const avaliar2 = document.getElementById("avaliar2");
+                            const avaliar3 = document.getElementById("avaliar3");
+                            const avaliar4 = document.getElementById("avaliar4");
+                            const avaliar5 = document.getElementById("avaliar5");
+
+                            const rating = document.getElementById("rating");
+
+                            avaliar1.onclick = () => {
+                                Avaliar(1)
+                            }
+
+                            avaliar2.onclick = () => {
+                                Avaliar(2)
+                            }
+
+                            avaliar3.onclick = () => {
+                                Avaliar(3)
+                            }
+
+                            avaliar4.onclick = () => {
+                                Avaliar(4)
+                            }
+
+                            avaliar5.onclick = () => {
+                                Avaliar(5)
+                            }
+
+                            star1.addEventListener("mouseenter", function(){
+                                star1.src = "../../img/star1.png";
+                                star2.src = "../../img/star0.png";
+                                star3.src = "../../img/star0.png";
+                                star4.src = "../../img/star0.png";
+                                star5.src = "../../img/star0.png";
+                            })
+
+                            star2.addEventListener("mouseenter", function(){
+                                star1.src = "../../img/star1.png";
+                                star2.src = "../../img/star1.png";
+                                star3.src = "../../img/star0.png";
+                                star4.src = "../../img/star0.png";
+                                star5.src = "../../img/star0.png";
+                            })
+
+                            star3.addEventListener("mouseenter", function(){
+                                star1.src = "../../img/star1.png";
+                                star2.src = "../../img/star1.png";
+                                star3.src = "../../img/star1.png";
+                                star4.src = "../../img/star0.png";
+                                star5.src = "../../img/star0.png";
+                            })
+
+                            star4.addEventListener("mouseenter", function(){
+                                star1.src = "../../img/star1.png";
+                                star2.src = "../../img/star1.png";
+                                star3.src = "../../img/star1.png";
+                                star4.src = "../../img/star1.png";
+                                star5.src = "../../img/star0.png";
+                            })
+
+                            star5.addEventListener("mouseenter", function(){
+                                star1.src = "../../img/star1.png";
+                                star2.src = "../../img/star1.png";
+                                star3.src = "../../img/star1.png";
+                                star4.src = "../../img/star1.png";
+                                star5.src = "../../img/star1.png";
+                            })
+
+
+                            estrelasParaArtista.addEventListener("mouseleave", function(){
+                                if(rating.innerHTML == 1.0){
+                                    star1.src = "../../img/star1.png";
+                                    star2.src = "../../img/star0.png";
+                                    star3.src = "../../img/star0.png";
+                                    star4.src = "../../img/star0.png";
+                                    star5.src = "../../img/star0.png";
+                                } else if(rating.innerHTML == 2.0){
+                                    star1.src = "../../img/star1.png";
+                                    star2.src = "../../img/star1.png";
+                                    star3.src = "../../img/star0.png";
+                                    star4.src = "../../img/star0.png";
+                                    star5.src = "../../img/star0.png";
+                                } else if(rating.innerHTML == 3.0){
+                                    star1.src = "../../img/star1.png";
+                                    star2.src = "../../img/star1.png";
+                                    star3.src = "../../img/star1.png";
+                                    star4.src = "../../img/star0.png";
+                                    star5.src = "../../img/star0.png";
+                                } else if(rating.innerHTML == 4.0){
+                                    star1.src = "../../img/star1.png";
+                                    star2.src = "../../img/star1.png";
+                                    star3.src = "../../img/star1.png";
+                                    star4.src = "../../img/star1.png";
+                                    star5.src = "../../img/star0.png";
+                                } else if(rating.innerHTML == 5.0){
+                                    star1.src = "../../img/star1.png";
+                                    star2.src = "../../img/star1.png";
+                                    star3.src = "../../img/star1.png";
+                                    star4.src = "../../img/star1.png";
+                                    star5.src = "../../img/star1.png";
+                                } else if(rating.innerHTML == ""){
+                                    star1.src = "../../img/star0.png";
+                                    star2.src = "../../img/star0.png";
+                                    star3.src = "../../img/star0.png";
+                                    star4.src = "../../img/star0.png";
+                                    star5.src = "../../img/star0.png";
+                                }
+                            })
+
+                            const textAreaDescricao = document.getElementById("textAreaDescricao");
+
+                           
                             const button_confirmar_avaliacao = document.getElementById("confirmar_avaliacao");
                             button_confirmar_avaliacao.addEventListener("click", function(){
+
+                                const avaliacao = document.getElementById("avaliacao");
+                                const descricao = document.getElementById("textAreaDescricao").value;
+                                const id_artista = document.getElementById("id_artista").value; 
+
+                                if(rating.innerHTML == ""){
+                                    alert("Você precisa dar uma nota para avaliar!");
+                                    return;
+                                } else if(textAreaDescricao == ""){
+                                    alert("Você precisa dar uma descrição para avaliar!");
+                                    return;
+                                } else if(rating.innerHTML != "" && textAreaDescricao != ""){
+                                    avaliarArtista(idArtista, avaliacao, descricao);
+                                    fundo_modal_avaliar_artista.innerHTML = "";
+                                    fundo_modal_avaliar_artista.style.display = "none";
+                                }
+
+
         
-                                avaliarArtista(idArtista);
-                                fundo_modal_avaliar_artista.innerHTML = "";
-                                fundo_modal_avaliar_artista.style.display = "none";
+                               
                 
                             });
         

@@ -44,7 +44,7 @@ const atualizarPerfil = (nacionalidade, pais, biografia, preferencia, imgPerfil,
     } 
 
     var requestOptions = {
-    method: 'PATCH',
+    method: 'PUT',
     headers: myHeaders,
     body: formdata,
     redirect: 'follow'

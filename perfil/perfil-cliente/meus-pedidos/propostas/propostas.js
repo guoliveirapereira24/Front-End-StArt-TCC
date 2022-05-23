@@ -14,7 +14,7 @@ const aceitarProposta = (idProposta, idPedidoPersonalizado) => {
     }
 
     const config = {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${tokenCliente}`
@@ -39,7 +39,7 @@ const recusarProposta = (idProposta, idArtista, idPedidoPersonalizado) => {
     }
 
     const config = {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${tokenCliente}`

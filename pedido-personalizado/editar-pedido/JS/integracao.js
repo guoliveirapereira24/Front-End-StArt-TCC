@@ -184,7 +184,7 @@ const editarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional2,
        
         
         const config = {
-            method: 'PATCH',
+            method: 'PUT',
             headers: myHeaders,
             body: formData,
             redirect: 'follow'
@@ -194,7 +194,7 @@ const editarPedido = (descricao, categoria, genero, imgOpcional1, imgOpcional2,
         fetch(`http://localhost:3000/pedidosPersonalizados/editarPedido/${idPedido}`, config)
             .then(response => response.text())
             .then((result) => {
-                console.log(result)
+                window.location.href = '../../../perfil/perfil-cliente/meus-pedidos/index.html'
             })
             .catch(error => console.log('error', error));
  
