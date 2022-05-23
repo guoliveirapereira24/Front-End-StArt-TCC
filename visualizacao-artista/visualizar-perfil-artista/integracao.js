@@ -40,8 +40,20 @@ function getInformacoesArtista(){
                         <p id="avaliacaoArtista" value="${artista.idArtista}"></p>
                     </section>
                 </div>
+            
+            <div class="botoes_doar_contatar">
+                <div class="contatar">
+                    <img src="../img/chat_direto.png" alt="">
+                    <p>Contatar</p>
+                </div>
+
+                <div class="doacao">
+                    <img src="../img/doar.png" alt="">
+                    <p>Doar</p>
+                </div>
+
+            </div>
         
-                <img id="icon_lapis" src="../img/lapis.png" alt="" srcset="" onclick="window.location.href = '../editar-artista/index.html'">
 
             </div>
         
@@ -61,6 +73,10 @@ function getInformacoesArtista(){
                         <p id="text_pais_artistas">${artista.pais}</p>
                     </section>
                 </div>
+                
+                <button class="button_fazer_pedido">
+                    Fazer Pedido
+                </button>
 
             </div>
             

@@ -297,7 +297,7 @@ h2{
     
     /* margin-top: 1vh; */
     /* margin-left: 5%; */
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
             
 }
 .container-slide-menor{
@@ -330,12 +330,12 @@ h2{
 	overflow: scroll;
 	scroll-snap-type: both mandatory;
 	scroll-padding: 5vh;
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 .gallery li{
     height: 100%;
     width: 100%;
-    background-color: #40E0D0;
+    /* background-color: #40E0D0; */
 }
 .gallery li img{
     height: 100%;

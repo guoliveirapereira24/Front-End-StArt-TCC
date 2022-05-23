@@ -36,14 +36,15 @@ function getInformacoesCliente(){
                     <div id="nome_avaliacao">
                         <h1>${cliente.nomeCompleto}</h1>
                         <section id="avaliacao">
-                            <img src="../img/estrela2.png" id="avaliacao" alt="" srcset="">
+
+                            <img src="../perfil/img/estrela2.png" id="avaliacao" alt="" srcset="">
                             <p id="avaliacaoCliente"></p>
                         </section>
                     
                     </div>
 
                     <div class="contatar">
-                        <img src="../img/chat_direto.png" alt="">
+                        <img src="../perfil/img/chat_direto.png" alt="">
                         <p>Contatar</p>
                     </div>
 

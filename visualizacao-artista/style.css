@@ -265,13 +265,14 @@ li select{
 }
 
 input{
+    /* width: 100vw; */
     border-radius: 0%;
 }
 
 
 
 h1{
-    margin-left: 25%;
+    margin-left: 10%;
 }
 .aba_categoria{
     display: flex;
@@ -289,10 +290,10 @@ h1{
     /* margin-right: 10%; */
 }
 .card{
-    display: flex;
+    display: display;
     flex-direction: column;
     height: 510px;
-    width: 500px;
+    width: 450px;
     align-items: center;
     /* justify-content: center; */
     /* border: 1px solid; */
@@ -301,6 +302,12 @@ h1{
     margin-right: 5%;
     background-color: #FCFCFC;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712); 
+    /* vertical-align: middle; */
+}
+.card img{
+    height: 40%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 .listagem_artistas{
     display: flex;
@@ -315,9 +322,10 @@ h1{
     /* gap: 40px; */
     /* padding-left: 50%; */
     /* padding-right: 50%; */
-    margin-left: 15%;
-    background-color: slateblue;
+    /* margin-left: 15%; */
+    /* background-color: slateblue; */
 }
+
 .linha_artistas{
     display: flex;
     flex-direction: row;
@@ -327,11 +335,11 @@ h1{
     margin-top: 1%;
     
     flex-wrap: wrap;
-    width: 95%;
+    width: 90%;
     margin-left: 5%;
     /* margin-right: 5%; */
     /* position: absolute; */
-    background-color: #04BA00;
+    /* background-color: #04BA00; */
 }
 
 
@@ -395,6 +403,7 @@ h1{
     height: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    /* border-bottom-left-radius: 0px; */
 }
 .nome_coracao{
     display: flex;
@@ -421,8 +430,8 @@ h1{
 }
 
 .text_informacoes_artista h2{
-    font-size: 30px;
-    margin-top: 0;
+    font-size: 28px;
+    margin-top: 5px;
     margin-bottom: 0;
 }
 .nome_coracao button{
