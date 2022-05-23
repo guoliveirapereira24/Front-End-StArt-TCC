@@ -314,7 +314,7 @@ const editarObra = (
 
     fetch(`http://localhost:3000/obraPronta/atualizarObra/${idObra}`, config)
         .then(response => response.text())
-        .then(result => window.location.href = '../index.html')
+        .then(data => window.location.href = '../index.html')
         .catch(error => console.log('error', error));
 } 
 

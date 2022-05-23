@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
+    <script src="integracao.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obra</title>
@@ -20,53 +21,38 @@
     
     <div class="img_card">
         <div class="imgs">
-            <div class="imgs_pequenas">
-
-                <div class="img_pequena">
-                    <img src="../img/obra.png" alt="">
-                </div>
-
-                <div class="img_pequena">
-                    <img src="../img/obra.png" alt="">
-                </div>
-
-                <div class="img_pequena">
-                    <img src="../img/obra.png" alt="">
-                </div>
-
-                <div class="img_pequena">
-                    <img src="../img/obra.png" alt="">
-                </div>
-
-                <div class="img_pequena">
-                    <img src="../img/obra.png" alt="">
-                </div>
+            <div class="imgs_pequenas" id="listaImagens">
             </div>
 
-            <div class="img_grande">
-                <img src="../img/obra.png" alt="">
+            <div class="img_grande" id="imgPrincipal">
+                
             </div>
 
         </div>
 
 
         <div class="card">
-            <div class="nome_favorito">
+            <div class="nome_favorito" id="nome_favorito">
 
                 <div class="nome_categoria">
-                    <h2 class="nome_obra">NOITE ESTRELADA</h2>
+                    <h2 class="nome_obra" id="nomeObra">NOITE ESTRELADA</h2>
                     <div class="categoria_sub_categoria">
-                        <p class="categoria">Pintura</p>
+                        <p class="categoria" id="nomeCategoria">Pintura</p>
                         <p>-</p>
-                        <p class="sub_categoria">Óleo sobre tela</p>
+                        <p class="sub_categoria" id="nomeTecnica">Óleo sobre tela</p>
                     </div>
                   
                 </div>
 
-                <img src="../img/formato-de-coracao.png" alt="">
+                <input type="checkbox" id="favoritar" class="coracao"/>
+                <label for="favoritar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#19b425">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </label>
             </div>
             
-                <h2 class="preco_obra">R$477,90</h2>
+                <h2 class="preco_obra" id="preco">R$477,90</h2>
             
                 <div class="frete_gratis">
                     <img src="../img/caminhao_frete.png" alt="">
@@ -79,9 +65,7 @@
                 </div>
 
                 <div class="select_buttons">
-                    <select name="" id="">Quantidade
-                        <option value="">1 unidade</option>
-                        <option value="">2 unidades</option>
+                    <select name="" id="selectQuantidade">Quantidade
                     </select>
 
                     <button class="compre_agora">Compre agora</button>
@@ -103,14 +87,14 @@
         <p class="feito_por">Feito por:</p>
         <div class="informacoes_artista">
             <div class="div_img_perfil_artista">
-                <img class="img_perfil_artista" src="../img/obra.png" alt="" srcset="">
+                <img class="img_perfil_artista" id="fotoPerfilArtista" src="../img/obra.png" alt="" srcset="">
             </div>
             <div class="div_nome_artista">
-                <p class="nome_artista">VINCENT VAN GOGH</p>
+                <p class="nome_artista" id="nomeArtista"></p>
             </div>
             <div class="avaliacao">
                 <img class="img_avaliacao" src="../img/estrela2.png" alt="">
-                <p class="nota_avaliacao">5.0</p>
+                <p class="nota_avaliacao" id="notaArtista">5.0</p>
             </div>
        
         </div>
@@ -119,34 +103,34 @@
 
             <div class="linha_tabela">
                 <div class="box">
-                    <p>Largura</p>
+                    <p>Categoria</p>
                 </div>
                 <div class="box_valor">
-                    <p class="valor_largura">92 cm</p>
+                    <p class="valor_largura" id="nomeCategoria2">92 cm</p>
                 </div>
             </div>
 
             <div class="linha_tabela">
                 <div class="box">
-                    <p>Altura</p>
+                    <p>Sub-Categoria</p>
                 </div>
 
                 <div class="box_valor">
-                    <p class="valor_altura"> 74 cm</p>
+                    <p class="valor_altura" id="nomeSubCategoria"> 74 cm</p>
                 </div>
             </div>
             <div class="linha_tabela_baixo">
                 <div class="box">
-                    <p>Peso</p>
+                    <p>Técnica</p>
                 </div>
                 <div class="box_valor">
-                    <p class="valor_peso">0.36 kg</p>
+                    <p class="valor_peso" id="nomeTecnica2">0.36 kg</p>
                 </div>
             </div>
         </div>
 
         <div class="div_textarea">
-            <textarea name="descricao_escrita" style="resize: none;" id="" cols="30" rows="10" value="" readonly>A Noite Estrelada é uma pintura de Vincent van Gogh de 1889. A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista. A tela faz parte da coleção permanente do Museu de Arte Moderna de Nova Iorque desde 1941. </textarea>
+            <textarea name="descricao_escrita" style="resize: none;" id="descricao" cols="30" rows="10" value="" readonly>A Noite Estrelada é uma pintura de Vincent van Gogh de 1889. A obra retrata a vista da janela de um quarto do hospício de Saint-Rémy-de-Provence, pouco antes do nascer do sol, com a adição de um vilarejo idealizado pelo artista. A tela faz parte da coleção permanente do Museu de Arte Moderna de Nova Iorque desde 1941. </textarea>
         </div>
 
     </div>
@@ -192,10 +176,6 @@
         
                     </div>
         
-                    <div class="parcelas">
-                        <p id="parcelas_obra_favorita1">5x sem juros</p>
-                    </div>
-                   
                 </div>
 
 <!-- 
