@@ -270,7 +270,7 @@ input{
 
 
 h1{
-    margin-left: 25%;
+    margin-left: 10%;
 }
 .aba_categoria{
     display: flex;
@@ -292,7 +292,7 @@ h1{
     flex-direction: row;
     width: 100%;
     margin-top:2%;
-    /* background-color: yellowgreen; */
+    background-color: yellowgreen;
 }
 
 .listagem_genero{
@@ -350,7 +350,7 @@ h1{
     /* gap: 40px; */
     /* padding-left: 50%; */
     /* padding-right: 50%; */
-    margin-left: 15%;
+    /* margin-left: 15%; */
     /* background-color: slateblue; */
 }
 .linha_obras{
@@ -362,30 +362,44 @@ h1{
     margin-top: 1%;
     
     flex-wrap: wrap;
-    width: 95%;
+    width: 90%;
     margin-left: 5%;
     gap: 5%;
-
+    /* padding-bottom: 5%; */
     /* margin-right: 5%; */
     /* position: absolute; */
     /* background-color: #04BA00; */
 }
 .obra{
-    
-    /* background-color: #DCDCDC; */
-    background-color: #FCFCFC;
-
-    display: flex;
     flex-direction: column;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 2.5%;
+    /* margin-bottom: 2.5%; */
 
     background-color: #FCFCFC;
-    height: 80%;
-    width: 20vw;
+    height: 480px;
+    width: 450px;
     border-radius: 15px;
     filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+    
+
+
+    display: inline-block;
+    transform-style: preserve-3d;
+    vertical-align: middle;
+
+
 
 }
+/* .obra:hover{
+    cursor: pointer;
+    transform: scale(1.1);  
+} */
 .obra img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
     height: 70%;
     width: 100%;
 }
@@ -427,7 +441,7 @@ h1{
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 56%;
+    width: 65%;
     gap: 5%;
     /* background-color: tomato; */
     align-items: flex-end;
@@ -469,7 +483,7 @@ h1{
 }
 .promocao{
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 40%;
     flex-direction: row;
     /* align-items: center; */

@@ -290,7 +290,7 @@ h1{
     /* margin-right: 10%; */
 }
 .card{
-    display: flex;
+    display: display;
     flex-direction: column;
     height: 510px;
     width: 450px;
@@ -302,8 +302,10 @@ h1{
     margin-right: 5%;
     background-color: #FCFCFC;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712); 
+    /* vertical-align: middle; */
 }
 .card img{
+    height: 40%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
