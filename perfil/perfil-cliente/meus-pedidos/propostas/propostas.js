@@ -88,7 +88,7 @@ const getPropostas = () => {
                     <div class="nome_tipo_contato" id="nome_tipo_contato">
             
                         <div class="img_nome">
-                            <img id="img_perfil" src="${proposta.fotoPerfilArtista}" alt="" srcset="">
+                            <img id="img_perfil ${proposta.idProposta}" src="${proposta.fotoPerfilArtista}" alt="" srcset="">
 
                             <p class="nome" id="nome_cliente">${proposta.nomeArtista}</p>
                         </div>
@@ -125,6 +125,12 @@ const getPropostas = () => {
 
 
                 listagem_propostas.appendChild(divCard);
+
+                const imgPerfil = document.getElementById(`img_perfil ${proposta.idProposta}`);
+
+                imgPerfil.addEventListener('click', () => {
+                    window.location.href = `../../../visualizacao-artista/visualizacao-perfil-artista/index.html?q=${proposta.idArtista}`;
+                })
 
                 const buttons = document.getElementById(`buttons ${proposta.idProposta}`);
 

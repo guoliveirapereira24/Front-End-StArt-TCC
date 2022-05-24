@@ -1,6 +1,6 @@
 "use strict";
 
-const tokenCliente = localStorage.getItem('tokenCliente');
+// const tokenCliente = localStorage.getItem('tokenCliente');
 // if(tokenCliente === "null" || tokenCliente === null || 
 // tokenCliente === "" || tokenCliente === "undefined") {
 //   window.location.href = "../../index.html";
@@ -8,20 +8,20 @@ const tokenCliente = localStorage.getItem('tokenCliente');
 
 const informacoesClienteDiv = document.getElementById('informacoesClienteDiv');
 
+const query = location.search.slice(1);
+const idCliente = query.split('=')[1];
+
 function getInformacoesCliente(){
 
     const configCliente = {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenCliente}`
+            'Cache-Control': 'no-cache'
         }
-    } 
-
+    }    
     
-    
-    fetch('http://localhost:3000/cliente/meuPerfil', configCliente)
+    fetch(`http://localhost:3000/cliente/${idCliente}`, configCliente)
         .then((res) => res.json())
         .then((data) => {
             const informacoesCliente = data.cliente;
@@ -74,19 +74,6 @@ function getInformacoesCliente(){
 
 
             getAvaliacaoCliente(cliente.idCliente);
-
-            const editPerfil = document.getElementById("icon_lapis")
-
-            editPerfil.onclick = () => {
-                window.location.href = "../editar-cliente/index.html"
-            }
-
-            const btnMeusPedidos = document.getElementById("button_meus_pedidos")
-
-            btnMeusPedidos.addEventListener("click", () => {
-                
-                window.location.href = "./meus-pedidos/index.html"
-            })
 
         });
     });
@@ -145,11 +132,10 @@ const listarArtistasParceiros = () => {
         headers: {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenCliente}`
         }
     } 
 
-fetch(`http://localhost:3000/diversas/artistasParceiros`, configArtistasParceiros)
+fetch(`http://localhost:3000/diversas/artistasParceirosDeCliente/${idCliente}`, configArtistasParceiros)
                 .then((res) => res.json())
                 .then((data) => {
                     const artistasParceiros = data.artistasParceiros;

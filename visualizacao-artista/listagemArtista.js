@@ -67,6 +67,10 @@ const listarArtistas = () => {
 
                 listagem.appendChild(div)
 
+                div.onclick = () => {
+                    window.location.href = `./visualizar-perfil-artista/index.html?q=${idArtista}`
+                }
+
 
                 const getAvaliacaoArtista = (idArtista) => {
 

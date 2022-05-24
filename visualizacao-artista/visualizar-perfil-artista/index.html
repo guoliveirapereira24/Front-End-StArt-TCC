@@ -13,10 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="./JS/integracao.js" defer></script>
-    <script src="./JS/listagem.js" defer></script>
-    <script src="./JS/minhasObras.js" defer></script>
-    <script src="./JS/minhasPropostas.js" defer></script>
+    <script src="./integracao.js" defer></script>
+    <script src="./minhasObras.js" defer></script>
     <title>Perfil</title>
 </head>
 
@@ -56,13 +54,10 @@
 
 <div id="informacoesArtistaDiv">
     <div id="img_nome_avaliacao">
-        <img src="../img/artista1.png" id="img_perfil_artista" alt="" srcset="">
+        <img src="" id="img_perfil_artista" alt="" srcset="">
 
         <div id="nome_avaliacao">
-           
         </div>
-
-        <img id="icon_lapis" src="../img/lapis.png" alt="" srcset="">
 
     </div>
 
@@ -72,91 +67,20 @@
     <p class="descricao_perfil_artista" id="descricao_perfil_artista"></p>
 
 </div>
-    <div id="button_artistas_parceiros_obras_favoritas" class="button_artistas_parceiros_obras_favoritas">
+    <div id="divButtonObras" class="divButtonObras">
 
-        <button class="button_artistas_parceiros" id="button_minhas_obras">
-                Minhas Obras
+        <button class="button_obras" id="button_obras">
+                Obras de Artista
         </button>
-        <button class="button_minhas_propostas" id="button_minhas_propostas">
-                Minhas propostas
-        </button>
+
     </div>
-
-    <!-- LISTAGEM MINHAS OBRAS -->
     
-    <div class="listagem_minhas_obras" id="listagem_minhas_obras">
+    <div class="listagem_obras" id="listagem_obras">
         <div class="linha_obras" id="linha_obrasArtistas">
-            <div class="modal_excluir_obra" id="modal_excluir_obra">
-            </div>
         </div>
     </div>
     
-    <!-- LISTAGEM DAS MINHAS PROPOSTAS -->
-    
-    <div class="minhas_propostas" id="listagem_minhas_propostas">
-    
-        <div class="fundo_ver_pedido" id="fundo_ver_pedido">
-        </div>
-
-        <div class="fundo_modal_excluir_proposta" id="fundo_excluir_proposta"> 
-        </div>
-
-        <div class="fundo_modal_cancelar_proposta" id="fundo_cancelar_proposta">
-        </div>
-
-        <div class="fundo_modal_finalizar_pedido" id="fundo_finalizar_pedido">           
-        </div>
-
-        
-        <div class="fundo_editar_proposta" id="modal_editar_proposta">
-        </div>
-
-        <div class="fundo_modal_avaliar_cliente">           
-      
-            <div class="modal_avaliar_cliente" id="modal_avaliar_cliente">
-
-                <h2>Avalie seu cliente</h2>
-                <div class="avaliacao_modal_avaliar">
-                    <img id="avaliacao_1_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_2_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_3_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_4_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_5_estrela" src="../img/estrela2.png" alt="" srcset="">
-
-                    <p class="avaliarCliente">5.0</p>
-                </div>
-                <textarea name="avaliacao_escrita_para_cliente" class="avaliacao_escrita_para_cliente" id="avaliacao_escrita_para_cliente" style="resize: none" cols="30" rows="10"></textarea>
-                    <div class="botoes_modal_avaliar_cliente">
-                        <button class="button_vermelho" id="button_cancelar_modal_avaliar_cliente">NÃO</button>
-                        <button class="button_azul" id="button_enviar_modal_avaliar_cliente">SIM</button>
-                    </div>
-            </div>
-        </div>
-       
-
     </div>
-
-    <div class="fundo_modal_avaliar_artista">
-        <div class="modal_avaliar_artista">
-            <h2>Avalie seu artista</h2>
-            <div class="estrelas_nota">
-                <img src="../../img/estrela2.png" alt="" srcset="">
-                <img src="../../img/estrela2.png" alt="" srcset="">
-                <img src="../../img/estrela2.png" alt="" srcset="">
-                <img src="../../img/estrela2.png" alt="" srcset="">
-                <img src="../../img/estrela2.png" alt="" srcset="">
-                <p class="avaliacao">5.0</p>
-            </div>
-            <textarea name="" placeholder="Digite aqui sua avaliação" style="resize: none;" id="" cols="30" rows="10"></textarea>
-            <div class="buttons">
-                <button class="vermelho" id="cancelar_avaliacao">CANCELAR</button>
-                <button class="azul" id="confirmar_avaliacao">ENVIAR</button>
-            </div>
-        </div>
-        
-
-    </div>
-
 
 </body>
 </html>

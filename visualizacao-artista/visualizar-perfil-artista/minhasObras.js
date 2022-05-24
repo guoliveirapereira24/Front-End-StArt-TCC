@@ -2,28 +2,6 @@
 
 const obrasArtistas = document.getElementById('linha_obrasArtistas');
 
-const deleteObraById = (idObraPronta) => {
-    const configObra = {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenArtista}`
-        }
-    } 
-
-    fetch(`http://localhost:3000/obraPronta/${idObraPronta}`, configObra)
-        .then((res) => res.json())
-        .then((data) => {
-            window.location.reload();
-        });
-};
-
-const redirectEditObra = (idObraPronta) => {
-    window.location.href = `./editar-obra/index.html?q=${idObraPronta}`;
-}
-
-
 function getObraPronta(){
 
     const configObras = {
@@ -31,13 +9,10 @@ function getObraPronta(){
         headers: {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenArtista}`
         }
     } 
-
     
-    
-    fetch('http://localhost:3000/obraPronta/minhasObras', configObras)
+    fetch(`http://localhost:3000/obraPronta/obrasDeArtista/${idArtista}`, configObras)
         .then((res) => res.json())
         .then((data) => {
             const obraPronta = data.obraPronta;
@@ -71,46 +46,18 @@ function getObraPronta(){
                     </div>
                 `
 
+                div.onclick = () => {
+                    window.location.href = `../../visualizar-obras/mais-informacoes/index.html?q=${idObraPronta}`
+                }
+
                 obrasArtistas.appendChild(div);
 
-                const edit_delete = document.getElementById('edit_delete ' + idObraPronta);
 
-                const btnEdit = document.createElement('button');
-                btnEdit.className = 'btn_edit';
-                btnEdit.id = `btn_edit ${obraPronta.idObraPronta}`;
-                btnEdit.innerHTML = `<img id="edit" src="../img/editar.png" alt="" onclick="javascript:redirectEditObra(${obraPronta.idObraPronta})">`;
-                edit_delete.appendChild(btnEdit)
-
-                const btnDelete = document.createElement('button');
-                btnDelete.className = 'btn_delete';
-                btnDelete.id = `btn_delete ${obraPronta.idObraPronta}`;
-                btnDelete.innerHTML = `<img id="button_delete" src="../img/excluir.png" alt="" onclick="javascript:deleteObraById(${obraPronta.idObraPronta})">`;
-                edit_delete.appendChild(btnDelete);
-                
-
-            }),
-            obrasArtistas.innerHTML += 
-                `
-                <div class="div_button_adicionar_obra">
-
-                    <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil" onclick="window.location.href = './adicionar-obra/index.html'">
-                        <img src="../img/plus.png" alt="" srcset="">
-                    </button>   
-                
-            
-                </div>
-                `;    
+            }) 
         } else {
             obrasArtistas.innerHTML += 
             `
-            <div class="div_button_adicionar_obra">
-
-                <button class="button_adicionar_obra_perfil" id="button_adicionar_obra_perfil" onclick="window.location.href = './adicionar-obra/index.html'">
-                    <img src="../img/plus.png" alt="" srcset="">
-                </button>   
-            
-        
-            </div>
+            <h2>Este artista não possui obras prontas</h2>
             `;    
         }
     });
@@ -118,8 +65,3 @@ function getObraPronta(){
 
 
 getObraPronta();
-
-
-
-
-    

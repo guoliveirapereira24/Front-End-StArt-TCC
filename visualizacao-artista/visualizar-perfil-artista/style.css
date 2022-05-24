@@ -423,7 +423,7 @@ h1{
     margin-left: 28vw;
     background-color: #04BA00;
 } */
-.button_artistas_parceiros_obras_favoritas{
+.divButtonObras{
     display: flex;
     flex-direction: row;
     height: 80px;
@@ -433,19 +433,15 @@ h1{
     /* background-color: #40E0D0; */
     gap: 50px;
 }
-.button_artistas_parceiros_obras_favoritas button{
+.divButtonObras button{
     width: 300px;
     background-color: #FFFFFF;
     font-style: bold;
     font-size: 30px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: none;
 }
-.button_minhas_propostas{
-    border-bottom: none;
-}
-.listagem_minhas_obras{
+
+.listagem_obras{
     display: flex;
     flex-direction: row;
     height: 50vh;
@@ -1265,4 +1261,15 @@ button:hover{
 }
 #semProposta{
     padding-top: 30px;
+}
+.contatar:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card_minha_obra:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
 }

@@ -167,7 +167,7 @@ function getMinhasPropostas(){
             <div id="nome_tipo_contato">
                 <p class="text_para">Para:</p>
 
-                <img id="img_perfil" src="${proposta.fotoPerfilCliente}" alt="" srcset="">
+                <img class="img_perfil" id="img_perfil ${proposta.idProposta}" src="${proposta.fotoPerfilCliente}" alt="" srcset="">
 
                 <p class="nome"  id="nome_cliente">${proposta.nomeCliente}</p>
 
@@ -211,6 +211,12 @@ function getMinhasPropostas(){
 
             `
             minhasPropostas.appendChild(div);
+
+            const imgPerfil = document.getElementById(`img_perfil ${proposta.idProposta}`);
+
+                imgPerfil.addEventListener('click', () => {
+                    window.location.href = `../../../visualizar-cliente/index.html?q=${proposta.idCliente}`;
+                })
 
             const buttons = document.getElementById(`botoes ${proposta.idProposta}`);
 

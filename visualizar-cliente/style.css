@@ -6,6 +6,21 @@
 
 }
 
+#avaliacaoCliente{
+    color: #FFC700;
+}
+
+.contatar:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+
+
+.img_nome_artista:hover{
+    transition: all 0.3s;
+    transform: scale(1.05);
+}
+
 header{
     display: flex;
     width:100vw;

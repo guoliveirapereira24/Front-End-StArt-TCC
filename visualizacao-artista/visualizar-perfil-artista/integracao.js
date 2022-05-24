@@ -1,10 +1,7 @@
 "use strict";
 
-const tokenArtista = localStorage.getItem('tokenArtista');
-if(tokenArtista === "null" || tokenArtista === null || 
-   tokenArtista === "" || tokenArtista === "undefined") {
-  window.location.href = "../../index.html";
-} 
+const query = location.search.slice(1)
+const idArtista = query.split('=')[1];
 
 const informacoesArtistaDiv = document.getElementById('informacoesArtistaDiv');
 
@@ -14,14 +11,13 @@ function getInformacoesArtista(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenArtista}`
+            'Cache-Control': 'no-cache'
         }
     } 
 
     
     
-    fetch('http://localhost:3000/artista/meuPerfil', configArtista)
+    fetch(`http://localhost:3000/artista/${idArtista}`, configArtista)
         .then((res) => res.json())
         .then((data) => {
             const informacoesArtista = data.artista;
@@ -43,7 +39,7 @@ function getInformacoesArtista(){
             
             <div class="botoes_doar_contatar">
                 <div class="contatar">
-                    <img src="../img/chat_direto.png" alt="">
+                    <img src="../img/contatar.png" alt="">
                     <p>Contatar</p>
                 </div>
 
@@ -74,7 +70,7 @@ function getInformacoesArtista(){
                     </section>
                 </div>
                 
-                <button class="button_fazer_pedido">
+                <button class="button_fazer_pedido" id="button_fazer_pedido">
                     Fazer Pedido
                 </button>
 
@@ -83,6 +79,12 @@ function getInformacoesArtista(){
             <p class="descricao_perfil_artista" id="descricao_perfil_artista">${artista.biografia}</p>
 
                 `
+
+            const buttonFazerPedido = document.getElementById('button_fazer_pedido');
+
+            buttonFazerPedido.addEventListener('click', () => {
+                location.href = `./fazer-pedido/index.html?q=${artista.idArtista}`
+            })
 
 
             getAvaliacaoArtista(artista.idArtista);
@@ -100,8 +102,7 @@ function getAvaliacaoArtista(idArtista){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-            'Authorization' : `Bearer ${tokenArtista}`
+            'Cache-Control': 'no-cache'
         }
     } 
 
