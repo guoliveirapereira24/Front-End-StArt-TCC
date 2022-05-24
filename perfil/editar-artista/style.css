@@ -285,6 +285,7 @@ body{
     height: 150px;
     width: 150px;
     border-radius: 50%;
+    background-color: turquoise;
 }
 
 button{
@@ -335,14 +336,17 @@ button p:hover{
 .editar_informacoes_pessoais{
     display: none;
     flex-direction: column;
-    /* background-color:violet; */
+    background-color: tomato;
     height: 100%;
     width: 100%;
-    gap: 2%;
+    font-size: 2.5vh;
+    /* gap: 2%; */
+    /* padding-right: 2%; */
 }
 .editar_forma_recebimento{
     display: none;
     flex-direction: column;
+    align-items: center;
     /* background-color:violet; */
     height: 100%;
     width: 100%;
@@ -355,11 +359,11 @@ button p:hover{
     justify-content: center;
     width: 100%;
     height: 100%;
-    gap: 5%;
+    /* gap: 1%; */
     /* padding-left: 10%; */
     padding-top: 2%;
     /* padding-right: 5%; */
-    font-size: 25px;
+    /* font-size: 25px; */
     /* background-color:violet;  */
 }
 .aba_desativar_conta{
@@ -381,11 +385,11 @@ button p:hover{
 }
 
 .aba_desativar_conta p {
-    font-size:20px;
+    font-size:22px;
     margin-top: 5%;
 }
 .aba_desativar_conta button{
-    height: 8%;
+    height: 12%;
     width: 30%;
     margin-top: 10%;
     font-size:20px;
@@ -400,9 +404,9 @@ button p:hover{
 .container_forms_buttons{
     display: flex;
     flex-direction: row;
-    margin-top: 10vh;
-    height: 80vh;
-    width: 60vw;
+    margin-top: 5vh;
+    height: 70vh;
+    width: 70vw;
     border: 1px solid;
     /* background-color: yellow; */
 }
@@ -410,16 +414,18 @@ button p:hover{
     display: flex;
     border-right: 1px solid;
     flex-direction: column;
-    width:30%;
+    width:25%;
     gap: 1%;
+
     /* background-color: aqua; */
 }
 .opcoes_edicao button{
     width:100%;
     height:10%;
     border: none;
+    font-size: 10px;
+
     border-left: 7px solid;
-    font-size: 30px;
     background-color: white;
 }
 section{
@@ -427,20 +433,23 @@ section{
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    height: 50%;
+    height: 15%;
+    /* width: 100%; */
 
     gap: 1%;
 
-    /* background-color:chartreuse; */
+    background-color:chartreuse;
 
 }
 .logo{
     display: flex;
-    margin-top: 16vh;
+    flex-direction: row;
+    margin-top: 82%;
+    /* justify-content: end; */
     align-items: center;
     justify-content: center ;
-    font-size: 60px;
-    height: 20vh;
+    font-size: 5vh;
+    height: 18%;
     background-color: black;
     color:white;
     font-family: 'Comforter', cursive;
@@ -459,12 +468,15 @@ section{
 
 .img_nome{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    padding-top: 2%;
+
+    height: 25%;
+    /* padding-top: 2%; */
     padding-left: 10%;
-    gap: 2%;
+    /* gap: 2%; */
    
-    /* background-color:aqua; */
+    background-color:violet;
 }
 #nome_artista1, #nome_artista2, #nome_artista3, #nome_artista{
     font-size: 2.5rem;
@@ -472,15 +484,21 @@ section{
 .img_texto{
     display: flex;
     flex-direction:column;
+    height: 82%;
+    width: 28%;
     gap: 10px;
-    font-size: 18px;
+    font-size: 17px;
     color:#40E0D0;
-    align-items: center;
+    align-items: center;  
+    background-color: yellow; 
 }
-
+.input-text p{
+    /* width: 20%; */
+    background-color: antiquewhite;
+}
 textarea{
     width: 80%;
-    height: 100%;
+    height: 90%;
     border-radius: 10px;
     padding: 1%;
     font-size: 2vh;
@@ -501,30 +519,30 @@ textarea{
     align-self: center;
     justify-content: center;
     width: 100%;
-    height: 65%;
-    gap: 5%;
-    padding-left: 5%;
-    padding-top: 2%;
+    height: 100%;
+    /* gap: 5%; */
+    padding-left: 2%;
+    /* padding-top: 2%; */
     padding-right: 5%;
     font-size: 24px;
-    /* background-color:yellow; */
+    background-color:yellow;
 
 }
 .inputs input, select{
-    width: 65%;
-    height: 100%;
+    width: 74%;
+    height: 75%;
     border: 1px solid #4C4E5F;
     box-sizing: border-box;
     border-radius: 10px;
     font-size: 25px;
-    padding-left: 1%;
-    padding-right: 2%;
-    
+    /* padding-left: 1%; */
+    /* padding-right: 2%; */
+    background-color: violet;
 }
 .button-salvar_editar_perfil{
-    height: 8%;
+    height: 2%;
     width: 30%;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     margin-left: 40%;
     font-size: 25px;
 
@@ -580,18 +598,20 @@ input:focus-within {
 }
 .editar_informacoes_pessoais{
     display: flex;
+    
 }
 .editar_informacoes_pessoais input{
     height: 60%;
-    /* width: 10%; */
+    width: 67%;
+    background-color: yellow;
 }
 .editar_informacoes_pessoais button{
 
-    height: 35%;
+    height: 11%;
 
 }
 .form_editar_informacoes_pessoais{
-    background-color:yellow
+    background-color:yellow;
  
 }
 
@@ -600,27 +620,27 @@ input:focus-within {
 .formulario_dados_pagamento{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    height: 300px;
-    margin-top: 6%;
+    width: 80%;
+    height: 100%;
+    /* margin-top: 6%; */
     /* margin-left: 300px; */
 
     /* border: 1px solid; */
-    border-radius: 15px;
-    /* background-color: blueviolet; */
+    border-radius: 12px;
+    background-color: blueviolet;
 }
 .pix_trans_banco{
     display: flex;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     width: 100%;
     height: 50px;
-    padding-left: 13%;
+    justify-content: center;
+    /* padding-left: 13%; */
     /* gap: 50px; */
     /* background-color: yellow; */
 }
 .pix_trans_banco button{
     width: 200px;
-    margin-left: 10%;
     font-size: 20px;
     /* background-color: blueviolet; */
     background-color: white;
@@ -647,6 +667,8 @@ input:focus-within {
     border-right: none;
     border-bottom: none;
     /* border: none; */
+    margin-left: 15%;
+
 }
 
 .dados-pix{
@@ -654,12 +676,12 @@ input:focus-within {
     flex-direction: column;
     width: 100%;
     height: 350px;
-    padding-left: 6%;
+    /* padding-left: 6%; */
     /* justify-content: center; */
     /* background-color: aquamarine;  */
 }
 .dados-pix input{
-    width: 400px;
+    /* width: 400px; */
     height: 60px;
 
     padding: 10px;
@@ -682,7 +704,7 @@ input:focus-within {
     justify-content: center;
     height: 30%;
     width: 100%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
     margin-top: 100px;
 
     /* background-color: beige; */
@@ -705,17 +727,17 @@ input:focus-within {
 }
 .button1{
 
-    width: 67%;
-    height: 5.5%;
+    /* width: 67%;
+    height: 5.5%; */
     border-radius: 10px;
     border: none;
     font-size: 30px;
     background-color: #40E0D0;
-    margin-left: 3%;
-    margin-bottom: 5%;
+    /* margin-left: 3%; */
+    /* margin-bottom: 5%; */
     /* margin-left: 300px; */
     
-    margin-top: 35%;
+    /* margin-top: 35%; */
 }
 
 
@@ -770,7 +792,7 @@ input{
 .ajuste2 input{
     /* display: none; */
     width: 100%;
-    height: 68%;
+    height: 69%;
     /* background-color: yellowgreen; */
     border-radius: 10px;
     /* margin-left: 30px; */
@@ -781,7 +803,7 @@ input{
 
     /* display: none; */
     width: 100%;
-    height: 50px;
+    height: 68%;
 
     border-color: black;
     border-width: 1px;
@@ -796,44 +818,46 @@ input{
 .ajuste2{
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 15%;
 
     margin-top: 2%;
     /* background-color: aquamarine; */
 }
 .ajuste3{
-    height: 13%;
+    height: 14%;
     /* width: 0%; */
     margin-top: 1%;
-    margin-bottom: 3%;
+    margin-bottom: 1%;
     /* background-color:steelblue; */
 }
 
 .ajuste3 input{
-    /* height: 13%; */
+    height: 76%;
     width: 99%;
-    height: 100%;
+    max-height: 200px ;
+    /* height: 85%; */
     /* margin-bottom: 0%; */
     /* background-color:steelblue; */
 }
 .ajuste3 select{
     width: 99%;
-    height: 100%;
+    height: 76%;
     /* margin-bottom: 2%; */
 }
 
 .formulario_dados_transferencia label{
     margin-left: 1%;
     width: 100%;
-    /* background-color: violet; */
+    /* background-color: #40E0D0; */
 }
 .button_salvar_dados_pagamento1, .button_salvar_dados_pagamento2{
 
-    height: 5vh;
-    width: 30vw;
+    height: 15%;
+    width: 50%;
+    max-height: 55px;
 
-    margin-top: 5%;
-    margin-left: 15%;
+    /* margin-top: 5%; */
+    margin-left: 27%;
     font-size: 25px;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -847,11 +871,11 @@ input{
     height: 100%;
     width: 100%;
     font-size: 20px;
-    /* background-color:violet */
+    /* background-color:violet; */
 }
 .h2_forma_recebimento{
-    margin-top: 5%;
-    margin-left: 19%;
+    margin-top: 2%;
+    /* margin-left: 19%; */
     font-size: 25px;
 }
 .tipo_conta{
@@ -872,7 +896,7 @@ input{
     display: none;
     flex-direction: column;
     position: absolute;
-    height:25%;
+    height: 25%;
     width: 25%;
     margin-top: 5%;
     border-radius: 10px;
@@ -889,12 +913,14 @@ input{
 }
 .botoes_desativar_conta button{
     height: 100%;
+    width: 40%;
 }
 
 .modal_desativar_conta h2{
-    height: 55%;
+    font-size: 2.5vh;
+    height: 50%;
     padding-top: 5%;
-    padding-left: 10%;
+    padding-left: 5%;
     padding-right: 5%;
     /* background-color:tomato */
 }
@@ -921,8 +947,9 @@ input{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 200px;
-    height: 300px;
+    /* width: 200px; */
+    /* height: 100%; */
+    background-color: chartreuse;
 }
 
 .img_texto img {
@@ -951,7 +978,7 @@ input{
 .tipoChavePix{
     border-right: none;
     border: 1px 1px 1px 0px solid;
-    width: 300px;
+    width: 30%;
     height: 60px;
     font-size: 25px;
     /* background-color: #40E0D0; */
@@ -959,7 +986,7 @@ input{
 }
 
 .chavePix{
-    width: 520px;
+    width: 70%;
     height: 80px;
     /* padding: 10px; */
 
