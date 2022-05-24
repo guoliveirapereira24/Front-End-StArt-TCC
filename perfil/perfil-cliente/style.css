@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway';
+    font-family: 'Raleway'; 
+
 }
 
 header{
@@ -21,14 +22,12 @@ header a{
     display:flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #40E0D0; */
 }
 
 header img{
     width: 50px;
     height: 50px;
 }
-
 
 .links ul {
     padding-top: 1.5%;
@@ -212,36 +211,18 @@ li select{
         max-width: 360px;
         /* margin-bottom: 10%; */
         }
-/* 
-    .container {
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: right;
-        }
-                  
-             
-    .btn-buscar-top {
-        width: 20px!important;
-        height: 22px;
-        background: url(http://www.devmedia.com.br/imagens/2013/buscar_grey.png) no-repeat;
-        cursor: pointer!important;
-        border: none;
-        transform: translateY(-50%);
-        padding: 0;
-         
-        } */
 
         
     
  #linha {
     width: 100%;
-    /* background-color: #40E0D0; */
+    background-color: #40E0D0;
     border-bottom: 10px solid #000000;
     margin-bottom: 2%;
 }
 
 
-.logo-header img{
+.logo img{
   width: 120px;
 
 }
@@ -266,10 +247,19 @@ input{
     border-radius: 0%;
 }
 
+/* ---------------------- BODY ------------------------ */
 
+#icon_lapis:hover{
+    transition: all 0.3s;
+    cursor: pointer;
+    transform: rotate(360deg) scale(1.2);
+}
 
-/* Fim do Header */
-
+.nome_artista_parceiro{
+    align-self: center;
+    text-align: center;
+    width: 400px;
+}
 
 #img_nome_avaliacao{
     display: flex;
@@ -279,58 +269,17 @@ input{
     /* background-color: yellowgreen; */
 }
 
-.botoes_doar_contatar{
-    display: flex;
-    flex-direction: column;
-
-    /* align-items: center; */
-    /* height: 15vh;
-    width: 20vw; */
-    margin-left: 35vw;
-    /* background-color: #D71B1B; */
-}
-
-.contatar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    font-size: 2.5vh;
-    gap: 2%;
-    /* background-color: #FFC700; */
-}
-.contatar img{
-    width: 12%;
-    height: 50%;
-    color: #04BA00;
-    /* border: 1px solid; */
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
-}
-.doacao{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    gap: 3%;
-    text-decoration: solid;
-    /* background-color: aquamarine; */
-}
-.doacao img{
-    width: 13%;
-    height: 50%;
-    /* margin-right: 5%; */
-}
-.doacao p{
-    font-size: 2.5vh;
-    margin-right: 8%;
-    /* stroke: 4px #FFC700; */
-    color: #FFC700;
-    
-}
-#img_perfil_artista{
+#img_perfil_cliente{
     display: flex;
     width: 150px;
     height: 150px;
+    border-radius: 50%;
+}
+
+.img_artista_parceiro{
+    display: flex;
+    width: 317px;
+    height: 317px;
     border-radius: 50%;
 }
 
@@ -345,6 +294,25 @@ h1{
     margin-left: 30px;
     /* padding-left: 50px; */
 }
+.contatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 2.5vh;
+    width: 20vw;
+    height: 100%;
+    gap: 5%;
+    margin-left: 30vw;
+    /* background-color: #FFC700; */
+}
+.contatar img{
+    width: 20%;
+    height: 100%;
+    color: #04BA00;
+    /* border: 1px solid; */
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
 #nome_avaliacao{
     display: flex;
     flex-direction: column;
@@ -357,19 +325,11 @@ h1{
     gap: 5px;
     font-size: 35px;
 }
-
-
-#icon_lapis:hover{
-    transition: all 0.3s;
-    cursor: pointer;
-    transform: rotate(360deg) scale(1.2);
-}
-
 #avaliacao img{
     height: 50px;
     width: 50px;
 }
-.informacoes_artista{
+.informacoes_cliente{
     display: flex;
     flex-direction: row;
     height: 300px;
@@ -377,27 +337,39 @@ h1{
     font-size: 30px;
     align-items: center;
 }
-.text_informacoes_artista{
+.text_informacoes_cliente{
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-left: 5%;
-    /* background-color: #04BA00; */
-    height: 100%;
-    width: 40%;
 }
-.text_informacoes_artista section{
+.text_informacoes_cliente section{
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.text_informacoes_artista p{
+.text_informacoes_cliente p{
     font-size: 40px;
 }
 .transparente{
-    color: rgba(0, 0, 0, 0.5)
+    opacity: 50%;
 }
-.descricao_perfil_artista{
+.button_meus_pedidos{
+    width: 393px;
+    height: 81px;
+    margin-left: 20%;
+    font-family: "Raleway", regular;
+    font-size: 35px;
+
+    border: none;
+    border-radius: 10px;
+    background: #40E0D0;
+}
+.button_meus_pedidos:hover{
+    transition: all 0.3s;
+    transform: scale(1.2);
+}
+.descricao_perfil_cliente{
     height: 300px;
     
     padding-left: 5%;
@@ -405,31 +377,12 @@ h1{
     font-size: 35px;
     /* background-color: coral; */
 }
-.button_fazer_pedido{
-    width: 15%;
-    height: 25%;
-    font-size: 2.5vh;
-    margin-left: 19%;
-    border-radius: 10px;
-    border: none;
-    background-color: #40E0D0;
-    color: white;
-}
-/* .doacao{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 10%;
-    margin-left: 28vw;
-    background-color: #04BA00;
-} */
 .button_artistas_parceiros_obras_favoritas{
     display: flex;
     flex-direction: row;
     height: 80px;
     
     justify-content: center;
-    /* align-items: center; */
     /* background-color: #40E0D0; */
     gap: 50px;
 }
@@ -442,76 +395,63 @@ h1{
     border-left: none;
     border-right: none;
 }
-.button_minhas_propostas{
+.button_obras_favoritas{
     border-bottom: none;
 }
-.listagem_minhas_obras{
-    display: flex;
-    flex-direction: row;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1%;
-    flex-wrap: wrap;
-    /* gap: 40px; */
-    /* padding-left: 50%; */
-    /* padding-right: 50%; */
-    /* background-color: tomato; */
-}
-.linha_obras{
-    display: flex;
-    flex-direction: row;
-    height: 50vh;
-    justify-content: center;
-    margin-top: 1%;
-    gap: 30px;
-    flex-wrap: wrap;
-    /* position: absolute; */
+
+.text_artistas_parceiros{
+    height: 5%;
+    font-size: 2.5vh;
+    padding-left: 45%;
+    /* align-items: center; */
     /* background-color: #04BA00; */
 }
 
-.card_minha_obra{
+.listagem_artistas_parceiros{
     display: flex;
+    margin-top: 1%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    height: 50vh;
+    /* background-color: violet; */
+}
+.img_nome_artista{
+    display: flex;
+    /* background-color: yellow; */
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+}
+
+.img_obra{
+        width: 464px;
+        height: 387px
+}
+.nome_artista_parceiro{
+    margin-top: 20px;
+}
+.listagem_obras_favoritas{
+    display: none;
+    flex-direction: row;
+    height: 50vh;
+    justify-content: center;
+    margin-top: 1%;
+    gap: 2%;
+    /* background-color: tomato; */
+}
+.obra_favorita{
     
     /* background-color: #DCDCDC; */
     background-color: #FCFCFC;
+
+    display: flex;
     flex-direction: column;
     height: 515px;
-    width: 410px;
     border-radius: 10px;
     filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
 }
-.div_button_adicionar_obra{
-    display: flex;
-    
-    /* background-color: #DCDCDC; */
-    background-color: #ffffff;
-    margin-bottom: 4.2%;
-    margin-left: 2%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 515px;
-    width: 410px;
-    border-radius: 10px;
-
-}
-.div_button_adicionar_obra button{
-    height: 30%;
-    border: none;
-
-}
-
-.div_button_adicionar_obra img{
-    height: 100%; 
-    width: 100%;
-    border-radius:10px;
-    border: 1px solid;
-    font-size: 100px;
-    background-color:#40E0D0;
-    color: rgb(255, 255, 255);
-}
-.nome_artista{
+.nome_artista_favorito_preco{
     display: flex;
     flex-direction: row;
     /* border-radius: 10px; */
@@ -522,11 +462,11 @@ h1{
     height: 20%;
     /* background-color: #40E0D0; */
 }
-.nome_obra_artista{
+.nome_obra_artista_categoria_tecnica{
     /* background-color: #40E0D0; */
-    gap: 5px;
+    gap: 10px;
     width: 100%;
-    padding-top: 1%;
+    padding-top: 2%;
     padding-left: 2%;
 }
 
@@ -535,650 +475,64 @@ h1{
     flex-direction: column;
     /* gap: 5px; */
 }
-.nome_obra_artista p{
+.nome_obra_artista_categoria_tecnica p{
     margin-top: 8px;
     font-size: 18px;
 }
 .categoria_tecnica{
     display: flex;
     flex-direction: row;
-    padding-left: 2%;
-    gap: 1%;
+    gap: 5px;
 }
-.card_minha_obra img{
-    width: 410px;
-    height: 75%;
-    border-radius: 10px 10px 0px 0px;
-}
-.edit_delete{
+.img_favoritada_preco{
     display: flex;
+    flex-direction: column;
+    width: 30%;
+    /* background-color: beige; */
+    align-items: flex-end;
+    justify-items: center;
+}
+.img_favoritada_preco img{
+    margin-top: 10px;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+}
+.img_favoritada_preco p{
+    font-size: 25px;
+    margin-top: 5%;
+    margin-right: 10px;
+}
+.parcelas{
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 1%; */
     height: 10%;
-    width: 30%;
-    gap: 15%;
-    /* padding-right: 15%; */
-    
-    align-items: center;
-    margin-left: 70%;
-    position: absolute;
-    background-color: rgb(0, 0, 0, 0.25);
-    border-radius: 10px 10px 0px 10px;
-    /* background-color: #04BA00; */
-}
-.button_azul{
-    background-color:#40E0D0;
-    color: white;
-}
-.button_vermelho{
-    background-color:red;
-    color:white;
-}
-.modal_excluir_obra, .modal_excluir_proposta, .modal_finalizar_pedido{
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    margin-top: 5%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
-    background-color:white;
-    top: 0;
-    left: 0;
-}
-/* .modal_excluir_obra h2, .modal_excluir_proposta h2{
-    margin-left: 4%;
-
-}
-
-
-} */
-.fundo_modal_cancelar_proposta, .fundo_modal_excluir_proposta, 
-.fundo_modal_finalizar_pedido, .fundo_modal_avaliar_cliente{
-    width: 100vw;
-    height: 1000vh;
-    background-color: #0000007d;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-}
-.fundo_modal_finalizar_pedido{
-    display:none;
-}
-.fundo_modal_excluir_proposta{
-    display: none;
-}
-.fundo_modal_cancelar_proposta{
-    display:none;
-}
-.fundo_modal_avaliar_cliente{
-    display:none;
-}
-.modal_avaliar_cliente{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    height: 28%;
-    width: 25%;
-    top: 30%;
-    margin-top: 5%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
-    background-color:white;
-}
-.avaliacao_escrita_para_cliente{
-    width:80%;
-    border-radius:10px;
-}
-.avaliacao_modal_avaliar{
-    display: flex;
-    align-items: center;
-    font-size:24px;
-    gap: 3px;
-    padding-left: 4%;
-    margin-left: 7%;
-    margin-bottom: 1%;
-}
-.avaliacao_modal_avaliar img{
-    width:5%;
-}
-
-.modal_cancelar_proposta{
-    display: flex;
-    background-color: white;
-    
-    position: fixed;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    top: 40%;
-    /* padding-left: 2%; */
-    font-size: 20px;
-    height:25%;
-    width: 32%;
-    border-radius: 10px;
-    border: none;
-}
-.modal_cancelar_proposta h2{
-    width:100%;
-    padding-left: 8%;
-    padding-right:1%;
-    font-size: 30px;
-    height: 20%;
-    /* background-color:#04BA00; */
-}
-.modal_cancelar_proposta p {
-    margin-top: 2%;
-    font-size:25px;
-}
-.botoes_cancelar_proposta{
-    display: flex;
-    flex-direction: row;
-    /* background-color:yellow; */
-    justify-content: center;
-    margin-top: 2%;
-    gap: 5%;
-    width: 100%;
-    height:20%;
-}
-.botoes_cancelar_proposta button{
-    width: 40%;
-    border: none;
-    border-radius: 10px;
-    font-size:20px;
-}
-.modal_finalizar_pedido{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    height: 18%;
-    width: 25%;
-    top: 30%;
-    margin-top: 5%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
-    background-color:white;
-}
-
-.botoes_excluir_obra, .botoes_excluir_proposta, 
-.botoes_finalizar_pedido, .botoes_modal_avaliar_cliente{
-    display:flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    height: 30%;
-    gap: 5%;
-    /* background-color:#40E0D0 */
-}
-.botoes_modal_avaliar_cliente{
-    height: 20%;
-    margin-top: 1%;
-}
-.botoes_excluir_obra button, .botoes_excluir_proposta button,
- .botoes_finalizar_pedido button{
-    height: 100%;
-    width: 40%;
-    border: 1px solid;
-    border-radius: 10px;
-    font-size: 20px;
-}
-.botoes_modal_avaliar_cliente button{
-    height: 90%;
-    width: 40%;
-    border: 1px solid;
-    border-radius: 10px;
-    font-size: 20px
-
-}
-.modal_excluir_obra h2, .modal_excluir_proposta h2, .modal_finalizar_pedido h2{
-    height: 55%;
-    padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 5%;
-    /* background-color:tomato */
-}
-/* .modal_excluir_proposta h2{
-    height: 55%;
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-} */
-.modal_avaliar_cliente h2{
-    font-size:30px;
-    padding-bottom: 1%;
-}
-.button_edit_delete{
-    width: 100%;
-    height: 100%;
-    background-color: #40E0D0;
-}
-.edit_delete img{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-}
-.edit_delete button{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(0, 0, 0, 0.25);
-
-}
-
-.minhas_propostas{
-    display: none;
-    margin-top: 0;
-    /* background-color: aquamarine; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.card{
-    height: 420px;
-    width: 55vw;
-    /* border: 1px solid; */
-    border-radius: 15px;
-    margin-top: 20px;
-    background-color: #FCFCFC;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
-    
-}
-/* #card p{
-    background-color:#40E0D0;
-} */
-#nome_tipo_contato{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 80px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    /* background-color: #04BA00; */
-
-}
-
-#img_perfil{
-    margin-top: 5px;
-    margin-left: 10px;
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    /* background-color: #40E0D0; */
-}
-
-.nome{
-    font-size: 25px;
-    margin-left: 10px;
-    width: 30%;
-    /* background-color: #40E0D0; */
-}
-
-#avaliacao{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 30px;
-    margin-left: 1%;
-}
-#avaliacao img{
-    width: 45px;
-    height: 45px;
-}
-#avaliacao p{
-    margin-left: 10px;
-    color: rgb(255, 200, 0);
-    
-}
-#categoria_pedido{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    flex-direction: row;
-    /* margin-left: 20%; */
-    font-size: 25px;
-    /* background-color: #40E0D0; */
-}
-#contatar{
-    display: flex;
-    align-items: center;
-    margin-left: 20%;
-    font-size: 25px;
-    /* background-color: #40E0D0; */
-}
-#descricao_pedido{
-    display: flex;
-    font-size: 28px;
-    height: 30%;
-    align-items: center;
-    padding-left: 2%;
+    justify-content: end;
     padding-right: 2%;
-    /* background-color: #40E0D0; */
-}
-
-#exemplo_botoes{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* background-color: brown; */
-    height: 50%;
-}
-
-#exemplo_botoes img{
-    width: 35%;
-    height: 100%;
-    margin-left: 5%;
-
-}
-
-.botoes{
-    display: flex;
-    flex-direction: column;
-
-    width: 300px;
-    height: 200px;
-    gap: 12px;
-    margin-left: 30%;
-    
-    justify-content: center;
     /* background-color: yellow; */
+    /* font-size: 18px; */
 }
-.botoes button{
-    height: 55px;
-    border: none;
-    border-radius: 15px;
-    font-size: 20px;
-    /* box-shadow: 0px 3px 0px 0px #00000025; */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-#fazer_proposta{
-    background-color: #40e0d0a9;
-}
-#recusar{
-    background-color: rgba(255, 99, 71, 0.699);
-}
-.container_status{
-    display: flex;
-    flex-direction: row;
-    width: 30%;
-    margin-left: 17%;
-    gap: 3%;
+.parcelas p{
     font-size: 25px;
-    /* background-color: #40E0D0; */
-}
-.text_para{
-    font-size: 25px;
-    margin-left: 2%;
-}
-.preco_prazo_buttons{
-    display: flex;
-    height: 50%;
-    flex-direction: row;
-    /* background-color: aqua; */
-}
-.preco_prazo{
-    display: flex;
-    flex-direction: column;
-    gap: 5%;
-    /* padding: 2%; */
-    padding-left: 2%;
-    font-size: 30px;
-    /* background-color: yellow; */
-       
-}
-.preco{
-    display: flex;
-    flex-direction: row;
-    gap: 3%;
-    /* background-color: yellowgreen; */
-}
-.prazo{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    /* gap: 1%; */
-    /* background-color: brown; */
-}
-.button_ver_pedido{
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    margin-top: 3%;
-    font-size: 20px;
-    background: #EDECEC;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.editar_proposta, .entrar_em_contato{
-    background-color: #40E0D0;
-}
-.rejeitar, .excluir_proposta, .cancelar_proposta{
-    background-color: #E14A4A;
-}
-.iniciar_pedido, .finalizar_pedido, .pedido_despachado{
-    background-color: #04BA00;
-}
-.recusada{
-    color: #E14A4A;
-}
-.aceita, .finalizado, .despachado{
-    color: #04BA00;
-}
-.andamento{
-    color: #FFC700;
-}
-
-.fundo_ver_pedido{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-}
-
-.fundo_modal_excluir_proposta{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-}
-
-.fundo_modal_cancelar_proposta{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-}
-
-.fundo_modal_finalizar_pedido{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-}
-
-
-.modal_ver_pedido{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 480px;
-    width: 50vw;
-    /* border: 1px solid; */
-    border-radius: 15px;
-  
-    background-color: #ffffff;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
-    justify-content: center;
-    
-}
-.modal_excluir_proposta, .modal_cancelar_proposta, .modal_finalizar_pedido{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    height: 480px;
-    width: 50vw;
-    /* border: 1px solid; */
-    border-radius: 15px;
-  
-    background-color: #ffffff;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
-    justify-content: center;
-}
-
-.modal_excluir_proposta{
-    display: flex;
-    width:20%;
-    height:15%;
-    top: 30%;
-}
-
-.modal_excluir_proposta button{
-    width: 10vw;
-}
-
-.nome_tipo_contato{
-    width: 100%;
-    /* background-color: #04BA00; */
-}
-.img_exemplo{
-    height: 250px;
-    /* margin-left: 30%; */
-}
-.categoria_pedido{
-    margin-left: 25%;
-    /* background-color: #40E0D0; */
-}
-.fechar{
-    margin-left: 10%;
-    font-size: 40px;
-}
-
-.fechar:hover{
-    cursor: pointer;
-    color: red;
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-
-button{
-    transition: 0.2s;
-}
-button:hover{
-    cursor: pointer;
-    transform: scale(1.1);  
-}
-.fundo_editar_proposta{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    background-color: white;
-    top: 0;
-    left: 0;
-}
-.h1_proposta{
-    margin-top: 5%;
-    margin-left: 0vw;
-    font-size: 34px;
-    font-family: 'Raleway', sans-serif;
-
-}
-.descricao_preco_prazo_buttons{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content:center ;
-    flex-direction: row;
-    margin-top: 2%;
-    /* background-color: yellow; */
-    font-size: 30px;
-}
-.descricao_pedido_personalizado {
-    /* background-color: violet; */
-    border-radius: 10px;
-    border: 2px solid;
-    height: 40vh;
-    width: 40vw;
-    font-size: 30px;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 2%;
-    /* padding-bottom: 45%; */
-    flex-direction: column;
-    /* align-items: center; */
-
-}
-.inputs_buttons{
-    display: flex;
-    flex-direction: column;
-    margin-left: 2%;
-    gap: 6vh;
-}
-.input_text_prazo, .input_text_preco{
-    width: 30vw;
-    height: 7vh;
-    border-radius: 10px;
-    border: 2px solid;
-    font-size: 30px;
-    padding-left: 3%;
-    /* background-color: #40E0D0; */
-}
-
-.buttons_proposta_pedido_personalizado{
-    display: flex;
-    flex-direction: row;
-    height: 6vh;
-    gap: 5%;
-    /* background-color: turquoise; */
-    justify-content: center;
-}
-.buttons_proposta_pedido_personalizado button{
-    width: 40%;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 25px;
-    color: white;
-}
-.cancelar{
-    background-color: #D71B1B;
-}
-.enviar{
-    background-color: turquoise;
-}
-#semProposta{
-    padding-top: 30px;
-}
+label{ cursor: pointer;
+    margin-top: 2px;
+    margin-right: 20px;}
+     svg{ stroke: black;}
+     .coracao { display: none;}
+     .coracao:checked+label>svg {
+         animation: preencher;
+         animation-duration: .3s;
+         animation-fill-mode: forwards;
+     }
+     @keyframes preencher {
+         0% {
+             fill: transparent;
+         }
+         100% {
+             stroke: turquoise;
+             fill: turquoise;
+         }
+     }

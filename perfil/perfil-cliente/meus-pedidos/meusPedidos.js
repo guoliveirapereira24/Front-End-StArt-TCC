@@ -74,12 +74,13 @@ const Avaliar = (estrela) => {
     
 }
 
-const avaliarArtista = (idArtista, avaliacao, descricao) => {
+const avaliarArtista = (idArtista, avaliacao, descricao, idPedidoPersonalizado) => {
 
     const body = {
         idArtista: idArtista,
         avaliacaoArtista: avaliacao,
-        descricao: descricao
+        descricao: descricao,
+        idPedidoPersonalizado: idPedidoPersonalizado
     }
 
     const config = {
@@ -227,10 +228,14 @@ const getMeusPedidos = () => {
                         fetch(`http://localhost:3000/pedidosPersonalizados/artistaPedidoPersonalizado/${idPedido}`, configGetIdArtista)
                             .then((res) => res.json())
                             .then((data) => {
-                                const artistaPedidoPersonalizado = data
+                                
+                                console.log(data)
+                                const artistaPedidoPersonalizado = data.artistaPedidoPersonalizado;
+
                                 artistaPedidoPersonalizado.map(artistaPedidoPersonalizado => {
-                                    return idArtista = artistaPedidoPersonalizado.idArtista;
+                                    idArtista = artistaPedidoPersonalizado.idArtista;
                                 })
+                                return idArtista;
                             })
                     }
 
@@ -502,7 +507,7 @@ const getMeusPedidos = () => {
         
                             fundo_modal_avaliar_artista.innerHTML = 
                             `
-                            <div class="modal_avaliar_artista" id="modal_avaliar_artista${proposta.idArtista}">
+                            <div class="modal_avaliar_artista" id="modal_avaliar_artista ${idArtista}">
                                 <h2>Avalie seu artista</h2>
                                 <div class="estrelas_nota">
                                     <div class="estrelas" id="estrelas_nota">
@@ -658,7 +663,7 @@ const getMeusPedidos = () => {
                             button_confirmar_avaliacao.addEventListener("click", function(){
 
                                 const avaliacao = rating.innerHTML;
-                                const descricao = textAreaDescricao.innerHTML;
+                                const descricao = textAreaDescricao.value;
                                 if(avaliacao == ""){
                                     alert("Você precisa dar uma nota para avaliar!");
                                     return;
@@ -666,7 +671,7 @@ const getMeusPedidos = () => {
                                     alert("Você precisa dar uma descrição para avaliar!");
                                     return;
                                 } else if(avaliacao != "" && descricao != ""){
-                                    avaliarArtista(idArtista, avaliacao, descricao);
+                                    avaliarArtista(idArtista, avaliacao, descricao, idPedidoPersonalizado);
                                     fundo_modal_avaliar_artista.innerHTML = "";
                                     fundo_modal_avaliar_artista.style.display = "none";
                                 }

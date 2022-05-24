@@ -1,151 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <script src="./JS/integracao.js" defer></script>
-    <script src="./JS/listagem.js" defer></script>
-    <script src="./JS/minhasObras.js" defer></script>
-    <script src="./JS/minhasPropostas.js" defer></script>
-    <title>Perfil</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="./JS/listagem.js" defer></script>
+<script src="./JS/meuPerfil.js" defer></script>
+
+<title>Perfil</title>
 </head>
 
 <header>
-    <a href="../../home/home-artista/index.html" class="icon-home">
+    <a href="../../home/home-cliente/index.html" class="icon-home">
         <img src="../../home/img_header/home.png" alt="icon home">
     </a>
     <a href="" class="icon-cart">
         <img src="../../home/img_header/carrinho.png" alt="icon cart">
     </a>
-    <a href="../../home/home-artista/index.html" class="logo-header">
+    <a href="../../home/home-cliente/index.html" class="logo">
         <img src="../../home/img_header/StArt.png" alt="logo StArt">
     </a>
     <a href="" class="icon-chat">
         <img src="../../home/img_header/chat_branco.png" alt="icon chat">
     </a>
-    
+
     <nav class="links">
         <ul>
             <li>
                <img src="../../home/img_header/perfil.png" alt="icon profile" width="85%">
                 <ul class="submenu">
-                    <li><a href="../perfil-artista/index.html">Perfil</a></li>
-                    <li><a href= "./index.html">Configurações</a></li>
-                    <li><a id="logout">Logout</a></li>
+                   <li><a href="../../perfil/perfil-cliente/index.html">Perfil</a></li>
+                   <li><a href= "../../perfil/editar-cliente/index.html">Configurações</a></li>
+                   <li><a id="logout">Logout</a></li>
                 </ul>
             </li>  
 
         </ul>
     </nav>
-    
-    
+
 </header>
 
-
 <body>
+<div id="informacoesClienteDiv">
+<div id="img_nome_avaliacao">
+    <img src="../img/cliente.png" id="img_perfil_cliente" alt="" srcset="">
 
-<div id="informacoesArtistaDiv">
-    <div id="img_nome_avaliacao">
-        <img src="../img/artista1.png" id="img_perfil_artista" alt="" srcset="">
 
-        <div id="nome_avaliacao">
-           
-        </div>
 
-        <!-- <img class="icon_lapis" id="icon_lapis" src="../img/lapis.png" alt="" srcset=""> -->
-
-        <div class="contatar">
-            <img src="../../home/img_header/chat_branco.png" alt="">
-            <p>Contatar</p>
-        </div>
-
-    </div>
-
-    <div class="informacoes_artista" id="informacoes_cliente_button_meus_pedidos">
-
-        <button class="button_fazer_pedido">
-            Fazer Pedido
-        </button>
-
-    </div>
-    
-    <p class="descricao_perfil_artista" id="descricao_perfil_artista"></p>
+    <img id="icon_lapis" src="../img/lapis.png" alt="" srcset="">
 
 </div>
-    <!-- <div id="button_artistas_parceiros_obras_favoritas" class="button_artistas_parceiros_obras_favoritas">
 
-        <button class="button_artistas_parceiros" id="button_minhas_obras">
-                Minhas Obras
-        </button>
-        <button class="button_minhas_propostas" id="button_minhas_propostas">
-                Minhas propostas
-        </button>
-    </div> -->
-
-    <!-- LISTAGEM MINHAS OBRAS -->
+<div class="informacoes_cliente" id="informacoes_cliente_button_meus_pedidos">
     
-    <div class="listagem_minhas_obras" id="listagem_minhas_obras">
-        <div class="linha_obras" id="linha_obrasArtistas">
-            <!-- <div class="modal_excluir_obra" id="modal_excluir_obra"> -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- LISTAGEM DAS MINHAS PROPOSTAS -->
-    
-    <div class="minhas_propostas" id="listagem_minhas_propostas">
-    
-        <div class="fundo_ver_pedido" id="fundo_ver_pedido">
-        </div>
+    <button class="button_meus_pedidos" id="button_meus_pedidos">
+        Meus Pedidos
+    </button>
 
-        <div class="fundo_modal_excluir_proposta" id="fundo_excluir_proposta"> 
-        </div>
+</div>
 
-        <div class="fundo_modal_cancelar_proposta" id="fundo_cancelar_proposta">
-        </div>
 
-        <div class="fundo_modal_finalizar_pedido" id="fundo_finalizar_pedido">           
-        </div>
+</div>
+<!-- FIM DAS DESCRIÇÕES PESSOAIS DO CLIENTE -->
+<div id="button_artistas_parceiros_obras_favoritas" class="button_artistas_parceiros_obras_favoritas">
+    <button class="button_artistas_parceiros" id="button_artistas_parceiros">
+        Artistas Parceiros
+    </button>
+    <button class="button_obras_favoritas" id="button_obras_favoritas">
+        Obras Favoritas
+    </button>
+</div>
 
-        
-        <div class="fundo_editar_proposta" id="modal_editar_proposta">
-        </div>
+<div class="listagem_artistas_parceiros" id="listagem_artistas_parceiros">
+</div>
 
-        <div class="fundo_modal_avaliar_cliente">           
-      
-            <div class="modal_avaliar_cliente" id="modal_avaliar_cliente">
 
-                <h2>Avalie seu cliente</h2>
-                <div class="avaliacao_modal_avaliar">
-                    <img id="avaliacao_1_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_2_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_3_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_4_estrela" src="../img/estrela2.png" alt="" srcset="">
-                    <img id="avaliacao_5_estrela" src="../img/estrela2.png" alt="" srcset="">
-
-                    <p class="avaliarCliente">5.0</p>
-                </div>
-                <textarea name="avaliacao_escrita_para_cliente" class="avaliacao_escrita_para_cliente" id="avaliacao_escrita_para_cliente" style="resize: none" cols="30" rows="10"></textarea>
-                    <div class="botoes_modal_avaliar_cliente">
-                        <button class="button_vermelho" id="button_cancelar_modal_avaliar_cliente">NÃO</button>
-                        <button class="button_azul" id="button_enviar_modal_avaliar_cliente">SIM</button>
-                    </div>
-            </div>
-        </div>
-       
-
-    </div>
-    
+<!-- LISTAGEM OBRAS FAVORITAS  -->
+<div class="listagem_obras_favoritas" id="listagem_obras_favoritas">
+</div>
 
 </body>
 </html>

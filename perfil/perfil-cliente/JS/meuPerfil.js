@@ -39,13 +39,9 @@ function getInformacoesCliente(){
                             <img src="../img/estrela2.png" id="avaliacao" alt="" srcset="">
                             <p id="avaliacaoCliente"></p>
                         </section>
-                    
                     </div>
 
-                    <div class="contatar">
-                        <img src="../img/chat_direto.png" alt="">
-                        <p>Contatar</p>
-                    </div>
+                    <img id="icon_lapis" src="../img/lapis.png" alt="" srcset="">
 
                 </div>
 
@@ -66,6 +62,9 @@ function getInformacoesCliente(){
                         </section>
                     </div>
 
+                    <button class="button_meus_pedidos" id="button_meus_pedidos">
+                        Meus Pedidos
+                    </button>
                 </div>
                 
                 <p class="descricao_perfil_cliente" id="descricao_perfil_cliente">${cliente.biografia}</p>
