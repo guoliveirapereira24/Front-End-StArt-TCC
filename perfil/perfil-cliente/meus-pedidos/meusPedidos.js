@@ -117,6 +117,8 @@ const getMeusPedidos = () => {
        
                 pedidoPersonalizado.map(pedidoPersonalizado => {
 
+                    var idArtista = 0;
+
                     const idPedidoPersonalizado = pedidoPersonalizado.idPedidoPersonalizado;
 
                     let statusClass = "";
@@ -211,6 +213,28 @@ const getMeusPedidos = () => {
                                 divCard.remove();
                             })
                     }
+
+                    const getIdArtista = (idPedido) => {
+                        const configGetIdArtista = {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Cache-Control': 'no-cache',
+                                'Authorization' : `Bearer ${tokenCliente}`
+                            }
+                        }
+
+                        fetch(`http://localhost:3000/pedidosPersonalizados/artistaPedidoPersonalizado/${idPedido}`, configGetIdArtista)
+                            .then((res) => res.json())
+                            .then((data) => {
+                                const artistaPedidoPersonalizado = data
+                                artistaPedidoPersonalizado.map(artistaPedidoPersonalizado => {
+                                    return idArtista = artistaPedidoPersonalizado.idArtista;
+                                })
+                            })
+                    }
+
+                    getIdArtista(idPedidoPersonalizado);
 
                     const botoes = document.getElementById(`botoes ${idPedidoPersonalizado}`);
 
@@ -633,24 +657,19 @@ const getMeusPedidos = () => {
                             const button_confirmar_avaliacao = document.getElementById("confirmar_avaliacao");
                             button_confirmar_avaliacao.addEventListener("click", function(){
 
-                                const avaliacao = document.getElementById("avaliacao");
-                                const descricao = document.getElementById("textAreaDescricao").value;
-                                const id_artista = document.getElementById("id_artista").value; 
-
-                                if(rating.innerHTML == ""){
+                                const avaliacao = rating.innerHTML;
+                                const descricao = textAreaDescricao.innerHTML;
+                                if(avaliacao == ""){
                                     alert("Você precisa dar uma nota para avaliar!");
                                     return;
-                                } else if(textAreaDescricao == ""){
+                                } else if(descricao == ""){
                                     alert("Você precisa dar uma descrição para avaliar!");
                                     return;
-                                } else if(rating.innerHTML != "" && textAreaDescricao != ""){
+                                } else if(avaliacao != "" && descricao != ""){
                                     avaliarArtista(idArtista, avaliacao, descricao);
                                     fundo_modal_avaliar_artista.innerHTML = "";
                                     fundo_modal_avaliar_artista.style.display = "none";
                                 }
-
-
-        
                                
                 
                             });
