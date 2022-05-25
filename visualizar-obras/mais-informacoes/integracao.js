@@ -214,7 +214,7 @@ const listarObra = () => {
                     listaImagens.innerHTML += div 
                 }
 
-                listaMaisObrasDesteArtista(obraPronta.idArtista);
+                listaMaisObrasDesteArtista(obraPronta.idArtista, idObra);
 
                 var img1 = document.getElementById('img-1')
                 var img2 = document.getElementById('img-2')
@@ -254,7 +254,7 @@ listarObra()
 
 const maisDesteArtista = document.getElementById('maisDesteArtista')
 
-const listaMaisObrasDesteArtista = (idArtista) => {
+const listaMaisObrasDesteArtista = (idArtista, idObra) => {
 
     const config = {
         method: 'GET',
@@ -264,7 +264,7 @@ const listaMaisObrasDesteArtista = (idArtista) => {
         }
     }
 
-    fetch(`http://localhost:3000/obraPronta/maisDesteArtista/${idArtista}`, config)
+    fetch(`http://localhost:3000/obraPronta/maisDesteArtista/${idArtista}/${idObra}`, config)
     .then(response => response.json())
     .then(data => {
         console.log(data)
