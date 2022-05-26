@@ -86,7 +86,7 @@ const getObraPronta = () => {
                 inputQuantidade.value = obraPronta.quantidade;
                 inputTecnica.value = obraPronta.tecnica;
                 inputDesconto.value = obraPronta.desconto;
-                textAreaDescricao.innerHTML = obraPronta.descricao;
+                textAreaDescricao.value = obraPronta.descricao;
 
                 let {idCategoria} = obraPronta;
                 selectCategoria.value = idCategoria
@@ -370,7 +370,7 @@ btnAddObra.addEventListener('click', () => {
     const quantidade = inputQuantidade.value.toString();
     const desconto = inputDesconto.value.toString();
     const tecnica = inputTecnica.value;
-    const descricao = textAreaDescricao.innerHTML;
+    const descricao = textAreaDescricao.value;
     const exclusividade = selectExclusividade.value;
     const categoria = selectCategoria.value;
     const subCategoria = selectSubcategoria.value;
