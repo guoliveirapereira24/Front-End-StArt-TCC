@@ -16,46 +16,60 @@ body{
 .img_card{
     display: flex;
     flex-direction: row;
-    height: 70vh;
+    height: 65vh;
     width: 90vw;
     margin-top: 2%;
     margin-left: 5%;
     /* background-color: aqua; */
     gap: 5%;
+    max-height: 1000px;
 }
 .imgs{
     display: flex;
     flex-direction: row;
     height: 100%;
-    width: 50vw;
+    width: 55vw;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    /* max-height: 650px; */
     /* border: 1px solid; */
     /* background-color: violet; */
 }
 .imgs_pequenas{
     width: 9vw;
     height: 100%;
-    /* background-color: aquamarine; */
+
+
+    background-color: aquamarine;
 }
 .img_pequena{
-    width: 100%;
-    height: 20%;
+    width: 9vw;
+    height: 13vh;
     border: 1px solid;
+    object-fit: cover;
     /* border-radius: 10px; */
     /* background-color: yellow; */
 }
 .img_pequena img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .img_grande{
-    width: 45vw;
-    height: 100%;
-    /* border-radius: 1px; */
+    width: 39vw;
+    /* height: 65vh; */
+    /* background-color:#88EAE0; */
+    /* border-radius: 5px; */
 }
 .img_grande img{
     height: 100%;
     width: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    /* max-height: 700px; */
+    object-fit: cover;
+    /* border-radius: 15px; */
 }
 .card{
     display: flex;
