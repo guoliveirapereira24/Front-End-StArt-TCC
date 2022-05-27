@@ -71,6 +71,7 @@ body{
     object-fit: cover;
     /* border-radius: 15px; */
 }
+
 .card{
     display: flex;
     flex-direction: column;

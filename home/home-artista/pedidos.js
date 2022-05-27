@@ -97,13 +97,30 @@ const getPedidosPublicos = () => {
                         <p id="descricao_pedido">${pedidoPersonalizado.descricao}</p>
         
                         <div id="exemplo_botoes">
-                            <img src="${pedidoPersonalizado.imagem1opcional}" alt="">
-        
+                        
+                            <div class="imgs">
+                                <div class="img_grande">
+                                    <img src="${pedidoPersonalizado.imagem1opcional}" alt="" class="img1">
+                                </div>
+
+                                <div class="imgs_pequenas">
+                                    <div class="img_pequena">
+                                        <img src="${pedidoPersonalizado.imagem2opcional}" alt="" class="img2">
+                                    </div>
+                                    <div class="img_pequena">
+                                        <img src="${pedidoPersonalizado.imagem3opcional}" alt="" class="img3">
+                                    </div>
+                                </div>
+
+                            </div>    
+
                             <div class="botoes" id="botoes ${pedidoPersonalizado.idPedidoPersonalizado}">
                             </div>
         
                         </div>
                     `;
+
+                    
                     
                     listagemPedidosPublicos.appendChild(divCard);
 
