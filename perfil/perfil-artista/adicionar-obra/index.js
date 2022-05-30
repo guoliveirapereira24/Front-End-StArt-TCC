@@ -253,6 +253,7 @@ btnAddObra.addEventListener('click', () => {
         cadastrarObra(nome, preco, quantidade, desconto, tecnica, descricao, 
             exclusividade, categoria, subCategoria, inputImg1Obrigatoria, inputImg2Opcional, 
             inputImg3Opcional, inputImg4Opcional, inputImg5Opcional, inputImg6Opcional);
+            btnAddObra.disabled = true;
     }
 })
 

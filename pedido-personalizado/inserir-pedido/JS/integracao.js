@@ -293,6 +293,7 @@ btnCadastrar.addEventListener("click", () => {
     } else {
         cadastrarPedido(descricao, categoria, genero, imgOpcional1, imgOpcional2, 
             imgOpcional3, arrayVisibilidade);
+            btnCadastrar.disabled = true;
     }
 })
 
