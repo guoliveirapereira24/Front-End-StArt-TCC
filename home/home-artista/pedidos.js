@@ -123,23 +123,27 @@ const getPedidosPublicos = () => {
                             <img src="${pedidoPersonalizado.imagem1opcional}" alt="" class="img1" id="img-1">
                         `;
                     } else {
-
+                        imgGrande.innerHTML = `
+                            <img src="../img/no-image.png" alt="" class="img1" id="img-1">
+                        `;
                     }
 
                     if(pedidoPersonalizado.imagem2opcional != ""){
-                        imgPequena.innerHTML += `
+                        const div = `
                                 <div class="img_pequena">
                                     <img src="${pedidoPersonalizado.imagem2opcional}" alt="" class="img2" id="img-2">
                                 </div>
                                 `;
+                        imgPequena.innerHTML += div;
                     }
 
                     if(pedidoPersonalizado.imagem3opcional != ""){
-                        imgPequena.innerHTML += `
+                        const div = `
                                 <div class="img_pequena">
                                     <img src="${pedidoPersonalizado.imagem3opcional}" alt="" class="img2" id="img-3">
                                 </div>
                                 `;
+                        imgPequena.innerHTML += div;
                     }
 
                     var img1 = document.getElementById('img-1')
@@ -158,7 +162,7 @@ const getPedidosPublicos = () => {
                         }
 
                         if (img == null) {
-                            console
+                            console.log(img)
                         } else {
                             img.addEventListener('click', () => {
                                 tradeImage()
