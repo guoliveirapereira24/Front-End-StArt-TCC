@@ -276,12 +276,12 @@ body{
     /* background-color: aquamarine; */
 }
 #button_editar_perfil{
-    font-size: 27px;
+    font-size: 2.3vh;
 }
 
 #button_alterar_senha, #button_informacoes_pessoais, #button_endereco, #botao_desativar_conta{
     border:none;
-    font-size: 27px;
+    font-size: 2.3vh;
 }
 
 .editar_perfil{
@@ -366,7 +366,7 @@ body{
 .container_forms_buttons{
     display: flex;
     flex-direction: row;
-    margin-top: 10vh;
+    margin-top: 5vh;
     height: 80vh;
     width: 60vw;
     border: 1px solid;
@@ -424,39 +424,64 @@ section{
     height: 100%;
 }
 
-.img_perfil {
-    width: 150px;
-    height: 150px;
+.img_perfil{
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
+    background-color: #40E0D0;
+}
+.img_perfil img{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: #40E0D0;
+
 }
 
 .img_nome{
     display: flex;
     align-items: center;
-    padding-top: 2%;
-    padding-left: 10%;
-    gap: 2%;
+    /* height: 15%; */
+    /* padding-top: 2%; */
+    /* padding-left: 10%; */
+    gap: 1%;
    
-    /* background-color:aqua; */
+    background-color:steelblue;
 }
 #nome_cliente1, #nome_cliente2, #nome_cliente3, #nome_cliente{
-    font-size: 40px;
+    font-size: 3.5vh;
 }
 
 .img_texto{
     display: flex;
-    width : 300px;
-    height: 250px;
+    width : 25%;
+    height: 100%;
     flex-direction:column;
-    gap: 10px;
-    font-size: 18px;
+    /* gap: 10px; */
+    font-size: 1.8vh;
     color:#40E0D0;
     align-items: center;
+    background-color: yellowgreen;
 }
 .img_texto img{
-    height: 150px;
+    height: 10px;
     border-radius: 50px;
-    width: 150px;
+    width: 10px;
+}
+.input-text{
+    height: 10px;
+    width: 10px;
+    background-color: yellow;
+}
+.input-text img{
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+    /* background-color: violet; */
+}
+.input-image{
+    height: 100%;
+    background-color: tomato;
 }
 
 textarea{

@@ -11,10 +11,10 @@ header{
     display: flex;
     width:100vw;
     background-color: black;
-    height: 100px;
+    height: 150px;
     justify-content: space-between;
     align-items: center;
-    padding: 1vh 10vw 1vh 10vw; 
+    padding: 1.5vh 10vw 1vh 10vw; 
 }
 
 header a{
@@ -28,6 +28,9 @@ header a{
 header img{
     width: 50px;
     height: 50px;
+}
+.links{
+    background-color: #000000;
 }
 
 .links ul {
@@ -135,6 +138,7 @@ header img{
     align-items: center;
     text-align: center;
     /* gap: 2rem; */
+    background-color: #000000;
 }
 
 .header2{
@@ -237,7 +241,7 @@ li select{
     width: 100%;
     background-color: #40E0D0;
     border-bottom: 10px solid #000000;
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
 }
 
 
