@@ -1004,9 +1004,29 @@ function getMinhasPropostas(){
                         ${proposta.descricaoPedidoPersonalizado}
                     </p>
 
-                    <img id="img_exemplo" class="img_exemplo" src="${proposta.imagem1opcional}" alt="">
+
+                    <div class="imgs">
+                        <div class="img_grande">
+                            <img id="img_exemplo" class="img_exemplo" src="${proposta.imagem1opcional}" alt="">
+                        </div>
+                    <div class="imgs_pequenas">
+                        <div class="img_pequena">
+                            <img src="${proposta.imagem2opcional}" class="img2" alt="" id="imagem2opcional">
+                        </div>
+                        <div class="img_pequena">
+                            <img src="${proposta.imagem3opcional}" class="img3" alt="" srcset="" id="imagem3opcional">
+                        </div>
+                        
+                    </div>
+                </div>    
 
                 </div>`;
+
+
+
+                
+                
+                
 
                 getAvaliacaoCliente(proposta.idCliente, proposta.idProposta);
 

@@ -308,6 +308,7 @@ body{
     height: 100%;
     width: 100%;
     gap: 2%;
+
 }
 
 .form_editar_forma_recebimento{
@@ -322,7 +323,7 @@ body{
     padding-top: 2%;
     padding-right: 5%;
     font-size: 25px;
-    /* background-color:violet; */ 
+    /* background-color:violet;  */
 }
 .aba_desativar_conta{
     display: none;
@@ -350,7 +351,7 @@ body{
     height: 8%;
     width: 30%;
     margin-top: 10%;
-    font-size:20px;
+    font-size: 20px;
     border: none;
     /* background: #D71B1B; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -359,8 +360,12 @@ body{
 
 .img_nome img{
 
-    padding-left: 1%;
+    width: 100px;
+    height: 100px;
+    /* padding-left: 1%; */
     margin-left: 5%;
+    margin-top: 2%;
+    /* background-color: wheat; */
 }
 
 .container_forms_buttons{
@@ -425,15 +430,15 @@ section{
 }
 
 .img_perfil{
-    width: 10px;
-    height: 10px;
+    width: 105px;
+    height: 100px;
     border-radius: 50%;
     background-color: #40E0D0;
 }
 .img_perfil img{
     width: 10%;
     height: 10%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background-color: #40E0D0;
 
 }
@@ -445,8 +450,10 @@ section{
     /* padding-top: 2%; */
     /* padding-left: 10%; */
     gap: 1%;
+    /* padding-top: 1%; */
+    height: 120px;
    
-    background-color:steelblue;
+    /* background-color:steelblue; */
 }
 #nome_cliente1, #nome_cliente2, #nome_cliente3, #nome_cliente{
     font-size: 3.5vh;
@@ -454,24 +461,27 @@ section{
 
 .img_texto{
     display: flex;
-    width : 25%;
+    width : 20%;
     height: 100%;
     flex-direction:column;
     /* gap: 10px; */
+    margin-left: 2%;
+    margin-top: 3%;
     font-size: 1.8vh;
     color:#40E0D0;
     align-items: center;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 .img_texto img{
-    height: 10px;
+    /* height: 0px; */
     border-radius: 50px;
     width: 10px;
 }
 .input-text{
     height: 10px;
-    width: 10px;
-    background-color: yellow;
+    /* width: 10px; */
+    /* width: px; */
+    /* background-color: yellow; */
 }
 .input-text img{
     height: 10px;
@@ -479,6 +489,13 @@ section{
     border-radius: 50px;
     /* background-color: violet; */
 }
+.input-text p{
+
+    width: 70%;
+    margin-left: 5%;
+    /* background-color: blueviolet; */
+}
+
 .input-image{
     height: 100%;
     background-color: tomato;
@@ -497,7 +514,7 @@ textarea{
     padding-bottom: 15%;
     padding-top: 2%;
     padding-left: 3%;
-    /* font-size: 2vh; */
+    font-size: 2vh;
 }
 
 .inputs{
@@ -508,36 +525,36 @@ textarea{
     width: 100%;
     height: 65%;
     gap: 5%;
-    padding-left: 5%;
+    /* padding-left: 5%; */
     padding-top: 2%;
     padding-right: 5%;
-    font-size: 24px;
+    font-size: 1.8vh;
     /* background-color:yellow; */
 
 }
 .section_input select{
-    width: 80%;
+    width: 70%;
     /* background-color:violet */
 }
 
 
 .inputs input, select{
-    width: 65%;
-    height: 75%;
+    width: 70%;
+    height: 70%;
     border: 1px solid #4C4E5F;
     box-sizing: border-box;
     border-radius: 10px;
-    font-size: 25px;
-    padding-left: 1%;
+    font-size: 2.5vh;
+    /* padding-left: 1%; */
     padding-right: 2%;
     
 }
 .button-salvar_editar_perfil{
-    height: 8%;
-    width: 30%;
+    height: 60px;
+    width: 40%;
     margin-top: 5%;
-    margin-left: 40%;
-    font-size: 25px;
+    margin-left: 35%;
+    font-size: 2vh;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -556,26 +573,26 @@ textarea{
     /* padding-left: 5%; */
     /* padding-top: 2%; */
     padding-right: 5%;
-    font-size: 25px;
+    /* font-size: 25px; */
     /* background-color:violet */
 }
 .conteudo_alterar_senha input{
     height: 50%;
-    width: 72%;
+    width: 75%;
     background: #FFFFFF;
     border: 1px solid #4C4E5F;
     box-sizing: border-box;
-    font-size: 25px;
+    /* font-size: 25px; */
     border-radius: 5px;
     padding-left: 1%;
     padding-right: 2%;
 }
 .inputs_senha button{
-    height: 25%;
-    width: 30%;
+    height: 20%;
+    width: 40%;
     /* margin-top: 5%; */
     margin-left: 40%;
-    font-size: 25px;
+    font-size: 2vh;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -591,16 +608,20 @@ input:focus-within {
 }
 .editar_informacoes_pessoais{
     display: flex;
-    font-size: 24px;
+    /* font-size: 24px; */
+    /* background-color: #40E0D0; */
 }
 .editar_informacoes_pessoais input{
-    height: 60%;
-    /* width: 10%; */
+    height: 75%;
+    width: 65%;
+    /* background-color: blueviolet; */
 }
 .editar_informacoes_pessoais button{
-
     height: 35%;
-
+}
+.editar_informacoes_pessoais p{
+    /* width: 33%; */
+    background-color: #40E0D0;
 }
 
 
@@ -670,11 +691,11 @@ input:focus-within {
     font-size: 25px;
 }
 .button_salvar_alteracoes{
-    height: 8%;
-    width: 30%;
-    margin-top: 5%;
+    height: 7%;
+    width: 35%;
+    /* margin-top: 5%; */
     /* margin-left: 1%; */
-    font-size: 25px;
+    font-size: 2vh;
   
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -760,7 +781,7 @@ input:focus-within {
 }
 
 .img_texto img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50%; */
 }

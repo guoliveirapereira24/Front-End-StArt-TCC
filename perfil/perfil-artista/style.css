@@ -583,7 +583,7 @@ h1{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     background-color:white;
     top: 0;
-    left: 0;
+    left: 45%;
 }
 /* .modal_excluir_obra h2, .modal_excluir_proposta h2{
     margin-left: 4%;
@@ -798,7 +798,7 @@ h1{
     height: 80px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    /* background-color: #04BA00; */
+    background-color: #04BA00;
 
 }
 
@@ -809,6 +809,12 @@ h1{
     width: 70px;
     border-radius: 50%;
     /* background-color: #40E0D0; */
+    
+}
+#img_perfil{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
 }
 
 .img_perfil:hover{
@@ -856,12 +862,14 @@ h1{
 }
 #descricao_pedido{
     display: flex;
-    font-size: 28px;
-    height: 30%;
-    align-items: center;
-    padding-left: 2%;
-    padding-right: 2%;
-    /* background-color: #40E0D0; */
+    font-size: 2.5vh;
+    width: 100%;
+    height: 25%;
+    /* align-items: center; */
+    padding-top: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #40E0D0;
 }
 
 #exemplo_botoes{
@@ -883,13 +891,14 @@ h1{
     display: flex;
     flex-direction: column;
 
-    width: 300px;
+    width: 50%;
     height: 200px;
     gap: 12px;
-    margin-left: 30%;
-    
+    /* margin-left: 30%; */
+    padding-right: 2%;
+    padding-left: 2%;
     justify-content: center;
-    /* background-color: yellow; */
+    background-color: #04BA00;
 }
 .botoes button{
     height: 55px;
@@ -927,12 +936,13 @@ h1{
 }
 .preco_prazo{
     display: flex;
+    width: 70%;
     flex-direction: column;
     gap: 5%;
     /* padding: 2%; */
     padding-left: 2%;
-    font-size: 30px;
-    /* background-color: yellow; */
+    font-size: 2.5vh;
+    background-color: yellow;
        
 }
 .preco{
@@ -950,9 +960,11 @@ h1{
 }
 .button_ver_pedido{
     height: 50px;
+    width: 90%;
     border-radius: 10px;
     border: none;
     margin-top: 3%;
+    margin-left: 2%;
     font-size: 20px;
     background: #EDECEC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1038,7 +1050,7 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 480px;
+    height: 60%;
     width: 50vw;
     /* border: 1px solid; */
     border-radius: 15px;
@@ -1065,21 +1077,25 @@ h1{
 
 .modal_excluir_proposta{
     display: flex;
-    width:20%;
-    height:15%;
+    width:25%;
+    height:25%;
     top: 30%;
+    
 }
 
 .modal_excluir_proposta button{
     width: 10vw;
+    height: 75%;
 }
 
 .nome_tipo_contato{
-    width: 100%;
+    width: 95%;
+
     /* background-color: #04BA00; */
 }
 .img_exemplo{
     height: 250px;
+    border-radius: 15px;
     /* margin-left: 30%; */
 }
 .categoria_pedido{
@@ -1261,4 +1277,85 @@ textarea{
 
     height: 65%;
     width: 40%;
+}
+
+/* Listagem das imagens */
+
+.imgs{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 55%;
+    width: 85%;
+    max-width: 600px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: blueviolet;
+    margin-left: 1%;
+}
+
+.img_grande{
+    
+    height: 100%;
+    width: 90%;
+     
+    /* background-color: #40E0D0; */
+}
+
+.img_grande img{
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid;
+    object-fit:cover;
+    border-radius: 15px;
+  
+    /* border */
+    /* margin-left: 5%; */
+}
+.imgs_pequenas{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    /* background-color: aquamarine; */
+}
+.img_pequena{
+    width: 100%;
+    height: 45%;
+    
+    /* border-radius: 10px; */
+    /* background-color: yellow; */
+}
+.img2{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 1px solid;
+    border-right: 0.5px solid;
+    border-radius: 15px;
+    /* border-top: none; */
+    /* border-right: none; */
+    object-fit: cover;
+    border-bottom: 0.5px solid;
+}
+.img3{
+    border-top-left-radius: 15px;
+    /* border-top-right-radius: 15px; */
+    border: 1px solid;
+    border-right: 0.5px solid;
+    border-radius: 15px;
+    /* border-top: none; */
+    /* border-right: none; */
+    object-fit: cover;
+    border-bottom: 0.5px solid;
+}
+
+
+.img_pequena img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
 }

@@ -168,9 +168,19 @@ const getMeusPedidos = () => {
     
                         <div class="exemplo_botoes" id="exemplo_botoes">
 
-                            <div class="exemplo">
-                                <img src="${pedidoPersonalizado.imagem1opcional}" alt="">  
-                            </div>
+               
+                            <div class="imgs">
+                                <div class="img_grande" id="imgGrande ${pedidoPersonalizado.idPedidoPersonalizado}">
+                                    <img src="${pedidoPersonalizado.imagem1opcional}" alt="">  
+                                </div>
+
+                                <div class="imgs_pequenas" id="imgPequena ${pedidoPersonalizado.idPedidoPersonalizado}">
+                                    <img src="${pedidoPersonalizado.imagem2opcional}" alt="">  
+                                    <img src="${pedidoPersonalizado.imagem3opcional}" alt="">  
+                                
+                                </div>
+
+                            </div>    
         
                             <div class="botoes" id="botoes ${idPedidoPersonalizado}">
                             </div>
