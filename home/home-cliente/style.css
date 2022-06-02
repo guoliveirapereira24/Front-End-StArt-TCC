@@ -7,6 +7,34 @@
 
 }
 
+.gallery::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .gallery::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+  }
+  
+  .gallery::-webkit-scrollbar-thumb {
+    background-color: rgb(180, 180, 180);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
+  }
+
+  .gallery-menor::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .gallery-menor::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+  }
+  
+  .gallery-menor::-webkit-scrollbar-thumb {
+    background-color: rgb(180, 180, 180);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(255, 255, 255);  /* creates padding around scroll thumb */
+  }
+
 header{
     display: flex;
     width:100vw;
@@ -334,7 +362,7 @@ li{
 	grid-column-gap: 1%;
 	/* grid-row-gap: 1rem; */
 	overflow: scroll;
-	scroll-snap-type: both mandatory;
+    scroll-snap-type: both mandatory;
 	scroll-padding: 5vh;
     /* background-color: bisque; */
 }
@@ -561,6 +589,11 @@ p{
     color: white;
     border: 0px solid;   
 }
+.personalizado button:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
 .indicacao{
     display: flex;
     flex-direction: row;
@@ -574,6 +607,8 @@ p{
 .indicacao img{
     width: 30px;
 } 
+
+
 
 /* ---------------------------------------------------------------------------------- */
 

@@ -88,7 +88,7 @@ const getPedidosPublicos = () => {
                                 
                             </section>
                         
-                            <button id="contatar">
+                            <button id="contatar ${idPedidoPersonalizado}" class="contatar">
                                 <img src="../img/contatar.png" alt="">
                                 <p>Contatar</p>
                             </button>
@@ -120,7 +120,7 @@ const getPedidosPublicos = () => {
 
                     if(pedidoPersonalizado.imagem1opcional != ""){
                         imgGrande.innerHTML = `
-                            <img src="${pedidoPersonalizado.imagem1opcional}" alt="" class="img1" id="img-1">
+                            <img src="${pedidoPersonalizado.imagem1opcional}" alt="" class="img1" id="img-1 ${pedidoPersonalizado.idPedidoPersonalizado}">
                         `;
                     } else {
                         imgGrande.innerHTML = `
@@ -131,7 +131,7 @@ const getPedidosPublicos = () => {
                     if(pedidoPersonalizado.imagem2opcional != ""){
                         const div = `
                                 <div class="img_pequena">
-                                    <img src="${pedidoPersonalizado.imagem2opcional}" alt="" class="img2" id="img-2">
+                                    <img src="${pedidoPersonalizado.imagem2opcional}" alt="" class="img2" id="img-2 ${pedidoPersonalizado.idPedidoPersonalizado}">
                                 </div>
                                 `;
                         imgPequena.innerHTML += div;
@@ -140,15 +140,15 @@ const getPedidosPublicos = () => {
                     if(pedidoPersonalizado.imagem3opcional != ""){
                         const div = `
                                 <div class="img_pequena">
-                                    <img src="${pedidoPersonalizado.imagem3opcional}" alt="" class="img2" id="img-3">
+                                    <img src="${pedidoPersonalizado.imagem3opcional}" alt="" class="img2" id="img-3 ${pedidoPersonalizado.idPedidoPersonalizado}">
                                 </div>
                                 `;
                         imgPequena.innerHTML += div;
                     }
 
-                    var img1 = document.getElementById('img-1')
-                    var img2 = document.getElementById('img-2')
-                    var img3 = document.getElementById('img-3')
+                    var img1 = document.getElementById(`img-1 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+                    var img2 = document.getElementById(`img-2 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+                    var img3 = document.getElementById(`img-3 ${pedidoPersonalizado.idPedidoPersonalizado}`)
         
 
 
@@ -173,6 +173,35 @@ const getPedidosPublicos = () => {
                     const optionalImages = [img2, img3]
 
                     optionalImages.map(removeImageIfEmptyAndPutEventListener)
+
+
+                    const buttonContatar = document.getElementById(`contatar ${idPedidoPersonalizado}`);
+                    buttonContatar.addEventListener('click', () => {
+                        const idCliente = pedidoPersonalizado.idCliente;
+                        const configContatar = {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${tokenArtista}`,
+                                'Cache-Control': 'no-cache'
+                            },
+                            body: JSON.stringify({
+                                idCliente: idCliente
+                            })
+                        }
+
+                        fetch("http://localhost:3000/chat/chatCliente", configContatar)
+                            .then((res) => res.json())
+                            .then((data) => {
+                                console.log(data);
+                                const idChat = data.idChat;
+                                window.location.href = "../../chat/index.html?q=" + idChat;
+                            })
+                    })
+
+
+                                
+
 
                     getAvaliacaoCliente(pedidoPersonalizado.idCliente, idPedidoPersonalizado);
 
@@ -336,7 +365,7 @@ const getPedidosParaMim = () => {
                                 
                             </section>
                         
-                            <button id="contatar">
+                            <button id="contatar ${idPedidoPersonalizado}" class="contatar">
                                 <img src="../img/contatar.png" alt="">
                                 <p>Contatar</p>
                             </button>
@@ -345,7 +374,14 @@ const getPedidosParaMim = () => {
                         <p id="descricao_pedido">${pedidoPersonalizado.descricao}</p>
         
                         <div id="exemplo_botoes">
-                            <img src="${pedidoPersonalizado.imagem1opcional}" alt="">
+
+                            <div class="imgs">
+                                <div class="img_grande" id="imgGrande ${pedidoPersonalizado.idPedidoPersonalizado}">
+                                </div>
+
+                                <div class="imgs_pequenas" id="imgPequena ${pedidoPersonalizado.idPedidoPersonalizado}">
+                                </div>
+                            </div>   
         
                             <div class="botoes" id="botoes ${pedidoPersonalizado.idPedidoPersonalizado}">
                             </div>
@@ -354,6 +390,65 @@ const getPedidosParaMim = () => {
                     `;
                     
                     listagemPedidosParaMim.appendChild(divCard);
+
+                    const imgGrande = document.getElementById(`imgGrande ${pedidoPersonalizado.idPedidoPersonalizado}`);
+                    const imgPequena = document.getElementById(`imgPequena ${pedidoPersonalizado.idPedidoPersonalizado}`);
+
+                    if(pedidoPersonalizado.imagem1opcional != ""){
+                        imgGrande.innerHTML = `
+                            <img src="${pedidoPersonalizado.imagem1opcional}" alt="" class="img1" id="img-1 ${pedidoPersonalizado.idPedidoPersonalizado}">
+                        `;
+                    } else {
+                        imgGrande.innerHTML = `
+                            <img src="../img/no-image.png" alt="" class="img1" id="img-1">
+                        `;
+                    }
+
+                    if(pedidoPersonalizado.imagem2opcional != ""){
+                        const div = `
+                                <div class="img_pequena">
+                                    <img src="${pedidoPersonalizado.imagem2opcional}" alt="" class="img2" id="img-2 ${pedidoPersonalizado.idPedidoPersonalizado}">
+                                </div>
+                                `;
+                        imgPequena.innerHTML += div;
+                    }
+
+                    if(pedidoPersonalizado.imagem3opcional != ""){
+                        const div = `
+                                <div class="img_pequena">
+                                    <img src="${pedidoPersonalizado.imagem3opcional}" alt="" class="img2" id="img-3 ${pedidoPersonalizado.idPedidoPersonalizado}">
+                                </div>
+                                `;
+                        imgPequena.innerHTML += div;
+                    }
+
+                    var img1 = document.getElementById(`img-1 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+                    var img2 = document.getElementById(`img-2 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+                    var img3 = document.getElementById(`img-3 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+        
+
+
+                    const removeImageIfEmptyAndPutEventListener = (img) => {
+                        const tradeImage = () => {
+                            const imageOnMain = img1.src
+                            const imageSelected = img.src
+
+                            img1.src = imageSelected
+                            img.src = imageOnMain
+                        }
+
+                        if (img == null) {
+                            console.log(img)
+                        } else {
+                            img.addEventListener('click', () => {
+                                tradeImage()
+                            })
+                        }
+                    }
+
+                    const optionalImages = [img2, img3]
+
+                    optionalImages.map(removeImageIfEmptyAndPutEventListener)
 
                     getAvaliacaoCliente(pedidoPersonalizado.idCliente, idPedidoPersonalizado);
 

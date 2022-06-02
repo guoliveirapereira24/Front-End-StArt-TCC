@@ -180,8 +180,10 @@ li select{
     border-width: 0.2rem;
     border-right-width: 0.1rem ;
  
+
 }
   
+
     .form-field {
         /* height: 10s0%; */
         display: block;
@@ -687,15 +689,6 @@ h2{
     font-size: 25px;
     /* background-color: #40E0D0; */
 }
-#contatar{
-    display: flex;
-    align-items: center;
-    /* margin-left: 10%; */
-    font-size: 25px;
-    border: none;
-    background-color: transparent;
-    /* background-color: #40E0D0; */
-}
 #descricao_pedido{
     display: flex;
     font-size: 28px;
@@ -826,6 +819,22 @@ h2{
 }
 .recusar{
     background-color: rgba(255, 99, 71, 0.699);
+}
+
+.contatar{
+    display: flex;
+    align-items: center;
+    /* margin-left: 10%; */
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    /* background-color: #40E0D0; */
+}
+
+button:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .modal_proposta{
