@@ -922,6 +922,7 @@ function getMinhasPropostas(){
                                     return;
                                 } else if(avaliacao != "" && descricao != ""){
                                     avaliarCliente(proposta.idCliente, avaliacao, descricao, proposta.idProposta);
+                                    atualizarStatus(proposta.idProposta, "Despachado e Cliente Avaliado");
                                     fundo_modal_avaliar_cliente.innerHTML = "";
                                     fundo_modal_avaliar_cliente.style.display = "none";
                                     window.location.reload();
