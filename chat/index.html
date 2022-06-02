@@ -4,90 +4,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat para teste</title>
-    
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
 </head>
 <body>
+    <div class="container">
+        <div class="leftSide">
+            <!-- Header -->
+            <div class="header">
+                <div class="userimg">
+                    <img src="" alt="" class="cover" id="userimg">
+                </div>
+                
+            </div>
+            <!-- CHAT LIST -->
+            <div class="chatlist" id="chatlist">
+                <!-- <div class="block">
+                    <div class="imgBox">
+                        <img src="images/img1.jpg" class="cover" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="listHead">
+                            <h4>Jhon Doe</h4>
+                            <p class="time">10:56</p>
+                        </div>
+                        <div class="message_p">
+                            <p>How are you doing?</p>
+                        </div>
+                    </div>
+                </div>
 
-    <form id="chat">   
-        <div class="messages" id="messages"></div>
-        <input type="text" name="message" placeholder="Digite sua mensagem">
-        <button type="submit">Enviar</button>
+                <div class="block active">
+                    <div class="imgBox">
+                        <img src="images/img2.jpg" class="cover" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="listHead">
+                            <h4>Andre</h4>
+                            <p class="time">12:34</p>
+                        </div>
+                        <div class="message_p">
+                            <p>I love your youtube videos!</p>
+                        </div>
+                    </div>
+                </div> -->
 
-    </form>
-
-    <script type="text/javascript">
-
-        var socket = io('http://localhost:3000');
-
-        var $chat = $('#chat');
-        var $messages = $('.messages');
-        const divMessage = document.getElementById('messages');
-
-        function renderMessage(message) {
-            if(message.artistaOUcliente === 0){
-                $messages.append('<div><strong>' + message.idUsuario + '</strong>: ' + message.mensagem + '</div>');
-            } else if(message.artistaOUcliente === 1) {
-                $messages.append('<div class="message"><strong>' + message.idUsuario + '</strong>: ' + message.mensagem + '</div>');
-            }
-        }
-
-        const query = location.search.slice(1)
-        const idChat = query.split('=')[1]
-
-        socket.emit('idChat', idChat)
-        
-        socket.on('previousMessages', function(messages) {
-            divMessage.innerHTML = '';
-            for (message of messages) {
-                renderMessage(message);
-            }
-        })
-
-        socket.on('receivedMessage', function(message) {
-            renderMessage(message);
-        })
-
-
-        $chat.submit(function(event){
-            event.preventDefault();
-            var author = 1;
-
-            if(tokenArtista === undefined){
-                artistaOUcliente = 0;
-            }
-            var message = $('input[name=message]').val();
-
-            var currentdate = new Date();
-            var datetime = currentdate.getFullYear() + "-" + currentdate.getMonth() 
-            + "-" + currentdate.getDay() + " " 
-            + currentdate.getHours() + ":" 
-            + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-
-            var foto = null;
+                
+            </div>
+        </div>
+        <div class="rightSide">
+            <div class="header">
+                <div class="imgText">
+                    <div class="userimg">
+                        <img src="" alt="" class="cover">
+                    </div>
+                    <h4>Qazi</h4>
+                </div>
             
+            </div>
 
-                    
-            if(author.length && message.length){
-                var messageObject = {
-                    mensagem: message,
-                    foto: foto,
-                    data_hora: datetime,
-                    artistaOUcliente: artistaOUcliente,
-                    idUsuario: author
-                };
+            <!-- CHAT-BOX -->
+            <div class="chatbox">
+                <div class="message my_msg">
+                    <p>Hi <br><span>12:18</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Hey <br><span>12:18</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br><span>12:15</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquid fugiat accusamus dolore qui vitae ratione optio sunt <br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br><span>12:15</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur <br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message my_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+                <div class="message friend_msg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><span>12:15</span></p>
+                </div>
+            </div>
+            
+            <!-- CHAT INPUT -->
+            <div class="chat_input">
+                <!-- <ion-icon name="happy-outline"></ion-icon> -->
+                <input type="text" placeholder="Type a message">
+                <button class="send_btn">
+                    <img src="./img/icon-send.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
 
-                renderMessage(messageObject);
 
-                socket.emit('sendMessage', messageObject)
-            }
-            });
-
-        
-    </script>
-    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
