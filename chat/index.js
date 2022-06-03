@@ -98,7 +98,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             function renderMessage(message) {
 
                                 var dateTimeMessage = new Date(message.data_hora)
-                                var timeMessage = dateTimeMessage.toLocaleTimeString()
+                                var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
 
                                 var date = new Date(message.data_hora);
                                 var date = date.toLocaleDateString('pt-BR');
@@ -178,6 +178,95 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         }
 
                     } else {
+
+                        block.className = 'block active'
+                        const idChat = chat.idChat
+                        const idCliente = chat.idCliente
+
+                        const chatbox = document.getElementById('chatbox')
+                        const sendMessage = document.getElementById('sendMessage')
+                        const inputMessage = document.getElementById('inputMessage')
+
+                        
+
+                        function renderMessage(message) {
+
+                            var dateTimeMessage = new Date(message.data_hora)
+                            var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+
+                            var date = new Date(message.data_hora);
+                            var date = date.toLocaleDateString('pt-BR');
+
+                            
+                            var dateNow = new Date(Date.now());
+                            dateNow = dateNow.toLocaleDateString('pt-BR');
+
+                            console.log(dateNow)
+                            console.log(date)
+
+
+                            if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
+                                date = 'Ontem'
+                            } else if(date == dateNow){
+                                date = timeMessage
+                            } else if(date < dateNow){
+                                date = date
+                            }
+
+                            if(message.artistaOUcliente === 1){
+                                const messageBox = document.createElement('div')
+                                messageBox.className = 'message my_msg'
+                                messageBox.innerHTML = '<p>' + message.mensagem + '<br><span>' + date + '</span></p>'
+                                chatbox.append(messageBox)
+                            } else if(message.artistaOUcliente === 0) {
+                                const messageBox = document.createElement('div')
+                                messageBox.className = 'message friend_msg'
+                                messageBox.innerHTML = '<p>' + message.mensagem + '<br><span>' + date + '</span></p>'
+                                chatbox.append(messageBox)
+                            }
+                        }
+
+                        socket.emit('idChat', idChat)
+
+                        socket.on('previousMessages', function(messages) {
+                            chatbox.innerHTML = '';
+                            for (message of messages) {
+                                renderMessage(message);
+                            }
+                        })
+
+                        socket.on('receivedMessage', function(message) {
+                            renderMessage(message);
+                        })
+
+                        sendMessage.onclick = function(event){
+                            event.preventDefault();
+                            
+                           
+                            const artistaOUcliente = 1;
+
+                            var dateNow = new Date(Date.now());
+                            dateNow = dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1) + '-' + dateNow.getDate() + ' ' + dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getSeconds();
+                       
+
+
+                            var foto = null;
+                            const message = inputMessage.value;
+                                    
+                            if(message.length){
+                                var messageObject = {
+                                    mensagem: message,
+                                    foto: foto,
+                                    data_hora: dateNow,
+                                    artistaOUcliente: artistaOUcliente,
+                                    idUsuario: idCliente
+                                };
+
+                                renderMessage(messageObject);
+
+                                socket.emit('sendMessage', messageObject)
+                            }
+                            };
 
                     }
 
@@ -271,6 +360,17 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         block.onclick = () => {
 
                             block.className = 'block active'
+
+                            const header = document.getElementById('header')
+                            header.innerHTML = `
+                                <div class="imgText">
+                                    <div class="userimg">
+                                        <img src="${chat.imgCliente}" alt="" class="cover">
+                                    </div>
+                                    <h4>${nomeCliente}</h4>
+                                </div>
+                            `
+
                             const idChat = chat.idChat
                             const idArtista = chat.idArtista
 
@@ -283,7 +383,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             function renderMessage(message) {
 
                                 var dateTimeMessage = new Date(message.data_hora)
-                                var timeMessage = dateTimeMessage.toLocaleTimeString()
+                                var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
 
                                 var date = new Date(message.data_hora);
                                 var date = date.toLocaleDateString('pt-BR');
@@ -351,7 +451,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                         foto: foto,
                                         data_hora: dateNow,
                                         artistaOUcliente: artistaOUcliente,
-                                        idUsuario: idCliente
+                                        idUsuario: idArtista
                                     };
 
                                     renderMessage(messageObject);
@@ -363,7 +463,106 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         }
 
                     } else {
+                        block.className = 'block active'
 
+                        const header = document.getElementById('header')
+                        header.innerHTML = `
+                            <div class="imgText">
+                                <div class="userimg">
+                                    <img src="${chat.imgCliente}" alt="" class="cover">
+                                </div>
+                                <h4>${nomeCliente}</h4>
+                            </div>
+                        `
+
+                        const idChat = idChatQuery
+                        const idArtista = chat.idArtista
+
+                        const chatbox = document.getElementById('chatbox')
+                        const sendMessage = document.getElementById('sendMessage')
+                        const inputMessage = document.getElementById('inputMessage')
+
+                        
+
+                        function renderMessage(message) {
+
+                            var dateTimeMessage = new Date(message.data_hora)
+                            var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+
+                            var date = new Date(message.data_hora);
+                            var date = date.toLocaleDateString('pt-BR');
+
+                            
+                            var dateNow = new Date(Date.now());
+                            dateNow = dateNow.toLocaleDateString('pt-BR');
+
+                            console.log(dateNow)
+                            console.log(date)
+
+
+                            if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
+                                date = 'Ontem'
+                            } else if(date == dateNow){
+                                date = timeMessage
+                            } else if(date < dateNow){
+                                date = date
+                            }
+
+                            
+                            if(message.artistaOUcliente === 1){
+                                const messageBox = document.createElement('div')
+                                messageBox.className = 'message friend_msg'
+                                messageBox.innerHTML = '<p>' + message.mensagem + '<br><span>' + date + '</span></p>'
+                                chatbox.append(messageBox)
+                            } else if(message.artistaOUcliente === 0) {
+                                const messageBox = document.createElement('div')
+                                messageBox.className = 'message my_msg'
+                                messageBox.innerHTML = '<p>' + message.mensagem + '<br><span>' + date + '</span></p>'
+                                chatbox.append(messageBox)
+                            }
+                        }
+
+                        socket.emit('idChat', idChat)
+
+                        socket.on('previousMessages', function(messages) {
+                            chatbox.innerHTML = '';
+                            for (message of messages) {
+                                renderMessage(message);
+                            }
+                        })
+
+                        socket.on('receivedMessage', function(message) {
+                            renderMessage(message);
+                        })
+
+                        sendMessage.onclick = function(event){
+                            event.preventDefault();
+                            
+                           
+                            const artistaOUcliente = 0;
+
+                            var dateNow = new Date(Date.now());
+                            dateNow = dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1) + '-' + dateNow.getDate() + ' ' + dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getSeconds();
+                       
+
+
+                            var foto = null;
+                            const message = inputMessage.value;
+                                    
+                            if(message.length){
+                                var messageObject = {
+                                    mensagem: message,
+                                    foto: foto,
+                                    data_hora: dateNow,
+                                    artistaOUcliente: artistaOUcliente,
+                                    idUsuario: idArtista
+                                };
+
+                                renderMessage(messageObject);
+
+                                socket.emit('sendMessage', messageObject)
+                            }
+                            };
                     }
                 })
             })
@@ -371,66 +570,3 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
     conversasDeArtista()
 } 
-
-// var $chat = $('#chat');
-// var $messages = $('.messages');
-// const divMessage = document.getElementById('messages');
-
-// function renderMessage(message) {
-//     if(message.artistaOUcliente === 0){
-//         $messages.append('<div><strong>' + message.idUsuario + '</strong>: ' + message.mensagem + '</div>');
-//     } else if(message.artistaOUcliente === 1) {
-//         $messages.append('<div class="message"><strong>' + message.idUsuario + '</strong>: ' + message.mensagem + '</div>');
-//     }
-// }
-
-// const query = location.search.slice(1)
-// const idChat = query.split('=')[1]
-
-// socket.emit('idChat', idChat)
-
-// socket.on('previousMessages', function(messages) {
-//     divMessage.innerHTML = '';
-//     for (message of messages) {
-//         renderMessage(message);
-//     }
-// })
-
-// socket.on('receivedMessage', function(message) {
-//     renderMessage(message);
-// })
-
-
-// $chat.submit(function(event){
-//     event.preventDefault();
-//     var author = 1;
-
-//     if(tokenArtista === undefined){
-//         artistaOUcliente = 0;
-//     }
-//     var message = $('input[name=message]').val();
-
-//     var currentdate = new Date();
-//     var datetime = currentdate.getFullYear() + "-" + currentdate.getMonth() 
-//     + "-" + currentdate.getDay() + " " 
-//     + currentdate.getHours() + ":" 
-//     + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-
-//     var foto = null;
-    
-
-            
-//     if(author.length && message.length){
-//         var messageObject = {
-//             mensagem: message,
-//             foto: foto,
-//             data_hora: datetime,
-//             artistaOUcliente: artistaOUcliente,
-//             idUsuario: author
-//         };
-
-//         renderMessage(messageObject);
-
-//         socket.emit('sendMessage', messageObject)
-//     }
-//     });
