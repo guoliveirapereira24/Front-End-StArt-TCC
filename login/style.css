@@ -33,7 +33,7 @@ body {
     color: rgb(255, 90, 76);
 
 
-    font-size: 30px;
+    font-size: 2vh;
 
 }
 
@@ -71,7 +71,7 @@ h1 {
     gap: 5px;
 }
 p{
-    font-size: 20px;
+    font-size: 2.1vh;
 }
 .p-colorido {
     color: #40E0D0;
@@ -90,7 +90,7 @@ label {
     flex-direction: column;
     color: #000000;
     gap: 10%;
-    font-size: 24px;
+    font-size: 2vh;
 }
 
 #label-senha {
@@ -105,7 +105,7 @@ input {
     border: 1px solid black;
     padding: 0% 2%;
     display: block;
-    font-size: 20px;
+    font-size: 2vh;
 }
 
 input:focus-within {
@@ -152,7 +152,7 @@ button:hover {
 }
 .button_logar{
     height: 7%;
-    font-size: 20px;
+    font-size: 2vh;
 }
 
 .img-login {
@@ -214,7 +214,7 @@ button:hover {
 .button_continuar{
     height: 10%;
     width: 70%;
-    font-size: 20px;
+    font-size: 2vh;
     /* background-color:#40E0D0; */
 }
 
@@ -270,9 +270,9 @@ button:hover {
 
 .close2{
     position: absolute;
-    margin-left: 95%;
-    margin-bottom: 90%;
-    font-size: 50px;
+    margin-left: 92%;
+    margin-bottom: 62vh;
+    font-size: 4vh;
 }
 
 .close2:hover{
@@ -286,6 +286,12 @@ button:hover {
     height: 60%;
     width: 30vw;
     margin-top: 2%;
+
+}
+.container_esqueceu_senha p{
+    padding-left: 5%;
+    padding-right: 5%;
+    /* font-size: 2vh; */
 }
 /* .container_esqueceu_senha img{
     background-color: #40E0D0;
@@ -295,7 +301,7 @@ button:hover {
     height: 60%;
     width: 70%;
     margin-left: 16%;
-    font-size: 20px;
+    font-size: 2vh;
 }
 
 @media (max-width: 1350px) {

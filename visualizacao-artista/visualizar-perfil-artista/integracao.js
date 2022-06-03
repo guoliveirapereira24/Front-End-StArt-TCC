@@ -39,12 +39,12 @@ function getInformacoesArtista(){
             
             <div class="botoes_doar_contatar">
                 <div class="contatar">
-                    <img src="../img/contatar.png" alt="">
+                    <img class="img_contatar" src="../../home/img/contatar.png" alt="">
                     <p>Contatar</p>
                 </div>
 
                 <div class="doacao">
-                    <img src="../img/doar.png" alt="">
+                    <img src="../../perfil/img/doar.png" alt="">
                     <p>Doar</p>
                 </div>
 

@@ -290,7 +290,7 @@ h1{
     /* margin-right: 10%; */
 }
 .card{
-    display: display;
+    display: flex;
     flex-direction: column;
     height: 510px;
     width: 450px;
@@ -430,7 +430,7 @@ h1{
 }
 
 .text_informacoes_artista h2{
-    font-size: 28px;
+    font-size: 2.3vh;
     margin-top: 5px;
     margin-bottom: 0;
 }
@@ -456,7 +456,7 @@ h1{
     height: 85%;
     padding-left: 5%;
     flex-direction: column;
-    /* background-color:tomato */
+    background-color:tomato
 }
 .especialidade{
     display: flex;
@@ -465,7 +465,7 @@ h1{
     width:100%;
     gap: 1%;
     /* padding-left: 5%; */
-    /* background-color:violet; */
+    background-color:violet;
 }
 .avaliacao{
     display: flex;
@@ -474,7 +474,7 @@ h1{
     align-items: center;
     justify-content: center;
     /* background-color:aqua; */
-    font-size: 30px;
+    font-size: 2vh;
     /* gap:5%; */
 }
 
@@ -488,7 +488,7 @@ h1{
     /* background-color:steelblue; */
 }
 .amarelo{
-    font-size: 40px;
+    font-size: 3.5vh;
     margin-top: 0;
     margin-bottom: 0;
     color: rgb(255, 200, 0);
