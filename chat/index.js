@@ -1,4 +1,4 @@
-var socket = io('http://localhost:3000');
+var socket = io('http://localhost:3000', { transports: ['websocket', 'polling', 'flashsocket'] });
 
 const tokenArtista = localStorage.getItem('tokenArtista');
 const tokenCliente = localStorage.getItem('tokenCliente')
@@ -89,6 +89,17 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             const idChat = chat.idChat
                             const idCliente = chat.idCliente
 
+
+                            const header = document.getElementById('header')
+                            header.innerHTML = `
+                                <div class="imgText">
+                                    <div class="userimg">
+                                        <img src="${chat.imgCliente}" alt="" class="cover">
+                                    </div>
+                                    <h4>${nomeCliente}</h4>
+                                </div>
+                            `
+
                             const chatbox = document.getElementById('chatbox')
                             const sendMessage = document.getElementById('sendMessage')
                             const inputMessage = document.getElementById('inputMessage')
@@ -106,9 +117,6 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                 
                                 var dateNow = new Date(Date.now());
                                 dateNow = dateNow.toLocaleDateString('pt-BR');
-
-                                console.log(dateNow)
-                                console.log(date)
 
 
                                 if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
@@ -187,7 +195,15 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         const sendMessage = document.getElementById('sendMessage')
                         const inputMessage = document.getElementById('inputMessage')
 
-                        
+                        const header = document.getElementById('header')
+                            header.innerHTML = `
+                                <div class="imgText">
+                                    <div class="userimg">
+                                        <img src="${chat.imgCliente}" alt="" class="cover">
+                                    </div>
+                                    <h4>${nomeCliente}</h4>
+                                </div>
+                            `
 
                         function renderMessage(message) {
 
@@ -201,8 +217,6 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             var dateNow = new Date(Date.now());
                             dateNow = dateNow.toLocaleDateString('pt-BR');
 
-                            console.log(dateNow)
-                            console.log(date)
 
 
                             if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
@@ -350,7 +364,12 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         </div>
                     `
 
+
+
+
                     chatList.appendChild(block)
+
+                    
 
                     const query = location.search.slice(1)
                     const idChatQuery = query.split('=')[1]
@@ -391,10 +410,6 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                 
                                 var dateNow = new Date(Date.now());
                                 dateNow = dateNow.toLocaleDateString('pt-BR');
-
-                                console.log(dateNow)
-                                console.log(date)
-
 
                                 if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
                                     date = 'Ontem'
@@ -496,9 +511,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             var dateNow = new Date(Date.now());
                             dateNow = dateNow.toLocaleDateString('pt-BR');
 
-                            console.log(dateNow)
-                            console.log(date)
-
+          
 
                             if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
                                 date = 'Ontem'
