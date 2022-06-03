@@ -283,11 +283,11 @@ input{
     display: flex;
     flex-direction: column;
 
-    /* align-items: center; */
-    /* height: 15vh;
-    width: 20vw; */
-    margin-left: 35vw;
-    /* background-color: #D71B1B; */
+    align-items: center;
+    /* height: 15vh;*/
+    /* width: 10%;  */
+    margin-left: 35%;
+    /* background-color: #04BA00; */
 }
 
 .contatar{
@@ -295,13 +295,16 @@ input{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    font-size: 2.5vh;
+    /* font-size: 2.5vh; */
     gap: 2%;
+     
+    
     /* background-color: #FFC700; */
 }
 .contatar img{
     width: 12%;
     height: 50%;
+    /* gap: 2%; */
     color: #04BA00;
     /* border: 1px solid; */
     /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
@@ -311,7 +314,7 @@ input{
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    gap: 3%;
+    gap: 2%;
     text-decoration: solid;
     /* background-color: aquamarine; */
 }
@@ -322,7 +325,7 @@ input{
 }
 .doacao p{
     font-size: 2.5vh;
-    margin-right: 8%;
+    /* margin-right: 8%; */
     /* stroke: 4px #FFC700; */
     color: #FFC700;
     
@@ -834,7 +837,7 @@ textarea{
 .button_edit_delete{
     width: 100%;
     height: 100%;
-    background-color: #40E0D0;
+    /* background-color: #40E0D0; */
 }
 .edit_delete img{
     height: 100%;
@@ -1267,9 +1270,45 @@ button:hover{
     transform: scale(1.1);
     cursor: pointer;
 }
+.doacao:hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 .card_minha_obra:hover{
     transition: all 0.3s;
     transform: scale(1.1);
     cursor: pointer;
+}
+.contatar{
+    width: 100%;
+    /* background-color: #E14A4A; */
+}
+.doacao{
+    width: 100%;
+
+    /* background-color: #FFC700; */
+}
+.doacao p, .contatar p{
+    font-size: 2.5vh;
+    width: 80%;
+    /* background-color: #40E0D0; */
+    /* font-family: 'Raleway', sans-serif; */
+
+}
+.contatar img, .doacao img{
+    width: 40%;
+    height: 100%;
+    /* background-color: #40E0D0; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    
+}
+
+.img_contatar{
+    width: 100%;
+    height: 100%;
+    
+    /* background-color: #04BA00; */
+
 }

@@ -57,7 +57,9 @@ const listarArtistas = () => {
                     
                         <h2 class="especialidade_categoria">${artista.nomeEspecialidadeArtista}</h2>
 
-                        <section class="avaliacao" id="avaliacaoArtista">
+                        <section class="avaliacao" id="avaliacaoArtista ${idArtista}">
+                            <img src="./img/estrela2.png" alt="">
+                            <p class="amarelo">${artista.avaliacao}</p>
                         </section>
 
                     </div>
@@ -83,7 +85,7 @@ const listarArtistas = () => {
                         }
                     } 
                 
-                    const avaliacao = document.getElementById(`avaliacaoArtista`);
+                    const avaliacao = document.getElementById(`avaliacaoArtista ${idArtista}`);
                 
                 fetch(`http://localhost:3000/avaliacao/avaliacaoDeArtista/${idArtista}`, configAvaliacao)
                                 .then((res) => res.json())
