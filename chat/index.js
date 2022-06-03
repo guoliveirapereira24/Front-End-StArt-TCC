@@ -77,6 +77,78 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                     `
 
                     chatList.appendChild(block)
+
+                    const query = location.search.slice(1)
+                    const idChatQuery = query.split('=')[1]
+
+                    if(idChatQuery == null){
+
+                        block.onclick = () => {
+                            const idChat = chat.idChat
+                            const idCliente = chat.idCliente
+
+                            const chatbox = document.getElementById('chatbox')
+                            const sendMessage = document.getElementById('sendMessage')
+                            const inputMessage = document.getElementById('inputMessage')
+
+                            function renderMessage(message) {
+                                if(message.artistaOUcliente === 1){
+                                    chatbox.append('<div class="message my_msg"><p>' + message.mensagem + '<br><span>' + message.data_hora +'</span></p></div>')
+                                } else if(message.artistaOUcliente === 0) {
+                                    chatbox.append('<div class="message my_msg"><p>' + message.mensagem + '<br><span>' + message.data_hora +'</span></p></div>')
+                                }
+                            }
+
+                            socket.emit('idChat', idChat)
+
+                            socket.on('previousMessages', function(messages) {
+                                chatbox.innerHTML = '';
+                                for (message of messages) {
+                                    renderMessage(message);
+                                }
+                            })
+
+                            socket.on('receivedMessage', function(message) {
+                                renderMessage(message);
+                            })
+
+                            sendMessage.submit(function(event){
+                                event.preventDefault();
+                                
+                               
+                                const artistaOUcliente = 1;
+
+                                var currentdate = new Date();
+                                var datetime = currentdate.getFullYear() + "-" + currentdate.getMonth() 
+                                + "-" + currentdate.getDay() + " " 
+                                + currentdate.getHours() + ":" 
+                                + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+                                var foto = null;
+                                const message = inputMessage.value;
+                                        
+                                if(message.length){
+                                    var messageObject = {
+                                        mensagem: message,
+                                        foto: foto,
+                                        data_hora: datetime,
+                                        artistaOUcliente: artistaOUcliente,
+                                        idUsuario: idCliente
+                                    };
+
+                                    renderMessage(messageObject);
+
+                                    socket.emit('sendMessage', messageObject)
+                                }
+                                });
+
+                        }
+
+                    } else {
+
+                    }
+
+                        
                 })
             })
     }

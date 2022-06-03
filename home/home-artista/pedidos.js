@@ -388,8 +388,34 @@ const getPedidosParaMim = () => {
         
                         </div>
                     `;
-                    
+
                     listagemPedidosParaMim.appendChild(divCard);
+
+                    const buttonContatar = document.getElementById(`contatar ${idPedidoPersonalizado}`);
+                    buttonContatar.addEventListener('click', () => {
+                        const idCliente = pedidoPersonalizado.idCliente;
+                        const configContatar = {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${tokenArtista}`,
+                                'Cache-Control': 'no-cache'
+                            },
+                            body: JSON.stringify({
+                                idCliente: idCliente
+                            })
+                        }
+
+                        fetch("http://localhost:3000/chat/chatCliente", configContatar)
+                            .then((res) => res.json())
+                            .then((data) => {
+                                console.log(data);
+                                const idChat = data.idChat;
+                                window.location.href = "../../chat/index.html?q=" + idChat;
+                            })
+                    })
+                    
+                    
 
                     const imgGrande = document.getElementById(`imgGrande ${pedidoPersonalizado.idPedidoPersonalizado}`);
                     const imgPequena = document.getElementById(`imgPequena ${pedidoPersonalizado.idPedidoPersonalizado}`);
