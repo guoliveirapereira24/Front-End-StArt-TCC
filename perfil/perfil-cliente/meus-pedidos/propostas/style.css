@@ -257,6 +257,13 @@ body{
     width: 100vw;
     /* background-color: #04BA00; */
 }
+
+button:hover{
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+
 h1{
     font-size: 3vh;
     margin-top: 1%;
@@ -315,6 +322,12 @@ h1{
     gap: 5%;
     /* background-color: blueviolet; */
 }
+
+.img_nome:hover{
+    cursor: pointer;
+}
+
+
 .img_nome img{
     height: 100%;
     border-radius: 50%;
@@ -329,6 +342,8 @@ h1{
     gap: 5%;
     font-size: 2vh;
     /* background-color: bisque; */
+    border: none;
+    background-color: transparent;
 }
 
 .contatar img{

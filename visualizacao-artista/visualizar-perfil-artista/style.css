@@ -1284,6 +1284,12 @@ button:hover{
 .contatar{
     width: 100%;
     /* background-color: #E14A4A; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
 }
 .doacao{
     width: 100%;

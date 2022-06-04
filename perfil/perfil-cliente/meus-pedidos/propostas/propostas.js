@@ -87,17 +87,17 @@ const getPropostas = () => {
                 divCard.innerHTML = `
                     <div class="nome_tipo_contato" id="nome_tipo_contato">
             
-                        <div class="img_nome">
+                        <section class="img_nome">
                             <img id="img_perfil ${proposta.idProposta}" src="${proposta.fotoPerfilArtista}" alt="" srcset="">
 
                             <p class="nome" id="nome_cliente">${proposta.nomeArtista}</p>
-                        </div>
+                        </section>
             
 
-                        <section class="contatar" id="contatar">
+                        <button class="contatar" id="contatar ${proposta.idProposta}">
                             <img src="../../../img/contatar.png" alt="">
                             <p>Contatar</p>
-                        </section>
+                        </button>
                     
                     </div>
 
@@ -129,15 +129,34 @@ const getPropostas = () => {
                 const imgPerfil = document.getElementById(`img_perfil ${proposta.idProposta}`);
 
                 imgPerfil.addEventListener('click', () => {
-                    window.location.href = `../../../visualizacao-artista/visualizacao-perfil-artista/index.html?q=${proposta.idArtista}`;
+                    window.location.href = `../../../../visualizacao-artista/visualizar-perfil-artista/index.html?q=${proposta.idArtista}`;
                 })
 
                 const buttons = document.getElementById(`buttons ${proposta.idProposta}`);
 
-                const botaoContatar = document.getElementById('contatar');
-                botaoContatar.addEventListener('click', () => {
-                    window.location.href = `../../../chat/index.html?id=${proposta.idArtista}`
-                });
+                const buttonContatar = document.getElementById(`contatar ${proposta.idProposta}`);
+                buttonContatar.addEventListener('click', () => {
+                    const idArtista = proposta.idArtista;
+                    const configContatar = {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            "Authorization": `Bearer ${tokenCliente}`,
+                            'Cache-Control': 'no-cache'
+                        },
+                        body: JSON.stringify({
+                            idArtista: idArtista
+                        })
+                    }
+
+                    fetch("http://localhost:3000/chat/chatCliente", configContatar)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            console.log(data);
+                            const idChat = data.idChat;
+                            window.location.href = "../../chat/index.html?q=" + idChat;
+                        })
+                })
 
                 const botaoAceitar = document.createElement('button');
                 botaoAceitar.className = "button_azul";

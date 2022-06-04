@@ -645,6 +645,10 @@ function getMinhasPropostas(){
                 buttons.appendChild(buttonEntrarContato);
                 buttons.appendChild(buttonCancelar);
 
+                buttonEntrarContato.addEventListener("click", function(){
+                    window.location.href = `../../../chat/index.html?q=${proposta.idCliente}`;
+                });
+
                 const fundo_finalizar_pedido = document.getElementById("fundo_finalizar_pedido");
 
                 buttonFinalizarPedido.addEventListener("click", function(){
@@ -736,6 +740,11 @@ function getMinhasPropostas(){
                     atualizarStatusPedido(proposta.idPedidoPersonalizado, "Despachado")
                 }
 
+                
+                buttonEntrarContato.addEventListener("click", function(){
+                    window.location.href = `../../../chat/index.html?q=${proposta.idCliente}`;
+                });
+
 
             } else if(status == "Despachado"){
                 const buttonEntrarContato = document.createElement('button');
@@ -751,6 +760,11 @@ function getMinhasPropostas(){
                 buttons.innerHTML = ""
                 buttons.appendChild(buttonEntrarContato);
                 buttons.appendChild(buttonAvaliarCliente);
+
+                
+                buttonEntrarContato.addEventListener("click", function(){
+                    window.location.href = `../../../chat/index.html?q=${proposta.idCliente}`;
+                });
 
                 const fundo_modal_avaliar_cliente = document.getElementById("fundo_modal_avaliar_cliente");
                   
@@ -967,8 +981,8 @@ function getMinhasPropostas(){
                 buttons.innerHTML = ""
                 buttons.appendChild(buttonEntrarContato);
 
-                buttonEntrarContato.addEventListener('click', () => {
-                    // window.location.href = `../../../chat/index.html?q=${idPedidoPersonalizado}`;
+                buttonEntrarContato.addEventListener("click", function(){
+                    window.location.href = `../../../chat/index.html?q=${proposta.idCliente}`;
                 });
             }
 
@@ -986,7 +1000,7 @@ function getMinhasPropostas(){
                 <div class="modal_ver_pedido" id="modal_ver_pedido ${proposta.idProposta}">
                     <div class="nome_tipo_contato" id="nome_tipo_contato">
 
-                        <img id="img_perfil" src="${proposta.fotoPerfilCliente}" alt="" srcset="">
+                        <img class="img_perfil" id="img_perfil ${proposta.idCliente}" src="${proposta.fotoPerfilCliente}" alt="" srcset="">
 
                         <p class="nome"  id="nome_cliente">${proposta.nomeCliente}</p>
                         <section id="avaliacao">
@@ -1007,27 +1021,77 @@ function getMinhasPropostas(){
 
 
                     <div class="imgs">
-                        <div class="img_grande">
-                            <img id="img_exemplo" class="img_exemplo" src="${proposta.imagem1opcional}" alt="">
+                        <div class="img_grande" id="imgGrande ${proposta.idPedidoPersonalizado}">
                         </div>
-                    <div class="imgs_pequenas">
-                        <div class="img_pequena">
-                            <img src="${proposta.imagem2opcional}" class="img2" alt="" id="imagem2opcional">
+                        <div class="imgs_pequenas" id="imgPequena ${proposta.idPedidoPersonalizado}">
                         </div>
-                        <div class="img_pequena">
-                            <img src="${proposta.imagem3opcional}" class="img3" alt="" srcset="" id="imagem3opcional">
-                        </div>
-                        
-                    </div>
-                </div>    
+                    </div>    
 
                 </div>`;
 
+                const imgGrande = document.getElementById(`imgGrande ${proposta.idPedidoPersonalizado}`);
+                const imgPequena = document.getElementById(`imgPequena ${proposta.idPedidoPersonalizado}`);
 
+                if(proposta.imagem1opcional != ""){
+                    imgGrande.innerHTML = `
+                        <img src="${proposta.imagem1opcional}" alt="" class="img1" id="img-1 ${proposta.idPedidoPersonalizado}">
+                    `;
+                } else {
+                    imgGrande.innerHTML = `
+                        <img src="../img/no-image.png" alt="" class="img1" id="img-1">
+                    `;
+                }
 
-                
-                
-                
+                if(proposta.imagem2opcional != ""){
+                    const div = `
+                            <div class="img_pequena">
+                                <img src="${proposta.imagem2opcional}" alt="" class="img2" id="img-2 ${proposta.idPedidoPersonalizado}">
+                            </div>
+                            `;
+                    imgPequena.innerHTML += div;
+                }
+
+                if(proposta.imagem3opcional != ""){
+                    const div = `
+                            <div class="img_pequena">
+                                <img src="${proposta.imagem3opcional}" alt="" class="img2" id="img-3 ${proposta.idPedidoPersonalizado}">
+                            </div>
+                            `;
+                    imgPequena.innerHTML += div;
+                }
+
+                var img1 = document.getElementById(`img-1 ${proposta.idPedidoPersonalizado}`)
+                var img2 = document.getElementById(`img-2 ${proposta.idPedidoPersonalizado}`)
+                var img3 = document.getElementById(`img-3 ${proposta.idPedidoPersonalizado}`)
+    
+                const perfilCliente = document.getElementById(`img_perfil ${proposta.idCliente}`);
+                perfilCliente.addEventListener("click", () => {
+                    window.location.href = `../../../visualizar-cliente/index.html?q=${proposta.idCliente}`;
+                });
+
+                const removeImageIfEmptyAndPutEventListener = (img) => {
+                    const tradeImage = () => {
+                        const imageOnMain = img1.src
+                        const imageSelected = img.src
+
+                        img1.src = imageSelected
+                        img.src = imageOnMain
+                    }
+
+                    if (img == null) {
+                        console.log(img)
+                    } else {
+                        img.addEventListener('click', () => {
+                            tradeImage()
+                        })
+                    }
+                }
+
+                const optionalImages = [img2, img3]
+
+                optionalImages.map(removeImageIfEmptyAndPutEventListener)
+            
+            
 
                 getAvaliacaoCliente(proposta.idCliente, proposta.idProposta);
 

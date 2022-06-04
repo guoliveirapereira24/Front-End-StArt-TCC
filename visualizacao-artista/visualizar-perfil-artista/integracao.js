@@ -1,5 +1,7 @@
 "use strict";
 
+const tokenCliente = localStorage.getItem('tokenCliente');
+
 const query = location.search.slice(1)
 const idArtista = query.split('=')[1];
 
@@ -38,10 +40,10 @@ function getInformacoesArtista(){
                 </div>
             
             <div class="botoes_doar_contatar">
-                <div class="contatar">
+                <button class="contatar" id="contatar">
                     <img class="img_contatar" src="../../home/img/contatar.png" alt="">
                     <p>Contatar</p>
-                </div>
+                </button>
 
                 <div class="doacao">
                     <img src="../../perfil/img/doar.png" alt="">
@@ -84,6 +86,30 @@ function getInformacoesArtista(){
 
             buttonFazerPedido.addEventListener('click', () => {
                 location.href = `./fazer-pedido/index.html?q=${artista.idArtista}`
+            })
+
+            const buttonContatar = document.getElementById(`contatar`);
+            buttonContatar.addEventListener('click', () => {
+                const idArtista = artista.idArtista;
+                const configContatar = {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "Authorization": `Bearer ${tokenCliente}`,
+                        'Cache-Control': 'no-cache'
+                    },
+                    body: JSON.stringify({
+                        idArtista: idArtista
+                    })
+                }
+
+                fetch("http://localhost:3000/chat/chatCliente", configContatar)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        const idChat = data.idChat;
+                        window.location.href = "../../chat/index.html?q=" + idChat;
+                    })
             })
 
 

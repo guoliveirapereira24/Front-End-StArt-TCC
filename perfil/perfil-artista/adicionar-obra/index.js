@@ -21,6 +21,19 @@ const inputImg4Opcional = document.getElementById('inputImage4');
 const inputImg5Opcional = document.getElementById('inputImage5');
 const inputImg6Opcional = document.getElementById('inputImage6');
 
+
+inputDesconto.onkeydown = function(e){
+
+    if(inputDesconto.value.length == 2 && e.keyCode != 8) {
+        return false;
+    }
+
+    var chr = String.fromCharCode(e.which);
+    if ("1234567890".indexOf(chr) < 0 && e.keyCode != 8) {
+        return false
+    }
+}
+
 const configureImagePreview = () => {
     const inputImage1 = document.querySelector('#inputImage1')
     const handleFileImage1 = () => imagePreview('inputImage1', 'imagePreview1')

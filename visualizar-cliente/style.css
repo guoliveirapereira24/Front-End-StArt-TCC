@@ -337,6 +337,8 @@ h1{
     height: 100%;
     gap: 5%;
     margin-left: 30vw;
+    border: none;
+    background-color: transparent;
     /* background-color: #FFC700; */
 }
 .contatar img{

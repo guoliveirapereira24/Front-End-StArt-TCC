@@ -798,7 +798,7 @@ h1{
     height: 80px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    background-color: #04BA00;
+
 
 }
 
@@ -811,7 +811,7 @@ h1{
     /* background-color: #40E0D0; */
     
 }
-#img_perfil{
+.img_perfil{
     height: 80px;
     width: 80px;
     border-radius: 50%;
@@ -869,7 +869,7 @@ h1{
     padding-top: 2%;
     padding-left: 3%;
     padding-right: 3%;
-    background-color: #40E0D0;
+
 }
 
 #exemplo_botoes{
@@ -898,7 +898,6 @@ h1{
     padding-right: 2%;
     padding-left: 2%;
     justify-content: center;
-    background-color: #04BA00;
 }
 .botoes button{
     height: 55px;
@@ -942,7 +941,6 @@ h1{
     /* padding: 2%; */
     padding-left: 2%;
     font-size: 2.5vh;
-    background-color: yellow;
        
 }
 .preco{
@@ -1289,7 +1287,6 @@ textarea{
     max-width: 600px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: blueviolet;
     margin-left: 1%;
 }
 

@@ -67,12 +67,12 @@ const getPedidosPublicos = () => {
                     divCard.innerHTML = `
                         <div id="nome_tipo_contato">
                             
-                            <section class="img_nome_avaliacao">
-                                <section class="img_nome">
+                            <section class="img_nome_avaliacao" id="perfilCliente ${idPedidoPersonalizado}">
+                                <button class="img_nome">
                                     <img id="img_perfil" src="${pedidoPersonalizado.fotoPerfilCliente}" alt="" srcset="">
             
                                     <p class="nome" id="nome_cliente">${pedidoPersonalizado.nomeCliente}</p>
-                                </section>
+                                </button>
                         
                                 
                                 <section id="avaliacao">
@@ -150,7 +150,10 @@ const getPedidosPublicos = () => {
                     var img2 = document.getElementById(`img-2 ${pedidoPersonalizado.idPedidoPersonalizado}`)
                     var img3 = document.getElementById(`img-3 ${pedidoPersonalizado.idPedidoPersonalizado}`)
         
-
+                    const perfilCliente = document.getElementById(`perfilCliente ${pedidoPersonalizado.idPedidoPersonalizado}`);
+                    perfilCliente.addEventListener("click", () => {
+                        window.location.href = `../../visualizar-cliente/index.html?q=${pedidoPersonalizado.idCliente}`;
+                    });
 
                     const removeImageIfEmptyAndPutEventListener = (img) => {
                         const tradeImage = () => {
@@ -344,12 +347,12 @@ const getPedidosParaMim = () => {
                     divCard.innerHTML = `
                         <div id="nome_tipo_contato">
                             
-                            <section class="img_nome_avaliacao">
-                                <section class="img_nome">
+                            <section class="img_nome_avaliacao" id="perfilCliente ${idPedidoPersonalizado}">
+                                <button class="img_nome">
                                     <img id="img_perfil" src="${pedidoPersonalizado.fotoPerfilCliente}" alt="" srcset="">
             
                                     <p class="nome" id="nome_cliente">${pedidoPersonalizado.nomeCliente}</p>
-                                </section>
+                                </button>
                         
                                 
                                 <section id="avaliacao">
@@ -452,7 +455,10 @@ const getPedidosParaMim = () => {
                     var img2 = document.getElementById(`img-2 ${pedidoPersonalizado.idPedidoPersonalizado}`)
                     var img3 = document.getElementById(`img-3 ${pedidoPersonalizado.idPedidoPersonalizado}`)
         
-
+                    const perfilCliente = document.getElementById(`perfilCliente ${pedidoPersonalizado.idPedidoPersonalizado}`);
+                    perfilCliente.addEventListener("click", () => {
+                        window.location.href = `../../visualizar-cliente/index.html?q=${pedidoPersonalizado.idCliente}`;
+                    });
 
                     const removeImageIfEmptyAndPutEventListener = (img) => {
                         const tradeImage = () => {

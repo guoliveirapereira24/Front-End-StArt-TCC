@@ -94,11 +94,18 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             header.innerHTML = `
                                 <div class="imgText">
                                     <div class="userimg">
-                                        <img src="${chat.imgCliente}" alt="" class="cover">
+                                        <img src="${chat.imgArtista}" alt="" class="cover">
                                     </div>
-                                    <h4>${nomeCliente}</h4>
+                                    <h4>${nomeArtista}</h4>
                                 </div>
                             `
+
+                            const chatinput = document.getElementById('chatinput')
+                            chatinput.innerHTML = `
+                            <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
+                            <button class="send_btn" id="sendMessage">
+                                <img src="./img/icon-send.png" alt="">
+                            </button>`
 
                             const chatbox = document.getElementById('chatbox')
                             const sendMessage = document.getElementById('sendMessage')
@@ -191,19 +198,26 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         const idChat = chat.idChat
                         const idCliente = chat.idCliente
 
+                        const header = document.getElementById('header')
+                        header.innerHTML = `
+                            <div class="imgText">
+                                <div class="userimg">
+                                    <img src="${chat.imgArtista}" alt="" class="cover">
+                                </div>
+                                <h4>${nomeArtista}</h4>
+                            </div>
+                        `
+
+                        const chatinput = document.getElementById('chatinput')
+                            chatinput.innerHTML = `
+                            <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
+                            <button class="send_btn" id="sendMessage">
+                                <img src="./img/icon-send.png" alt="">
+                            </button>`
+
                         const chatbox = document.getElementById('chatbox')
                         const sendMessage = document.getElementById('sendMessage')
                         const inputMessage = document.getElementById('inputMessage')
-
-                        const header = document.getElementById('header')
-                            header.innerHTML = `
-                                <div class="imgText">
-                                    <div class="userimg">
-                                        <img src="${chat.imgCliente}" alt="" class="cover">
-                                    </div>
-                                    <h4>${nomeCliente}</h4>
-                                </div>
-                            `
 
                         function renderMessage(message) {
 
@@ -364,9 +378,6 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         </div>
                     `
 
-
-
-
                     chatList.appendChild(block)
 
                     
@@ -380,6 +391,9 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                             block.className = 'block active'
 
+                            const idChat = chat.idChat
+                            const idArtista = chat.idArtista
+
                             const header = document.getElementById('header')
                             header.innerHTML = `
                                 <div class="imgText">
@@ -390,8 +404,12 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                 </div>
                             `
 
-                            const idChat = chat.idChat
-                            const idArtista = chat.idArtista
+                            const chatinput = document.getElementById('chatinput')
+                            chatinput.innerHTML = `
+                            <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
+                            <button class="send_btn" id="sendMessage">
+                                <img src="./img/icon-send.png" alt="">
+                            </button>`
 
                             const chatbox = document.getElementById('chatbox')
                             const sendMessage = document.getElementById('sendMessage')
@@ -480,6 +498,9 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                     } else {
                         block.className = 'block active'
 
+                        const idChat = idChatQuery
+                        const idArtista = chat.idArtista
+
                         const header = document.getElementById('header')
                         header.innerHTML = `
                             <div class="imgText">
@@ -490,14 +511,16 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             </div>
                         `
 
-                        const idChat = idChatQuery
-                        const idArtista = chat.idArtista
+                        const chatinput = document.getElementById('chatinput')
+                            chatinput.innerHTML = `
+                            <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
+                            <button class="send_btn" id="sendMessage">
+                                <img src="./img/icon-send.png" alt="">
+                            </button>`
 
                         const chatbox = document.getElementById('chatbox')
                         const sendMessage = document.getElementById('sendMessage')
                         const inputMessage = document.getElementById('inputMessage')
-
-                        
 
                         function renderMessage(message) {
 

@@ -74,6 +74,25 @@ const Avaliar = (estrela) => {
     
 }
 
+const entrarContato = (idPedidoPersonalizado) => {
+
+    const configGetIdArtista = {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${tokenCliente}`,
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache'
+        }
+    }
+
+    fetch(`http://localhost:3000/chat/getIdArtista/${idPedidoPersonalizado}`, configGetIdArtista)
+        .then(res => res.json())
+        .then(data => {
+            window.location.href = `../../../chat/index.html?q=${data.idArtista}`;
+        })
+}
+
+
 const avaliarArtista = (idArtista, avaliacao, descricao, idPedidoPersonalizado) => {
 
     const body = {
@@ -170,14 +189,10 @@ const getMeusPedidos = () => {
 
                
                             <div class="imgs">
-                                <div class="img_grande" id="imgGrande ${pedidoPersonalizado.idPedidoPersonalizado}">
-                                    <img src="${pedidoPersonalizado.imagem1opcional}" alt="">  
+                                <div class="img_grande" id="imgGrande ${pedidoPersonalizado.idPedidoPersonalizado}">  
                                 </div>
 
                                 <div class="imgs_pequenas" id="imgPequena ${pedidoPersonalizado.idPedidoPersonalizado}">
-                                    <img src="${pedidoPersonalizado.imagem2opcional}" alt="">  
-                                    <img src="${pedidoPersonalizado.imagem3opcional}" alt="">  
-                                
                                 </div>
 
                             </div>    
@@ -190,6 +205,65 @@ const getMeusPedidos = () => {
                     `;
 
                     listagemMeusPedidos.appendChild(divCard);
+
+                    const imgGrande = document.getElementById(`imgGrande ${idPedidoPersonalizado}`);
+                    const imgPequena = document.getElementById(`imgPequena ${idPedidoPersonalizado}`);
+
+                    if(pedidoPersonalizado.imagem1opcional != ""){
+                        imgGrande.innerHTML = `
+                            <img src="${pedidoPersonalizado.imagem1opcional}" alt="" class="img1" id="img-1 ${idPedidoPersonalizado}">
+                        `;
+                    } else {
+                        imgGrande.innerHTML = `
+                            <img src="../img/no-image.png" alt="" class="img1" id="img-1">
+                        `;
+                    }
+
+                    if(pedidoPersonalizado.imagem2opcional != ""){
+                        const div = `
+                                <div class="img_pequena">
+                                    <img src="${pedidoPersonalizado.imagem2opcional}" alt="" class="img2" id="img-2 ${idPedidoPersonalizado}">
+                                </div>
+                                `;
+                        imgPequena.innerHTML += div;
+                    }
+
+                    if(pedidoPersonalizado.imagem3opcional != ""){
+                        const div = `
+                                <div class="img_pequena">
+                                    <img src="${pedidoPersonalizado.imagem3opcional}" alt="" class="img2" id="img-3 ${idPedidoPersonalizado}">
+                                </div>
+                                `;
+                        imgPequena.innerHTML += div;
+                    }
+
+                    var img1 = document.getElementById(`img-1 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+                    var img2 = document.getElementById(`img-2 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+                    var img3 = document.getElementById(`img-3 ${pedidoPersonalizado.idPedidoPersonalizado}`)
+        
+
+                    const removeImageIfEmptyAndPutEventListener = (img) => {
+                        const tradeImage = () => {
+                            const imageOnMain = img1.src
+                            const imageSelected = img.src
+
+                            img1.src = imageSelected
+                            img.src = imageOnMain
+                        }
+
+                        if (img == null) {
+                            console.log(img)
+                        } else {
+                            img.addEventListener('click', () => {
+                                tradeImage()
+                            })
+                        }
+                    }
+
+                    const optionalImages = [img2, img3]
+
+                    optionalImages.map(removeImageIfEmptyAndPutEventListener)
+                
 
 
                     const excluirPedido = (idPedido) => {
@@ -386,7 +460,7 @@ const getMeusPedidos = () => {
                         botoes.appendChild(buttonCancelar);
         
                         buttonEntrarContato.addEventListener('click', () => {
-                            // window.location.href = `../../../chat/index.html?q=${idPedidoPersonalizado}`;
+                            entrarContato(idPedidoPersonalizado)
                         });
         
                         const fundo_modal_cancelar_pedido = document.getElementById("fundo_modal_cancelar_pedido");
@@ -441,7 +515,7 @@ const getMeusPedidos = () => {
                         botoes.appendChild(buttonCancelar);
         
                         buttonEntrarContato.addEventListener('click', () => {
-                            // window.location.href = `../../../chat/index.html?q=${idPedidoPersonalizado}`;
+                            entrarContato(idPedidoPersonalizado)
                         });
         
                         const fundo_modal_cancelar_pedido = document.getElementById("fundo_modal_cancelar_pedido");
@@ -507,7 +581,7 @@ const getMeusPedidos = () => {
                         botoes.appendChild(buttonAvaliarArtista);
 
                         buttonEntrarContato.addEventListener('click', () => {
-                            // window.location.href = `../../../chat/index.html?q=${idPedidoPersonalizado}`;
+                            entrarContato(idPedidoPersonalizado)
                         });
 
             
@@ -708,7 +782,7 @@ const getMeusPedidos = () => {
                         botoes.appendChild(buttonEntrarContato);
 
                         buttonEntrarContato.addEventListener('click', () => {
-                            // window.location.href = `../../../chat/index.html?q=${idPedidoPersonalizado}`;
+                            entrarContato(idPedidoPersonalizado)
                         });
                     }
         
