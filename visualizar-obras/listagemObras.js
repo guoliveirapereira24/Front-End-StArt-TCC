@@ -110,7 +110,11 @@ const getObras = () => {
             const desconto = obraPronta.desconto
             const preco = obraPronta.preco
         
+            var precoFormatado = preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                
             const precoComDesconto = preco - ((preco * desconto) / 100)
+
+            var precoComDescontoFormatado = precoComDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
             var nomeArtista = obraPronta.nomeArtista.split(' ')[0]
                 if(obraPronta.nomeArtista.split(' ').length > 1){
@@ -149,9 +153,9 @@ const getObras = () => {
                         </label>
                         <div class="promocao" id="promocao ${idObraPronta}">
                             <p class="porcentagem_desconto">${desconto}%</p>
-                            <p class="preco_original">R$ ${preco.toFixed(2).replace('.', ',')}</p>
+                            <p class="preco_original">${precoFormatado}</p>
                         </div>
-                        <p class="preco_obra_favorita" id="preco_obra_favorita1">R$ ${precoComDesconto.toFixed(2).replace('.', ',')}</p>
+                        <p class="preco_obra_favorita" id="preco_obra_favorita1">${precoComDescontoFormatado}</p>
     
                     </div>
     
@@ -209,9 +213,13 @@ inputPesquisa.addEventListener('keyup', () => {
         
                     const desconto = obraPronta.desconto
                     const preco = obraPronta.preco
+
+                    var precoFormatado = preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 
                     const precoComDesconto = preco - ((preco * desconto) / 100)
-        
+
+                    var precoComDescontoFormatado = precoComDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
                     var nomeArtista = obraPronta.nomeArtista.split(' ')[0]
                         if(obraPronta.nomeArtista.split(' ').length > 1){
                             nomeArtista += ' ' + obraPronta.nomeArtista.split(' ')[1]
@@ -249,9 +257,9 @@ inputPesquisa.addEventListener('keyup', () => {
                                 </label>
                                 <div class="promocao" id="promocao ${idObraPronta}">
                                     <p class="porcentagem_desconto">${desconto}%</p>
-                                    <p class="preco_original">R$ ${preco.toFixed(2).replace('.', ',')}</p>
+                                    <p class="preco_original">${precoFormatado}</p>
                                 </div>
-                                <p class="preco_obra_favorita" id="preco_obra_favorita1">R$ ${precoComDesconto.toFixed(2).replace('.', ',')}</p>
+                                <p class="preco_obra_favorita" id="preco_obra_favorita1">${precoComDescontoFormatado}</p>
             
                             </div>
             

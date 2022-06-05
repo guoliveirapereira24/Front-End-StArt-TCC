@@ -81,6 +81,8 @@ const getPropostas = () => {
                 let prazoEntregaPadrao = prazoEntregaPadraoBanco[0] + prazoEntregaPadraoBanco[1] + prazoEntregaPadraoBanco[2] + prazoEntregaPadraoBanco[3] + prazoEntregaPadraoBanco[4] + prazoEntregaPadraoBanco[5] + prazoEntregaPadraoBanco[6] + prazoEntregaPadraoBanco[7] + prazoEntregaPadraoBanco[8] + prazoEntregaPadraoBanco[9];
                 let prazoEntregaPadraoBrasileiro = prazoEntregaPadrao.split('-').reverse().join('/');
 
+                var precoFormatado = (proposta.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
                 const divCard = document.createElement("div");
                 divCard.className = "card";
                 divCard.id = 
@@ -107,7 +109,7 @@ const getPropostas = () => {
                         <div class="preco_prazo">
                             <div class="div_preco">
                                 <p class="translucido">Preço:</p>
-                                <p class="">R$ ${proposta.preco}</p>
+                                <p class="">${precoFormatado}</p>
                             </div>
 
                             <div class="div_prazo">

@@ -357,7 +357,7 @@ li{
     /* gap: 5%; */
 	/* padding: 1rem; */
 	display: grid;
-	grid-template-columns: repeat(4, 32vw);
+	grid-template-columns: repeat(5, 32vw);
 	grid-template-rows: 1fr;
 	grid-column-gap: 1%;
 	/* grid-row-gap: 1rem; */
@@ -384,10 +384,15 @@ li{
 } 
 .gallery li img:hover{
     transition: 0.4s;
+     cursor: pointer;
+    transform: scale(1.05); 
 }
-.gallery li img:hover{
-    cursor: pointer;
-    transform: scale(1.05);   
+
+
+.gallery-menor li img:hover{
+    transition: 0.4s;
+     cursor: pointer;
+    transform: scale(1.05); 
 }
 
 .slide1 img{

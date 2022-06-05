@@ -536,7 +536,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
           
 
-                            if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1){
+                            if(((dateNow.split('/')[0]) - (date.split('/')[0])) == 1 && date.split('/')[1] == dateNow.split('/')[1] && date.split('/')[2] == dateNow.split('/')[2]){
                                 date = 'Ontem'
                             } else if(date == dateNow){
                                 date = timeMessage

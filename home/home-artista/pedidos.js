@@ -233,7 +233,7 @@ const getPedidosPublicos = () => {
                             const divModalProposta = document.getElementById('modal_proposta');
 
                             divModalProposta.innerHTML = `
-                                <h1 class="h1_proposta">Faça a sua proposta para esse pedido personalizado</h1>
+                                <h1 class="h1_proposta" id="error_message">Faça a sua proposta para esse pedido personalizado</h1>
 
                                 <div class="descricao_preco_prazo_buttons">
                                     <section>  
@@ -245,7 +245,7 @@ const getPedidosPublicos = () => {
                                     <div class="inputs_buttons">
                                         <section>
                                             <p>Preço:</p>
-                                            <input type="text" name="preco" class="input_text_preco"  id="input_text_preco_proposta_pedido_personalizado" value="">
+                                            <input type="number" min="1" max="" name="preco" class="input_text_preco"  id="input_text_preco_proposta_pedido_personalizado" value="">
                                         </section>
                                         <section>
                                             <p>Prazo de entrega:</p>
@@ -263,7 +263,7 @@ const getPedidosPublicos = () => {
                                 </div>
                             `;
                             divModalProposta.style.display = "flex";
-                            console.log("sfjdsfds");
+              
 
                             const buttonCancelarProposta = document.getElementById('button_cancelar_proposta_pedido_personalizado');
                             buttonCancelarProposta.addEventListener('click', () => {
@@ -295,22 +295,34 @@ const getPedidosPublicos = () => {
                                     },
                                     body: JSON.stringify(body)
                                 }
-                                if(descricaoProposta == "" || precoProposta == "" || prazoProposta == ""){
-                                    alert("Preencha todos os campos");
+
+                                var dateNow = new Date(Date.now());
+                                dateNow = dateNow.toLocaleDateString('pt-BR');
+                                var dateProposta = new Date(prazoProposta);
+                                dateProposta = dateProposta.toLocaleDateString('pt-BR');
+                                if(dateNow < dateProposta){
+
+                                    if(descricaoProposta == "" || precoProposta == "" || prazoProposta == ""){
+                                        alert("Preencha todos os campos");
+                                        
+                                    } else {
+
+                                        fetch(`http://localhost:3000/proposta/fazerProposta/${idPedidoPersonalizado}`, configFazerProposta)
+                                            .then((res) => res.json())
+                                            .then((data) => {
+                                                console.log(data);
+                                                divModalProposta.innerHTML = "";
+                                                divModalProposta.style.display = "none";
+                                                divCard.remove()
+                                            })
+                                            .catch((error) => console.log(error));
+
+                                    
+                                    }
                                 } else {
-
-                                    fetch(`http://localhost:3000/proposta/fazerProposta/${idPedidoPersonalizado}`, configFazerProposta)
-                                        .then((res) => res.json())
-                                        .then((data) => {
-                                            console.log(data);
-                                            divModalProposta.innerHTML = "";
-                                            divModalProposta.style.display = "none";
-                                            divCard.remove()
-                                        })
-                                        .catch((error) => console.log(error));
-
-                                 
+                                    alert("Prazo de entrega inválido");
                                 }
+
                             });   
                         });
 
@@ -467,7 +479,7 @@ const getPedidosParaMim = () => {
 
                             img1.src = imageSelected
                             img.src = imageOnMain
-                        }
+                        }    
 
                         if (img == null) {
                             console.log(img)
@@ -547,7 +559,7 @@ const getPedidosParaMim = () => {
                                     <div class="inputs_buttons">
                                         <section>
                                             <p>Preço:</p>
-                                            <input type="text" name="preco" class="input_text_preco"  id="input_text_preco_proposta_pedido_personalizado" value="">
+                                            <input type="number" min="0" max="" name="preco" class="input_text_preco"  id="input_text_preco_proposta_pedido_personalizado" value="">
                                         </section>
                                         <section>
                                             <p>Prazo de entrega:</p>
@@ -582,7 +594,7 @@ const getPedidosParaMim = () => {
                                 console.log(descricaoProposta);
                                     
                                 const body = {
-                                        "descricao": descricaoProposta,
+                                        "descricao": descricaoProposta, 
                                         "preco": precoProposta,
                                         "prazoEntrega": prazoProposta,
                                         "status": "Publicada"

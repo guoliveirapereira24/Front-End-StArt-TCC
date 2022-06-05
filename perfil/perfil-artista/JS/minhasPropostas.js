@@ -147,6 +147,8 @@ function getMinhasPropostas(){
             let prazoEntregaPadrao = prazoEntregaPadraoBanco[0] + prazoEntregaPadraoBanco[1] + prazoEntregaPadraoBanco[2] + prazoEntregaPadraoBanco[3] + prazoEntregaPadraoBanco[4] + prazoEntregaPadraoBanco[5] + prazoEntregaPadraoBanco[6] + prazoEntregaPadraoBanco[7] + prazoEntregaPadraoBanco[8] + prazoEntregaPadraoBanco[9];
             let prazoEntregaPadraoBrasileiro = prazoEntregaPadrao.split('-').reverse().join('/');
 
+            var precoFormatado = (proposta.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
 
             let statusClass = "";
             let status = proposta.status;
@@ -190,7 +192,7 @@ function getMinhasPropostas(){
                 <div id="preco_prazo" class="preco_prazo">
                     <div class="preco">
                         <p class="transparente">Preço:</p>
-                        <p class="" id="preco_proposta">R$ ${(proposta.preco).toFixed(2).replace('.', ',')}</p>
+                        <p class="" id="preco_proposta">R$ ${precoFormatado}</p>
                     </div>
                     <div class="prazo">
                         <p class="transparente">Prazo de entrega:</p>

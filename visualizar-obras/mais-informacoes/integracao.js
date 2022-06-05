@@ -133,6 +133,7 @@ const listarObra = () => {
                 const desconto = obraPronta.desconto
                 const preco = obraPronta.preco
                 const precoComDesconto = preco - ((preco * desconto) / 100)
+                var precoComDescontoFormatado = precoComDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
                 document.getElementById("nomeObra").innerHTML = obraPronta.nomeObra
                 document.getElementById("nomeCategoria").innerHTML = obraPronta.nomeCategoria
@@ -141,7 +142,7 @@ const listarObra = () => {
                 document.getElementById("nomeTecnica2").innerHTML = obraPronta.tecnica
                 document.getElementById("nomeSubCategoria").innerHTML = obraPronta.nomeSubCategoria
                 document.getElementById("descricao").innerHTML = obraPronta.descricao
-                document.getElementById("preco").innerHTML = `R$ ${(precoComDesconto).toFixed(2).replace('.', ',')}`
+                document.getElementById("preco").innerHTML = precoComDescontoFormatado
                 document.getElementById("nomeArtista").innerHTML = obraPronta.nomeArtista
                 document.getElementById("fotoPerfilArtista").src = obraPronta.fotoPerfilArtista
                 document.getElementById("imgPrincipal").innerHTML = `<img id="img-1" src="${obraPronta.imagem1obrigatoria}" alt="">`
