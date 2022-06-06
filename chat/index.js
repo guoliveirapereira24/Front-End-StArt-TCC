@@ -4,6 +4,18 @@ const tokenArtista = localStorage.getItem('tokenArtista');
 const tokenCliente = localStorage.getItem('tokenCliente')
 
 if(tokenCliente != "null" && tokenCliente != "undefined") {
+
+    document.getElementById('perfilUser').addEventListener('click', function() {
+        window.location.href = '../perfil/perfil-cliente/index.html';
+    });
+
+    document.getElementById('configuracoes').addEventListener('click', function() {
+        window.location.href = '../perfil/editar-cliente/index.html';
+    });
+
+    document.getElementById('logout').addEventListener('click', function() {
+        window.location.href = '../login/index.html';
+    });
     
     const meuPerfil = () => {
         const config = {
@@ -48,7 +60,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                 
                 const chatList = document.getElementById('chatlist');
 
-                chat.forEach(chat => {
+                chat.map(chat => {
 
                     var nomeArtista = chat.nomeArtista.split(' ')[0]
                     if(chat.nomeArtista.split(' ').length > 1){
@@ -81,10 +93,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                     const query = location.search.slice(1)
                     const idChatQuery = query.split('=')[1]
 
-                 
-
-                        block.onclick = () => {
-
+                        block.addEventListener('click', () => {
 
                             document.querySelectorAll('.block').forEach(block => {
                                 block.classList.remove('active')
@@ -108,18 +117,18 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             const chatinput = document.getElementById('chatinput')
                             chatinput.innerHTML = `
                             <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
-                            <button class="send_btn" id="sendMessage">
+                            <button class="send_btn" id="sendMessage ${idChat}">
                                 <img src="./img/icon-send.png" alt="">
                             </button>`
 
                             const chatbox = document.getElementById('chatbox')
-                            const sendMessage = document.getElementById('sendMessage')
+                            const sendMessage = document.getElementById(`sendMessage ${idChat}`)
                             const inputMessage = document.getElementById('inputMessage')
 
                             chatbox.innerHTML = ''
 
 
-                            function renderMessage(message) {
+                            const renderMessage = (message) => {
 
                                 var dateTimeMessage = new Date(message.data_hora)
                                 var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
@@ -167,36 +176,35 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                 renderMessage(message);
                             })
 
-                            sendMessage.onclick = function(event){
-                                event.preventDefault();
-                                
+                            sendMessage.onclick = () => {
                                
                                 const artistaOUcliente = 1;
 
                                 var dateNow = new Date(Date.now());
                                 dateNow = dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1) + '-' + dateNow.getDate() + ' ' + dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getSeconds();
-                           
-
 
                                 var foto = null;
                                 const message = inputMessage.value;
+
+                                inputMessage.value = ''
                                         
-                                if(message.length){
+                                if(message.length > 0){
                                     var messageObject = {
+                                        idChat: idChat,
                                         mensagem: message,
                                         foto: foto,
                                         data_hora: dateNow,
                                         artistaOUcliente: artistaOUcliente,
                                         idUsuario: idCliente
-                                    };
-
-                                    renderMessage(messageObject);
-
+                                    };                                 
+                                    
                                     socket.emit('sendMessage', messageObject)
+                                    renderMessage(messageObject);
+                        
                                 }
                                 };
 
-                        }
+                        })
 
                     
                     if(idChatQuery != null) {
@@ -218,17 +226,17 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         const chatinput = document.getElementById('chatinput')
                             chatinput.innerHTML = `
                             <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
-                            <button class="send_btn" id="sendMessage">
+                            <button class="send_btn" id="sendMessage ${idChat}">
                                 <img src="./img/icon-send.png" alt="">
                             </button>`
 
                         const chatbox = document.getElementById('chatbox')
-                        const sendMessage = document.getElementById('sendMessage')
+                        const sendMessage = document.getElementById(`sendMessage ${idChat}`)
                         const inputMessage = document.getElementById('inputMessage')
 
                         chatbox.innerHTML = ''
 
-                        function renderMessage(message) {
+                        const renderMessage = (message) => {
 
                             var dateTimeMessage = new Date(message.data_hora)
                             var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
@@ -265,43 +273,41 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                         socket.emit('idChat', idChat)
 
-                        socket.on('previousMessages', function(messages) {
+                        socket.on('previousMessages', (messages) => {
                             chatbox.innerHTML = '';
                             for (message of messages) {
                                 renderMessage(message);
                             }
                         })
 
-                        socket.on('receivedMessage', function(message) {
+                        socket.on('receivedMessage', (message) => {
                             renderMessage(message);
                         })
 
-                        sendMessage.onclick = function(event){
-                            event.preventDefault();
-                            
+                        sendMessage.onclick = () => {
                            
                             const artistaOUcliente = 1;
 
                             var dateNow = new Date(Date.now());
                             dateNow = dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1) + '-' + dateNow.getDate() + ' ' + dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getSeconds();
                        
-
-
                             var foto = null;
                             const message = inputMessage.value;
                                     
-                            if(message.length){
+                            if(message.length > 0){
                                 var messageObject = {
+                                    idChat: idChat,
                                     mensagem: message,
                                     foto: foto,
                                     data_hora: dateNow,
                                     artistaOUcliente: artistaOUcliente,
                                     idUsuario: idCliente
-                                };
-
+                                };   
+                                                              
                                 renderMessage(messageObject);
-
                                 socket.emit('sendMessage', messageObject)
+                                
+                    
                             }
                             };
 
@@ -315,6 +321,19 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
     conversasDeCliente()
     
 } else if(tokenArtista != "null" && tokenArtista != "undefined") {
+
+    const perfil =  document.getElementById('perfilUser')
+
+    perfil.href = '../perfil/perfil-artista/index.html';
+
+
+    document.getElementById('configuracoes').addEventListener('click', function() {
+        window.location.href = '../perfil/editar-artista/index.html';
+    });
+
+    document.getElementById('logout').addEventListener('click', function() {
+        window.location.href = '../login/index.html';
+    });
 
     const meuPerfil = () => {
         const config = {
@@ -398,15 +417,13 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                         block.onclick = () => {
 
-                            location.search = '?q=' + chat.idChat
-
                             document.querySelectorAll('.block').forEach(block => {
                                 block.classList.remove('active')
                             })
 
                             block.className = 'block active'
 
-                            const idChat = chat.idChat
+                            const idChat = block.id
                             const idArtista = chat.idArtista
 
                             const header = document.getElementById('header')
@@ -422,12 +439,12 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             const chatinput = document.getElementById('chatinput')
                             chatinput.innerHTML = `
                             <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
-                            <button class="send_btn" id="sendMessage">
+                            <button class="send_btn" id="sendMessage ${idChat}">
                                 <img src="./img/icon-send.png" alt="">
                             </button>`
 
                             const chatbox = document.getElementById('chatbox')
-                            const sendMessage = document.getElementById('sendMessage')
+                            const sendMessage = document.getElementById(`sendMessage ${idChat}`)
                             const inputMessage = document.getElementById('inputMessage')
 
                             chatbox.innerHTML = ''
@@ -494,8 +511,9 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                 var foto = null;
                                 const message = inputMessage.value;
                                         
-                                if(message.length){
+                                if(message.length > 0){
                                     var messageObject = {
+                                        idChat: idChat,
                                         mensagem: message,
                                         foto: foto,
                                         data_hora: dateNow,
@@ -504,8 +522,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                     };
 
                                     renderMessage(messageObject);
-
                                     socket.emit('sendMessage', messageObject)
+                                    
                                 }
                                 };
 
@@ -513,6 +531,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                     
                     if(idChatQuery != null) {
+
+
                         block.className = 'block active'
 
                         const idChat = idChatQuery
@@ -531,17 +551,18 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         const chatinput = document.getElementById('chatinput')
                             chatinput.innerHTML = `
                             <input type="text" placeholder="Escreva uma mensagem" id="inputMessage">
-                            <button class="send_btn" id="sendMessage">
+                            <button class="send_btn" id="sendMessage ${idChat}">
                                 <img src="./img/icon-send.png" alt="">
                             </button>`
 
                         const chatbox = document.getElementById('chatbox')
-                        const sendMessage = document.getElementById('sendMessage')
+                        const sendMessage = document.getElementById(`sendMessage ${idChat}`)
                         const inputMessage = document.getElementById('inputMessage')
 
                         chatbox.innerHTML = ''
 
                         function renderMessage(message) {
+
 
                             var dateTimeMessage = new Date(message.data_hora)
                             var timeMessage = dateTimeMessage.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
@@ -590,9 +611,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             renderMessage(message);
                         })
 
-                        sendMessage.onclick = function(event){
-                            event.preventDefault();
-                            
+                        sendMessage.onclick = () => {
                            
                             const artistaOUcliente = 0;
 
@@ -600,12 +619,14 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             dateNow = dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1) + '-' + dateNow.getDate() + ' ' + dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getSeconds();
                        
 
-
                             var foto = null;
                             const message = inputMessage.value;
+
+                            inputMessage.value = ''
                                     
-                            if(message.length){
+                            if(message.length > 0){
                                 var messageObject = {
+                                    idChat: idChat,
                                     mensagem: message,
                                     foto: foto,
                                     data_hora: dateNow,
@@ -614,8 +635,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                                 };
 
                                 renderMessage(messageObject);
-
                                 socket.emit('sendMessage', messageObject)
+                           
                             }
                             };
                     }
