@@ -81,9 +81,14 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                     const query = location.search.slice(1)
                     const idChatQuery = query.split('=')[1]
 
-                    if(idChatQuery == null){
+                 
 
                         block.onclick = () => {
+
+
+                            document.querySelectorAll('.block').forEach(block => {
+                                block.classList.remove('active')
+                            })
 
                             block.className = 'block active'
                             const idChat = chat.idChat
@@ -111,7 +116,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             const sendMessage = document.getElementById('sendMessage')
                             const inputMessage = document.getElementById('inputMessage')
 
-                            
+                            chatbox.innerHTML = ''
+
 
                             function renderMessage(message) {
 
@@ -192,10 +198,11 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                         }
 
-                    } else {
+                    
+                    if(idChatQuery != null) {
 
                         block.className = 'block active'
-                        const idChat = chat.idChat
+                        const idChat = idChatQuery
                         const idCliente = chat.idCliente
 
                         const header = document.getElementById('header')
@@ -218,6 +225,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         const chatbox = document.getElementById('chatbox')
                         const sendMessage = document.getElementById('sendMessage')
                         const inputMessage = document.getElementById('inputMessage')
+
+                        chatbox.innerHTML = ''
 
                         function renderMessage(message) {
 
@@ -385,9 +394,15 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                     const query = location.search.slice(1)
                     const idChatQuery = query.split('=')[1]
 
-                    if(idChatQuery == null){
+                
 
                         block.onclick = () => {
+
+                            location.search = '?q=' + chat.idChat
+
+                            document.querySelectorAll('.block').forEach(block => {
+                                block.classList.remove('active')
+                            })
 
                             block.className = 'block active'
 
@@ -415,6 +430,7 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                             const sendMessage = document.getElementById('sendMessage')
                             const inputMessage = document.getElementById('inputMessage')
 
+                            chatbox.innerHTML = ''
                             
 
                             function renderMessage(message) {
@@ -495,7 +511,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                         }
 
-                    } else {
+                    
+                    if(idChatQuery != null) {
                         block.className = 'block active'
 
                         const idChat = idChatQuery
@@ -521,6 +538,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                         const chatbox = document.getElementById('chatbox')
                         const sendMessage = document.getElementById('sendMessage')
                         const inputMessage = document.getElementById('inputMessage')
+
+                        chatbox.innerHTML = ''
 
                         function renderMessage(message) {
 
