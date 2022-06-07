@@ -100,6 +100,8 @@ const getObraByCategoria = (Categoria) => {
 
       let obraPronta = data.obraPronta;
 
+      console.log(obraPronta)
+
       obraPronta.map(obraPronta => {
         const div = document.createElement('li');
         div.id = obraPronta.idObraPronta;
@@ -117,4 +119,8 @@ const getObraByCategoria = (Categoria) => {
     .catch(err => console.log(err));
 }
 
+getObraByCategoria("Gravura")
+getObraByCategoria("Pintura")
+getObraByCategoria("Fotografia")
 getObraByCategoria("Desenho")
+
