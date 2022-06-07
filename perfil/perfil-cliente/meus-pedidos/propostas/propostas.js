@@ -156,7 +156,7 @@ const getPropostas = () => {
                         .then((data) => {
                             console.log(data);
                             const idChat = data.idChat;
-                            window.location.href = "../../chat/index.html?q=" + idChat;
+                            window.location.href = "../../../../chat/index.html?q=" + idChat;
                         })
                 })
 

@@ -758,6 +758,7 @@ const getMeusPedidos = () => {
                                     avaliarArtista(idArtista, avaliacao, descricao, idPedidoPersonalizado);
                                     fundo_modal_avaliar_artista.innerHTML = "";
                                     fundo_modal_avaliar_artista.style.display = "none";
+                                    window.location.reload();
                                 }
                                
                 
