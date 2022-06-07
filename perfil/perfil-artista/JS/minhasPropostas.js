@@ -1019,6 +1019,7 @@ function getMinhasPropostas(){
 
                     <p id="descricao_pedido">
                         ${proposta.descricaoPedidoPersonalizado}
+                        
                     </p>
 
 

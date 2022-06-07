@@ -29,6 +29,9 @@
     align-items: center;
     padding: 1vh 10vw 1vh 10vw; 
 }
+.logo-header img{
+    width: 125px;
+}
 
 header a{
     text-decoration: none;

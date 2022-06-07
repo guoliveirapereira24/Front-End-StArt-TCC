@@ -275,7 +275,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 2vh;
-    width: 50%;
+    width: 55%;
     height: 100%;
     /* margin-bottom: 3%; */
 }
@@ -289,7 +289,7 @@ button:hover{
 .card{
     display: flex;
     flex-direction: column;
-    height: 45vh;
+    height: 47vh;
     width: 100%;
     background: #FCFCFC;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
@@ -319,7 +319,7 @@ button:hover{
     height: 100%;
     /* width: 100%; */
     gap: 2%;
-    font-size: 2vh;
+    font-size: 1.7vh;
     /* background-color: brown; */
 } 
 
@@ -368,7 +368,7 @@ button:hover{
     margin-right: 1%;
 }
 .botoes button{
-    height: 50px;
+    height: 20%;
     border-radius: 10px;
     border: none;
     /* background: #40E0D0; */

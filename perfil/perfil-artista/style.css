@@ -583,7 +583,7 @@ h1{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
     background-color:white;
     top: 0;
-    left: 45%;
+    /* left: 45%; */
 }
 /* .modal_excluir_obra h2, .modal_excluir_proposta h2{
     margin-left: 4%;
@@ -779,13 +779,15 @@ h1{
     align-items: center;
 }
 .card{
-    height: 420px;
-    width: 55vw;
+    height: 440px;
+    width: 78vw;
+    max-width: 1000px;
     /* border: 1px solid; */
     border-radius: 15px;
     margin-top: 20px;
     background-color: #FCFCFC;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712);
+    font-size: 2.3vh;
     
 }
 /* #card p{
@@ -803,17 +805,17 @@ h1{
 }
 
 .img_perfil{
-    margin-top: 5px;
-    margin-left: 10px;
-    height: 70px;
+    /* margin-top: 5px; */
+    /* margin-left: 10px; */
+    height: 50px;
     width: 70px;
     border-radius: 50%;
-    /* background-color: #40E0D0; */
+    background-color: #40E0D0;
     
 }
 .img_perfil{
-    height: 80px;
-    width: 80px;
+    height: 75px;
+    width: 75px;
     border-radius: 50%;
 }
 
@@ -822,7 +824,7 @@ h1{
 }
 
 .nome{
-    font-size: 25px;
+    font-size: 2vh;
     margin-left: 10px;
     width: 30%;
     /* background-color: #40E0D0; */
@@ -850,7 +852,7 @@ h1{
     align-items: center;
     flex-direction: row;
     /* margin-left: 20%; */
-    font-size: 25px;
+    font-size: 2vh;
     /* background-color: #40E0D0; */
 }
 #contatar{
@@ -862,14 +864,14 @@ h1{
 }
 #descricao_pedido{
     display: flex;
-    font-size: 2.5vh;
+    font-size: 2vh;
     width: 100%;
-    height: 25%;
+    height: 29%;
     /* align-items: center; */
     padding-top: 2%;
     padding-left: 3%;
     padding-right: 3%;
-
+    /* background-color: #FFC700 */
 }
 
 #exemplo_botoes{
@@ -920,7 +922,7 @@ h1{
     width: 30%;
     margin-left: 17%;
     gap: 3%;
-    font-size: 25px;
+    font-size: 1.8vh;
     /* background-color: #40E0D0; */
 }
 .text_para{
@@ -940,7 +942,7 @@ h1{
     gap: 5%;
     /* padding: 2%; */
     padding-left: 2%;
-    font-size: 2.5vh;
+    /* font-size: 2.5vh; */
        
 }
 .preco{
@@ -1048,8 +1050,8 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60%;
-    width: 50vw;
+    height: 55%;
+    width: 55vw;
     /* border: 1px solid; */
     border-radius: 15px;
   
@@ -1285,6 +1287,7 @@ textarea{
     height: 55%;
     width: 85%;
     max-width: 600px;
+    /* background-color:#04BA00; */
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-left: 1%;
