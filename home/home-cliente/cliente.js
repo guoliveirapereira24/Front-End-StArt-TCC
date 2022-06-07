@@ -102,7 +102,7 @@ const getObraByCategoria = (Categoria) => {
 
       obraPronta.map(obraPronta => {
         const div = document.createElement('li');
-        div.id = obraPronta.obraPronta;
+        div.id = obraPronta.idObraPronta;
         div.innerHTML = `
               <img src="${obraPronta.imagem1obrigatoria}" alt="">
         `;
