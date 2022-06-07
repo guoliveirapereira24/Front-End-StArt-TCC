@@ -304,8 +304,14 @@ h1{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.712); 
     /* vertical-align: middle; */
 }
+.card:hover{
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1.03);
+}
 .card img{
     height: 40%;
+    object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
