@@ -293,6 +293,9 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
                        
                             var foto = null;
                             const message = inputMessage.value;
+
+                            inputMessage.value = ''
+                                    
                                     
                             if(message.length > 0){
                                 var messageObject = {
@@ -510,7 +513,8 @@ if(tokenCliente != "null" && tokenCliente != "undefined") {
 
                                 var foto = null;
                                 const message = inputMessage.value;
-                                        
+                                inputMessage.value = ''
+                                            
                                 if(message.length > 0){
                                     var messageObject = {
                                         idChat: idChat,

@@ -3,6 +3,7 @@
 const tokenCliente = localStorage.getItem('tokenCliente');
 
 const inputDescricao = document.getElementById("textAreaDescricao");
+inputDescricao.value = "Eu quero uma pintura abstrata dessa paisagem em até 45 dias."
 const imgOpcional1 = document.getElementById("inputImage1");
 const imgOpcional2 = document.getElementById("inputImage2");
 const imgOpcional3 = document.getElementById("inputImage3");

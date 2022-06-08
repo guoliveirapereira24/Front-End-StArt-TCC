@@ -275,3 +275,12 @@ getCategorias();
 configureImagePreview()
 
 
+inputNome.value = 'Paisagem de um rio'
+inputPreco.value = 899.99
+inputQuantidade.value = 1
+inputTecnica.value = 'Aquarela'
+inputDesconto.value = 15
+selectExclusividade.value = 1;
+selectCategoria.value = 1;
+selectSubcategoria.value = 20;
+textAreaDescricao.value = 'A pintura de um rio num bosque'
